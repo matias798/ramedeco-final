@@ -46,17 +46,17 @@ Para el segundo grupo brindaremos diferentes categorías para poder llegar al pr
 
 ## *Integrantes*
 
-- <img src="./img/eze.jpg" style="width:50px;border-radius:50%;display:inline;" />***Agustina Sánchez Ré***
+- <img src="./img/eze.jpg" />***Agustina Sánchez Ré***
 
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et tincidunt purus, auctor molestie orci. Morbi at bibendum sapien, eu.
 
-- <img src="./img/eze.jpg" style="width:50px;border-radius:50%;display:inline;" />***Ezequiel Garcia Riveros***
+- <img src="./img/eze.jpg" />***Ezequiel Garcia Riveros***
 
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et tincidunt purus, auctor molestie orci. Morbi at bibendum sapien, eu.
 
-- <img src="./img/eze.jpg" style="width:50px;border-radius:50%;display:inline;" /> **Matías Quiroga**
+- <img src="./img/eze.jpg" /> **Matías Quiroga**
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et tincidunt purus, auctor molestie orci. Morbi at bibendum sapien, eu.
 
-- ***<img src="./img/eze.jpg" style="width:50px;border-radius:50%;display:inline;" />***Ruben Eliett***
+- ***<img src="./img/eze.jpg" />***Ruben Eliett***
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et tincidunt purus, auctor molestie orci. Morbi at bibendum sapien, eu.
 
