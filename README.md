@@ -46,17 +46,17 @@ Para el segundo grupo brindaremos diferentes categorías para poder llegar al pr
 
 ## *Integrantes*
 
-- <img src="C:\Users\PC_DEL\Documents\Curso_Digital_house\workspace\proyecto_integrador\Grupo_9_Ecommerce_DH\img\eze.jpg" style="width:200px;border-radius:50%;display:inline;" />**Agustina Sánchez Ré**
+- <img src="./img/eze.jpg" style="width:200px;border-radius:50%;display:inline;" />**Agustina Sánchez Ré**
 
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et tincidunt purus, auctor molestie orci. Morbi at bibendum sapien, eu.
 
-- <img src="C:\Users\PC_DEL\Documents\Curso_Digital_house\workspace\proyecto_integrador\Grupo_9_Ecommerce_DH\img\eze.jpg" style="width:200px;border-radius:50%;display:inline;" />***Ezequiel Garcia Riveros***
+- <img src="./img/eze.jpg" style="width:200px;border-radius:50%;display:inline;" />***Ezequiel Garcia Riveros***
 
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et tincidunt purus, auctor molestie orci. Morbi at bibendum sapien, eu.
 
-- ***<img src="C:\Users\PC_DEL\Documents\Curso_Digital_house\workspace\proyecto_integrador\Grupo_9_Ecommerce_DH\img\eze.jpg" style="width:200px;border-radius:50%;display:inline;" />******Matias Quiroga***
+- <img src="./img/eze.jpg" style="width:200px;border-radius:50%;display:inline;" /> **Matías Quiroga**
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et tincidunt purus, auctor molestie orci. Morbi at bibendum sapien, eu.
 
-- ***<img src="C:\Users\PC_DEL\Documents\Curso_Digital_house\workspace\proyecto_integrador\Grupo_9_Ecommerce_DH\img\eze.jpg" style="width:200px;border-radius:50%;display:inline;" />******Ruben Eliett***
+- ***<img src="./img/eze.jpg" style="width:200px;border-radius:50%;display:inline;" />******Ruben Eliett***
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et tincidunt purus, auctor molestie orci. Morbi at bibendum sapien, eu.
 
