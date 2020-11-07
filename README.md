@@ -57,6 +57,6 @@ Para el segundo grupo brindaremos diferentes categorías para poder llegar al pr
 - **Matías Quiroga**
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et tincidunt purus, auctor molestie orci. Morbi at bibendum sapien, eu.
 
-- <img src="./img/eze2.jpg" />***Ruben Eliett***
+- ***Ruben Eliett***
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et tincidunt purus, auctor molestie orci. Morbi at bibendum sapien, eu.
 
