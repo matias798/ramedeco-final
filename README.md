@@ -48,15 +48,17 @@ Para el segundo grupo brindaremos diferentes categorías para poder llegar al pr
 
 - ***Agustina Sánchez Ré***
 
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et tincidunt purus, auctor molestie orci. Morbi at bibendum sapien, eu.
+Agus, 23 años. Soy estudiante de Ing. Industrial en FIUBA, doy clases de inglés, me gusta la música, los perros, el mate, viajar, leer y aprender cosas nuevas.
 
 - ***Ezequiel Garcia Riveros***
 
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et tincidunt purus, auctor molestie orci. Morbi at bibendum sapien, eu.
 
-- **Matías Quiroga**
+- ***Matías Quiroga***
+
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et tincidunt purus, auctor molestie orci. Morbi at bibendum sapien, eu.
 
 - ***Ruben Eliett***
+
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et tincidunt purus, auctor molestie orci. Morbi at bibendum sapien, eu.
 
