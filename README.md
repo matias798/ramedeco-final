@@ -56,7 +56,7 @@ Agus, 23 años. Soy estudiante de Ing. Industrial en FIUBA, doy clases de inglé
 
 - ***Matías Quiroga***
 
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et tincidunt purus, auctor molestie orci. Morbi at bibendum sapien, eu.
+  Matias, tengo 19 años.Estudio analista de sistemas en el politecnico y soy de Rosario, me considero una persona honesta y actualmente estoy tratando de aprender más sobre el desarrollo web para lograr impulsar mi carrera profesional en el área.
 
 - ***Ruben Eliett***
 
