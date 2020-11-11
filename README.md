@@ -52,7 +52,7 @@ Agus, 23 años. Soy estudiante de Ing. Industrial en FIUBA, doy clases de inglé
 
 - ***Ezequiel Garcia Riveros***
 
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et tincidunt purus, auctor molestie orci. Morbi at bibendum sapien, eu.
+Eze, 29 años.Ingeniero.Me gusta viajar, los desafios y a amo mi perra. Me considero muy responsable y quiero crecer como profesional! 
 
 - ***Matías Quiroga***
 
