@@ -60,5 +60,5 @@ Eze, 29 años.Ingeniero.Me gusta viajar, los desafios y a amo mi perra. Me consi
 
 - ***Ruben Eliett***
 
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et tincidunt purus, auctor molestie orci. Morbi at bibendum sapien, eu.
+  Rubén. Soy Ingeniero Mecánico, me gusta estudiar todo sobre los mercados financieros, conocer nuevos lugares y aprender constantemente. Desde hace algún tiempo me llamó la atención el desarrollo web, y ahora quiero convertirme en desarrollador Full Stack.
 
