@@ -1,0 +1,19 @@
+Gral: barra de navegacion fija 
+
+En el footer: 
+
+* Buscanos en lasRedes
+* Subscribite a nuestro newletter
+* Ubicacion
+
+Carrito de Compras:
+
+*Sugerencia de productos por si queres agregar mas.
+*Actualizacion de precio en base a cantidad automatico.
+*Cuadrado por producto.
+
+Detalle de producto:
+En donde figura el precio, vamos a agregar opciones de tamaños,cantidad, colores disponibles
+
+Login y formulario de crear usuario: 
+Queremos poner una imagen de fondo que no quite la atencion del usuario del formulario.
