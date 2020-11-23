@@ -17,12 +17,12 @@ app.get("/register", (req,res) =>{
 
 app.get("/shoppingcart", (req,res) =>{
     res.sendFile(__dirname+"/views/shoppingcart.html") 
+})*/
+
+app.get("/product_detail", (req,res) =>{
+    res.sendFile(__dirname+"/views/product_detail.html") 
 })
 
-app.get("/product_deail", (req,res) =>{
-    res.sendFile(__dirname+"/views/product_deail.html") 
-})
-*/
 app.get("*", (req,res) =>{
     res.sendFile(__dirname+"/../public/" +req.url ) 
 })
