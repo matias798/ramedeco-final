@@ -1,0 +1,22 @@
+Identidad visual de nuestro sitio 
+
+NOMBRE: Ramé Deco
+
+CONCEPTO GENERAL: Queremos que el sitio de la idea de calidez, calma, hogar, inspiración para los espacios de la casa. Lo más minimalista posible y nuestra prioridad será cuidar la estética sin perder de vista que el objetivo es el diseño UX.
+
+TIPOGRAFÍA: (https://fonts.google.com/)
+Slabo 27px
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
+
+PALETA DE COLORES: 
+Colores neutros y cálidos, tonos suaves y contrastantes.
+Inspirándonos en algunas paletas, armamos una propia con los tonos que más nos gustaron:
+    Para el body: #dce1df
+    Para los contenedores de productos (card): #ffffff
+    Para la letra: #dce1df (y en algunas ocasiones blanco y negro)
+    Para el navbar y el footer: #2c303a
+    Para los botones y algunos títulos: #0096a0
+
+LOGO
+img adjuntada en esta misma carpeta
