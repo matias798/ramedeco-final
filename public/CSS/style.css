@@ -1,10 +1,11 @@
-
 * {
 	font-family: 'Dosis', sans-serif;
 	margin: 0;
 	padding: 0;
 }
 
+body{  box-sizing: border-box;
+}
 
 .product{margin: 4% 0 0 5%;}
 
@@ -33,6 +34,21 @@ transition: transform .2s;
 .container-image:hover{
 	transform: scale(1.3); 
 }
+
+.shoppincart-delete{
+position: relative;
+left: 50px;
+top: 10px;
+opacity: 0.5;
+color: red;
+}
+
+.shoppincart-delete:hover{
+	opacity: 1;
+	cursor: pointer;
+
+}
+
 
 .container-right{ 
 	display: inline-block;
@@ -121,6 +137,32 @@ margin-bottom: 5%;
 	}
 
 
+	.Sugested-products-title{	
+		font-weight: 900;
+		position: relative;
+		top: 40px;
+		left: 90px;
+		max-width: 200px;
+		color: #53b5aa;
+		font-size: 18px;
+		}
+		
+			.Sugested-products-image{
+				position: relative;
+				top: 44px;
+				left: 100px;
+				max-width: 220px;
+				border-radius: 20px;
+				margin: 10px;
+				opacity: 0.8;
+			box-shadow: 2px 2px 5px #999;
+			}
+		
+			.Sugested-products-image:hover{
+				opacity: 1;
+			}
+
+			
 	.container-order-summary {
 		margin: 7% 0 0 0;
 		padding: 40px;
@@ -176,3 +218,85 @@ margin-bottom: 5%;
 		background: #429188;
 	}
 
+
+
+	
+
+@media (max-width: 360px) {
+*{font-size: 18px;
+}
+
+.product{
+	position: relative;
+	top: 10px;
+	left: 3px;
+	right: 3px;
+}
+
+.container-left {
+	margin: 10px 0 20px 0;
+}
+
+
+
+.container-image {
+position: relative;
+top: 10px;
+left: 50px;}
+
+.container-right-top{
+	position: relative;
+	top: 5px;
+max-width: 198px;
+margin: 6px 0 10x 0;
+}
+
+.quantity-display,.quantity-increment, .quantity-decrement,	.quantity-price  {
+	width: 20px;
+	display: block;
+	float: left;
+}
+.quantity-increment{margin-right: 1px;}
+
+.quantity-decrement{margin-left: 7px;}
+
+.quantity-price{
+	margin-left: 4px;
+	position: relative;
+	left: 35px;
+	width: 40px;}
+
+.summary-shipping{display: block;}
+
+.Sugested-products-title{	
+	left: 100px;
+max-width:100px ;}
+
+.Sugested-products-image{
+margin: 3px;
+max-width: 130px;
+left: 7px;}
+
+
+.container-order-summary{padding: 10px  3px 10px 3px;}
+
+.order-summary-left{float: none;}
+
+.order-summary-right{
+	float: none;
+	display: block;
+}
+
+.order-summary-total{
+	max-width: 198px;
+	margin: 0;
+	height: 30px;
+	}
+
+.btn-container{
+	max-width: 198px;
+	margin-top: 10px;
+	display: block;
+	}
+
+}
