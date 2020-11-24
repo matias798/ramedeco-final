@@ -4,8 +4,8 @@ const port=3000;
 
 app.listen(port,()=>console.log("server started at Port: "+port))
 
-app.get("/", (req,res) =>{
-    res.sendFile(__dirname+"/views/home.html") 
+app.get("/home", (req,res) =>{
+    res.sendFile(__dirname+"/views/index.html") 
 })
 
 app.get("/login", (req,res) =>{
