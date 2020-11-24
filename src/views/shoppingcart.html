@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Carrito</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+	<link rel="stylesheet" href="">
+	
+	  <!-- add icon src -->
+	  <link rel = "icon" href="/Users/Mati/Desktop/1/Grupo_9_Rame_Deco/public/images/logo.jpeg" type = "image/x-icon"> 
+
+  </head>
+  <body>
+<section class="shoppingcart-title">
+	  	<h1 class="page-title">Bienvenido a tu carrito</h1>
+	</section>
+
+	  <article class="product">
+
+<div class="container-left">
+<img class="container-image" src="https://images.pexels.com/photos/3757055/pexels-photo-3757055.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+<p class="shoppincart-delete">eliminar</p>
+
+  		</div>
+
+  		<div class="container-right">
+
+			<span class="container-right-top">
+	  		<p class="container-title">Sillon dos cuerpos</p>
+			  <p class="container-subtitle">Producto realizado con materiales de primera calidad con almohadones de asiento con efecto memoria.
+			  </p>
+			</span>
+
+	  		<div class="container-right-bottom">
+		
+				<input class="quantity-decrement" type="button" value="-" id="dec" onclick="decrementI()"/>
+												   
+				<label class="quantity-display" id="display" >1</label>
+												   
+				<input class="quantity-increment" type="button" value="+" id="inc" onclick="incrementI()"/>
+				 
+				
+				<span class="quantity-price">$<span>40000</span></span>	  
+			
+			</div>
+	</article>
+
+	<article class="product">
+
+		<div class="container-left">
+		<img class="container-image" src="https://cdn.pixabay.com/photo/2017/08/05/02/12/sansevieria-2582056_960_720.jpg" alt="">
+		<p class="shoppincart-delete">eliminar</p>
+
+				  </div>
+		
+	 <div class="container-right">
+		
+					<span class="container-right-top">
+					  <p class="container-title">Maceta estilo nordico</p>
+					  <p class="container-subtitle">Decora tu hogar con la presencia de esta maceta estilo nordico y disfruta de obtener una sansevieria de manera gratuita</p>
+					</span>
+		
+					  <div class="container-right-bottom">
+				
+						<input class="quantity-decrement" type="button" value="-" id="dec" onclick="decrementj()"/>
+														   
+						<label class="quantity-display" id="display-2" >1</label>
+														   
+						<input class="quantity-increment" type="button" value="+" id="inc" onclick="incrementJ()"/>
+						 
+						
+						<span class="quantity-price">$<span>1250</span></span>	  
+					
+					</div>
+			</article>
+
+<section class="Sugested-products">
+			<div class="Sugested-products-title ">Productos sugeridos </div>
+
+			<div class="Sugested-products-images">
+		<img class="Sugested-products-image" src="https://cdn.pixabay.com/photo/2017/08/05/02/12/sansevieria-2582056_960_720.jpg" alt="">
+		<img class="Sugested-products-image" src="https://cdn.pixabay.com/photo/2017/08/05/02/12/sansevieria-2582056_960_720.jpg" alt="">
+		<img class="Sugested-products-image" src="https://cdn.pixabay.com/photo/2017/08/05/02/12/sansevieria-2582056_960_720.jpg" alt="">
+		<img class="Sugested-products-image" src="https://cdn.pixabay.com/photo/2017/08/05/02/12/sansevieria-2582056_960_720.jpg" alt="">
+	</div>
+
+</section>
+
+
+
+<section class="container-order-summary">	
+	
+	
+		
+		<div class="order-summary-left">
+			<h2 class="order-summary-subtotal">Subtotal: $<span>1200</span></h2>
+			<h3 class="order-summary-shipping">Envio: $<span>400</span></h3>
+		</div>
+		
+		<div class="order-summary-right">
+			<h3 class="order-summary-total">Total:  $<span id="total">41.250</span></h1>
+			
+
+<div class="btn-container">
+		<button class="btn"><a class="#">Continuar compra</a></button>
+	</div>
+
+		</div>
+		
+		
+	</section>
+
+
+
+
+
+
+<script type="text/javascript"> 
+
+				var i = 1;
+				var j = 1;
+				var k = 41250;
+
+				
+				function incrementI() {
+				if (i < 10) {
+				 i++;
+				 k+=40000;
+				}
+				 document.getElementById("display").innerHTML = i;
+				 document.getElementById("total").innerHTML = k;
+				}
+			
+				 function decrementI() {
+				if (i > 1) {
+				k-=40000;
+				--i;
+				} 
+				document.getElementById("display").innerHTML = i;
+				document.getElementById("total").innerHTML = k;
+
+				}
+			
+				function incrementJ() {
+				if (j < 10) {
+				 j++;
+				 k+=1250;
+
+				}
+				 document.getElementById("display-2").innerHTML = j;
+				 document.getElementById("total").innerHTML = k;
+
+				 }
+			
+				 function decrementj() {
+				if (j > 1) {
+					k-=1250;
+					--j;
+				} 
+				document.getElementById("display-2").innerHTML = j;
+				document.getElementById("total").innerHTML = k;
+
+				}
+			
+			
+				</script>
+  </body>
+</html>
