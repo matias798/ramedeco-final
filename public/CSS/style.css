@@ -1,0 +1,181 @@
+* {
+	font-family: 'Dosis', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+
+.product{margin: 4% 0 0 5%;}
+
+.page-header-container {
+	font-size: 21px;
+	opacity: 0.75;
+}
+
+.container{
+	margin-left: 10%;
+}
+
+.container-left {
+	vertical-align: top;
+	display: inline-block;
+	margin-right: 12px;
+}
+
+.container-image {
+	max-width: 150px;
+	box-shadow: 2px 2px 5px #999;
+border-radius: 20px;
+transition: transform .2s; 
+}
+
+.container-image:hover{
+	transform: scale(1.3); 
+}
+
+.container-right{ 
+	display: inline-block;
+	padding-right: 40px;
+
+}
+
+.container-right-top{
+	width: 800px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	display: inline-block;
+	padding:0 7px 8px 40px;
+	box-shadow: 3px 3px 5px #999;
+margin-bottom: 5%;
+}
+
+
+.container-title {
+	max-width: 200px;
+    color: #53b5aa;
+	font-size: 18px;
+
+}
+
+.container-right-top-subtitle {
+	
+	color: #AAA;
+	padding-right: 80px;
+	font-size: 20px;
+	margin-bottom:6% 0 0 4% 0;
+}
+
+
+	.quantity-display,.quantity-increment, .quantity-decrement {
+		display: block;
+		float: left;
+	}
+	
+	.quantity-display {
+		background: #fcfcfc;
+		font-size: 19px;
+		line-height: 50px;
+		width: 70px;
+		text-align: center;
+	}
+	
+	.quantity-increment, .quantity-decrement {
+		background: #fcfcfc;
+		border: none;
+		font-size: 30px;
+		font-weight: 300;
+		height: 100%;
+		padding: 0 20px;
+	}
+	
+	.quantity-increment:hover, .quantity-decrement:hover {
+		background: #53b5aa;
+		color: #fff;
+		cursor: pointer;
+	}
+	
+	.quantity-increment {
+		line-height: 50px;
+		margin-right: 40%;
+	}
+	
+	.quantity-decrement {
+		line-height: 47px;
+	}
+
+
+	.quantity-price {
+		float: right;
+		background: #53b5aa;
+		box-shadow: 2px 2px 5px #999;
+		color: #fff;
+		float: right;
+		font-size: 22px;
+		font-weight: 300;
+		line-height: 49px;
+		margin: 0;
+		padding: 0 30px;
+	
+	}
+
+
+	.container-order-summary {
+		margin: 7% 0 0 0;
+		padding: 40px;
+	}
+	
+	.order-summary-total {
+		background: #fcfcfc;
+		box-shadow: 2px 2px 5px #999;
+		border: 1px solid #ccc;
+		border-style: none none solid none;
+		font-size: 24px;
+		font-weight: 300;
+		margin: 0 0 7px 0;
+		padding: 14px 40px;
+		text-align: center;
+	}
+	
+	.order-summary-subtotal{
+		font-size: 24px;
+		font-weight: 300;
+		margin: 10px 0 0 0;
+	}
+	
+	.order-summary-shipping {
+		font-size: 19px;
+		font-weight: 300;
+		margin: 15px 0;
+	}
+	
+	.order-summary-left{
+		float: left;
+	}
+	
+	.order-summary-right{
+		float: right;
+	}
+	
+	.btn {
+		background: #53b5aa;
+        border-radius: 20px;
+		border-style: none none solid none;
+		cursor: pointer;
+		color: #fff;
+		font-size: 20px;
+		font-weight: 300;
+		padding: 16px 0;
+		width: 290px;
+		text-align: center;
+	}
+	
+	.btn:hover {
+		color: #fff;
+		background: #429188;
+	}
+
+
+
+
+

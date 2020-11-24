@@ -1,7 +1,8 @@
 const express = require('express')
 const app = express()
+const port=3000;
 
-app.listen(3000,()=>console.log("server started"))
+app.listen(port,()=>console.log("server started at Port: "+port))
 
 app.get("/", (req,res) =>{
     res.sendFile(__dirname+"/views/home.html") 
