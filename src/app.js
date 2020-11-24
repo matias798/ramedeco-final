@@ -1,9 +1,9 @@
 const express = require('express')
 const app = express()
 
-app.listen(3000,()=>console.log("server started"))
+app.listen(8080,()=>console.log("server started"))
 
-app.get("/", (req,res) =>{
+app.get("/home", (req,res) =>{
     res.sendFile(__dirname+"/views/home.html") 
 })
 /*
