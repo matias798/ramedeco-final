@@ -4,7 +4,7 @@ const port=3000;
 
 app.listen(port,()=>console.log("server started at Port: "+port))
 
-app.get("/home", (req,res) =>{
+app.get("/", (req,res) =>{
     res.sendFile(__dirname+"/views/index.html") 
 })
 
@@ -25,5 +25,7 @@ app.get("/product_detail", (req,res) =>{
 })
 
 app.get("*", (req,res) =>{
-    res.sendFile(__dirname+"/../public/" +req.url ) 
+    let path=__dirname+"public" + req.url
+    path=path.replace("src","")
+    res.sendFile(path)
 })
