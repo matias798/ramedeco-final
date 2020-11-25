@@ -9,6 +9,7 @@
     <title>Document</title>
 </head>
 <body>
+
     <!-- navbar -->
 
     <header class="header_layout">
@@ -34,7 +35,8 @@
 
     <section class="container section-container">
         <div class="section-container-top">
-        <img src="https://placeimg.com/480/480/tech" class="section-container-image" alt="">
+            <img class="section-container-image" src="images/shoppingcart/blue-chair.jpg" alt="">
+            
 <p class="shoppincart-delete">eliminar</p>
         
         </div>
@@ -42,7 +44,7 @@
         <div class="section-container-bottom">
 
             <!--Title of product -->
-            <p class="section-container-title">Sillon dos cuerpos</p>
+            <p class="section-container-title">Silla escandinava</p>
 
             <!-- Description of product-->
             <p class="section-container-subtitle">Producto realizado con materiales de primera calidad con almohadones de asiento con efecto memoria.</p>
@@ -67,7 +69,9 @@
 
     <section class="container section-container">
         <div class="section-container-top">
-        <img src="https://placeimg.com/480/480/tech" class="section-container-image" alt="">
+
+            <img class="section-container-image" src="images/shoppingcart/blue-chair.jpg" alt="">
+
         <p class="shoppincart-delete">eliminar</p>
         
         </div>
@@ -75,7 +79,7 @@
         <div class="section-container-bottom">
 
             <!--Title of product -->
-            <p class="section-container-title">Sillon dos cuerpos</p>
+            <p class="section-container-title">Silla escandinava</p>
 
             <!-- Description of product-->
             <p class="section-container-subtitle">Producto realizado con materiales de primera calidad con almohadones de asiento con efecto memoria.</p>
@@ -103,12 +107,10 @@
 <div class="Sugested-products-title ">Productos sugeridos </div>
 
 
-<div class="Sugested-products-images">
-    <img class="Sugested-products-image" src="https://cdn.pixabay.com/photo/2017/08/05/02/12/sansevieria-2582056_960_720.jpg" alt="">
-    <img class="Sugested-products-image" src="https://cdn.pixabay.com/photo/2017/08/05/02/12/sansevieria-2582056_960_720.jpg" alt="">
-    <img class="Sugested-products-image" src="https://cdn.pixabay.com/photo/2017/08/05/02/12/sansevieria-2582056_960_720.jpg" alt="">
-    <img class="Sugested-products-image" src="https://cdn.pixabay.com/photo/2017/08/05/02/12/sansevieria-2582056_960_720.jpg" alt="">
-</div>
+    <img class="Sugested-products-image" id = "top-left-image"  src="https://cdn.pixabay.com/photo/2017/08/05/02/12/sansevieria-2582056_960_720.jpg" alt="">
+    <img class="Sugested-products-image" id = "top-right-image" src="https://cdn.pixabay.com/photo/2017/08/05/02/12/sansevieria-2582056_960_720.jpg" alt="">
+    <img class="Sugested-products-image" id = "bottom-left-image" src="https://cdn.pixabay.com/photo/2017/08/05/02/12/sansevieria-2582056_960_720.jpg" alt="">
+    <img class="Sugested-products-image" id = "bottom-right-image" src="https://cdn.pixabay.com/photo/2017/08/05/02/12/sansevieria-2582056_960_720.jpg" alt="">
 
 </section>
 
@@ -119,10 +121,16 @@
 <!-- Resume of price and continue button -->
 <section class="container-order-summary">	
 			
-    <div class="order-summary-subtotal">Subtotal: $<span>1200</span></div>
-    <div class="order-summary-shipping">Envio: $<span>400</span></div>
+    <div class="order-summary-subtotal">Subtotal:
+    <span class="order-summary-price">$<span>1200</span></span></div>
+    
+    <div class="order-summary-shipping">Envio: 
+     <span class="order-summary-price">$<span>400</span></span></div>
             
-    <span class="order-summary-total">Total:  $<span id="total">41.250</span></span>
+    <div class="order-summary-total">Total:
+   <span class="order-summary-price">$<span id="total">41.250</span></span>
+            
+    </div>
                 
     <button id="button-order-summary">Continuar compra</button>
 
