@@ -4,41 +4,191 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Descripción de Producto</title>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+   
+   <style>
+
+/*Header styles*/
+header.header_layout{
+    background-color:#2c303a;
+    padding: 5px;
+    margin:0;
+}
+img.logo{
+    padding-left: 50px;
+    width: 60%;
+}
+
+div.nav_list_container{
+    display: none;
+}
+
+
+ul.nav_list_options{
+    display:flex ;
+    flex-direction: row;
+    list-style:none;
+    justify-content: space-between;
+    margin-right: 30px;
+}
+
+ul.nav_list_options li a{
+    text-decoration:none;
+    color:white;
+}
+
+i.header_icons{
+    color: #0096a0;
+    width:23px;
+    height: 23px;
+    margin:7px;
+    padding-top:5px;
+}
+i.hamburger_menu{  
+    width: 20px;
+    height: 20px;
+    background-color: #0096a0;
+    color:white;
+    font-size: 10px;
+    padding: 5.5px;
+    margin:7px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    display: inline;
+}
+
+i.hamburger_menu:hover +  div.nav_list_container{
+    display: block;
+}
+i.hamburger_menu:hover{
+    background-color: white;
+    color:#0096a0;
+    cursor:pointer ;
+}
+
+/**End Header**/
+
+/**Footer**/
+footer{
+    background-color:#2c303a;
+    padding: 15px;
+}
+
+form.subscribe_form{
+    padding: 5px;
+    width: 100%;
+    margin-right:30%;
+    margin-bottom: 15px;
+}
+.subscribe_form_input_text{
+    border-radius: 10px;
+    border: none;
+    display: inline;
+    font-size:18px;
+    padding:5px;
+    margin-top: 5px;
+}
+.subscribe_form_text{
+    font-size: 18px;
+    color: #dce1df;
+}
+
+input.subscribe_form_submit{
+    background: #0096a0;
+    border:none;
+    padding:5px;
+    border-radius: 10px;
+    margin: 0;
+    display: inline;
+    font-style: bold;
+}
+
+input.subscribe_form_submit:hover{
+    border:1px solid  #ececeb
+}
+
+div.links_container{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer_link{
+    display: block;
+    text-decoration: none; 
+    color: #dce1df;
+    font-size: 20px;
+    margin-top: 5px;
+    margin-bottom:5px;
+}
+
+.footer_link_icon_and_text{
+    display: inline;
+}
+
+.footer_context_container{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+/**End Footer**/
+
+/**Product Detail**/
+
+* {
+	font-family: 'Dosis', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.body-product-detail{
+  background-color: #dce1df;
+}
+
+.titulo-product-detail{
+  
+  display: flex;
+  position: relative;
+  left: 10px;
+  color: #0096a0
+}
+  
 .elContenedor{
     padding: 5px;
     position: relative;
     margin-bottom: 50px;
+    background-color: #ffffff;
 }
 
-.imagen {
+.imagen-product {
     width: 100%;
    vertical-align: top;
    display: inline-block;
 }
 
-.primerTexto {
-    background-color: yellow;
-    border-radius: 3px;
-    width: 35%;
+.texto-izq-product {
+    background-color: #dce1df;
+    color: black;
+    border-radius: 20px;
+    width: 25%;
     height: auto;
    position: absolute;
-   top: 57%;
+   top: 68%;
     left: 3%;
     margin: 0 auto;
-    padding: 10px;
+    padding: 10px; 
    
 }
 
-.segundoTexto {
-    background-color: yellow;
-    border-radius: 3px;
-    width: 35%;
+.texto-der-product {
+    background-color: #dce1df;
+    color: black;
+    border-radius: 20px;
+    width: 25%;
     height: auto;
     position: absolute;
-    top: 57%;
+    top: 68%;
     right: 3%;
     margin: 0 auto;
     padding: 10px;
@@ -56,18 +206,18 @@
 font-size: 18px; 
 font-weight: 400; 
 color: #ffffff; 
-background:#ee0467;
-max-width: 300px;
-padding: 5px;
-
+background-color: #2c303a;;
+max-width: 250px;
+padding: 10px;
+border-radius: 20px;
 }
 
 .contenedor-descrip-izq {
 	vertical-align: top;
 	display: inline-block;
-    margin-right: 5%;
-    margin-left: auto;
-    
+  margin-right: 5%;
+  margin-left: auto;
+   
 }
 
 .contenedor-descrip-der {
@@ -76,7 +226,8 @@ padding: 5px;
 
 
 .precio {
-	font-size: 18px;
+  font-size: 18px;
+  color: #0096a0;
 }
 
 
@@ -84,37 +235,54 @@ padding: 5px;
 	margin-top: 24px;
 	margin-bottom: 18px;
 	border-radius: 3px;
-	border: 1px solid lime;
-	background-color: lime;
+	border: 1px solid #0096a0;
+	background-color: #0096a0;
 	padding: 6px 12px;
 }
 
+.boton-agregar-carrito:hover {
+    color: #fff;
+    background: #429188;
+}
+
+/**End Product Detail**/
+
     </style>
+
 </head>
-<body>
-    <header>
-        <div><img src="" alt=""></div>
-    <div>
-        <nav>
-            <a href=""></a>
-            <a href=""></a>
-            <a href=""></a>
-            <a href=""></a>
-            <i></i>
-            <i></i>
-        </nav>
-        <i></i>
+<body class="body-product-detail">
+  <header class="header_layout">
+    <div style="display:flex;justify-content: space-between;">
+        <i class="fas fa-bars hamburger_menu"></i>
+        <div style="width: 50%;margin:5px;"> 
+            <a href="#"><img class="logo" src="../../public/images/rame_deco_logo.jpeg" alt=""/></a>
+        </div>
+        <i class="fas fa-shopping-cart  header_icons"></i>
+        <i class="fas fa-user-circle  header_icons"></i>
+    </div>
+    <div class="nav_list_container">
+            <nav>
+                <ul class="nav_list_options">
+                    <li> <a href="#">Categorias</a></li>
+                    <li><a href="#">Novedades</a></li>
+                    <li><a href="#">Inspiracion</a></li>
+                </ul>
+            </nav>
     </div>
     </header>
 
 
 <main>
 
+  <section class="titulo-product-detail">
+    <h1 >Sillón Dos Cuerpos</h1>
+</section>
+
     <div class="elContenedor">
         <div>
-          <img  src="http://placeimg.com/800/480/animals" alt="" class="imagen">
+          <img  src="https://images.pexels.com/photos/3757055/pexels-photo-3757055.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" class="imagen-product">
             
-              <div class="primerTexto"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit accusantium quasi facilis iure voluptates molestias excepturi fugit optio, est et ipsam. Tempora voluptatibus culpa tempore officia quidem possimus id quam.
+              <div class="texto-izq-product"> El lujo nunca había tenido una mejor cara. Sorprende a todos con la comodidad y el buen gusto de este sillón único.
               </div>
         </div>
             
@@ -122,9 +290,9 @@ padding: 5px;
 
     <div class="elContenedor">
       <div>
-        <img  src="http://placeimg.com/800/480/animals" alt="" class="imagen">
+        <img  src="https://images.pexels.com/photos/3757055/pexels-photo-3757055.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" class="imagen-product">
           
-            <div class="segundoTexto"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit accusantium quasi facilis iure voluptates molestias excepturi fugit optio, est et ipsam. Tempora voluptatibus culpa tempore officia quidem possimus id quam.
+            <div class="texto-der-product"> Elaborado con materiales de primera calidad y con almohadones de Efecto Memoria.
             </div>
       </div>
     </div>
@@ -132,25 +300,61 @@ padding: 5px;
 
       <div class="otroContenedor contenedor-descrip">
         <div class="contenedor-descrip-izq">
-          <p class="caja">Descripción adicional del Objeto Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti consequuntur sit mollitia libero! Reprehenderit sint iusto hic odio neque officia maxime repudiandae </p>
+          <p class="caja">Sillón de 2 Cuerpos, elaborado con materiales de última tecnología que garantizan tu confort de forma prolongada</p>
         </div>
   
         <div class="contenedor-descrip-der">
-          <p class="precio">Precio del Objeto</p>
+          <p class="precio">$ 40.000</p>
+
+          <div class="contenedor-cantidad">
+		
+            <input class="bajar-cantidad" type="button" value="-" id="dec" onclick="decrementI()"/>
+                               
+            <label class="cantidad-mostrada" id="display" >1</label>
+                               
+            <input class="aumentar-cantidad" type="button" value="+" id="inc" onclick="incrementI()"/>
+             
+            
+          
+          </div>
         
           <button class="boton-agregar-carrito" type="submit">Agregar al carrito</button>
           
           
         </div>
-      </div>
-
+      </div>  
 
 </main>
 
 
-  <footer>
-Aqui va el footer
-  </footer>
+<footer>
+  <div class="subscribe_form_container">
+  <form class="subscribe_form" action="">
+      <label class="subscribe_form_text" for="subscribe_input">Suscribite a nuestro Newsletter</label>
+      <input class="subscribe_form_input_text" id="subscribe_input" name="subscribe_input" type="text" placeholder="Ingrese su email">
+      <input class="subscribe_form_text subscribe_form_submit" type="submit">
+  </form>
+  </div>
+  <div class="links_container">
+      <div class="footer_context_container">
+          <a class="footer_link" href="">Quienes somos</a>
+          <a class="footer_link" href="">Politicas de Devolucion</a>
+          <a class="footer_link" href="">Garantias</a>
+          <a class="footer_link" href="">PreguntasFrecuentes</a>
+      </div>
+      <div class="footer_context_container">
+          <a class="footer_link"
+          href=""><i class="fab fa-facebook fa-1x footer_link_icon"></i>
+          <p class="footer_link_icon_and_text">Facebook</p></a>
+          <a  class="footer_link" href=""><i class="fab fa-instagram fa-1x footer_link_icon_and_text"></i>
+          <p class="footer_link_icon_and_text">Instagram</p></a>
+          <a class="footer_link" href=""><i class="fab fa-twitter fa-1x footer_link_icon_and_text"></i>
+          <p class="footer_link_icon_and_text">Twitter</p></a>
+          <a class="footer_link" href=""><i class="fab fa-whatsapp fa-1x footer_link_icon_and_text"></i>
+          <p class="footer_link_icon_and_text">Whatsapp</p></a>
+      </div>
+  </div>
+</footer>
     
 </body>
 </html>
