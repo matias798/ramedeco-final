@@ -418,16 +418,16 @@ div.links_container{
 
 .section-container-image {
     position: relative;
-	left: 120px;      
+	left: 100px;      
 
-max-width: 90px;
+max-width: 110px;
 border-radius: 20px;
 box-shadow: 2px 2px 5px #999;
 }
 
 /* deletes the product */
 .shoppincart-delete{
-    margin-top: 7px;
+    margin-top: 3px;
     position: relative;
 	left: 120px;      
     color:red;}
@@ -436,7 +436,7 @@ box-shadow: 2px 2px 5px #999;
 /* title description counter and price */
 .section-container-bottom {
 	display: inline-block;
-    padding-top: 10px;
+    padding-top: 7px;
 	box-shadow: 2px 2px 5px #999;
     border-radius: 20px;
 
