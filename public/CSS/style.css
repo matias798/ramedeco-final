@@ -1,5 +1,7 @@
 .page_background_color{
     background-color:#dce1df ;
+    margin:0;
+    padding:0;
 }
 
 a.link_without_style{
@@ -186,19 +188,19 @@ div.pointer-container:hover + div.card-container-product-description {
 /*target positions*/
 div.picture1_pointer_1{
     left:40%;
-    bottom: 55%;
+    bottom: 60%;
 }
 div.picture1_pointer_description_1{
     bottom:90%;
-    left:27%;
+    left:55%;
 }
 
 div.picture1_pointer_2{
-    bottom:50%;
+    bottom:65%;
     left: 70%;
 }
 div.picture1_pointer_description_2{
-    bottom:90%;
+    bottom:125%;
     left:57%;
 }
 
@@ -208,27 +210,27 @@ div.picture2_pointer_1{
 }
 
 div.picture2_pointer_description_1{
-    bottom:75%;
-    left:60%;
+    bottom:95%;
+    left:57%;
 }
 
 div.picture2_pointer_2{
-    bottom:90%;
-    left:10%;
+    bottom:107%;
+    left:7%;
 }
 
 div.picture2_pointer_description_2{
-    bottom:125%;
+    bottom:163%;
     left:3%;
 }
 
 div.picture2_pointer_3{
-    bottom:120%;
+    bottom:160%;
     left:45%;
 }
 
 div.picture2_pointer_description_3{
-    bottom:170%;
+    bottom:225%;
     left:30%;
 }
 
@@ -238,28 +240,28 @@ div.picture3_pointer_1{
 }
 
 div.picture3_pointer_description_1{
-    bottom:90%;
-    left:23%;
+    bottom:80%;
+    left:40%;
 }
 
 
 div.picture3_pointer_2{
-    bottom:80%;
+    bottom:85%;
     left:83%;
 }
 
 div.picture3_pointer_description_2{
     bottom:110%;
-    left:60%;
+    left:40%;
 }
 
 div.picture3_pointer_3{
-    bottom:155%;
+    bottom:190%;
     left:83%;
 }
 
 div.picture3_pointer_description_3{
-    bottom:150%;
+    bottom:190%;
     left:60%;
 }
 
@@ -280,7 +282,7 @@ div.picture5_pointer_1{
 
 div.picture5_pointer_description_1{
     bottom:90%;
-    left:40%;
+    left:10%;
 }
 div.picture6_pointer_1{
     bottom:60%;
@@ -292,12 +294,12 @@ div.picture6_pointer_description_1{
     left:20%;
 }
 div.picture6_pointer_2{
-    bottom:75%;
+    bottom:95%;
     left:80%;
 }
 
 div.picture6_pointer_description_2{
-    bottom:90%;
+    bottom:120%;
     left:40%;
 }
 h3.section_tittle{
