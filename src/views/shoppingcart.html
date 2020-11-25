@@ -36,7 +36,7 @@
     <section class="container section-container">
         <div class="section-container-top">
 
-            <img class="section-container-image" src="images/shoppingcart/blue-chair.jpg" alt="">
+            <img class="section-container-image" src="images/shoppingcart/lengua-de-suegra.jpg" alt="">
             
 <p class="shoppincart-delete">eliminar</p>
         
@@ -45,10 +45,10 @@
         <div class="section-container-bottom">
 
             <!--Title of product -->
-            <p class="section-container-title">Silla escandinava</p>
+            <p class="section-container-title">lengua de suegra</p>
 
             <!-- Description of product-->
-            <p class="section-container-subtitle">Producto realizado con materiales de primera calidad con almohadones de asiento con efecto memoria.</p>
+            <p class="section-container-subtitle">Producto realizado con materiales de primera calidad, realizado con plasticos ecologicos.</p>
             
             <!-- counter of products in the shoppingcart -->
         
@@ -59,7 +59,7 @@
 				<input class="quantity-increment" type="button" value="+" id="incI" onclick="incrementI()"/>
                 
             <!-- Price of the product -->
-				<span class="quantity-price">$<span>40000</span></span>    
+				<span class="quantity-price">$<span>1500</span></span>    
         
         
         </div>
@@ -94,7 +94,7 @@
             <input class="quantity-increment" type="button" value="+" id="incJ" onclick="incrementJ()"/>
 				 
             <!-- Price of the product -->
-				<span class="quantity-price">$<span>40000</span></span>    
+				<span class="quantity-price">$<span>10000</span></span>    
         
         
         </div>
@@ -179,13 +179,13 @@
 
     var i = 1;
     var j = 1;
-    var k = 41250;
+    var k = 11500;
 
     
     function incrementI() {
     if (i < 10) {
      i++;
-     k+=40000;
+     k+=1500;
     }
      document.getElementById("display").innerHTML = i;
      document.getElementById("total").innerHTML = k;
@@ -193,7 +193,7 @@
 
      function decrementI() {
     if (i > 1) {
-    k-=40000;
+    k-=1500;
     --i;
     } 
     document.getElementById("display").innerHTML = i;
@@ -204,7 +204,7 @@
     function incrementJ() {
     if (j < 10) {
      j++;
-     k+=1250;
+     k+=10000;
 
     }
      document.getElementById("display-2").innerHTML = j;
@@ -214,7 +214,7 @@
 
      function decrementj() {
     if (j > 1) {
-        k-=1250;
+        k-=10000;
         --j;
     } 
     document.getElementById("display-2").innerHTML = j;
