@@ -62,3 +62,5 @@ Eze, 29 años.Ingeniero.Me gusta viajar, los desafios y a amo mi perra. Me consi
 
   Rubén. Soy Ingeniero Mecánico, me gusta estudiar todo sobre los mercados financieros, conocer nuevos lugares y aprender constantemente. Desde hace algún tiempo me llamó la atención el desarrollo web, y ahora quiero convertirme en desarrollador Full Stack.
 
+
+Nuestra management tool es trello la cual puede ser vista usando este link https://trello.com/b/1TgNGe3C/dhram%C3%A9-deco
