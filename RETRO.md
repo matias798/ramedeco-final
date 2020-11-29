@@ -64,4 +64,43 @@ Eze:
 
   Keep Doing: --
 
-  
+# Retrospectiva 28/11/2020
+
+Eze:
+- Aspectos positivos del sprint anterior:Como se trabaja, el lunes y martes que pasaron hubo una buena forma de laburar y me gusto
+- Aspectos a mejorar:Capaz desglosar el contenido de las reuniones para que no sean mas largas. Osea aprovechar mas whatsapp como ahora en la retro y ganamos tiempo.
+- Tomar la costrumbre de hacer pull primero y despues push mas que nada para no pisar cambios
+
+Agus
+- Aspectos positivos del sprint anterior:El trabajo en equipo, más equilibrado y equitativo y la buena onda y predisposición de siempre por parte de todos. El cumplimiento de los objetivos.
+- Aspectos a mejorar:Me sumo a Eze en definir mejor el contenido de cada reunion o desglosarlo y tmb tomar como costumbre hable mas por wpp
+- Cosas a hacer:Reunirnos solo cuando sea importante estar los 4 pero con objetivos claros a cumplir o charlar para el meet 
+
+
+
+Mati:
+
+- Aspectos positivos del sprint anterior: Buena predisposicion, siempre se hicieron un tiempo si bien tuvimos horarios distintos
+- Aspectos negativos del sprint anterior: Por mi parte me encontre despistado con el objetivo del sprint, le deberia haber prestado mas atencion
+- Aspectos a mejorar: Reuniones mas eficientes, por ahi hasta es mejor vernos mas veces, pero menos tiempo
+- Cosas a hacer:Concuerdo con lo de objetivos claros a charlar para el meet
+
+Ruben:
+
+- Aspectos positivos del sprint anterior: Buena coordinación y disposición a trabajar colaborativamente
+- Aspectos a mejorar: Disminuir los tiempos de reunión o aumentar la frecuencia.
+
+Conclusión final:
+
+More of: división de tareas, uso de tablero de trabajo
+
+Start Doing: Encontrar un horario semi fijo de comunicacion, Tomar la costrumbre de hacer pull primero y despues push mas que nada para no pisar cambios
+
+
+Stop Doing: --
+
+Less of: --
+
+
+Keep Doing: comunicación entre nosotros, buena predisposición, mantener division clara de tareas y ganas de dar una mano a los compañeros.
+
