@@ -15,8 +15,17 @@ header.header_layout{
     padding: 5px;
     margin:0;
 }
+
+.logo_nav{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo_container{
+    width: 50%;
+
+}
 img.logo{
-    padding-left: 50px;
     width: 60%;
 }
 
@@ -38,10 +47,12 @@ ul.nav_list_options li a{
     color:white;
 }
 
+i{
+    font-size: 1.5em;
+}
+
 i.header_icons{
     color: #0096a0;
-    width:23px;
-    height: 23px;
     margin:7px;
     padding-top:5px;
 }
@@ -74,15 +85,15 @@ div.banner_container{
     margin: 0px;
     padding:  0px;
 }
+
 img.banner_container_image{
     width: 100%;
-
     margin: 0px;
     padding:  0px;
     display: block;
 }
+
 form.banner_container_form{
-    position: relative;
     height:40px;
     width: 100%;
     box-sizing: border-box;
@@ -98,14 +109,11 @@ border: 1px solid grey;
 
 button.banner_form_button{
     height:45px;
-    width: 60px;
     background-color: #0096a0;
     color: white;
-    margin:0;
     border: 1.5px solid white;
     position: relative;
     bottom:4px;
-
 }
 /**End Banner Section*/
 /**Products section**/
@@ -350,6 +358,7 @@ form.subscribe_form{
     width: 100%;
     margin-right:30%;
     margin-bottom: 15px;
+    text-align: center;
 }
 .subscribe_form_input_text{
     border-radius: 10px;
@@ -725,6 +734,13 @@ border-radius: 20px;
 /**End Product Detail**/
 /**Media Querys**/
 @media(min-width : 768px){
+    .menu_container{
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
     div.section_product_container{
         flex-direction: row;
         flex-wrap: wrap;
@@ -735,6 +751,7 @@ border-radius: 20px;
         flex-direction: row;
         flex-wrap: wrap;
         align-items: center;
+        justify-content: space-around;
     }
     div.product_card_container{
         width:30%;
@@ -742,4 +759,31 @@ border-radius: 20px;
         margin-right: 1%;
         margin-bottom: 4%;
     }
+
+    div.menu_option_container{
+        box-sizing: border-box;
+        text-align: center;
+        margin:10px;
+        padding:10px;
+        width: 20%;
+    }
+
+    p.menu_option_name{
+        display: block;
+        margin:0;
+        padding:5px;
+    }
+
+    form.subscribe_form{
+        text-align: center;
+    }
+
+    form.banner_container_form{
+        width:70%;
+        margin: 0 20%;
+    }
+    img.logo{
+        width: 20%;
+    }
 }
+
