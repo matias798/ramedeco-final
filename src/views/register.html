@@ -11,23 +11,21 @@
 </head>
 <body style="margin:0">
     <header class="header_layout">
-        <div style="display:flex;justify-content: space-between;">
+        <div class="logo_nav">
             <i class="fas fa-bars hamburger_menu"></i>
-            <div style="width: 50%;margin:5px;"> 
+            <div class="logo_container"> 
                 <a href="#"><img class="logo" src="images/rame_deco_logo.jpeg" alt=""/></a>
             </div>
-            <a class="link_without_style" href="#"><i class="fas fa-shopping-cart  header_icons"></i></a>
-            <a class="link_without_style"  href="#"><i class="fas fa-user-circle  header_icons"></i></a>
+            <a  href="/shoppingcart"><i class="fas fa-shopping-cart green_font"></i></a>
+            <a  href="/login"><i class="fas fa-user-circle green_font"></i></a>
         </div>
-        <div class="nav_list_container">
                 <nav>
                     <ul class="nav_list_options">
-                        <li><a  class="link_without_style" href="#">Categorias</a></li>
-                        <li><a  class="link_without_style" href="#">Novedades</a></li>
-                        <li><a  class="link_without_style" href="#">Inspiracion</a></li>
+                        <li><a class="white_font" href="#">Categorias</a></li>
+                        <li><a class="white_font" href="#">Novedades</a></li>
+                        <li><a class="white_font" href="#">Inspiracion</a></li>
                     </ul>
                 </nav>
-        </div>
         </header>
     <main class="lr-main-container">
         <div class="lr-title">
@@ -63,30 +61,33 @@
                 <div class="register-final-msg"><p>Podrás agregar más información personal, gustos y preferencias más tarde</p></div>
     </main>
     <footer>
-        <div class="subscribe_form_container">
-        <form class="subscribe_form" action="">
-            <label class="subscribe_form_text" for="subscribe_input">Suscribite a nuestro Newsletter</label>
-            <input class="subscribe_form_input_text" id="subscribe_input" name="subscribe_input" type="text" placeholder="Ingrese su email">
-            <input class="subscribe_form_text subscribe_form_submit" type="submit">
+        <form class="flex_property_config" action="">
+            <label for="subscribe_input" class="white_font" style="margin-right: 10px;">Suscribite a nuestro Newsletter</label>
+            <div class="unified">
+                <input class="unified_inputs" id="subscribe_input" name="subscribe_input" type="text" placeholder="Ingrese su email">
+                <input class="unified_inputs greend_background white_font" type="submit">
+            </div>
         </form>
-        </div>
-        <div class="links_container">
+        <div class="flex_property_config">
             <div class="footer_context_container">
-                <a class="footer_link" href="">Quienes somos</a>
-                <a class="footer_link" href="">Politicas de Devolucion</a>
-                <a class="footer_link" href="">Garantias</a>
-                <a class="footer_link" href="">PreguntasFrecuentes</a>
+                <a class="white_font" href="">Quienes somos</a>
+                <a class="white_font" href="">Politicas de Devolucion</a>
+                <a class="white_font" href="">Garantias</a>
+                <a class="white_font" href="">Preguntas Frecuentes</a>
             </div>
             <div class="footer_context_container">
-                <a class="footer_link"
-                href=""><i class="fab fa-facebook fa-1x footer_link_icon"></i>
-                <p class="footer_link_icon_and_text">Facebook</p></a>
-                <a  class="footer_link" href=""><i class="fab fa-instagram fa-1x footer_link_icon_and_text"></i>
-                <p class="footer_link_icon_and_text">Instagram</p></a>
-                <a class="footer_link" href=""><i class="fab fa-twitter fa-1x footer_link_icon_and_text"></i>
-                <p class="footer_link_icon_and_text">Twitter</p></a>
-                <a class="footer_link" href=""><i class="fab fa-whatsapp fa-1x footer_link_icon_and_text"></i>
-                <p class="footer_link_icon_and_text">Whatsapp</p></a>
+                <a href="">
+                    <i class="fab fa-facebook white_font"></i><p class="white_font" >Facebook</p>
+                </a>
+                <a href="">
+                    <i class="fab fa-instagram white_font"></i><p class="white_font" >Instagram</p>
+                </a>
+                <a href="">
+                    <i class="fab fa-twitter white_font"></i><p class="white_font" >Twitter</p>
+                </a>
+                <a href="">
+                    <i class="fab fa-whatsapp white_font"></i><p class="white_font" >Whatsapp</p>
+                </a>
             </div>
         </div>
     </footer>
