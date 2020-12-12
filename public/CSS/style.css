@@ -339,7 +339,10 @@ footer{
 
 /* End of shoppingcart.html */
 
-
+body{
+    margin:0;
+    padding:0;
+}
 *{
     font-family: 'Slabo 27px', serif;
     font-size: 1em;
