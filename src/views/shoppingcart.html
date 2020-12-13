@@ -1,104 +1,131 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+<html>
+  <head>
+    <title>Rame deco</title>
 	<link rel="stylesheet" href="CSS/style.css">
-    
-    <!-- icon -->
 	<link rel = "icon" href="images/white-logo.jpeg" type = "image/x-icon"> 
 
-    <title>Rame deco</title>
-</head>
-<body>
+  </head>
+  <body>
+
 
     <!-- navbar -->
 
     <header class="header_layout">
-        <div class="logo_nav">
-            <i class="fas fa-bars hamburger_menu"></i>
-            <div class="logo_container"> 
-                <a href="#"><img class="logo" src="images/rame_deco_logo.jpeg" alt=""/></a>
-            </div>
-            <a  href="/shoppingcart"><i class="fas fa-shopping-cart green_font"></i></a>
-            <a  href="/login"><i class="fas fa-user-circle green_font"></i></a>
-        </div>
-                <nav>
-                    <ul class="nav_list_options">
-                        <li><a class="white_font" href="#">Categorías</a></li>
-                        <li><a class="white_font" href="#">Novedades</a></li>
-                        <li><a class="white_font" href="#">Inspiración</a></li>
-                    </ul>
-                </nav>
-        </header>
+      <div class="logo_nav">
+          <i class="fas fa-bars hamburger_menu"></i>
+          <div class="logo_container"> 
+              <a href="#"><img class="logo" src="images/rame_deco_logo.jpeg" alt=""/></a>
+          </div>
+          <a  href="/shoppingcart"><i class="fas fa-shopping-cart green_font"></i></a>
+          <a  href="/login"><i class="fas fa-user-circle green_font"></i></a>
+      </div>
+              <nav>
+                  <ul class="nav_list_options">
+                      <li><a class="white_font" href="#">Categorías</a></li>
+                      <li><a class="white_font" href="#">Novedades</a></li>
+                      <li><a class="white_font" href="#">Inspiración</a></li>
+                  </ul>
+              </nav>
+      </header>
+      
 
-    <section class="container section-container">
-        <div class="section-container-top">
+<!-- contains the article image title and quantity -->
+    <section class="container-section-articles">
 
-            <img class="section-container-image" src="images/shoppingcart/lengua-de-suegra.jpg" alt="">
-            
-<p class="shoppincart-delete">eliminar</p>
+      <!-- article image and push button -->
+      <div class="section-container-top">
+  <img class="section-container-image" src="images/shoppingcart/lengua-de-suegra.jpg" alt="">
+      </div>
+      
+      <div><p class="shoppincart-delete">eliminar</p></div>
+  
+      <div class="section-container-bottom">
+
+        <!-- article title and description -->
+ <div class="shoppingcart-tittle-description" >
+        <!--Title of product -->
+          <p class="section-container-title">lengua de suegra</p>
+
+          <!-- Description of product-->
+          <p class="section-container-subtitle">Producto realizado con materiales de primera calidad, realizado con plasticos ecologicos.</p>
+</div>
         
-        </div>
+
+ <!-- counter of products in the shoppingcart and the price-->
+      
+
+      <div class="shoppingcart-quantity-price">
+
+      <div class="shoppingcart-quantity">
+
+      <input class="quantity-decrement" type="button" value="-" id="decI" onclick="decrementI()"/>             
+      <label class="quantity-display" id="display" >1</label>                  
+      <input class="quantity-increment" type="button" value="+" id="incI" onclick="incrementI()"/>
+
+    </div>
+          
+    <!-- Price of the product -->
+        <div class="shoppingcart-product-price">
+
+      <span class="quantity-price">$<span>1500</span></span>    
+      
+  </div>
+</div>
+</div>
+</section>
+
+
+
+
+<!-- contains the article image title and quantity -->
+<section class="container-section-articles">
+
+  <!-- article image and push button -->
+  <div class="section-container-top">
+<img class="section-container-image" src="images/shoppingcart/blue-chair.jpg" alt="">
+  </div>
+
+  <div><p class="shoppincart-delete">eliminar</p></div>
+
+
+  <div class="section-container-bottom">
+
+    <!-- article title and description -->
+<div class="shoppingcart-tittle-description" >
+    <!--Title of product -->
+      <p class="section-container-title">Silla escandinava</p>
+
+      <!-- Description of product-->
+      <p class="section-container-subtitle">Producto realizado con materiales de primera calidad con almohadones de asiento con efecto memoria.</p>
+</div>
     
-        <div class="section-container-bottom">
 
-            <!--Title of product -->
-            <p class="section-container-title">lengua de suegra</p>
+<!-- counter of products in the shoppingcart and the price-->
+  
 
-            <!-- Description of product-->
-            <p class="section-container-subtitle">Producto realizado con materiales de primera calidad, realizado con plásticos ecológicos.</p>
-            
-            <!-- counter of products in the shoppingcart -->
-        
-				<input class="quantity-decrement" type="button" value="-" id="decI" onclick="decrementI()"/>
-												   
-				<label class="quantity-display" id="display" >1</label>
-												   
-				<input class="quantity-increment" type="button" value="+" id="incI" onclick="incrementI()"/>
-                
-            <!-- Price of the product -->
-				<span class="quantity-price">$<span>1500</span></span>    
-        
-        
-        </div>
-    </section>
+  <div class="shoppingcart-quantity-price">
+
+  <div class="shoppingcart-quantity">
+
+    <input class="quantity-decrement" type="button" value="-" id="decJ" onclick="decrementj()"/>
+    <label class="quantity-display" id="display-2" >1</label>
+    <input class="quantity-increment" type="button" value="+" id="incJ" onclick="incrementJ()"/>
 
 
+</div>
+      
+<!-- Price of the product -->
+    <div class="shoppingcart-product-price">
 
+  <span class="quantity-price">$<span>10000</span></span>    
 
-    <section class="container section-container">
-        <div class="section-container-top">
-            <img class="section-container-image" src="images/shoppingcart/blue-chair.jpg" alt="">
+  
+</div>
+</div>
+</div>
+</section>
 
-
-
-        <p class="shoppincart-delete">eliminar</p>
-        
-        </div>
-    
-        <div class="section-container-bottom">
-
-            <!--Title of product -->
-            <p class="section-container-title">Silla escandinava</p>
-
-            <!-- Description of product-->
-            <p class="section-container-subtitle">Producto realizado con materiales de primera calidad con almohadones de asiento con efecto memoria.</p>
-        
-            <!-- counter of products in the shoppingcart -->
-            <input class="quantity-decrement" type="button" value="-" id="decJ" onclick="decrementj()"/>
-														   
-            <label class="quantity-display" id="display-2" >1</label>
-                                               
-            <input class="quantity-increment" type="button" value="+" id="incJ" onclick="incrementJ()"/>
-				 
-            <!-- Price of the product -->
-				<span class="quantity-price">$<span>10000</span></span>    
-        
-        
-        </div>
-    </section>
 
 
 
@@ -108,16 +135,13 @@
     <!-- title of sugested products -->
 <div class="Sugested-products-title ">Productos sugeridos </div>
 
-
+<div class='Sugested-products-image-container'>
     <img class="Sugested-products-image" id = "top-left-image"  src="https://cdn.pixabay.com/photo/2017/08/05/02/12/sansevieria-2582056_960_720.jpg" alt="">
     <img class="Sugested-products-image" id = "top-right-image" src="https://cdn.pixabay.com/photo/2017/08/05/02/12/sansevieria-2582056_960_720.jpg" alt="">
     <img class="Sugested-products-image" id = "bottom-left-image" src="https://cdn.pixabay.com/photo/2017/08/05/02/12/sansevieria-2582056_960_720.jpg" alt="">
     <img class="Sugested-products-image" id = "bottom-right-image" src="https://cdn.pixabay.com/photo/2017/08/05/02/12/sansevieria-2582056_960_720.jpg" alt="">
-
+</div>
 </section>
-
-
-
 
 
 <!-- Resume of price and continue button -->
@@ -137,46 +161,41 @@
     <h4 id="button-order-summary">Continuar compra</h4>
             
     </section>
-    
 
-
-
-<!-- footer of the webpage -->
 <footer>
-    <form class="flex_property_config" action="">
-        <label for="subscribe_input" class="white_font" style="margin-right: 10px;">Suscribite a nuestro Newsletter</label>
-        <div class="unified">
-            <input class="unified_inputs" id="subscribe_input" name="subscribe_input" type="text" placeholder="Ingrese su email">
-            <input class="unified_inputs greend_background white_font" type="submit">
+        <form class="flex_property_config" action="">
+            <label for="subscribe_input" class="white_font" style="margin-right: 10px;">Suscribite a nuestro Newsletter</label>
+            <div class="unified">
+                <input class="unified_inputs" id="subscribe_input" name="subscribe_input" type="text" placeholder="Ingrese su email">
+                <input class="unified_inputs greend_background white_font" type="submit">
+            </div>
+        </form>
+        <div class="flex_property_config">
+            <div class="footer_context_container">
+                <a class="white_font" href="">Quienes somos</a>
+                <a class="white_font" href="">Políticas de Devolución</a>
+                <a class="white_font" href="">Garantías</a>
+                <a class="white_font" href="">Preguntas Frecuentes</a>
+            </div>
+            <div class="footer_context_container">
+                <a href="">
+                    <i class="fab fa-facebook white_font"></i><p class="white_font" >Facebook</p>
+                </a>
+                <a href="">
+                    <i class="fab fa-instagram white_font"></i><p class="white_font" >Instagram</p>
+                </a>
+                <a href="">
+                    <i class="fab fa-twitter white_font"></i><p class="white_font" >Twitter</p>
+                </a>
+                <a href="">
+                    <i class="fab fa-whatsapp white_font"></i><p class="white_font" >Whatsapp</p>
+                </a>
+            </div>
         </div>
-    </form>
-    <div class="flex_property_config">
-        <div class="footer_context_container">
-            <a class="white_font" href="">Quienes somos</a>
-            <a class="white_font" href="">Políticas de Devolución</a>
-            <a class="white_font" href="">Garantías</a>
-            <a class="white_font" href="">Preguntas Frecuentes</a>
-        </div>
-        <div class="footer_context_container">
-            <a href="">
-                <i class="fab fa-facebook white_font"></i><p class="white_font" >Facebook</p>
-            </a>
-            <a href="">
-                <i class="fab fa-instagram white_font"></i><p class="white_font" >Instagram</p>
-            </a>
-            <a href="">
-                <i class="fab fa-twitter white_font"></i><p class="white_font" >Twitter</p>
-            </a>
-            <a href="">
-                <i class="fab fa-whatsapp white_font"></i><p class="white_font" >Whatsapp</p>
-            </a>
-        </div>
-    </div>
-</footer>
+    </footer>
 
 
-
-        
+       
 <script> 
 
     var i = 1;
