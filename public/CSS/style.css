@@ -365,12 +365,14 @@ body{
     position: relative;
     margin-bottom: 50px;
     background-color: #ffffff;
+    border-radius: 20px;
 }
 
 .imagen-product {
     width: 100%;
    vertical-align: top;
    display: inline-block;
+   border-radius: 20px;
 }
 
 .texto-izq-product {
@@ -739,10 +741,45 @@ margin:10px 0 10px 0;
 
     form input[type=text]{
         width: 80%;
-    }    
+    }  
+    
+    .texto-izq-product {
+        width: auto;
+    }
+    
+    .texto-der-product {
+        width: auto;
+    }
+
+    .precio {
+        font-size: 23px;
+      }
+
+    .boton-agregar-carrito {
+        margin-bottom: 0px;
+    }
 }
+
 @media(min-width : 800px){
 div.product_card_container{
     width:30%;
 }
+
+.texto-izq-product {
+    width: auto;
+}
+
+.texto-der-product {
+    width: auto;
+}
+
+.precio {
+    font-size: 23px;
+}
+
+.boton-agregar-carrito {
+    margin-bottom: 0px;
+}
+}
+
 }    
