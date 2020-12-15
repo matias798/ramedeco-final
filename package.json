@@ -1,26 +1,16 @@
 {
-  "name": "Grupo_9_Rame_Deco",
-  "version": "1.0.0",
-  "description": "Nuestro sitio es un tienda virtual orientada a la venta de decoración de ambientes, herramientas y insumos para la construcción. Nuestra audiencia se dividirá en:",
-  "main": "app.js",
+  "name": "dummy",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./src/app.js"
+    "start": "nodemon src/bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ezequielRiveros/Grupo_9_Rame_Deco.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ezequielRiveros/Grupo_9_Rame_Deco/issues"
-  },
-  "homepage": "https://github.com/ezequielRiveros/Grupo_9_Rame_Deco#readme",
   "dependencies": {
-    "express": "^4.17.1",
-    "nodemon": "^2.0.6",
-    "package.json": "^2.0.1"
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1"
   }
 }
