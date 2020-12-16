@@ -11,51 +11,52 @@
         <!-- navbar -->
         <%- include('parcials/header.ejs') %> 
     
-    <!-- contains the article image title and quantity -->
+    <!-- Contains the products contained in the shoppingcart -->
         <section class="container-section-articles">
     
           <!-- article image and push button -->
-          <div class="section-container-top">
+       <div class="section-container-top">
       <img class="section-container-image" src="images/shoppingcart/lengua-de-suegra.jpg" alt="">
-          </div>
-          
+      </div>
+        
+    <!-- red cross used showed in mobile -->
           <div><p class="shoppincart-delete">eliminar</p></div>
       
-          <div class="section-container-bottom">
+  <div class="section-container-bottom">
     
-            <!-- article title and description -->
-     <div class="shoppingcart-tittle-description" >
-            <!--Title of product -->
-              <p class="section-container-title">lengua de suegra</p>
+ <!-- article title and description -->
+  <div class="shoppingcart-tittle-description" >
+  <!--Title of product -->
+  <p class="section-container-title">lengua de suegra</p>
     
-              <!-- Description of product-->
-              <p class="section-container-subtitle">Producto realizado con materiales de primera calidad, realizado con plasticos ecologicos.</p>
-    </div>
+  <!-- Description of product-->
+  <p class="section-container-subtitle">Producto realizado con materiales de primera calidad, realizado con plasticos ecologicos.</p>
+  </div>
             
     
-     <!-- counter of products in the shoppingcart and the price-->
+<!-- counter of products in the shoppingcart and the price-->
           
     
-          <div class="shoppingcart-quantity-price">
+<div class="shoppingcart-quantity-price">
     
-          <div class="shoppingcart-quantity">
+<div class="shoppingcart-quantity">
     
-          <input class="quantity-decrement" type="button" value="-" id="decI" onclick="decrementI()"/>             
-          <label class="quantity-display" id="display" >1</label>                  
-          <input class="quantity-increment" type="button" value="+" id="incI" onclick="incrementI()"/>
+ <input class="quantity-decrement" type="button" value="-" id="decI" onclick="decrementI()"/>             
+ <label class="quantity-display" id="display" >1</label>                  
+ <input class="quantity-increment" type="button" value="+" id="incI" onclick="incrementI()"/>
     
-        </div>
+</div>
               
         
-        <!-- Price of the product -->
-            <div class="shoppingcart-product-price">
+    <!-- Price of the product -->
+<div class="shoppingcart-product-price">
+<span class="quantity-price">$<span>1500</span></span>    
+</div>
+</div>
     
-          <span class="quantity-price">$<span>1500</span></span>    
-          
-      </div>
-    </div>
-    
-    </div>
+</div>
+
+    <!-- red cross used showed in pc -->
     <span class="shoppingcart-delete-pc">x</span>
     
     </section>
@@ -71,6 +72,8 @@
     <img class="section-container-image" src="images/shoppingcart/blue-chair.jpg" alt="">
       </div>
     
+    <!-- red cross used showed in mobile -->
+
       <div><p class="shoppincart-delete">eliminar</p></div>
     
     
@@ -109,6 +112,8 @@
     </div>
     </div>
     </div>
+
+    <!-- red cross used showed in pc -->
     <span class="shoppingcart-delete-pc">x</span>
     
     </section>
@@ -119,7 +124,7 @@
     <!-- images of sugested products -->
     <section class="Sugested-products">
     
-        <!-- title of sugested products -->
+    <!-- title of sugested products -->
     <div class="Sugested-products-title ">Productos sugeridos </div>
     
     <div class='Sugested-products-image-container'>
@@ -149,9 +154,11 @@
                 
         </section>
         
+<!-- partial of the footer-->
     <%- include('parcials/footer.ejs') %>
-    <script> 
-    
+ 
+  <!-- js for the counter of products -->
+<script> 
         var i = 1;
         var j = 1;
         var k = 11900;
@@ -198,6 +205,6 @@
         }
     
     
-        </script>
+    </script>
     </body>
     </html>
