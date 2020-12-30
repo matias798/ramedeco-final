@@ -10,29 +10,12 @@
     <title>Ingresá</title>
 </head>
 <body style="margin:0">
-    <header class="header_layout">
-        <div class="logo_nav">
-            <i class="fas fa-bars hamburger_menu"></i>
-            <div class="logo_container"> 
-                <a href="#"><img class="logo" src="images/rame_deco_logo.jpeg" alt=""/></a>
-            </div>
-            <a  href="/shoppingcart"><i class="fas fa-shopping-cart green_font"></i></a>
-            <a  href="/login"><i class="fas fa-user-circle green_font"></i></a>
-        </div>
-                <nav>
-                    <ul class="nav_list_options">
-                        <li><a class="white_font" href="#">Categorías</a></li>
-                        <li><a class="white_font" href="#">Novedades</a></li>
-                        <li><a class="white_font" href="#">Inspiración</a></li>
-                    </ul>
-                </nav>
-        </header>
+    <%- include('parcials/header.ejs') %> 
     <main class="lr-main-container">
         <form class="lr-form" action="index.html" method="POST">
             <div class="lr-title">
                 <h2>Iniciá sesión</h2>
             </div>
-             <div>
                 <label class="lr-fontsize" for="username">Nombre de usuario o e-mail</label><br>
                 <input class="form_lr-width lr-fontsize" type="text" id="username" name="username" placeholder="Usuario o e-mail"><br><br>
                     
@@ -45,36 +28,6 @@
                 <p>Si todavía no tenés cuenta, ingresá <a href="/register">acá</a></p>
         </form>        
     </main> 
-    <footer>
-        <form class="flex_property_config" action="">
-            <label for="subscribe_input" class="white_font" style="margin-right: 10px;">Suscribite a nuestro Newsletter</label>
-            <div class="unified">
-                <input class="unified_inputs" id="subscribe_input" name="subscribe_input" type="text" placeholder="Ingrese su email">
-                <input class="unified_inputs greend_background white_font" type="submit">
-            </div>
-        </form>
-        <div class="flex_property_config">
-            <div class="footer_context_container">
-                <a class="white_font" href="">Quienes somos</a>
-                <a class="white_font" href="">Políticas de Devolución</a>
-                <a class="white_font" href="">Garantías</a>
-                <a class="white_font" href="">Preguntas Frecuentes</a>
-            </div>
-            <div class="footer_context_container">
-                <a href="">
-                    <i class="fab fa-facebook white_font"></i><p class="white_font" >Facebook</p>
-                </a>
-                <a href="">
-                    <i class="fab fa-instagram white_font"></i><p class="white_font" >Instagram</p>
-                </a>
-                <a href="">
-                    <i class="fab fa-twitter white_font"></i><p class="white_font" >Twitter</p>
-                </a>
-                <a href="">
-                    <i class="fab fa-whatsapp white_font"></i><p class="white_font" >Whatsapp</p>
-                </a>
-            </div>
-        </div>
-    </footer>
+    <%- include('parcials/footer.ejs') %>
 </body>
 </html>
