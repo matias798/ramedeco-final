@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <title>Ramé Deco</title>
+</head>
+
+<body>
+<main>
+
+    <!-- navbar -->
+    <%- include('parcials/header.ejs') %> 
+
+    <!-- title -->
+    <div><h1>Agregar Producto</h1></div>
+
+    <form class="containerPrincipal" action="/products/create" method="POST" enctype="multipart/form-data">
+
+     <div class="containerAdd">
+
+    <label class="labelName" for="">Nombre del producto</label>
+    <input class="inputName" type="text" name="name" placeholder="">
+                    
+                    
+    <label class=" labelDescri" for="">Descripción del producto</label>
+    <textarea class="coments" style="resize: none;" name="coments" rows="10" placeholder="" cols="40"></textarea>     
+       </div>
+
+
+       <!-- inputs -->
+  <div class="containerDetalle">
+
+  <div>
+                    
+    <label for="">Categoría</label>
+                  
+    <select name="Categoria">
+                      
+        <option value="1">categoría</option>
+        <option value="3">category2</option>
+          </select>
+
+     <label for="">Color Principal</label>
+                    <select name="color">
+                        <option value="2">blanco</option>
+                        <option value="3">negro</option>
+                        <option value="4">rojo</option>
+                        <option value="5">azul</option>
+                        <option value="6">amarillo</option>
+                    </select>
+                       
+<form action="#">
+    <label class="m">Sube imagenes del producto
+        <input type="file" size="60" >
+        </label>
+    </div>
+  </form>
+
+
+
+
+                <div>
+
+                    <label for="">tipo de envio</label>
+
+                    <select name="envio">
+                        <option value="1">Envío gratis</option>
+                        <option value="3">Correo</option>
+                       
+                    </select>
+
+                    <input class="inputPrecio" type="number" name="precio" placeholder="Precio" style="background-color: #dce1df;margin-top: 15px;" >
+                  
+
+
+
+    <button style="margin-top: 20px; padding: 9px; background-color:#53b5aa ;" class="m">Agregar producto</button>
+                </div>
+                    
+                </div>
+             
+            </div>
+
+
+       
+        </div>
+               
+        
+
+<!-- partial of the footer-->
+<%- include('parcials/footer.ejs') %>
+  
+</main>
+
+<script>
+document.querySelector("html").classList.add('js');
+
+var fileInput  = document.querySelector( ".input-file" ),  
+    button     = document.querySelector( ".input-file-trigger" ),
+    the_return = document.querySelector(".file-return");
+      
+button.addEventListener( "keydown", function( event ) {  
+    if ( event.keyCode == 13 || event.keyCode == 32 ) {  
+        fileInput.focus();  
+    }  
+});
+button.addEventListener( "click", function( event ) {
+   fileInput.focus();
+   return false;
+});  
+fileInput.addEventListener( "change", function( event ) {  
+    the_return.innerHTML = this.value;  
+});  
+
+</script>
+
+</body>
+
+</html>

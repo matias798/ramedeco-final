@@ -4,22 +4,24 @@
     <title>Rame deco</title>
 	<link rel="stylesheet" href="CSS/style.css">
 	<link rel = "icon" href="images/white-logo.jpeg" type = "image/x-icon"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   </head>
   <body>
-    <body>
-        <!-- navbar -->
-        <%- include('parcials/header.ejs') %> 
-    
+    <!-- navbar -->
+    <%- include('parcials/header.ejs') %> 
+ 
+  <!--  -->
+
     <!-- Contains the products contained in the shoppingcart -->
-        <section class="container-section-articles">
+    <section class="container-section-articles">
     
           <!-- article image and push button -->
        <div class="section-container-top">
-      <img class="section-container-image" src="images/shoppingcart/lengua-de-suegra.jpg" alt="">
+      <img class="section-container-image" src="https://cdn.pixabay.com/photo/2017/08/05/02/12/sansevieria-2582056_960_720.jpg" alt="">
       </div>
         
-    <!-- red cross used showed in mobile -->
+    <!-- red cross for mobile -->
           <div><p class="shoppincart-delete">eliminar</p></div>
       
   <div class="section-container-bottom">
@@ -61,18 +63,15 @@
     
     </section>
     
-    
-    
-    
     <!-- contains the article image title and quantity -->
     <section class="container-section-articles">
     
       <!-- article image and push button -->
       <div class="section-container-top">
-    <img class="section-container-image" src="images/shoppingcart/blue-chair.jpg" alt="">
+    <img class="section-container-image" src="https://cdn.pixabay.com/photo/2017/08/05/02/12/sansevieria-2582056_960_720.jpg" alt="">
       </div>
     
-    <!-- red cross used showed in mobile -->
+    <!-- red cross for mobile -->
 
       <div><p class="shoppincart-delete">eliminar</p></div>
     
@@ -91,7 +90,6 @@
     
     <!-- counter of products in the shoppingcart and the price-->
       
-    
       <div class="shoppingcart-quantity-price">
     
       <div class="shoppingcart-quantity">
@@ -119,14 +117,13 @@
     </section>
     
     
-    
-    
-    <!-- images of sugested products -->
+    <!-- Products sugested to the clients -->
     <section class="Sugested-products">
     
     <!-- title of sugested products -->
     <div class="Sugested-products-title ">Productos sugeridos </div>
     
+    <!-- images of sugested products -->
     <div class='Sugested-products-image-container'>
         <img class="Sugested-products-image" id = "top-left-image"  src="https://cdn.pixabay.com/photo/2017/08/05/02/12/sansevieria-2582056_960_720.jpg" alt="">
         <img class="Sugested-products-image" id = "top-right-image" src="https://cdn.pixabay.com/photo/2017/08/05/02/12/sansevieria-2582056_960_720.jpg" alt="">
@@ -136,23 +133,34 @@
     </section>
     
     
-    <!-- Resume of price and continue button -->
-    <section class="container-order-summary">	
-                
-        <div class="order-summary-subtotal">Subtotal:
-        <span class="order-summary-price">$<span>1200</span></span></div>
-        
-        <div class="order-summary-shipping">Envio: 
-         <span class="order-summary-price">$<span>400</span></span></div>
-                
-        <div class="order-summary-total">Total:
-       <span class="order-summary-price">$<span id="total">11900</span></span>
-                
-        </div>
+    <!-- Resume of prices and continue button -->
+    <section class="container-order-summary">
+    
+   <div class="order-summary-bottom">
+              
+    <div class="order-summary-subtotal">Subtotal:
+    <div class="order-summary-price">$<span>1200</span></div></div>
+
+   <div class="order-summary-shipping">Envio: 
+   <div class="order-summary-price">$<span>400</span></div></div>
+       
+  </div>
+ 
+<div class="order-summary-bottom">
+  
+  <div class="order-summary-total">Total:
+  <div class="order-summary-price">$<span id="total">11900</span></div>
+             
+  </div>
+  <br>
+    
+<button id="button-order-summary">Continuar compra</button>   
+ 
+</div>
+
+</section>
+
                     
-        <h4 id="button-order-summary">Continuar compra</h4>
-                
-        </section>
         
 <!-- partial of the footer-->
     <%- include('parcials/footer.ejs') %>
