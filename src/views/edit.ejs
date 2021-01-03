@@ -19,7 +19,20 @@
     <%- include('parcials/header.ejs') %> 
 
     <!-- title -->
-    <div><h1>Agregar producto</h1></div>
+    <div><h1>Editar producto</h1></div>
+
+    <div>
+        <h1 > 
+        <label for="" class='edit-product' >Que producto queres editar?</label>
+                  
+        <select name="Categoria" class="edit-product-options">
+        <option>categoría</option>
+        <option >category</option>
+        </select>
+    </h1>
+        
+        </div>
+
 
        <form class="container-main" action="/products/create" method="POST" enctype="multipart/form-data">
 

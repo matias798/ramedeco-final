@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var methodOverride = require('method-override')
 
 var indexRouter = require('./routes/indexRouter');
 var loginRouter = require('./routes/loginRouter');
@@ -29,6 +30,8 @@ app.use('/login', loginRouter);
 app.use('/shoppingcart', shoppingcartRouter);
 app.use('/productdetail', productDetailRouter);
 app.use('/products', products);
+
+
 
 
 // catch 404 and forward to error handler
