@@ -10,28 +10,12 @@
     <title>¡Registrate!</title>
 </head>
 <body style="margin:0">
-    <header class="header_layout">
-        <div class="logo_nav">
-            <i class="fas fa-bars hamburger_menu"></i>
-            <div class="logo_container"> 
-                <a href="#"><img class="logo" src="images/rame_deco_logo.jpeg" alt=""/></a>
-            </div>
-            <a  href="/shoppingcart"><i class="fas fa-shopping-cart green_font"></i></a>
-            <a  href="/login"><i class="fas fa-user-circle green_font"></i></a>
-        </div>
-                <nav>
-                    <ul class="nav_list_options">
-                        <li><a class="white_font" href="#">Categorías</a></li>
-                        <li><a class="white_font" href="#">Novedades</a></li>
-                        <li><a class="white_font" href="#">Inspiración</a></li>
-                    </ul>
-                </nav>
-        </header>
+    <%- include('parcials/header.ejs') %> 
     <main class="lr-main-container">
         <div class="lr-title">
             <h2>Creá tu cuenta</h2>
         </div>
-        <form class="lr-form" action="index.html" method="POST">
+        <form class="lr-form" action="/register" method="POST">
                 <div>
                 <label class="lr-fontsize" for="username">Nombre de usuario</label><br>
                 <input class="form_lr-width lr-fontsize" type="text" id="username" name="username" placeholder="Nombre de usuario"><br><br>
@@ -44,11 +28,22 @@
 
                 <div>
                 <label class="lr-fontsize" for="contraseña">Contraseña</label><br>
-                <input class="form_lr-width lr-fontsize" type="password" id="contraseña" name="contraseña" placeholder="Elegí tu contraseña"><br>
+                <input class="form_lr-width lr-fontsize" type="password" id="password" name="password" placeholder="Elegí tu contraseña"><br>
                 <div class="register-password-msg"><small>La contraseña debe ser de mínimo 6 dígitos</small></div>
-                <input class="form_lr-width lr-fontsize" type="password" id="contraseña" name="contraseña" placeholder="Confirmá tu contraseña"><br>
+                <input class="form_lr-width lr-fontsize" type="password" id="password_confirm" name="password_confirm" placeholder="Confirmá tu contraseña"><br>
                 </div><br>
-
+                <div>
+                    <label class="lr-fontsize for="first_name">Nombre</label>
+                    <input class="form_lr-width lr-fontsize" type="text" id="first_name" name="first_name">
+                </div>
+                <div>
+                    <label class="lr-fontsize for="last_name">Apellido</label>
+                    <input class="form_lr-width lr-fontsize" type="text" id="last_name" name="last_name">
+                </div>
+                <div>
+                    <label class="lr-fontsize for="address">Direccion</label>
+                    <input class="form_lr-width lr-fontsize" type="text" id="address" name="address">
+                </div>
                 <div class="register-newsletter-msg">
                     <input type="checkbox" name="newsletter" value="newsletter si">Quiero recibir emails de RaméDeco con ofertas y promociones exclusivas acordes a mis gustos, intereses e historial de compras.
                     </div>
@@ -60,36 +55,6 @@
 
                 <div class="register-final-msg"><p>Podrás agregar más información personal, gustos y preferencias más tarde</p></div>
     </main>
-    <footer>
-        <form class="flex_property_config" action="">
-            <label for="subscribe_input" class="white_font" style="margin-right: 10px;">Suscribite a nuestro Newsletter</label>
-            <div class="unified">
-                <input class="unified_inputs" id="subscribe_input" name="subscribe_input" type="text" placeholder="Ingrese su email">
-                <input class="unified_inputs greend_background white_font" type="submit">
-            </div>
-        </form>
-        <div class="flex_property_config">
-            <div class="footer_context_container">
-                <a class="white_font" href="">Quienes somos</a>
-                <a class="white_font" href="">Políticas de Devolución</a>
-                <a class="white_font" href="">Garantías</a>
-                <a class="white_font" href="">Preguntas Frecuentes</a>
-            </div>
-            <div class="footer_context_container">
-                <a href="">
-                    <i class="fab fa-facebook white_font"></i><p class="white_font" >Facebook</p>
-                </a>
-                <a href="">
-                    <i class="fab fa-instagram white_font"></i><p class="white_font" >Instagram</p>
-                </a>
-                <a href="">
-                    <i class="fab fa-twitter white_font"></i><p class="white_font" >Twitter</p>
-                </a>
-                <a href="">
-                    <i class="fab fa-whatsapp white_font"></i><p class="white_font" >Whatsapp</p>
-                </a>
-            </div>
-        </div>
-    </footer>
+    <%- include('parcials/footer.ejs') %>
 </body>
 </html>

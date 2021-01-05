@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
+	<link rel = "icon" href="../images/white-logo.jpeg" type = "image/x-icon"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <title>Ramé Deco</title>
+</head>
+
+<body>
+<main>
+
+    <!-- navbar -->
+    <%- include('parcials/header.ejs') %> 
+
+    <!-- title -->
+    <div><h1>Editar producto</h1></div>
+
+    <div>
+        <h1 > 
+        <label for="" class='edit-product' >Que producto queres editar?</label>
+                  
+        <select name="Categoria" class="edit-product-options">
+        <option>categoría</option>
+        <option >category</option>
+        </select>
+    </h1>
+        
+        </div>
+
+
+       <form class="container-main" method="POST" action="/products/:id?_method=PUT" >
+
+<!--product name and description  -->
+<div class="product-name-description">
+
+        <!--name  -->
+    <label class="labelName" for="">Nombre del producto</label>
+    <input class="inputName" type="text" name="name" placeholder="">
+                    
+    <!--description  -->
+    <label class=" labelDescription" for="">Descripción del producto</label>
+    <textarea class="coments" style="resize: none;" name="coments" rows="10" placeholder="" cols="40"></textarea>     
+       </div>
+
+<!-- inputs -->
+  <div class="containerDetalle">
+
+    <!-- first column of inputs -->
+  <div>
+                    
+    <label for="">Categoría</label>
+                  
+    <select name="Categoria">
+    
+    <option>categoría</option>
+    <option >category</option>
+       
+     </select>
+
+     <label for="">Color Principal</label>
+
+        <select name="color">
+
+         <option >blanco</option>
+         <option >rojo</option>
+         <option >azul</option>
+         <option >negro</option>
+    
+        </select>
+                       
+
+        <!-- upload images of products -->
+<form action="#">
+
+    <label class="upload-images">Sube imagenes del producto <input type="file" size="60" accept=".pdf,.jpg,.png"></label>
+  
+</form>
+</div>
+
+<!-- second column of inputs -->
+<div>
+    <label for="">tipo de envio</label>
+
+    <select name="envio">
+                     
+        <option >Envío gratis</option>
+        <option >Retirar en el local</option>
+             
+    </select>
+                  
+    <label class="labelPrecio" for="">Precio</label>
+                  
+    <input class="inputPrecio" type="number" name="precio" style="background-color: #dce1df" >
+                  
+
+
+
+    <button style="margin-top: 20px; padding: 15px 9px 15px 9px; background-color:#53b5aa ;" class="m">Agregar producto</button>
+              
+</div>
+                    
+</div>
+
+
+</form>
+
+</div>
+ 
+             
+
+<!-- partial of the footer-->
+<%- include('parcials/footer.ejs') %>
+  
+</main>
+
+
+
+</body>
+
+</html>

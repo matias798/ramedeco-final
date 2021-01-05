@@ -15,8 +15,8 @@
     <%- include('parcials/header.ejs') %> 
     <section style="position: relative;">
         <a href="#"><img class="banner_container_image" src="images/home/Banner_green_friday.png" alt=""></a>
-        <form class="overlap" action="">
-            <input class="unified_inputs" id="subscribe_input" name="subscribe_input" type="text" placeholder="Buscar productos y más...">
+        <form class="overlap" action="/search" method="POST" >
+            <input class="unified_inputs" id="search_input" name="search_input" type="text" placeholder="Buscar productos y más...">
                 <input class="unified_inputs greend_background white_font" type="submit">
         </form>
     </section>
@@ -24,152 +24,17 @@
         <section class="section_products">
             <h3 class="section_tittle">Ambientes Decorados</h3>
             <div class="flex_property_config">
-            <div class="product_card_container">
-                <img class="product_card_img" src="images/home/dormitorio.webp" alt="">
-                <div class="pointer-container picture1_pointer_1">
-                </div>
-                <div class="card-container-product-description picture1_pointer_description_1">
-                    <a href="#"><h3 class="product_card_text_mark product_card_text green_font">Dosel</h3></a>
-                    <p class="product_card_text">Dosel, motivo conejo</p>
-                    <p class="product_card_text_mark product_card_text green_font">$700</p>
-                </div>
-            <!-- Pointer2 -->
-                <div class="pointer-container picture1_pointer_2">
-                </div>
-                <div class="card-container-product-description picture1_pointer_description_2">
-                    <a   href="#"><h3 class="product_card_text_mark product_card_text green_font">Cuna</h3></a>
-                    <p class="product_card_text">Cuna, blanco60x120 cm</p>
-                    <p class="product_card_text_mark product_card_text green_font">$5.400</p>
-                </div>
-            </div>
-            <div class="product_card_container">
-                <img class="product_card_img" src="images/home/bedroom_pointer.webp" alt="">
-                <div class="pointer-container picture2_pointer_1"></div>
-                <div class="card-container-product-description picture2_pointer_description_1">
-                    <a   href="#"><h3 class="product_card_text_mark product_card_text green_font">Estructura de Cama</h3></a>
-                    <p class="product_card_text">Estructura de Cama con 4 cajones 160x200cm</p>
-                    <p class="product_card_text_mark product_card_text green_font">$10.000</p>
-                </div>
-                <div class="pointer-container picture2_pointer_2"></div>
-                <div class="card-container-product-description picture2_pointer_description_2">
-                    <a   href="#"><h3 class="product_card_text_mark product_card_text green_font">Manta</h3></a>
-                    <p class="product_card_text">Manta 130X170cm</p>
-                    <p class="product_card_text_mark product_card_text green_font">$1.000</p>
-                </div>
-                <div class="pointer-container picture2_pointer_3"></div>
-                <div class="card-container-product-description picture2_pointer_description_3">
-                    <a   href="#"><h3 class="product_card_text_mark product_card_text green_font">Funda para Colchon Nordica</h3></a>
-                    <p class="product_card_text">Funda Nórdica 240x220cm</p>
-                    <p class="product_card_text_mark product_card_text green_font">$2.000</p>
-                </div>
-            </div>
-            <div class="product_card_container">
-                <img class="product_card_img" src="images/home/bedroom_pointer2.webp" alt="">
-                <div class="pointer-container picture3_pointer_1"></div>
-                <div class="card-container-product-description picture3_pointer_description_1">
-                    <a href="#"><h3 class="product_card_text_mark product_card_text green_font">Armario</h3></a>
-                    <p class="product_card_text">Armario 120x61x191 cm</p>
-                    <p class="product_card_text_mark product_card_text green_font">$12.000</p>
-                </div>
-                <div class="pointer-container picture3_pointer_2"></div>
-                <div class="card-container-product-description picture3_pointer_description_2">
-                    <a   href="#"><h3 class="product_card_text_mark product_card_text green_font">Silla</h3></a>
-                    <p class="product_card_text">Silla</p>
-                    <p class="product_card_text_mark product_card_text green_font">$2.000</p>
-                </div>
-                <div class="pointer-container picture3_pointer_3"></div>
-                <div class="card-container-product-description picture3_pointer_description_3">
-                    <a   href="#"><h3 class="product_card_text_mark product_card_text green_font">Lámpara</h3></a>
-                    <p class="product_card_text">Lámpara de techo, 38cm</p>
-                    <p class="product_card_text_mark product_card_text green_font">$2.600</p>
-                </div>
-            </div>
-            <div class="product_card_container">
-                <img class="product_card_img" src="images/home/exterior_pointer.webp" alt="">
-                <div class="pointer-container picture4_pointer_1"></div>
-                <div class="card-container-product-description picture4_pointer_description_1">
-                    <a   href="#"><h3 class="product_card_text_mark product_card_text green_font">Parrilla para Exteriores</h3></a>
-                    <p class="product_card_text">Barbacoa de Carbón</p>
-                    <p class="product_card_text_mark product_card_text green_font">$7.000</p>
-                </div>
-            </div>
-            <div class="product_card_container">
-                <img class="product_card_img" src="images/home/livingroom_pointer.webp" alt="">
-                <div class="pointer-container picture5_pointer_1"></div>
-                <div class="card-container-product-description picture5_pointer_description_1">
-                        <a   href="#"><h3 class="product_card_text_mark product_card_text green_font">Estantería con cajonera</h3></a>
-                        <p class="product_card_text">Estantería armario/cajn, pino/rojo 134x30x179 cm</p>
-                        <p class="product_card_text_mark product_card_text green_font">$13.000</p>
-                </div>
-            </div>
-            <div  class="product_card_container">
-                    <img class="product_card_img" src="images/home/livingroom_pointer2.webp" alt="">
-                    <div class="pointer-container picture6_pointer_1"></div>
-                    <div class="card-container-product-description picture6_pointer_description_1">
-                        <a  href="#"><h3 class="product_card_text_mark product_card_text green_font">Estantería</h3></a>
-                        <p class="product_card_text">Estantería, negro 100x136 cm</p>
-                        <p class="product_card_text_mark product_card_text green_font">$5.000</p>
-                    </div>
-            <div class="pointer-container picture6_pointer_2"></div>
-                <div class="card-container-product-description picture6_pointer_description_2">
-                        <a   href="#"><h3 class="product_card_text_mark product_card_text green_font">Mesa Ratona</h3></a>
-                        <p class="product_card_text">Mesa de centro, chapa fresno 118x50 cm</p>
-                        <p class="product_card_text_mark product_card_text green_font">$5.000</p>
-                </div>
-            </div>
+                <% for (const scene of scenes) {%> 
+                    <%- include('parcials/scene.ejs',{'scene':scene}) %>      
+                <%} %> 
         </div>            
         </section>
         <section class="section_products">
             <h3 class="section_tittle">Productos</h3>
             <div class="flex_property_config">
-            <div class="product_card_container product_card_container_height">
-                <img class="product_card_img " src="images/home/productos/colcha.webp" alt="">
-                <div>
-                    <a href="#"><h3 class="product_card_text product_card_text_mark green_font">Manta estación Verano</h3></a>
-                    <p class="product_card_text">Manta, azul claro 130x170 cm</p>
-                    <p class="product_card_text product_card_text_mark">$1.000</p>
-                </div>
-            </div>
-            <div class="product_card_container product_card_container_height"> 
-                <img class="product_card_img "  src="images/home/productos/colchon.webp" alt="">
-                <div>
-                    <a   href="#"><h3 class="product_card_text product_card_text_mark green_font">Sommier Matriz</h3></a>
-                    <p class="product_card_text">Colchón Sommier</p>
-                    <p class="product_card_text product_card_text_mark">$7.000</p>
-                </div>
-            </div>
-            <div  class="product_card_container product_card_container_height">
-                <img class="product_card_img "  src="images/home/productos/mueble_tv.webp" alt="">
-                <div>
-                    <a   href="#"><h3 class="product_card_text product_card_text_mark green_font">Mesa TV, estilo moderno</h3></a>
-                    <p class="product_card_text">Mueble TV, blanco</p>
-                    <p class="product_card_text product_card_text_mark">$4.000</p>
-                </div>
-            </div>
-            <div  class="product_card_container product_card_container_height">
-                <img class="product_card_img "  src="images/home/productos/silla.webp" alt="">
-                <div>
-                    <a   href="#"><h3 class="product_card_text product_card_text_mark green_font">Silla Modelo Granero</h3></a>
-                    <p class="product_card_text">Silla, tinte envejecido claro/blanco</p>
-                    <p class="product_card_text product_card_text_mark">$3.000</p>
-                </div>
-            </div>
-            <div  class="product_card_container product_card_container_height">
-                <img class="product_card_img "  src="images/home/productos/silla_mesa.webp" alt="">
-                <div>
-                    <a   href="#"><h3 class="product_card_text product_card_text_mark green_font">Juego Mesa con Sillas</h3></a>
-                    <p class="product_card_text">Mesa con 4 sillas, blanco/blanco 110/155 cm</p>
-                    <p class="product_card_text product_card_text_mark">$7.000</p>
-                </div>
-            </div>
-            <div  class="product_card_container product_card_container_height">
-                <img class="product_card_img " src="images/home/productos/sillon_l.webp" alt="">
-                <div>
-                    <a   href="#"><h3 class="product_card_text product_card_text_mark green_font">Sofa Cama formato L</h3></a>
-                    <p class="product_card_text">Sofá Came 3 plazas con almacenamiento</p>
-                    <p class="product_card_text product_card_text_mark">$10.000</p>
-                </div>
-            </div>
+            <% for (const product of products) {%> 
+                <%- include('parcials/product.ejs',{'product':product}) %>      
+            <%} %> 
         </div>
         </section>
         <section class="menu_container">

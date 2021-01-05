@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+    <title>Ramé Deco Admin</title>
+</head>
+
+<body class="page_background_color">
+    <%- include('parcials/headeradmin.ejs') %>
+
+    <main>
+        <section>
+            <div  style="width:90%;display: flex;flex-direction: column;margin:1em auto;">
+                <h1 style="align-self: flex-start;">Productos de la plataforma</h1>
+                <a class="btn btn-primary"  style="align-self: flex-end;" href="/admin/create">Crear un nuevo producto</a>
+            </div>
+            <div style="width: 90%;background-color: white;margin:0 auto;">
+                <table class="table table-striped">
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Resumen</th>
+                        <th>Editar</th>
+                        <th>Borrar</th>
+                    </tr>
+                    <% for (const product of products) {%>
+                    <tr>
+                        <td><%= product.id%></td>
+                        <td><%= product.tittle%></td>
+                        <td><%= product.summary%></td>
+                        <td>
+                            <a class="btn btn-secondary" href="/admin/edit/<%= product.id%>">Editar</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-danger" href="/admin/delete/<%= product.id%>">Borrar</a>
+                        </td>
+                    </tr>
+                    <%} %>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
+	<link rel = "icon" href="../images/white-logo.jpeg" type = "image/x-icon"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <title>Ramé Deco</title>
+</head>
+
+<body>
+<main>
+
+    <!-- navbar -->
+    <%- include('parcials/header.ejs') %> 
+
+    <!-- title -->
+    <div><h1>Agregar producto</h1></div>
+
+<form class="container-main" action="/products/create" method="POST" enctype="multipart/form-data">
+
+<!--product name and description  -->
+<div class="product-name-description">
+
+        <!--name  -->
+    <label class="labelName" for="title">Nombre del producto</label>
+    <input class="inputName" type="text" name="title" id="title"placeholder="Escribe el titulo de tu producto">
+                    
+    <!--description  -->
+    <label class=" labelDescription" for="summary">Descripción del producto</label>
+    <textarea class="coments" style="resize: none;" name="summary" id='summary' rows="10" placeholder="Escribe una descripcion de tu producto" cols="40"></textarea>     
+       
+
+</div>
+
+       
+
+<!-- inputs -->
+  <div class="containerDetalle">
+
+    <!-- first column of inputs -->
+  <div>
+                    
+    <!--description  -->
+    <label class=" labelDescription" for="summary">Resumen</label>
+    <textarea class="coments" style="resize: none;" name="summary" id='summary' rows="5" placeholder="Escribe un resumen de tu producto" cols="40"></textarea>     
+
+
+    <label>Categoría</label>
+                  
+    <select name="category">
+    
+    <option >categoría</option>
+       
+     </select>
+
+        <!-- upload images of products -->
+<form action="#">
+
+    <label class="upload-images">Sube imagenes del producto <input type="file" size="60" accept=".pdf,.jpg,.png"></label>
+  
+</form>
+</div>
+
+<!-- second column of inputs -->
+<div>
+
+    <!--description  -->
+    <label class=" labelDescription" for="product_detail">Detalles del producto</label>
+    <textarea class="coments" style="resize: none;" name="product_detail" id='product_detail' rows="5" placeholder="Escribe los detalles de tu producto" cols="40" required></textarea>     
+
+
+    <label class="labelPrecio" for="dimension">Dimension</label>
+    <input class="inputPrecio" type="number" name="dimension" id='dimension' style="background-color: #dce1df" required>
+                  
+
+    <label class="labelPrecio" for="dimension">Precio</label>
+    <input class="inputPrecio" type="number" name="dimension" id='dimension' style="background-color: #dce1df" required >
+
+</form>
+<input class="m" style="margin-top: 20px; padding: 15px 9px 15px 9px; background-color:#53b5aa ;"type="submit" value="Post Entry" class="btn btn-primary">
+              
+</div>
+                    
+</div>
+
+
+
+</div>
+ 
+             
+
+<!-- partial of the footer-->
+<%- include('parcials/footer.ejs') %>
+  
+</main>
+
+
+
+</body>
+
+</html>
