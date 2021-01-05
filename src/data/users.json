@@ -241,23 +241,7 @@
     "password": "lh5UeYGN5x",
     "username": "ehallawellq",
     "role": "admin"
-}, {
-    "id": 28,
-    "first_name": "Adelice",
-    "last_name": "Missen",
-    "email": "amissenr@cbsnews.com",
-    "address": "82 David Road",
-    "password": "eJ3YaKorUCUD",
-    "username": "amisse…d": 73,
-    "first_name": "Kasey",
-    "last_name": "Bingle",
-    "email": "kbingle20@nydailynews.com",
-    "address": "87375 Erie Park",
-    "password": "a4SrxcFC",
-    "username": "kbingle20",
-    "role": "admin"
-}, {
-    "id": 74,
+}, {  "id": 74,
     "first_name": "Earvin",
     "last_name": "Khomich",
     "email": "ekhomich21@wikia.com",
