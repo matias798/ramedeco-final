@@ -1,5 +1,12 @@
 let products = require("../data/products.json");
 const scenes = require("../data/scenes.json");
+const fs = require('fs');
+const uuid = require('uuid');
+
+
+const json_books = fs.readFileSync('src/data/products.json', 'utf-8');
+let books = JSON.parse(json_books);
+
 const mapOfProducts = new Map(
   products.map((val) => {
     return [val.id, val];
@@ -16,15 +23,38 @@ for (const scene of scenes) {
 
 let productsContoller = {
   getShoppingcart: function (req, res, next) {
-    res.render("shoppingcart");
+    res.render("shoppingcart",{books});
   },
 
-  create: function (req, res) {
-    res.render("create");
+  createGet: function (req, res) {
+    res.render("create",{books});
   },
+
+  createPost: function (req, res) {
+
+  const { tittle, summary, image, description ,category} = req.body;
+
+
+  var newBook = {
+    id: uuid.v4(),
+    tittle,
+    summary,
+    image,
+    description,
+    category
+  };
+// add a new book to the array
+books.push(newBook);
+
+// saving the array in a file
+const json_books = JSON.stringify(books);
+fs.writeFileSync('src/data/products.json', json_books, 'utf-8');
+
+res.redirect('/products/shoppingcart');
+},
 
   edit: function (req, res) {
-    res.render("edit");
+    res.render("edit",{books});
   },
 
   search: (req, res) => {
