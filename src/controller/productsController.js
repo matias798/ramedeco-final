@@ -1,4 +1,4 @@
-const products = require("../data/products.json");
+let products = require("../data/products.json");
 const scenes = require("../data/scenes.json");
 const mapOfProducts = new Map(
   products.map((val) => {
@@ -45,7 +45,7 @@ let productsContoller = {
     res.render("index", { scenes: scenes, products: product_s });
   },
   getAllProducts: (req, res) => {
-    res.render("", { products: products });
+    res.render("adminhome", { products: products });
   },
   findById: (req, res) => {
     let product = mapOfProducts.get(req.params.id);
@@ -67,7 +67,6 @@ let productsContoller = {
     product.price=req.body.price
     product.product_detail=req.body.product_detail
     product.dimension=req.body.dimension
-
   }
 };
 
