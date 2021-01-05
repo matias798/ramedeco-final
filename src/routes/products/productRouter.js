@@ -3,7 +3,8 @@ var router = express.Router();
 let products= require('../../controller/productsController');
 
 /* GET home page. */
-router.get('/create', products.create);
+router.get('/create', products.createGet);
+router.post('/create', products.createPost);
 
 router.get('/shoppingcart',products.getShoppingcart);
 

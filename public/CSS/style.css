@@ -589,7 +589,7 @@ border-radius: 20px;
 
 
 
-     /* create products styles */
+     /* create and edit products styles */
 
      h1{
         font-weight: 600;
@@ -715,8 +715,11 @@ display: none;
         width: 48%;
     }
     
-/* end of styles of created products */
-
+    .input-of-create{
+        margin: 20px 0 0 0;
+         padding: 15px 9px 15px 9px; 
+         background-color:#53b5aa }
+         .input-of-create:hover{cursor: pointer;}
 
 /* Edit products styles  */
 
@@ -921,7 +924,9 @@ div.product_card_container{
 
         .upload-images{
             padding: 15px;
-           
-            
              }
+        .input-of-create{ 
+        margin: 20px 0 0 80px ;
+
+        }
     }
