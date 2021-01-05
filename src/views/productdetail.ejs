@@ -56,7 +56,55 @@
             <label class="cantidad-mostrada" id="display" >1</label>
                                
             <input class="aumentar-cantidad" type="button" value="+" id="inc" onclick="incrementI()"/>
-             
+            
+            <script> 
+              var i = 1;
+              var j = 1;
+              var k = 11900;
+          
+              
+              function incrementI() {
+              if (i < 10) {
+               i++;
+               k+=1500;
+              }
+               document.getElementById("display").innerHTML = i;
+               document.getElementById("total").innerHTML = k;
+              }
+          
+               function decrementI() {
+              if (i > 1) {
+              k-=1500;
+              --i;
+              } 
+              document.getElementById("display").innerHTML = i;
+              document.getElementById("total").innerHTML = k;
+          
+              }
+          
+              function incrementJ() {
+              if (j < 10) {
+               j++;
+               k+=10000;
+          
+              }
+               document.getElementById("display-2").innerHTML = j;
+               document.getElementById("total").innerHTML = k;
+          
+               }
+          
+               function decrementj() {
+              if (j > 1) {
+                  k-=10000;
+                  --j;
+              } 
+              document.getElementById("display-2").innerHTML = j;
+              document.getElementById("total").innerHTML = k;
+          
+              }
+          
+          
+          </script>
             
           
           </div>
