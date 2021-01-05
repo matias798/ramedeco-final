@@ -12,151 +12,96 @@
     <!-- navbar -->
     <%- include('parcials/header.ejs') %> 
  
-  <!--  -->
 
-    <!-- Contains the products contained in the shoppingcart -->
+  <% for(var i= 0; i<gs.length; i++) { %>
     <section class="container-section-articles">
-    
-          <!-- article image and push button -->
-       <div class="section-container-top">
-      <img class="section-container-image" src="https://cdn.pixabay.com/photo/2017/08/05/02/12/sansevieria-2582056_960_720.jpg" alt="">
-      </div>
-        
-    <!-- red cross for mobile -->
-          <div><p class="shoppincart-delete">eliminar</p></div>
       
-  <div class="section-container-bottom">
-    
- <!-- article title and description -->
-  <div class="shoppingcart-tittle-description" >
-  <!--Title of product -->
-  <p class="section-container-title">lengua de suegra</p>
-    
-  <!-- Description of product-->
-  <p class="section-container-subtitle">Producto realizado con materiales de primera calidad, realizado con plasticos ecologicos.</p>
-  </div>
-            
-    
-<!-- counter of products in the shoppingcart and the price-->
-          
-    
-<div class="shoppingcart-quantity-price">
-    
-<div class="shoppingcart-quantity">
-    
- <input class="quantity-decrement" type="button" value="-" id="decI" onclick="decrementI()"/>             
- <label class="quantity-display" id="display" >1</label>                  
- <input class="quantity-increment" type="button" value="+" id="incI" onclick="incrementI()"/>
-    
-</div>
-              
-        
-    <!-- Price of the product -->
-<div class="shoppingcart-product-price">
-<span class="quantity-price">$<span>1500</span></span>    
-</div>
-</div>
-    
-</div>
-
-    <!-- red cross used showed in pc -->
-    <span class="shoppingcart-delete-pc">x</span>
-    
-    </section>
-    
-    <!-- contains the article image title and quantity -->
-    <section class="container-section-articles">
-    
       <!-- article image and push button -->
-      <div class="section-container-top">
-    <img class="section-container-image" src="https://cdn.pixabay.com/photo/2017/08/05/02/12/sansevieria-2582056_960_720.jpg" alt="">
-      </div>
+   <div class="section-container-top">
+  <img class="section-container-image" src="../images/home/productos/<%= gs[i].main_image %>" alt="">
+  </div>
     
-    <!-- red cross for mobile -->
-
+<!-- red cross for mobile -->
       <div><p class="shoppincart-delete">eliminar</p></div>
-    
-    
-      <div class="section-container-bottom">
-    
-        <!-- article title and description -->
-    <div class="shoppingcart-tittle-description" >
-        <!--Title of product -->
-          <p class="section-container-title">Silla escandinava</p>
-    
-          <!-- Description of product-->
-          <p class="section-container-subtitle">Producto realizado con materiales de primera calidad con almohadones de asiento con efecto memoria.</p>
-    </div>
-        
-    
-    <!-- counter of products in the shoppingcart and the price-->
-      
-      <div class="shoppingcart-quantity-price">
-    
-      <div class="shoppingcart-quantity">
-    
-        <input class="quantity-decrement" type="button" value="-" id="decJ" onclick="decrementj()"/>
-        <label class="quantity-display" id="display-2" >1</label>
-        <input class="quantity-increment" type="button" value="+" id="incJ" onclick="incrementJ()"/>
-    
-    
-    </div>
-          
-    <!-- Price of the product -->
-        <div class="shoppingcart-product-price">
-    
-      <span class="quantity-price">$<span>10000</span></span>    
-    
-      
-    </div>
-    </div>
-    </div>
-
-    <!-- red cross used showed in pc -->
-    <span class="shoppingcart-delete-pc">x</span>
-    
-    </section>
-    
-    
-    <!-- Products sugested to the clients -->
-    <section class="Sugested-products">
-    
-    <!-- title of sugested products -->
-    <div class="Sugested-products-title ">Productos sugeridos </div>
-    
-    <!-- images of sugested products -->
-    <div class='Sugested-products-image-container'>
-        <img class="Sugested-products-image" id = "top-left-image"  src="https://cdn.pixabay.com/photo/2017/08/05/02/12/sansevieria-2582056_960_720.jpg" alt="">
-        <img class="Sugested-products-image" id = "top-right-image" src="https://cdn.pixabay.com/photo/2017/08/05/02/12/sansevieria-2582056_960_720.jpg" alt="">
-        <img class="Sugested-products-image" id = "bottom-left-image" src="https://cdn.pixabay.com/photo/2017/08/05/02/12/sansevieria-2582056_960_720.jpg" alt="">
-        <img class="Sugested-products-image" id = "bottom-right-image" src="https://cdn.pixabay.com/photo/2017/08/05/02/12/sansevieria-2582056_960_720.jpg" alt="">
-    </div>
-    </section>
-    
-    
-    <!-- Resume of prices and continue button -->
-    <section class="container-order-summary">
-    
-   <div class="order-summary-bottom">
-              
-    <div class="order-summary-subtotal">Subtotal:
-    <div class="order-summary-price">$<span>1200</span></div></div>
-
-   <div class="order-summary-shipping">Envio: 
-   <div class="order-summary-price">$<span>400</span></div></div>
-       
-  </div>
- 
-<div class="order-summary-bottom">
   
-  <div class="order-summary-total">Total:
-  <div class="order-summary-price">$<span id="total">11900</span></div>
-             
-  </div>
-  <br>
+<div class="section-container-bottom">
+
+<!-- article title and description -->
+<div class="shoppingcart-tittle-description" >
+<!--Title of product -->
+<p class="section-container-title"><%=gs[i].tittle%></p>
+
+<!-- Description of product-->
+<p class="section-container-subtitle"><%=gs[i].description%></p>
+</div>
+
+<!-- counter of products in the shoppingcart and the price-->
+
+<div class="shoppingcart-quantity-price">
+<div class="shoppingcart-quantity">
+
+<input class="quantity-decrement" type="button" value="-" id="decI" onclick="decrementI()"/>             
+<label class="quantity-display" id="display" >1</label>                  
+<input class="quantity-increment" type="button" value="+" id="incI" onclick="incrementI()"/>
+
+</div>
+          
     
+<!-- Price of the product -->
+<div class="shoppingcart-product-price">
+<span class="quantity-price">$<span><%=gs[i].price%></span></span>    
+</div>
+</div>
+
+</div>
+
+<!-- red cross used showed in pc -->
+<span class="shoppingcart-delete-pc">x</span>
+
+</section>
+<% } %>
+
+
+<!-- Products sugested to the clients -->
+<section class="Sugested-products">
+
+<!-- title of sugested products -->
+<div class="Sugested-products-title ">Productos sugeridos </div>
+
+<!-- images of sugested products -->
+<div class='Sugested-products-image-container'>
+  <% for(var i= 0; i<gs.length; i++) { %>
+
+    <img class="Sugested-products-image" id = "top-right-image" src="../images/home/productos/<%= gs[i].main_image %>" alt="">
+    <% } %>
+
+  </div>
+</section>
+
+
+<!-- Resume of prices and continue button -->
+<section class="container-order-summary">
+
+<div class="order-summary-bottom">
+          
+<div class="order-summary-subtotal">Subtotal:
+<div class="order-summary-price">$<span>1200</span></div></div>
+
+<div class="order-summary-shipping">Envio: 
+<div class="order-summary-price">$<span>400</span></div></div>
+   
+</div>
+
+<div class="order-summary-bottom">
+
+<div class="order-summary-total">Total:
+<div class="order-summary-price">$<span id="total">11900</span></div>
+         
+</div>
+<br>
+
 <button id="button-order-summary">Continuar compra</button>   
- 
+
 </div>
 
 </section>

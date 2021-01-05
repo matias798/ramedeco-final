@@ -21,19 +21,23 @@
     <!-- title -->
     <div><h1>Agregar producto</h1></div>
 
-       <form class="container-main" action="/products/create" method="POST" enctype="multipart/form-data">
+<form class="container-main" action="/products/create" method="POST" enctype="multipart/form-data">
 
 <!--product name and description  -->
 <div class="product-name-description">
 
         <!--name  -->
-    <label class="labelName" for="">Nombre del producto</label>
-    <input class="inputName" type="text" name="name" placeholder="">
+    <label class="labelName" for="title">Nombre del producto</label>
+    <input class="inputName" type="text" name="title" id="title"placeholder="Escribe el titulo de tu producto">
                     
     <!--description  -->
-    <label class=" labelDescription" for="">Descripción del producto</label>
-    <textarea class="coments" style="resize: none;" name="coments" rows="10" placeholder="" cols="40"></textarea>     
-       </div>
+    <label class=" labelDescription" for="summary">Descripción del producto</label>
+    <textarea class="coments" style="resize: none;" name="summary" id='summary' rows="10" placeholder="Escribe una descripcion de tu producto" cols="40"></textarea>     
+       
+
+</div>
+
+       
 
 <!-- inputs -->
   <div class="containerDetalle">
@@ -41,26 +45,18 @@
     <!-- first column of inputs -->
   <div>
                     
-    <label for="">Categoría</label>
+    <!--description  -->
+    <label class=" labelDescription" for="summary">Resumen</label>
+    <textarea class="coments" style="resize: none;" name="summary" id='summary' rows="5" placeholder="Escribe un resumen de tu producto" cols="40"></textarea>     
+
+
+    <label>Categoría</label>
                   
-    <select name="Categoria">
+    <select name="category">
     
-    <option>categoría</option>
-    <option >category</option>
+    <option >categoría</option>
        
      </select>
-
-     <label for="">Color Principal</label>
-
-        <select name="color">
-
-         <option >blanco</option>
-         <option >rojo</option>
-         <option >azul</option>
-         <option >negro</option>
-    
-        </select>
-                       
 
         <!-- upload images of products -->
 <form action="#">
@@ -72,30 +68,27 @@
 
 <!-- second column of inputs -->
 <div>
-    <label for="">tipo de envio</label>
 
-    <select name="envio">
-                     
-        <option >Envío gratis</option>
-        <option >Retirar en el local</option>
-             
-    </select>
-                  
-    <label class="labelPrecio" for="">Precio</label>
-                  
-    <input class="inputPrecio" type="number" name="precio" style="background-color: #dce1df" >
+    <!--description  -->
+    <label class=" labelDescription" for="product_detail">Detalles del producto</label>
+    <textarea class="coments" style="resize: none;" name="product_detail" id='product_detail' rows="5" placeholder="Escribe los detalles de tu producto" cols="40" required></textarea>     
+
+
+    <label class="labelPrecio" for="dimension">Dimension</label>
+    <input class="inputPrecio" type="number" name="dimension" id='dimension' style="background-color: #dce1df" required>
                   
 
+    <label class="labelPrecio" for="dimension">Precio</label>
+    <input class="inputPrecio" type="number" name="dimension" id='dimension' style="background-color: #dce1df" required >
 
-
-    <button style="margin-top: 20px; padding: 15px 9px 15px 9px; background-color:#53b5aa ;" class="m">Agregar producto</button>
+</form>
+<input class="m" style="margin-top: 20px; padding: 15px 9px 15px 9px; background-color:#53b5aa ;"type="submit" value="Post Entry" class="btn btn-primary">
               
 </div>
                     
 </div>
 
 
-</form>
 
 </div>
  
