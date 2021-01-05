@@ -10,7 +10,7 @@ var loginRouter = require('./routes/loginRouter');
 var registerRouter = require('./routes/registerRouter');
 var productDetailRouter = require('./routes/productDetailRouter');
 var products = require('./routes/products/productRouter');
-
+var adminRouter = require('./routes/adminRouter');
 var app = express();
 
 // view engine setup
@@ -28,7 +28,7 @@ app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/productdetail', productDetailRouter);
 app.use('/products', products);
-
+app.use('/admin',adminRouter)
 
 
 

@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
-let registerController= require('../controller/registerController')
+let usersController= require('../controller/usersController')
 
 /* GET register page. */
-router.get('/', registerController.getRegister);
-
+router.get('/', usersController.getRegister);
+router.post('/', usersController.registerUser);
 module.exports = router;
 
