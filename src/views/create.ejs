@@ -21,7 +21,15 @@
     <!-- title -->
     <div><h1>Agregar producto</h1></div>
 
-<form class="container-main" action="/products/create" method="POST" enctype="multipart/form-data">
+    <!-- upload images -->
+  <form action="#" enctype="multipart/form-data">
+
+    <label class="upload-images">Sube imagenes del producto 
+    <input type="file"  ame='main_image' name='main_image' accept=".pdf,.jpg,.png" ></label>
+  
+</form>
+
+<form class="container-main" action="/products" method="POST" enctype="multipart/form-data">
 
 <!--product name and description  -->
 <div class="product-name-description">
@@ -58,12 +66,11 @@
       <% } %>
      </select>
 
-        <!-- upload images of products -->
-<form action="#">
+     <label class="labelPrecio" for="price">Precio</label>
+     <input class="inputPrecio" type="number" name="price"  style="background-color: #dce1df" required >
 
-    <label class="upload-images">Sube imagenes del producto <input type="file" size="60" name='images' accept=".pdf,.jpg,.png"></label>
-  
-</form>
+        <!-- upload images of products -->
+
 </div>
 
 <!-- second column of inputs -->
@@ -78,23 +85,17 @@
     <input class="inputPrecio" type="number" name="dimension"  style="background-color: #dce1df" required>
                   
 
-    <label class="labelPrecio" for="price">Precio</label>
-    <input class="inputPrecio" type="number" name="price"  style="background-color: #dce1df" required >
+   
    
     <div class="container-of-button">
-<input type="submit" class="input-of-create" value="crear">
+<input  type="submit" class="input-of-create" value="crear">
       </div>
+</div>
+
+</div>
+
 </form>
-              
-</div>
-                    
-</div>
 
-
-
-</div>
- 
-             
 
 <!-- partial of the footer-->
 <%- include('parcials/footer.ejs') %>
