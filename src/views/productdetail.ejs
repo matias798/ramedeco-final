@@ -18,14 +18,16 @@
 <main>
 
   <section class="titulo-product-detail">
-    <h1 >Sillón Dos Cuerpos</h1>
+    <h1 ><%= product.title %></h1>
 </section>
+
+
 
     <div class="elContenedor">
         <div>
-          <img  src="https://images.pexels.com/photos/3757055/pexels-photo-3757055.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" class="imagen-product">
+          <img  src="images/home/productos/<%= product.main_image%>" alt="" class="imagen-product">
             
-              <div class="texto-izq-product"> El lujo nunca había tenido una mejor cara. 
+              <div class="texto-izq-product"> <%= product.summary%>
               </div>
         </div>
             
@@ -33,9 +35,9 @@
 
     <div class="elContenedor">
       <div>
-        <img  src="https://images.pexels.com/photos/3757055/pexels-photo-3757055.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" class="imagen-product">
+        <img  src="images/home/productos/<%= product.images[0]%>" alt="" class="imagen-product"> 
           
-            <div class="texto-der-product"> Elaborado con almohadones de Efecto Memoria.
+            <div class="texto-der-product"> <%= product.summary%>
             </div>
       </div>
     </div>
@@ -43,11 +45,11 @@
 
       <div class="otroContenedor contenedor-descrip">
         <div class="contenedor-descrip-izq">
-          <p class="caja">Sillón de 2 Cuerpos, elaborado con materiales de última tecnología que garantizan tu confort de forma prolongada</p>
+          <p class="caja"><%= product.product_detail%></p>
         </div>
   
         <div class="contenedor-descrip-der">
-          <p class="precio">$ 40.000</p>
+          <p class="precio"><%= product.price%></p>
 
           <div class="contenedor-cantidad">
 		
@@ -56,7 +58,55 @@
             <label class="cantidad-mostrada" id="display" >1</label>
                                
             <input class="aumentar-cantidad" type="button" value="+" id="inc" onclick="incrementI()"/>
-             
+            
+            <script> 
+              var i = 1;
+              var j = 1;
+              var k = 11900;
+          
+              
+              function incrementI() {
+              if (i < 10) {
+               i++;
+               k+=1500;
+              }
+               document.getElementById("display").innerHTML = i;
+               document.getElementById("total").innerHTML = k;
+              }
+          
+               function decrementI() {
+              if (i > 1) {
+              k-=1500;
+              --i;
+              } 
+              document.getElementById("display").innerHTML = i;
+              document.getElementById("total").innerHTML = k;
+          
+              }
+          
+              function incrementJ() {
+              if (j < 10) {
+               j++;
+               k+=10000;
+          
+              }
+               document.getElementById("display-2").innerHTML = j;
+               document.getElementById("total").innerHTML = k;
+          
+               }
+          
+               function decrementj() {
+              if (j > 1) {
+                  k-=10000;
+                  --j;
+              } 
+              document.getElementById("display-2").innerHTML = j;
+              document.getElementById("total").innerHTML = k;
+          
+              }
+          
+          
+          </script>
             
           
           </div>

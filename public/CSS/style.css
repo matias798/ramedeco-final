@@ -406,7 +406,7 @@ border-radius: 20px;
         
         .section-container-image {
         max-width: 280px;
-        border-radius: 20px;
+        border-radius: 5px;
         box-shadow: 2px 2px 5px #999;
         }
         
@@ -452,7 +452,6 @@ border-radius: 20px;
         }
         
         
-        
         /* counter of products */
         .quantity-display,
         .quantity-increment,
@@ -488,15 +487,15 @@ border-radius: 20px;
         cursor: pointer;
         }
         
-        .quantity-increment {
-        line-height: 20px;
-        }
-        
         .quantity-decrement {
         line-height: 20px;
         margin-left: 7px;
         }
         
+
+        .quantity-increment {
+            line-height: 20px;
+            }
         
         .shoppingcart-quantity-price{
         display: flex;
@@ -518,7 +517,7 @@ border-radius: 20px;
         .Sugested-products-title {
         text-align: center;
         margin:20px 0 15px 0;
-        font-weight: 900;
+        font-weight: bolder;
         color: #53b5aa;
         }
         
@@ -532,7 +531,7 @@ border-radius: 20px;
         margin-top: 9px;
         box-shadow: 2px 2px 5px #999;
         max-width: 130px;
-        border-radius: 20px;
+        border-radius: 5px;
         opacity: 0.8;
         }
         
@@ -558,8 +557,6 @@ border-radius: 20px;
           margin-bottom: 20px;
         }
         
-        .order-summary-total{margin-top: 20px;}
-        
         .order-summary-price{
         color:#53b5aa ;
           margin-top: 5px;
@@ -567,6 +564,8 @@ border-radius: 20px;
           padding: 3px 6px 3px 6px;
           text-align: center;}
         
+        .order-summary-total{margin-top: 20px;}
+
         /*button used to coninue with the purchase  */
         #button-order-summary{
         background-color: #53b5aa;
@@ -575,7 +574,6 @@ border-radius: 20px;
         color: #fcfcfc;
         text-align: center;
         padding:  10px 100px 10px 100px;
-        box-shadow: 2px 2px 5px #999;
         font-weight: bold;
         margin:10px 0 10px 0;
         }
@@ -589,7 +587,7 @@ border-radius: 20px;
 
 
 
-     /* create products styles */
+     /* create and edit products styles */
 
      h1{
         font-weight: 600;
@@ -715,8 +713,11 @@ display: none;
         width: 48%;
     }
     
-/* end of styles of created products */
-
+    .input-of-create{
+        margin: 400px 0 0 0;
+         padding: 15px 9px 15px 9px; 
+         background-color:#53b5aa }
+         .input-of-create:hover{cursor: pointer;}
 
 /* Edit products styles  */
 
@@ -921,7 +922,9 @@ div.product_card_container{
 
         .upload-images{
             padding: 15px;
-           
-            
              }
+        .input-of-create{ 
+        margin: 20px 0 0 80px ;
+
+        }
     }

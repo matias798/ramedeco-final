@@ -21,49 +21,56 @@
     <!-- title -->
     <div><h1>Agregar producto</h1></div>
 
-<form class="container-main" action="/products/" method="POST" enctype="multipart/form-data">
+    <!-- upload images -->
+  <form action="#" enctype="multipart/form-data">
+
+    <label class="upload-images">Sube imagenes del producto 
+    <input type="file"  ame='main_image' name='main_image' accept=".pdf,.jpg,.png" ></label>
+  
+</form>
+
+<form class="container-main" action="/products" method="POST" enctype="multipart/form-data">
 
 <!--product name and description  -->
 <div class="product-name-description">
 
         <!--name  -->
-    
-
-    
-    <label class="labelName" for="title">Nombre del producto</label>
-    <input class="inputName" type="text" name="title" id="title"placeholder=" ">
+    <label class="labelName" for="tittle">Nombre del producto</label>
+    <input class="inputName" type="text" name="tittle" placeholder="Escribe el titulo de tu producto">
                     
     <!--description  -->
-    <label class=" labelDescription" for="summary">Descripción del producto</label>
-    <textarea class="coments" style="resize: none;" name="summary" id='summary' rows="10" placeholder="Escribe una descripcion de tu producto" cols="40"></textarea>     
+    <label class=" labelDescription" for="summary">Resumen de tu producto</label>
+    <textarea class="coments" style="resize: none;" name="summary" rows="10" placeholder="Escribe una descripcion de tu producto" cols="40"></textarea>     
+       
+
 </div>
+
+       
+
 <!-- inputs -->
-<div class="containerDetalle">
+  <div class="containerDetalle">
 
     <!-- first column of inputs -->
   <div>
                     
     <!--description  -->
-    <label class=" labelDescription" for="summary">Resumen</label>
-    <textarea class="coments" style="resize: none;" name="summary" id='summary' rows="5" placeholder="Escribe un resumen de tu producto" cols="40"></textarea>     
+    <label class=" labelDescription" for="product_detail">Resumen</label>
+    <textarea class="coments" style="resize: none;" name="product_detail"  rows="5" placeholder="Escribe un resumen de tu producto" cols="40"></textarea>     
 
 
     <label>Categoría</label>
                   
     <select name="category">
-    
-    <option >categoría</option>
-       
+        <% for(var i= 0; i< books.length; i++) { %>
+            <option name="category" ><%=books[i].category%></option>
+      <% } %>
      </select>
 
+     <label class="labelPrecio" for="price">Precio</label>
+     <input class="inputPrecio" type="number" name="price"  style="background-color: #dce1df" required >
+
         <!-- upload images of products -->
-<form action="#">
-    <h2>Imagenes del producto</h2>
-    <label class="upload-images">Sube imagen princal</label>
-    <input type="file" name="main_image" id="main_image"   size="60" accept=".pdf,.jpg,.png" >
-    <label class="upload-images">Subir mas imagenes para el detalle del producto</label>
-    <input type="file" name="image" id="image"   size="60" accept=".pdf,.jpg,.png" multiple>
-</form>
+
 </div>
 
 <!-- second column of inputs -->
@@ -71,28 +78,24 @@
 
     <!--description  -->
     <label class=" labelDescription" for="product_detail">Detalles del producto</label>
-    <textarea class="coments" style="resize: none;" name="product_detail" id='product_detail' rows="5" placeholder="Escribe los detalles de tu producto" cols="40" required></textarea>     
+    <textarea class="coments" style="resize: none;" name="product_detail" rows="5" placeholder="Escribe los detalles de tu producto" cols="40" required></textarea>     
 
 
     <label class="labelPrecio" for="dimension">Dimension</label>
-    <input class="inputPrecio" type="number" name="dimension" id='dimension' style="background-color: #dce1df" required>
+    <input class="inputPrecio" type="number" name="dimension"  style="background-color: #dce1df" required>
                   
 
-    <label class="labelPrecio" for="dimension">Precio</label>
-    <input class="inputPrecio" type="number" name="dimension" id='dimension' style="background-color: #dce1df" required >
+   
+   
+    <div class="container-of-button">
+<input  type="submit" class="input-of-create" value="crear">
+      </div>
+</div>
 
-    <input class="m" style="margin-top: 20px; padding: 15px 9px 15px 9px; background-color:#53b5aa ;"type="submit" value="Post Entry" class="btn btn-primary">
-    
+</div>
+
 </form>
-</div>
-                    
-</div>
 
-
-
-</div>
- 
-             
 
 <!-- partial of the footer-->
 <%- include('parcials/footer.ejs') %>
