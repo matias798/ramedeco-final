@@ -30,8 +30,8 @@ mercadopago.preferences.create(preference)
 });
 
 
-const json_books = fs.readFileSync('src/data/products.json', 'utf-8');
-let books = JSON.parse(json_books);
+const json_productsss = fs.readFileSync('src/data/products.json', 'utf-8');
+let productsss = JSON.parse(json_productsss);
 
 const mapOfProducts = new Map(
   products.map((val) => {
@@ -49,11 +49,11 @@ for (const scene of scenes) {
 
 let productsContoller = {
   getShoppingcart: function (req, res, next) {
-    res.render("shoppingcart",{books});
+    res.render("shoppingcart",{productsss});
   },
 
   createGet: function (req, res) {
-    res.render("create",{books});
+    res.render("create",{productsss});
   },
 
   createPost: function (req, res) {
@@ -69,18 +69,42 @@ let productsContoller = {
     product_detail,
     category
   };
-// add a new book to the array
-books.push(newProduct);
+// add a product to the array
+productsss.push(newProduct);
 
 // saving the array in a file
-const json_books = JSON.stringify(books);
-fs.writeFileSync('src/data/products.json', json_books, 'utf-8');
+const json_productsss = JSON.stringify(productsss);
+fs.writeFileSync('src/data/products.json', json_productsss, 'utf-8');
 
 res.redirect('/products/shoppingcart');
 },
 
-  edit: function (req, res) {
-    res.render("edit",{books});
+
+
+edit: function (req, res) {
+let params=req.params.id;
+
+  res.render('edit', {productsss,params,productToEdit: products[params]});
+},
+
+  editPut: function (req, res) {
+    res.send('tu peticion fue enviada')
+/*
+let products = JSON.parse(json_productsss);
+
+
+    products.forEach((producto)=>{
+		products[req.params.id ].tittle = req.body.tittle;
+		products[req.params.id ].summary = req.body.summary;
+		products[req.params.id ].description = req.body.description;
+		products[req.params.id ].product_detail = req.body.product_detail;
+		products[req.params.id ].category = req.body.category});
+    
+const json_productsss = JSON.stringify(productsss);
+fs.writeFileSync('src/data/products.json', json_productsss, 'utf-8');
+
+  res.redirect('/shoppingcart');*/
+
   },
 
   search: (req, res) => {

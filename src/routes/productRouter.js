@@ -8,10 +8,8 @@ router.post('/create', products.createPost);
 
 router.get('/shoppingcart',products.getShoppingcart);
 
-router.get('/:id', products.edit);
-router.post('/:id', (req,res)=>{
-res.send('fff')
-});
+router.get('/:id/edit', products.edit);
+router.put('/:id',products.editPut);
 
 
 module.exports = router;

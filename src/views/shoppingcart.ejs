@@ -12,12 +12,12 @@
     <%- include('parcials/header.ejs') %> 
  
 
-  <% for(var i= 0; i< books.length; i++) { %>
+  <% for(var i= 0; i< productsss.length; i++) { %>
   <section class="container-section-articles">
       
       <!-- article image and push button -->
    <div class="section-container-top">
-  <img class="section-container-image" src="../images/home/productos/<%= books[i].main_image %>" alt="">
+  <img class="section-container-image" src="../images/home/productos/<%= productsss[i].main_image %>" alt="">
   </div>
     
 <!-- red cross for mobile -->
@@ -28,10 +28,10 @@
 <!-- article title and description -->
 <div class="shoppingcart-tittle-description" >
 <!--Title of product -->
-<p class="section-container-title"><%=books[i].tittle%></p>
+<p class="section-container-title"><%=productsss[i].tittle%></p>
 
 <!-- Description of product-->
-<p class="section-container-subtitle"><%=books[i].description%></p>
+<p class="section-container-subtitle"><%=productsss[i].description%></p>
 </div>
 
 <!-- counter of products in the shoppingcart and the price-->
@@ -48,7 +48,7 @@
     
 <!-- Price of the product -->
 <div class="shoppingcart-product-price">
-<span class="quantity-price">$<span><%=books[i].price%></span></span>    
+<span class="quantity-price">$<span><%=productsss[i].price%></span></span>    
 </div>
 </div>
 
@@ -69,9 +69,9 @@
 
 <!-- images of sugested products -->
 <div class='Sugested-products-image-container'>
-  <% for(var i= 0; i<books.length; i++) { %>
+  <% for(var i= 0; i<productsss.length; i++) { %>
 
-    <img class="Sugested-products-image" id = "top-right-image" src="../images/home/productos/<%= books[i].main_image %>" alt="">
+    <img class="Sugested-products-image" id = "top-right-image" src="../images/home/productos/<%= productsss[i].main_image %>" alt="">
     <% } %>
 
   </div>

@@ -2,120 +2,83 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
-	<link rel = "icon" href="../images/white-logo.jpeg" type = "image/x-icon"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
-    <title>Ramé Deco</title>
+  <title>Rame deco</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/cosmo/bootstrap.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+<link rel = "icon" href="../images/white-logo.jpeg" type = "image/x-icon"> 
+<link rel="stylesheet" href="../../CSS/style.css">
+
 </head>
 
-<body>
-<main>
 
+<body>
     <!-- navbar -->
     <%- include('parcials/header.ejs') %> 
 
-    <!-- title -->
-    <div><h1>Editar producto</h1></div>
+  <div class="container p-4">
 
-    <div>
-        <h1 > 
-        <label for="" class='edit-product' >Que producto queres editar?</label>
-                  
-        <select name="Categoria" class="edit-product-options">
-        <option>categoría</option>
-        <option >category</option>
-        </select>
-    </h1>
-        
-        </div>
+  <!-- title -->
+  <div><h1>Editar producto</h1></div>
 
+    <form method="POST" target="/create" class="card card-body" action="/products/:id?_method=PUT"> 
 
-       <form class="container-main" method="POST" action="/products/:id?_method=PUT" >
+        <div class="form-group">
+            <label>Editando el producto <%=params%>  </label><br>
+            
+            </div>
 
-<!--product name and description  -->
-<div class="product-name-description">
+      <div class="form-group">
+        <label for="tittle">Nombre del producto</label>
+        <input name="tittle" type="text" class="form-control" placeholder=" "autofocus required>
+      </div>
 
-        <!--name  -->
-    <label class="labelName" for="tittle">Nombre del producto</label>
-    <input class="inputName" type="text" name="tittle" placeholder="Escribe el titulo de tu producto">
-                    
-    <!--description  -->
-    <label class=" labelDescription" for="summary">Resumen de tu producto</label>
-    <textarea class="coments" style="resize: none;" name="summary" rows="10" placeholder="Escribe una descripcion de tu producto" cols="40"></textarea>     
-       
+      <div class="form-group">
+        <label for="summary">Resumen de tu producto</label>
+        <input name="summary" type="text" class="form-control" placeholder="Escribe una descripcion de tu producto" autofocus required>
+      </div>
+      
+     
 
-</div>
-
-       
-
-<!-- inputs -->
-  <div class="containerDetalle">
-
-    <!-- first column of inputs -->
-  <div>
-                    
-    <!--description  -->
-    <label class=" labelDescription" for="product_detail">Resumen</label>
-    <textarea class="coments" style="resize: none;" name="product_detail"  rows="5" placeholder="Escribe un resumen de tu producto" cols="40"></textarea>     
+      <div class="form-group">
+        <label for="description">Describe el producto</label>
+        <textarea class="form-control" name="description" rows="2" required>
+        </textarea>
+      </div>
 
 
-    <label>Categoría</label>
-                  
-    <select name="category">
-        <% for(var i= 0; i< books.length; i++) { %>
-            <option name="category" ><%=books[i].category%></option>
+
+      <div class="form-group">
+        <label for="product_detail">detalles del producto</label>
+        <textarea class="form-control" name="product_detail" rows="2" required>
+        </textarea>
+      </div>
+
+
+
+      <div class="form-group">
+      <label>Categoría</label>
+      <select name="category">
+        <% for(var i= 0; i< productsss.length; i++) { %>
+            <option name="category" ><%=productsss[i].category%></option>
       <% } %>
      </select>
-
-        <!-- upload images of products -->
-<form action="#">
-
-    <label class="upload-images">Sube imagenes del producto <input type="file" size="60" name='images' accept=".pdf,.jpg,.png"></label>
-  
-</form>
-</div>
-
-<!-- second column of inputs -->
-<div>
-
-    <!--description  -->
-    <label class=" labelDescription" for="product_detail">Detalles del producto</label>
-    <textarea class="coments" style="resize: none;" name="product_detail" rows="5" placeholder="Escribe los detalles de tu producto" cols="40" required></textarea>     
-
-
-    <label class="labelPrecio" for="dimension">Dimension</label>
-    <input class="inputPrecio" type="number" name="dimension"  style="background-color: #dce1df" required>
-                  
-
-    <label class="labelPrecio" for="price">Precio</label>
-    <input class="inputPrecio" type="number" name="price"  style="background-color: #dce1df" required >
-   
-    <div class="container-of-button">
-<input type="submit" class="input-of-create" value="edit">
       </div>
-    
-    </div>
-                    
-</div>
-
-
-</form>
-
-</div>
- 
-             
-
-<!-- partial of the footer-->
-<%- include('parcials/footer.ejs') %>
-  
-</main>
 
 
 
+      <div class="form-group">
+        <input type="submit" value="editar  producto" class="btn btn-primary">
+      </div>
+    </form>
+
+  </div>
+
+  <%- include('parcials/footer')%>
 </body>
 
 </html>
