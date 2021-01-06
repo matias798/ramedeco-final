@@ -176,3 +176,20 @@ Keep doing:
 
 Matias :
 
+En mi parecer en este sprint senti al grupo con una menor comunicacion y al sprint con una mayor exigencia ,concuerdo con lo anteriormente dicho y sinceramente me cuesta mucho seguir el ritmo de Ezequiel debido a que tiene otro conocimiento lo cual fue notorio en este sprint. Por mi parte creo que deberia consultar mas con los profesores en las siguientes oportunidades debido a que a veces he perdido muchisimo tiempo por cosas simples
+
+
+More of: 
+- avisar cuando hay un problema/atraso
+- Comunicación clara entre nosotros
+- Ofrecer ayuda al otro siempre q se pueda
+-tener mas encuenta las oportunidades de consultar
+
+Stop doing:
+- Evitar el desbalance de carga en el sprint.
+- No dejar todo para última hora 
+
+
+Keep doing:
+- tener buena predisposición en ayudar a los que tengan dificultad con un tema.
+
