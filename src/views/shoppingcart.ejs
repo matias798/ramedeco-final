@@ -3,7 +3,6 @@
   <head>
     <title>Rame deco</title>
   <link rel="stylesheet" href="../CSS/style.css">
-  
 	<link rel = "icon" href="../images/white-logo.jpeg" type = "image/x-icon"> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -99,8 +98,10 @@
          
 </div>
 <br>
-
-<button id="button-order-summary">Continuar compra</button>   
+<script
+  src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
+  data-preference-id='<%= global.id %>'>
+</script>
 
 </div>
 

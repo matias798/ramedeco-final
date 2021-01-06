@@ -17,13 +17,18 @@
         </div>
         <form class="lr-form" action="/register" method="POST">
                 <div>
-                <label class="lr-fontsize" for="username">Nombre de usuario</label><br>
-                <input class="form_lr-width lr-fontsize" type="text" id="username" name="username" placeholder="Nombre de usuario"><br><br>
+                <label class="lr-fontsize" for="username">Nombre</label><br>
+                <input class="form_lr-width lr-fontsize" type="text" id="name" name="name" placeholder="Nombre">
+                </div>
+
+                <div>
+                <label class="lr-fontsize" for="username">Apellido</label><br>
+                <input class="form_lr-width lr-fontsize" type="text" id="last_name" name="last_name" placeholder="Apellido">
                 </div>
     
                 <div>
                 <label class="lr-fontsize" for="email">E-mail</label><br>
-                <input class="form_lr-width lr-fontsize" type="email" id="email" name="email" placeholder="E-mail"><br><br>
+                <input class="form_lr-width lr-fontsize" type="email" id="email" name="email" placeholder="E-mail">
                 </div>
 
                 <div>
@@ -31,19 +36,8 @@
                 <input class="form_lr-width lr-fontsize" type="password" id="password" name="password" placeholder="Elegí tu contraseña"><br>
                 <div class="register-password-msg"><small>La contraseña debe ser de mínimo 6 dígitos</small></div>
                 <input class="form_lr-width lr-fontsize" type="password" id="password_confirm" name="password_confirm" placeholder="Confirmá tu contraseña"><br>
-                </div><br>
-                <div>
-                    <label class="lr-fontsize for="first_name">Nombre</label>
-                    <input class="form_lr-width lr-fontsize" type="text" id="first_name" name="first_name">
                 </div>
-                <div>
-                    <label class="lr-fontsize for="last_name">Apellido</label>
-                    <input class="form_lr-width lr-fontsize" type="text" id="last_name" name="last_name">
-                </div>
-                <div>
-                    <label class="lr-fontsize for="address">Direccion</label>
-                    <input class="form_lr-width lr-fontsize" type="text" id="address" name="address">
-                </div>
+            
                 <div class="register-newsletter-msg">
                     <input type="checkbox" name="newsletter" value="newsletter si">Quiero recibir emails de RaméDeco con ofertas y promociones exclusivas acordes a mis gustos, intereses e historial de compras.
                     </div>

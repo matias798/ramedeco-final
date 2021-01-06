@@ -330,6 +330,8 @@ border-radius: 20px;
     background: #429188;
 }
 
+/*register y login*/
+
    .lr-title{
         color:#0096a0;
         font-size: 2em;
@@ -337,7 +339,7 @@ border-radius: 20px;
     }
 
     .lr-main-container{
-        background-color: #dce1df;
+        background-color: #f2f4f4;
         border: 1px solid;
         border-radius: 20px;
         margin: 25px;
@@ -813,7 +815,7 @@ display: none;
     /*register y login*/
 
     .lr-main-container{
-        background-color: #dce1df;
+        background-color: #f2f4f4;
         border: 1px solid;
         border-radius: 20px;
         margin: 25px;
