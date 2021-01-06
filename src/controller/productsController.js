@@ -83,27 +83,28 @@ res.redirect('/products/shoppingcart');
 
 edit: function (req, res) {
 let params=req.params.id;
+const id = req.params.id
+let productToEdit = products.find(products => products.id == id);
 
-  res.render('edit', {productsss,params,productToEdit: products[params]});
+  res.render('edit', {productsss,params,productToEdit: productToEdit});
 },
 
-  editPut: function (req, res) {
-    res.send('tu peticion fue enviada')
-/*
-let products = JSON.parse(json_productsss);
+  editPut: function (req, res) {   products.forEach(products => {
+    if(req.params.id == products.id){
 
+        products.tittle = req.body.tittle;
+        products.summary = req.body.summary;
+        products.description = req.body.description;
+        products.products_detail = req.body.products_detail;
+        products.category = req.body.category
 
-    products.forEach((producto)=>{
-		products[req.params.id ].tittle = req.body.tittle;
-		products[req.params.id ].summary = req.body.summary;
-		products[req.params.id ].description = req.body.description;
-		products[req.params.id ].product_detail = req.body.product_detail;
-		products[req.params.id ].category = req.body.category});
+        console.log(products);
+    }
     
-const json_productsss = JSON.stringify(productsss);
+});
+const json_productsss = JSON.stringify(products);
 fs.writeFileSync('src/data/products.json', json_productsss, 'utf-8');
-
-  res.redirect('/shoppingcart');*/
+res.redirect('../products/shoppingcart')
 
   },
 
