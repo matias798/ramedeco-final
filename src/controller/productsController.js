@@ -61,7 +61,7 @@ let productsContoller = {
   const { tittle, summary, description ,product_detail,category} = req.body;
 
 
-  var newBook = {
+  var newProduct = {
     id: uuid.v4(),
     tittle,
     summary,
@@ -70,7 +70,7 @@ let productsContoller = {
     category
   };
 // add a new book to the array
-books.push(newBook);
+books.push(newProduct);
 
 // saving the array in a file
 const json_books = JSON.stringify(books);
