@@ -1,126 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descripción de Producto</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/style.css">
-   
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/CSS/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
 </head>
+
 <body class="body-product-detail">
-  <%- include('parcials/header.ejs') %> 
-
-
-<main>
-
-  <section class="titulo-product-detail">
-    <h1 ><%= product.title %></h1>
-</section>
-
-
-
+  <%- include('parcials/header.ejs') %>
+  <main>
+    <section class="titulo-product-detail">
+      <h1><%= product.title %></h1>
+    </section>
     <div class="elContenedor">
-        <div>
-          <img  src="images/home/productos/<%= product.main_image%>" alt="" class="imagen-product">
-            
-              <div class="texto-izq-product"> <%= product.summary%>
-              </div>
-        </div>
-            
+      <div>
+        <img src="/images/home/productos/<%= product.main_image%>" alt="" class="imagen-product">
+        <div class="texto-izq-product"> <%= product.summary%></div>
+      </div>
     </div>
 
     <div class="elContenedor">
       <div>
-        <img  src="images/home/productos/<%= product.images[0]%>" alt="" class="imagen-product"> 
-          
-            <div class="texto-der-product"> <%= product.summary%>
-            </div>
+        <img src="/images/home/productos/<%= product.images[0]%>" alt="" class="imagen-product">
+        <div class="texto-der-product"> <%= product.summary%></div>
       </div>
     </div>
-          
+    <div class="otroContenedor contenedor-descrip">
+      <div class="contenedor-descrip-izq">
+        <p class="caja"><%= product.product_detail%></p>
+      </div>
 
-      <div class="otroContenedor contenedor-descrip">
-        <div class="contenedor-descrip-izq">
-          <p class="caja"><%= product.product_detail%></p>
+      <div class="contenedor-descrip-der">
+        <p class="precio"><%= product.price%></p>
+
+        <div class="contenedor-cantidad">
+          <form action="/products/addToCart">
+            <input class="bajar-cantidad" type="button" value="-" id="dec" onclick="decrementI()" />
+
+            <input type="text" name="display" id="display" value="1">
+            <input class="aumentar-cantidad" type="button" value="+" id="inc" onclick="incrementI()" />
+            <label id="total"><%= product.price%></label>
         </div>
-  
-        <div class="contenedor-descrip-der">
-          <p class="precio"><%= product.price%></p>
+        <button class="boton-agregar-carrito" type="submit">Agregar al carrito</button>
+        </form>
+      </div>
+    </div>
 
-          <div class="contenedor-cantidad">
-		
-            <input class="bajar-cantidad" type="button" value="-" id="dec" onclick="decrementI()"/>
-                               
-            <label class="cantidad-mostrada" id="display" >1</label>
-                               
-            <input class="aumentar-cantidad" type="button" value="+" id="inc" onclick="incrementI()"/>
-            
-            <script> 
-              var i = 1;
-              var j = 1;
-              var k = 11900;
-          
-              
-              function incrementI() {
-              if (i < 10) {
-               i++;
-               k+=1500;
-              }
-               document.getElementById("display").innerHTML = i;
-               document.getElementById("total").innerHTML = k;
-              }
-          
-               function decrementI() {
-              if (i > 1) {
-              k-=1500;
-              --i;
-              } 
-              document.getElementById("display").innerHTML = i;
-              document.getElementById("total").innerHTML = k;
-          
-              }
-          
-              function incrementJ() {
-              if (j < 10) {
-               j++;
-               k+=10000;
-          
-              }
-               document.getElementById("display-2").innerHTML = j;
-               document.getElementById("total").innerHTML = k;
-          
-               }
-          
-               function decrementj() {
-              if (j > 1) {
-                  k-=10000;
-                  --j;
-              } 
-              document.getElementById("display-2").innerHTML = j;
-              document.getElementById("total").innerHTML = k;
-          
-              }
-          
-          
-          </script>
-            
-          
-          </div>
-        
-          <button class="boton-agregar-carrito" type="submit">Agregar al carrito</button>
-          
-          
-        </div>
-      </div>  
-
-</main>
-
-
-<%- include('parcials/footer.ejs') %>
-    
+  </main>
+  <%- include('parcials/footer.ejs') %>
 </body>
+
+<script>
+  var i = 1;
+  var j = 1;
+  var k = 11900;
+
+
+  function incrementI() {
+    let cantidadActual = document.getElementById("display").innerHTML
+    let precio = document.getElementById("precio").innerHTML
+    let total = document.getElementById("total").innerHTML
+    if (cantidadActual < 10) {
+      cantidadActual++;
+      k = total + precio
+    }
+    document.getElementById("display").innerHTML = cantidadActual;
+    document.getElementById("total").innerHTML = k;
+  }
+
+  function decrementI() {
+    let cantidadActual = document.getElementById("display").innerHTML
+    let precio = document.getElementById("precio").innerHTML
+    let total = document.getElementById("total").innerHTML
+    if (cantidadActual > 1) {
+      k = total - precio
+        --cantidadActual;
+    }
+    document.getElementById("display").innerHTML = cantidadActual;
+    document.getElementById("total").innerHTML = k;
+
+  }
+
+  function incrementJ() {
+    if (j < 10) {
+      j++;
+      k += 10000;
+
+    }
+    document.getElementById("display-2").innerHTML = j;
+    document.getElementById("total").innerHTML = k;
+
+  }
+
+  function decrementj() {
+    if (j > 1) {
+      k -= 10000;
+      --j;
+    }
+    document.getElementById("display-2").innerHTML = j;
+    document.getElementById("total").innerHTML = k;
+
+  }
+</script>
+
 </html>

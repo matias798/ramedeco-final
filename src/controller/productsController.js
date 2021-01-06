@@ -1,17 +1,12 @@
+const fs =require('fs')
+var path = require('path');
 let products = require("../data/products.json");
 const scenes = require("../data/scenes.json");
-const fs = require('fs');
-const uuid = require('uuid');
-
-
-const json_books = fs.readFileSync('src/data/products.json', 'utf-8');
-let books = JSON.parse(json_books);
-
 const mapOfProducts = new Map(
   products.map((val) => {
     return [val.id, val];
-  })
-);
+  }))
+let pathProductJSON=path.resolve(__dirname,"..","data/products.json")
 for (const scene of scenes) {
   for (const description of scene.pointers_position) {
     let product = mapOfProducts.get(description.description_ref);
@@ -20,6 +15,7 @@ for (const scene of scenes) {
     description.description_price = product.price;
   }
 }
+
 let productSkeleton={"tittle":"",
 "summary":"",
 "description":"",
@@ -32,39 +28,17 @@ let productSkeleton={"tittle":"",
 
 let productsContoller = {
 
-  getShoppingcart: function (req, res, next) {
-    res.render("shoppingcart",{books});
+  getShoppingcart: function (req, res) {
+    res.render("shoppingcart",{'books':mapOfProducts.values()});
   },
 
-  createGet: function (req, res) {
-    res.render("create",{books});
+  create: function (req, res) {
+    res.render("create",{'books':mapOfProducts.values()});
   },
-
-  createPost: function (req, res) {
-
-  const { tittle, summary, image, description ,category} = req.body;
-
-
-  var newBook = {
-    id: uuid.v4(),
-    tittle,
-    summary,
-    image,
-    description,
-    category
-  };
-// add a new book to the array
-books.push(newBook);
-
-// saving the array in a file
-const json_books = JSON.stringify(books);
-fs.writeFileSync('src/data/products.json', json_books, 'utf-8');
-
-res.redirect('/products/shoppingcart');
-},
 
   edit: function (req, res) {
-    res.render("edit",{books});
+    let product=mapOfProducts.get(req.params.id)
+    res.render("edit",{'books':mapOfProducts.values(),'product':product});
   },
 
   search: (req, res) => {
@@ -104,6 +78,7 @@ res.redirect('/products/shoppingcart');
   },
 
   update:(req,res)=>{
+    console.log(req.files)
     let product =mapOfProducts.get(req.params.id);
     product.tittle=req.body.tittle,
     product.category=req.body.category
@@ -112,6 +87,16 @@ res.redirect('/products/shoppingcart');
     product.price=req.body.price
     product.product_detail=req.body.product_detail
     product.dimension=req.body.dimension
+
+    for (let i=0;i<req.files.length;i++) {
+      if(i == 0 ){
+        product.main_image=req.files[i].filename
+      }else{
+        product.images.push(req.files[i].filename)
+      }
+    }
+    fs.writeFileSync(pathProductJSON, JSON.stringify(products))
+    res.redirect('/products')
   },
   store: (req, res) => {
 		let newProduct={...productSkeleton,...req.body}
@@ -120,13 +105,17 @@ res.redirect('/products/shoppingcart');
 			lastProduct= products[lastProduct]
 			newProduct.id= lastProduct.id+1
 		}
-    newProduct.main_image=req.files[0].filename
-    for (const file of req.files) {
-      newProduct.images.push(file.filename)
+    for (let i=0;i<req.files.length;i++) {
+      if(i == 0 ){
+        newProduct.main_image=req.files[i].filename
+      }else{
+        newProduct.images.push(req.files[i].filename)
+      }
     }
 		console.log("el nombre dle file en create es "+ newProduct.image)
-		products.push(newProduct)
-		fs.writeFileSync(productsFilePath, JSON.stringify(products))
+    products.push(newProduct)
+    mapOfProducts.set(newProduct.id,newProduct)
+    fs.writeFileSync(pathProductJSON, JSON.stringify(products))
     res.redirect('/products')
   }
 };
