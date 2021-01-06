@@ -10,9 +10,11 @@ let pathProductJSON=path.resolve(__dirname,"..","data/products.json")
 for (const scene of scenes) {
   for (const description of scene.pointers_position) {
     let product = mapOfProducts.get(description.description_ref);
+    if(product !== undefined && product !== null){
     description.description_tittle = product.tittle;
     description.description_summary = product.summary;
     description.description_price = product.price;
+  }
   }
 }
 
