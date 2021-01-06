@@ -19,13 +19,13 @@
     <div class="elContenedor">
       <div>
         <img src="/images/home/productos/<%= product.main_image%>" alt="" class="imagen-product">
-        <div class="texto-izq-product"> <%= product.summary%></div>
+        <div class="texto-izq-product"><%= product.summary%></div>
       </div>
     </div>
 
     <div class="elContenedor">
       <div>
-        <img src="/images/home/productos/<%= product.images[0]%>" alt="" class="imagen-product">
+        <img src="/images/home/productos/<%= product.images[0] %>" alt="" class="imagen-product">
         <div class="texto-der-product"> <%= product.summary%></div>
       </div>
     </div>
@@ -37,16 +37,18 @@
       <div class="contenedor-descrip-der">
         <p class="precio"><%= product.price%></p>
 
+      
         <div class="contenedor-cantidad">
-          <form action="/products/addToCart">
-            <input class="bajar-cantidad" type="button" value="-" id="dec" onclick="decrementI()" />
-
+          <form action="/products/addToCart" method="POST">
+            <input style="display: none;" type="text" id="id_product" name="id_product" value="<%= product.id%>" />
+            <input class="bajar-cantidad" type="button" value="-" onclick="decrementI()" />
             <input type="text" name="display" id="display" value="1">
-            <input class="aumentar-cantidad" type="button" value="+" id="inc" onclick="incrementI()" />
-            <label id="total"><%= product.price%></label>
-        </div>
-        <button class="boton-agregar-carrito" type="submit">Agregar al carrito</button>
+            <input class="aumentar-cantidad" type="button" value="+" onclick="incrementI()" />
+            <button class="boton-agregar-carrito" type="submit">Agregar al carrito</button>
         </form>
+            <p class="precio" id="total" ><%= product.price%></p>
+        </div>
+        
       </div>
     </div>
 
@@ -54,57 +56,53 @@
   <%- include('parcials/footer.ejs') %>
 </body>
 
-<script>
+<script> 
   var i = 1;
   var j = 1;
   var k = 11900;
 
-
+  
   function incrementI() {
-    let cantidadActual = document.getElementById("display").innerHTML
-    let precio = document.getElementById("precio").innerHTML
-    let total = document.getElementById("total").innerHTML
-    if (cantidadActual < 10) {
-      cantidadActual++;
-      k = total + precio
-    }
-    document.getElementById("display").innerHTML = cantidadActual;
-    document.getElementById("total").innerHTML = k;
+  if (i < 10) {
+   i++;
+   k+=1500;
+  }
+   document.getElementById("display").innerHTML = i;
+   document.getElementById("total").innerHTML = k;
   }
 
-  function decrementI() {
-    let cantidadActual = document.getElementById("display").innerHTML
-    let precio = document.getElementById("precio").innerHTML
-    let total = document.getElementById("total").innerHTML
-    if (cantidadActual > 1) {
-      k = total - precio
-        --cantidadActual;
-    }
-    document.getElementById("display").innerHTML = cantidadActual;
-    document.getElementById("total").innerHTML = k;
+   function decrementI() {
+  if (i > 1) {
+  k-=1500;
+  --i;
+  } 
+  document.getElementById("display").innerHTML = i;
+  document.getElementById("total").innerHTML = k;
 
   }
 
   function incrementJ() {
-    if (j < 10) {
-      j++;
-      k += 10000;
-
-    }
-    document.getElementById("display-2").innerHTML = j;
-    document.getElementById("total").innerHTML = k;
+  if (j < 10) {
+   j++;
+   k+=10000;
 
   }
+   document.getElementById("display-2").innerHTML = j;
+   document.getElementById("total").innerHTML = k;
 
-  function decrementj() {
-    if (j > 1) {
-      k -= 10000;
+   }
+
+   function decrementj() {
+  if (j > 1) {
+      k-=10000;
       --j;
-    }
-    document.getElementById("display-2").innerHTML = j;
-    document.getElementById("total").innerHTML = k;
+  } 
+  document.getElementById("display-2").innerHTML = j;
+  document.getElementById("total").innerHTML = k;
 
   }
+
+
 </script>
 
 </html>

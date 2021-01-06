@@ -8,6 +8,8 @@ const user_template ={
     "password": "",
     "username": "",
 }
+var path = require('path');
+let pathUserJSON=path.resolve(__dirname,"..","data/users.json")
 
 module.exports={
     'getLogin':function(req, res, next) {
@@ -16,7 +18,7 @@ module.exports={
     'logInUser': function(req,res){
         let username=req.body.username
         let password=req.body.password
-        let user=users.find(user => {return user.username == username || user.email == username})
+        let user=users.find(user => {return user.username == username})
         if(user.password===password){
             if(user.role === "admin"){
                 res.redirect('/products')
@@ -34,7 +36,8 @@ module.exports={
         user.role="user"        
         user.id=users[users.length-1].id +1
         users.push(user)
-        fs.writeFileSync('../data/users.json',users)
+        fs.writeFileSync(pathUserJSON,JSON.stringify(users))
+        res.redirect('/')
     },
     'getRegister':function(req, res, next) {
         res.render('register');

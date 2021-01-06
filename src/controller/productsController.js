@@ -25,11 +25,28 @@ let productSkeleton={"tittle":"",
 "main_image":"",
 "images":[]}
 
+productCart=[]
 
 let productsContoller = {
-
+  addToCart: function(req,res){
+    console.log('inside addtocart')
+    console.log(req.body)
+    let idProducto=req.body.id_product
+    let cantidad=req.body.display
+    productCart.push({idProducto:idProducto,cantidad:cantidad})
+    console.log(productCart)
+    res.redirect('/')
+  },
   getShoppingcart: function (req, res) {
-    res.render("shoppingcart",{'books':mapOfProducts.values()});
+    console.log(productCart)
+    let productsInCart=[]
+    
+    productCart.forEach(element => {
+      productsInCart.push(mapOfProducts.get(element.idProducto))
+    });
+
+    console.log(productsInCart)
+    res.render("shoppingcart",{'books':productsInCart});
   },
 
   create: function (req, res) {
@@ -42,14 +59,15 @@ let productsContoller = {
   },
 
   search: (req, res) => {
+    console.log("inside search")
     let product = products.filter((producto) => {
-      let name = producto.name;
-      name = name.toLowerCase();
+      let name = producto.tittle.toLowerCase();
       return (
-        req.body.keywords == name ||
-        name.indexOf(req.body.keywords.toLowerCase()) != -1
+        req.body.search_input == name ||
+        name.indexOf(req.body.search_input.toLowerCase()) != -1
       );
-    });
+    })[0];
+    console.log(product)
     res.render("productdetail", { product: product });
   },
 

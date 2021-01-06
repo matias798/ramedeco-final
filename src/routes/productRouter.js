@@ -26,5 +26,6 @@ router.get('/detail/:id', productsController.findById);
 router.get('/', productsController.getAllProducts);
 router.delete('/:id', productsController.deleteById);
 router.post('/',upload.any(), productsController.store);
+router.post('/addToCart', productsController.addToCart);
 module.exports = router;
 
