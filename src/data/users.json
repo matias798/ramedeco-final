@@ -5,7 +5,7 @@
     "email": "mjoseph0@over-blog.com",
     "address": "91116 Sycamore Place",
     "password": "admin",
-    "username": "mjoseph0",
+    "username": "admin",
     "role": "admin"
 }, {
     "id": 2,
@@ -23,7 +23,7 @@
     "email": "rrembaud2@discuz.net",
     "address": "03 Cottonwood Drive",
     "password": "user",
-    "username": "rrembaud2",
+    "username": "user",
     "role": "user"
 }, {
     "id": 4,

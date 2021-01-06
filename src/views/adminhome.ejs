@@ -20,7 +20,7 @@
         <section>
             <div  style="width:90%;display: flex;flex-direction: column;margin:1em auto;">
                 <h1 style="align-self: flex-start;">Productos de la plataforma</h1>
-                <a class="btn btn-primary"  style="align-self: flex-end;" href="/admin/create">Crear un nuevo producto</a>
+                <a class="btn btn-primary"  style="align-self: flex-end;" href="/products/create">Crear un nuevo producto</a>
             </div>
             <div style="width: 90%;background-color: white;margin:0 auto;">
                 <table class="table table-striped">
@@ -37,10 +37,12 @@
                         <td><%= product.tittle%></td>
                         <td><%= product.summary%></td>
                         <td>
-                            <a class="btn btn-secondary" href="/admin/edit/<%= product.id%>">Editar</a>
+                            <a class="btn btn-secondary" href="/products/<%= product.id%>/edit">Editar</a>
                         </td>
                         <td>
-                            <a class="btn btn-danger" href="/admin/delete/<%= product.id%>">Borrar</a>
+                            <form action="/products/<%= product.id%>?_method=DELETE" method="POST">
+                                <button type="submit" class="btn btn-danger"></button>
+                            </form>
                         </td>
                     </tr>
                     <%} %>

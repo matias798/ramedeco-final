@@ -19,7 +19,7 @@ module.exports={
         let user=users.find(user => {return user.username == username || user.email == username})
         if(user.password===password){
             if(user.role === "admin"){
-                res.redirect('/admin')
+                res.redirect('/products')
             }else res.redirect('/')
         }else{
             res.redirect('login')

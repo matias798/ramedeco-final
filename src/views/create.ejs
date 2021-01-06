@@ -21,26 +21,24 @@
     <!-- title -->
     <div><h1>Agregar producto</h1></div>
 
-<form class="container-main" action="/products/create" method="POST" enctype="multipart/form-data">
+<form class="container-main" action="/products/" method="POST" enctype="multipart/form-data">
 
 <!--product name and description  -->
 <div class="product-name-description">
 
         <!--name  -->
+    
+
+    
     <label class="labelName" for="title">Nombre del producto</label>
-    <input class="inputName" type="text" name="title" id="title"placeholder="Escribe el titulo de tu producto">
+    <input class="inputName" type="text" name="title" id="title"placeholder=" ">
                     
     <!--description  -->
     <label class=" labelDescription" for="summary">Descripción del producto</label>
     <textarea class="coments" style="resize: none;" name="summary" id='summary' rows="10" placeholder="Escribe una descripcion de tu producto" cols="40"></textarea>     
-       
-
 </div>
-
-       
-
 <!-- inputs -->
-  <div class="containerDetalle">
+<div class="containerDetalle">
 
     <!-- first column of inputs -->
   <div>
@@ -60,9 +58,11 @@
 
         <!-- upload images of products -->
 <form action="#">
-
-    <label class="upload-images">Sube imagenes del producto <input type="file" size="60" accept=".pdf,.jpg,.png"></label>
-  
+    <h2>Imagenes del producto</h2>
+    <label class="upload-images">Sube imagen princal</label>
+    <input type="file" name="main_image" id="main_image"   size="60" accept=".pdf,.jpg,.png" >
+    <label class="upload-images">Subir mas imagenes para el detalle del producto</label>
+    <input type="file" name="image" id="image"   size="60" accept=".pdf,.jpg,.png" multiple>
 </form>
 </div>
 
@@ -81,9 +81,9 @@
     <label class="labelPrecio" for="dimension">Precio</label>
     <input class="inputPrecio" type="number" name="dimension" id='dimension' style="background-color: #dce1df" required >
 
+    <input class="m" style="margin-top: 20px; padding: 15px 9px 15px 9px; background-color:#53b5aa ;"type="submit" value="Post Entry" class="btn btn-primary">
+    
 </form>
-<input class="m" style="margin-top: 20px; padding: 15px 9px 15px 9px; background-color:#53b5aa ;"type="submit" value="Post Entry" class="btn btn-primary">
-              
 </div>
                     
 </div>
