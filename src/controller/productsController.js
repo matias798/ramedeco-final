@@ -2,6 +2,32 @@ let products = require("../data/products.json");
 const scenes = require("../data/scenes.json");
 const fs = require('fs');
 const uuid = require('uuid');
+const mercadopago = require ('mercadopago');
+
+
+// Agrega credenciales
+mercadopago.configure({
+  access_token: 'TEST-6620761640775699-010614-a4087d4d47f0304e0a446c3e689d32b7-229538513'
+});
+
+// Crea un objeto de preferencia
+let preference = {
+  items: [
+    {
+      title: "Estamos probando",
+      unit_price: 100,
+      quantity: 1,
+    }
+  ]
+};
+
+mercadopago.preferences.create(preference)
+.then(function(response){
+// Este valor reemplazará el string "<%= global.id %>" en tu HTML
+  global.id = response.body.id;
+}).catch(function(error){
+  console.log(error);
+});
 
 
 const json_books = fs.readFileSync('src/data/products.json', 'utf-8');
@@ -32,15 +58,15 @@ let productsContoller = {
 
   createPost: function (req, res) {
 
-  const { tittle, summary, image, description ,category} = req.body;
+  const { tittle, summary, description ,product_detail,category} = req.body;
 
 
   var newBook = {
     id: uuid.v4(),
     tittle,
     summary,
-    image,
     description,
+    product_detail,
     category
   };
 // add a new book to the array
