@@ -29,23 +29,17 @@ productCart=[]
 
 let productsContoller = {
   addToCart: function(req,res){
-    console.log('inside addtocart')
-    console.log(req.body)
     let idProducto=req.body.id_product
     let cantidad=req.body.display
     productCart.push({idProducto:idProducto,cantidad:cantidad})
-    console.log(productCart)
     res.redirect('/')
   },
   getShoppingcart: function (req, res) {
-    console.log(productCart)
     let productsInCart=[]
-    
     productCart.forEach(element => {
       productsInCart.push(mapOfProducts.get(element.idProducto))
     });
 
-    console.log(productsInCart)
     res.render("shoppingcart",{'books':productsInCart});
   },
 
@@ -59,7 +53,6 @@ let productsContoller = {
   },
 
   search: (req, res) => {
-    console.log("inside search")
     let product = products.filter((producto) => {
       let name = producto.tittle.toLowerCase();
       return (
@@ -67,7 +60,6 @@ let productsContoller = {
         name.indexOf(req.body.search_input.toLowerCase()) != -1
       );
     })[0];
-    console.log(product)
     res.render("productdetail", { product: product });
   },
 
@@ -96,7 +88,6 @@ let productsContoller = {
   },
 
   update:(req,res)=>{
-    console.log(req.files)
     let product =mapOfProducts.get(req.params.id);
     product.tittle=req.body.tittle,
     product.category=req.body.category
@@ -130,7 +121,6 @@ let productsContoller = {
         newProduct.images.push(req.files[i].filename)
       }
     }
-		console.log("el nombre dle file en create es "+ newProduct.image)
     products.push(newProduct)
     mapOfProducts.set(newProduct.id,newProduct)
     fs.writeFileSync(pathProductJSON, JSON.stringify(products))
