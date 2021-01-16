@@ -131,7 +131,11 @@ let productsContoller = {
     mapOfProducts.set(newProduct.id,newProduct)
     fs.writeFileSync(pathProductJSON, JSON.stringify(products))
     res.redirect('/products')
-  }
+  },
+
+  contact: (req, res) => {
+    res.render("contact");
+  },
 };
 
 module.exports = productsContoller;
