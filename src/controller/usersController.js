@@ -44,5 +44,13 @@ module.exports={
     },
     'getRegister':function(req, res, next) {
         res.render('register');
+    },
+
+    'adminUser':function(req, res, next) {
+        res.render('adminUser',{users:users});
+    },
+
+    'userProfile':function(req, res, next) {
+        res.render('profile',{users:users});
     }
 }
