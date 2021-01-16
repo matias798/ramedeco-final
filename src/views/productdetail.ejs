@@ -13,6 +13,7 @@
 <body class="body-product-detail">
   <%- include('parcials/header.ejs') %>
   <main>
+    <% if (product != undefined) { %>
     <section class="titulo-product-detail">
       <h1><%= product.title %></h1>
     </section>
@@ -51,7 +52,12 @@
         
       </div>
     </div>
-
+    <% } %> 
+    <% if (product == undefined) { %>
+    <div>
+      <p>No se han encontrado productos relacionados con su busqueda</p>
+    </div>
+    <% } %> 
   </main>
   <%- include('parcials/footer.ejs') %>
 </body>
