@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="../CSS/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
@@ -15,7 +15,7 @@
         <div class="lr-title">
             <h2>Creá tu cuenta</h2>
         </div>
-        <form class="lr-form" action="/register" method="POST">
+        <form class="lr-form" action="/users/register" method="POST">
                 <div>
                     <label class="lr-fontsize" for="username">Nombre de usuario</label><br>
                     <input class="form_lr-width lr-fontsize" type="text" id="username" name="username" placeholder="Nombre de usuario">
@@ -49,9 +49,9 @@
 
                 <div><button class="btn form_lr-width" type="submit">Registrarme</button></div>
             </form>
-                <div><p>¿Ya tenés cuenta? Ingresá <a href="/login">acá</a></p></div>
+                <div><p>¿Ya tenés cuenta? Ingresá <a href="/users/login">acá</a></p></div>
 
-                <div class="register-final-msg"><p>Podrás agregar más información personal, gustos y preferencias más tarde</p></div>
+                <div class="register-final-msg"><p>Podrás agregar más información personal, gustos y preferencias más adelante</p></div>
     </main>
     <%- include('parcials/footer.ejs') %>
 </body>

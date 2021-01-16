@@ -25,15 +25,15 @@ app.set('view engine', 'ejs');
 
 
 var indexRouter = require('./routes/indexRouter');
-var loginRouter = require('./routes/loginRouter');
-var registerRouter = require('./routes/registerRouter');
 var productRouter = require('./routes/productRouter');
+var userRouter = require('./routes/userRouter');
+
 
 
 app.use('/', indexRouter);
-app.use('/register', registerRouter);
-app.use('/login', loginRouter);
 app.use('/products', productRouter);
+app.use('/users', userRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

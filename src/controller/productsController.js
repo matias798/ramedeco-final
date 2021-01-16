@@ -42,7 +42,11 @@ let productsContoller = {
       productsInCart.push(mapOfProducts.get(element.idProducto))
     });
 
-    res.render("shoppingcart",{'books':productsInCart});
+    if (productsInCart.length === 0)
+     { 
+    res.render("emptyShoppingcart",{'books':productsInCart});}
+    else{
+    res.render("shoppingcart",{'books':productsInCart});}
   },
 
   create: function (req, res) {
@@ -127,7 +131,11 @@ let productsContoller = {
     mapOfProducts.set(newProduct.id,newProduct)
     fs.writeFileSync(pathProductJSON, JSON.stringify(products))
     res.redirect('/products')
-  }
+  },
+
+  contact: (req, res) => {
+    res.render("contact");
+  },
 };
 
 module.exports = productsContoller;
