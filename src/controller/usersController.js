@@ -52,5 +52,17 @@ module.exports={
 
     'userProfile':function(req, res, next) {
         res.render('profile',{users:users});
-    }
+    },
+    'editUser':function(req,res){
+        console.log(req.body)
+        let user = {...user_template,...req.body}
+        user.role="user"        
+        user.id=users[users.length-1].id +1
+        user.password=bcrypt.hashSync(user.password,10)
+        user.avatar = req.files[0].filename
+        users.push(user)
+        fs.writeFileSync(pathUserJSON,JSON.stringify(users))
+        res.redirect('/')
+    } 
+
 }
