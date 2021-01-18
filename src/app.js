@@ -4,7 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var methodOverride = require('method-override')
-
+var session = require('express-session')
 
 var app = express();
 
@@ -18,6 +18,9 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(cookieParser());
 app.use(methodOverride('_method'));
+app.use(session({
+  secret: 'keyboard cat'
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
