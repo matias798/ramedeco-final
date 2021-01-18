@@ -2,8 +2,9 @@
     <img class="product_card_img" src="images/home/<%= scene.image %>" alt="">
     <% for (const element of scene.pointers_position) { %>
         <div class="pointer-container" style="left:<%= element.pointer_left %>%;top:<%= element.pointer_top %>% ;"></div>
+        
         <div class="card-container-product-description" style="left:<%= element.description_lef%>%; top:<%= element.description_top %>%; ">
-            <a href="/products/detail/<%=element.description_ref%>"><h3 class="product_card_text_mark product_card_text green_font"><%= element.description_tittle %></h3></a>
+            <a class="links" href="/products/detail/<%=element.description_ref%>"><h3 class="product_card_text_mark product_card_text green_font"><%= element.description_tittle %></h3></a>
             <p class="product_card_text"><%= element.description_summary %></p>
             <p class="product_card_text_mark product_card_text green_font"><%= element.description_price %></p>
         </div>        

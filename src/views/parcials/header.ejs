@@ -1,21 +1,35 @@
 <header class="header_layout">
-    <div class="logo_nav">
-        <i class="fas fa-bars hamburger_menu"></i>
-        <div class="logo_container"> 
-            <a href="/"><img class="logo" src="/images/rame_deco_logo.jpeg" alt=""/></a>
-        </div>
-        <a  href="/products/shoppingcart"><i class="fas fa-shopping-cart green_font"></i></a>
-        <!--a  href="/login"><i class="fas fa-user-circle green_font"></i></a -->
-        <a  href="/users/login">Ingresar</a>
-        <a  href="/contact">Contactanos</a>
-        <a  href="/users/register">Registrarse</a>
-
+  <div class="logo_nav">
+    <div class="logo_container">
+      <a class="links" href="/">
+        <img class="logo" src="/images/rame_deco_logo.jpeg" alt=""/>
+      </a>
     </div>
-            <nav>
-                <ul class="nav_list_options">
-                    <li><a class="white_font" href="#">Categorías</a></li>
-                    <li><a class="white_font" href="#">Novedades</a></li>
-                    <li><a class="white_font" href="#">Inspiración</a></li>
-                </ul>
-            </nav>
-    </header>
+    <form class="search" action="/search" method="POST">
+      <input
+        class="unified_inputs"
+        id="search_input"
+        name="search_input"
+        type="text"
+        placeholder="Buscar productos y más..."
+      />
+      <input class="greend_background white_font" type="submit" />
+    </form>
+    <div class="nav_links">
+      <a href="/products/shoppingcart" class="links" style="margin-top: 3px;">
+        <i class="fas fa-shopping-cart green_font"></i>
+      </a>
+      <% if (usuario ==undefined) { %>
+        <a class="links" href="/users/login">Ingresar</a>
+        <a class="links" href="/users/register">Registrarse</a>
+      <% } %> 
+      <% if (usuario !=undefined) { %>  
+        <a href="/profile/<%=usuario.id%>" class="image_container green_font links">
+          <img class="logo_user" src="/images/defaultuser.png" alt=""/>
+        </a>
+        <a class="green_font links"  href="/users/logout">Salir</a>
+      <% } %> 
+    </div>
+  </div>
+
+</header>
