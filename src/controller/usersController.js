@@ -18,8 +18,9 @@ module.exports={
         res.render('login');
     },
     'logInUser': function(req,res){
-        let username=req.body.username
-        let password=req.body.password
+        var username=req.body.username;
+        var password=req.body.password;
+        req.session.userLogged=username;
         let user=users.find(user => {return user.username == username})
         if(bcrypt.compare(password,user.password)){
             if(user.role === "admin"){
@@ -51,6 +52,12 @@ module.exports={
     },
 
     'userProfile':function(req, res, next) {
+       var userLogged = req.session.userLogged;
+
+       let obj = users.find(o => o.username === userLogged );
+
+       console.log(obj);
+
         res.render('profile',{users:users});
     },
     'editUser':function(req,res){
