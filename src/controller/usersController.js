@@ -56,9 +56,8 @@ module.exports={
 
        let obj = users.find(o => o.username === userLogged );
 
-       console.log(obj);
 
-        res.render('profile',{users:users});
+        res.render('profile',{users:users, obj:obj });
     },
     'editUser':function(req,res){
         console.log(req.body)
