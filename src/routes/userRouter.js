@@ -24,7 +24,7 @@ router.get('/', usersController.adminUser);
 router.get('/profile', usersController.userProfile);
  
 /* GET user profile page*/
-router.get('/profile/:id', usersController.userEdit);
+router.get('/profile/edit/:id', usersController.userEdit);
 
 
 
