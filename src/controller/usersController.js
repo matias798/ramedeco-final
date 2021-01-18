@@ -69,6 +69,30 @@ module.exports={
         users.push(user)
         fs.writeFileSync(pathUserJSON,JSON.stringify(users))
         res.redirect('/')
-    } 
+    }  ,
+
+    'userEdit': function (req, res) {
+        res.render("profileEdit");
+      },
+
+  'update':(req,res)=>{
+    product.tittle=req.body.tittle,
+    product.category=req.body.category
+    product.summary=req.body.summary
+    product.description=req.body.description
+    product.price=req.body.price
+    product.product_detail=req.body.product_detail
+    product.dimension=req.body.dimension
+
+    for (let i=0;i<req.files.length;i++) {
+      if(i == 0 ){
+        product.main_image=req.files[i].filename
+      }else{
+        product.images.push(req.files[i].filename)
+      }
+    }
+    fs.writeFileSync(pathProductJSON, JSON.stringify(products))
+    res.redirect('/users/profile')
+  },
 
 }

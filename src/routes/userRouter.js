@@ -23,9 +23,12 @@ router.get('/', usersController.adminUser);
 /* GET user profile page*/
 router.get('/profile', usersController.userProfile);
  
+/* GET user profile page*/
+router.get('/profile/:id', usersController.userEdit);
 
-router.post('/profile/:id',upload.any(), usersController.editUser);
 
+
+//router.put('/profile/:id',upload.any(), usersController.update);
 
 /* GET register page. */
 router.get('/register', usersController.getRegister);
