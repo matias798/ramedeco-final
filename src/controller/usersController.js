@@ -20,9 +20,10 @@ module.exports={
     'logInUser': function(req,res){
         var username=req.body.username;
         var password=req.body.password;
-        req.session.userLogged=username;
         let user=users.find(user => {return user.username == username})
         if(bcrypt.compare(password,user.password)){
+            req.session.userLogged=username;
+
             if(user.role === "admin"){
                 res.redirect('/products')
             }else res.redirect('/')
@@ -69,6 +70,27 @@ module.exports={
         users.push(user)
         fs.writeFileSync(pathUserJSON,JSON.stringify(users))
         res.redirect('/')
-    } 
+    }  ,
+
+    'userEdit': function (req, res) {
+        var obj = req.session.userLogged;
+        res.render("profileEdit",{obj:obj});
+      },
+
+  'update':(req,res)=>{ 
+      var userLogged = req.session.userLogged;
+
+    let Index = users.findIndex(o => o.username === userLogged );
+    
+        
+    users[Index].first_name=req.body.Nombre;
+    users[Index].last_name=req.body.Apellido;
+    users[Index].email=req.body.Email;
+    users[Index].address=req.body.Direccion;
+        
+
+    fs.writeFileSync(pathUserJSON,JSON.stringify(users));
+    res.redirect('/users/profile')
+  },
 
 }
