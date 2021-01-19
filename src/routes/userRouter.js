@@ -2,7 +2,8 @@ var express = require('express');
 var router = express.Router();
 let usersController= require('../controller/usersController');
 const multer = require('multer');
-const path =require('path')
+const path =require('path');
+let loginMiddleware = require('../middlewares/loginMiddleware');
 
 const storage = multer.diskStorage(
 	{
@@ -18,10 +19,10 @@ const upload = multer({storage:storage})
 
 
 /* GET admin page*/
-router.get('/', usersController.adminUser);
+router.get('/', loginMiddleware,usersController.adminUser);
 
 /* GET user profile page*/
-router.get('/profile', usersController.userProfile);
+router.get('/profile', loginMiddleware,usersController.userProfile);
  
 /* GET user profile page*/
 router.get('/profile/edit/:id', usersController.userEdit);

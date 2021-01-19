@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const path =require('path')
+const loginMiddleware = require('../middlewares/loginMiddleware');
 const storage = multer.diskStorage(
 	{
 		destination: (req,file,cb)=>{ 
@@ -26,6 +27,6 @@ router.get('/detail/:id', productsController.findById);
 router.get('/', productsController.getAllProducts);
 router.delete('/:id', productsController.deleteById);
 router.post('/',upload.any(), productsController.store);
-router.post('/addToCart', productsController.addToCart);
+router.post('/addToCart', loginMiddleware,productsController.addToCart);
 module.exports = router;
 
