@@ -27,8 +27,7 @@ router.get('/profile', usersController.userProfile);
 router.get('/profile/edit/:id', usersController.userEdit);
 
 
-
-//router.put('/profile/:id',upload.any(), usersController.update);
+router.put('/profile/:id',upload.any(), usersController.update);
 
 /* GET register page. */
 router.get('/register', usersController.getRegister);

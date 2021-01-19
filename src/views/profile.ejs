@@ -17,6 +17,7 @@
     
     <main>
     <%- include('parcials/header.ejs') %>
+    <%if (obj != undefined) { %>
     <div class="container">
       <div class="main-body">
       
@@ -99,7 +100,7 @@
     </div>
       </div>
 
-
+      <% } %>
     <%- include('parcials/footer.ejs') %>
     
 </main>

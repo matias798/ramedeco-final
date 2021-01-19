@@ -20,9 +20,10 @@ module.exports={
     'logInUser': function(req,res){
         var username=req.body.username;
         var password=req.body.password;
-        req.session.userLogged=username;
         let user=users.find(user => {return user.username == username})
         if(bcrypt.compare(password,user.password)){
+            req.session.userLogged=username;
+
             if(user.role === "admin"){
                 res.redirect('/products')
             }else res.redirect('/')
@@ -72,26 +73,23 @@ module.exports={
     }  ,
 
     'userEdit': function (req, res) {
-        res.render("profileEdit");
+        var obj = req.session.userLogged;
+        res.render("profileEdit",{obj:obj});
       },
 
-  'update':(req,res)=>{
-    product.tittle=req.body.tittle,
-    product.category=req.body.category
-    product.summary=req.body.summary
-    product.description=req.body.description
-    product.price=req.body.price
-    product.product_detail=req.body.product_detail
-    product.dimension=req.body.dimension
+  'update':(req,res)=>{ 
+      var userLogged = req.session.userLogged;
 
-    for (let i=0;i<req.files.length;i++) {
-      if(i == 0 ){
-        product.main_image=req.files[i].filename
-      }else{
-        product.images.push(req.files[i].filename)
-      }
-    }
-    fs.writeFileSync(pathProductJSON, JSON.stringify(products))
+    let Index = users.findIndex(o => o.username === userLogged );
+    
+        
+    users[Index].first_name=req.body.Nombre;
+    users[Index].last_name=req.body.Apellido;
+    users[Index].email=req.body.Email;
+    users[Index].address=req.body.Direccion;
+        
+
+    fs.writeFileSync(pathUserJSON,JSON.stringify(users));
     res.redirect('/users/profile')
   },
 
