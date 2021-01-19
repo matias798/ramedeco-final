@@ -5,11 +5,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var methodOverride = require('method-override')
 var session = require('express-session')
+var recordarmeMiddleware = require("./middlewares/recordarmeMiddleware")
 
 var app = express();
-
-
-
 
 
 app.use(express.static(path.join(__dirname, '../public/')));
@@ -21,6 +19,7 @@ app.use(methodOverride('_method'));
 app.use(session({
   secret: 'keyboard cat'
 }));
+app.use(recordarmeMiddleware);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
