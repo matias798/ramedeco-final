@@ -11,11 +11,11 @@
 </head>
 
 <body class="body-product-detail">
-  <%- include('parcials/header.ejs') %>
+  <%- include('parcials/header.ejs',{'user':user}) %>
   <main>
     <% if (product != undefined) { %>
-    <section class="titulo-product-detail">
-      <h1><%= product.title %></h1>
+    <section class="titulo-product-detail">    
+        <h1><%= product.title %></h1>
     </section>
     <div class="elContenedor">
       <div>
@@ -52,13 +52,16 @@
         
       </div>
     </div>
+    </main>
     <% } %> 
     <% if (product == undefined) { %>
-    <div>
+    <main style="height: 80vh;">
+    <div class="error_container">
       <p>No se han encontrado productos relacionados con su busqueda</p>
     </div>
+  </main>  
     <% } %> 
-  </main>
+  
   <%- include('parcials/footer.ejs') %>
 </body>
 

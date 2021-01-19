@@ -10,7 +10,7 @@
     <title>Ingresá</title>
 </head>
 <body style="margin:0">
-    <%- include('parcials/header.ejs') %> 
+    <%- include('parcials/header.ejs',{'user':user}) %> 
     <main class="lr-main-container">
         <form class="lr-form" action="/users/login" method="POST">
             <div class="lr-title">

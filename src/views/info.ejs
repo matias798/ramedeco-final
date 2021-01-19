@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+    <title>Ramé Deco</title>
+</head>
+
+<body class="page_background_color">
+    <%- include('parcials/header.ejs',{'user':user}) %>
+    <div class="text-container">
+        <h2 id="quienes_somos" class="green_font">Quienes Somos</h2>
+        <p>
+            RameDeco es el home center líder especializado en venta de productos
+            para el mejoramiento del hogar, productos de ferretería y materiales
+            para la construcción.
+            <br />
+            RameDeco, la empresa creada por capitales agentinos, fue fundada en el
+            año 2020 en la Argentina, RameDeco ha sido pionera desarrollando un
+            nuevo mercado y satisfaciendo las necesidades de sus clientes en forma
+            completa. Uno de los aspectos destacados es su orientación a las
+            soluciones integrales para quienes quieren desarrollar sus propios
+            proyectos, ya que cada local tiene una oferta de más de 50.000 productos
+            distintos, tanto nacionales como importados, los que se distinguen por
+            su calidad y sus buenos precios.
+            <br />
+            RameDeco se instaló en el mercado argentino porque detectó que no
+            existía una propuesta que respondiera a las expectativas y necesidades
+            de los clientes de manera integral. El objetivo fue cubrir una demanda
+            que no estaba satisfecha: antes de RameDeco, el consumidor tenía que
+            recorrer por lo menos 8 locales para encontrar la misma variedad. En
+            cambio ahora, los clientes encuentran todo para la construcción,
+            remodelación y equipamiento para la casa y el jardín en un sólo lugar.
+            Esto significa ahorro de tiempo y dinero.
+            <br />
+            Cada uno de los locales produce un gran impacto económico, atrayendo a
+            más de 5.000.000 de clientes al año, a su área de influencia, y
+            potenciando a la vez su zona de ubicación.
+        </p>
+        <h4 class="green_font" class="green_font">Variedad de productos</h4>
+        <p>
+            RameDeco es un concepto inédito de compra, por el sistema de
+            autoservicio y por el hecho de que todo lo necesario para la casa se
+            encuentra en un mismo lugar, lo que significa ahorro de tiempo,
+            tranquilidad y comodidad para el consumidor.
+            <br />
+            RameDeco y sus vendedores ofrecen asesoramiento sobre los productos, su
+            utilización y aplicación en sus diferentes ámbitos, para un público que
+            comprende tanto a particulares como a profesionales y a técnicos de la
+            construcción y de la decoración.
+            <br />
+            Sus góndolas, especialmente diseñadas, exhiben productos de una gran
+            variedad de rubros, como Construcción, Maderas, Alfombras, Papeles,
+            Decoración, Electricidad e Iluminación, Baños y Cocina, Cerámicos, Papel
+            Mural, Muebles, Seguridad y Telefonía, Electrodomésticos, Camping y
+            Jardín, Ferretería, Pinturas, Accesorios, Organizadores y Aberturas,
+            entre otros, que el público puede apreciar en los amplios y cómodos
+            locales.
+        </p>
+        <h2 id="privacidad" class="green_font" >Politicas de Privacidad</h2>
+        <h4 class="green_font" >CONDICIONES GENERALES DE USO DEL PORTAL RameDeco</h4>
+        <p>
+            Declaración general sobre la política de www.easy.com.ar referente a la
+            privacidad y las condiciones de uso del Portal.
+            <br />
+            RameDeco comunica al usuario sus condiciones generales de uso y servicio
+            del Portal www.ramedeco.com.ar:
+            <br />
+            El uso de los servicios del Portal www.ramedeco.com.ar (en adelante,
+            indistintamente, el PORTAL o la PAGINA WEB) debe efectuarse de
+            conformidad con las presentes condiciones generales de uso. En
+            consecuencia, quien acceda o utilice el PORTAL, sus servicios o
+            contenido (en adelante, el USUARIO), debe leer atentamente estas
+            condiciones generales de uso cada vez que se proponga utilizar nuestros
+            servicios. El acceso y uso del PORTAL es voluntario y gratuito.
+            <br />
+            La sola visita y utilización del PORTAL atribuirá la condición de
+            USUARIO e implica el conocimiento, comprensión y aceptación de las
+            condiciones generales de uso, plenamente y sin reserva y en caso de que
+            corresponda, de las condiciones particulares del PORTAL, que en el
+            futuro pueden completarse, ser sustituidas o modificarse en algún
+            sentido en relación con los servicios y contenidos del PORTAL. Si no
+            está de acuerdo con las condiciones generales de uso, deberá abstenerse
+            de utilizar el PORTAL y los servicios por él ofrecidos.
+            <br />
+            El ingreso a la PAGINA WEB constituye el consentimiento del USUARIO a
+            utilizar la PAGINA WEB, sus servicios y contenidos sin contravenir la
+            legislación vigente, la buena fe y el orden público. Las violaciones a
+            estas condiciones generales de uso o a cualquiera de las condiciones
+            particulares, o la omisión de actos por parte del USUARIO, que a
+            criterio de RameDeco constituyan conductas abusivas, lesivas o ilícitas
+            generará el derecho de RameDeco de denegar de manera inmediata el acceso
+            al PORTAL y/o a la prestación del servicio al USUARIO en falta.
+            <br />
+            Queda prohibido todo uso del PORTAL con fines ilícitos que perjudiquen o
+            puedan dañar la utilización y normal funcionamiento del mismo.
+        </p>
+        <h4 class="green_font" >Promociones</h4>
+        <p>Las promociones no son acumulables</p>
+
+        <h4 class="green_font" >Objeto</h4>
+        <p>
+            A través del PORTAL, los USUARIOS tendrán acceso a diversos servicios,
+            que podrán ampliarse, modificarse o eliminarse de acuerdo a lo que
+            RameDeco establezca. Se detallan a continuación algunos de los servicios
+            disponibles en el PORTAL:
+        </p>
+        <ul>
+            <li>Información institucional</li>
+            <li>Ideas y proyectos para todos los sectores de la casa</li>
+            <li>Información y participación en promociones vigentes</li>
+            <li>Información sobre talleres gratuitos por local</li>
+            <li>Calculadora de materiales</li>
+            <li>Asesoramiento on-line</li>
+            <li>Información sobre tarjeta de crédito institucional</li>
+            <li>Información sobre productos y servicios</li>
+            <li>Orden de pedido on-line</li>
+            <li>Retiro en Tienda</li>
+        </ul>
+
+        <h4 class="green_font">Derecho de modificación unilateral</h4>
+        <p>
+            RameDeco podrá, en cualquier momento, sin previo aviso y a su exclusivo
+            criterio, modificar o eliminar el contenido, estructura, diseños,
+            servicios y condiciones de acceso o de uso del PORTAL, sin necesidad de
+            previo consentimiento de los USUARIOS. Dichos cambios tendrán vigencia a
+            partir del momento en que sean publicados en el PORTAL, o desde el
+            momento en que RameDeco lo indique expresamente. <br />
+
+            Al hacer uso del PORTAL una vez producida cualquiera de las
+            modificaciones indicadas precedentemente, dicho uso implicará la
+            aceptación del USUARIO a las mismas.
+        </p>
+        <h4 class="green_font">Denegación del acceso al Portal y/o a los Servicios.</h4>
+        <p>
+            RameDeco podrá denegar o retirar el acceso al PORTAL y/o a los servicios
+            en cualquier momento y sin necesidad de preaviso a aquellos USUARIOS que
+            incumplan estas condiciones generales o las condiciones particulares que
+            resulten de aplicación. <br />
+
+            RameDeco determinará qué empresas y/o proveedores incluirá en el PORTAL
+            para interactuar con el USUARIO.
+        </p>
+        <h4 class="green_font">Condiciones de acceso y utilización del PORTAL.</h4>
+        <p>
+            El acceso y utilización del PORTAL no exige la previa suscripción o
+            registro del USUARIO, es libre y gratuito para toda persona que quiera
+            utilizar los servicios del mismo. No obstante ello, a algunos servicios
+            y/o contenidos que el PORTAL ofrece sólo podrá accederse o utilizarse en
+            calidad de USUARIO registrado en la forma en que se indique en el
+            PORTAL.
+        </p>
+        <h4 class="green_font">Registro.</h4>
+        <p>
+            El USUARIO que quiera acceder a servicios con solicitud previa de
+            registración lo hará a través de un formulario on line, donde se le
+            solicitarán su tipo y número de documento, fecha de nacimiento, nombre,
+            apellido, dirección de e-mail, teléfono, ocupación, domicilio completo
+            de entrega y domicilio alternativo (en adelante, DATOS PERSONALES). Para
+            un correcto funcionamiento de los servicios del PORTAL, es necesario que
+            los USUARIOS mantengan sus DATOS PERSONALES actualizados.<br />
+
+            En el mismo acto en que el USUARIO se registre, se le solicitará que
+            elija un nombre de USUARIO y una clave que le permitirá acceder en el
+            futuro al site y a otros servicios del PORTAL. En la elección del nombre
+            y de la clave de USUARIO no podrá valerse de ninguna denominación o
+            término que infrinja las normas vigentes o los derechos de terceros.
+            <br />
+
+            El USUARIO es el único responsable de la elección y uso de su nombre de
+            USUARIO y clave, pudiendo en cualquier momento cambiarlos siempre a
+            condición de que respete lo señalado anteriormente, sin perjuicio de que
+            en caso de que la olvide pueda solicitar a RameDeco se la recuerde. En
+            este caso RameDeco enviará al correo electrónico informado el nombre de
+            USUARIO y clave elegidos oportunamente en el momento de la registración.
+            <br />
+
+            Es responsabilidad del USUARIO comunicar a RameDeco con la mayor
+            brevedad el robo de la clave, como cualquier riesgo de acceso por parte
+            de un tercero. El USUARIO debe responder por los gastos, daños y
+            perjuicios ocasionados por la utilización de los servicios por un
+            tercero que emplee su clave. En consecuencia, el USUARIO se obliga a
+            mantener en secreto, con carácter de información confidencial y
+            reservada, su nombre de USUARIO y claves de acceso, siendo responsable
+            de cualquier daño y perjuicio de toda naturaleza derivada del mal uso
+            realizado por sí o por terceros, tanto contra el mismo USUARIO como los
+            que pueda sufrir RameDeco como consecuencia de ello. Los DATOS
+            PERSONALES son el carácter de confidencial. RameDeco se compromete a
+            adoptar todas las medidas de seguridad de protección de los DATOS
+            PERSONALES; no obstante ello el USUARIO debe ser consciente de que las
+            medidas de seguridad en Internet no son inexpugnables, por lo cual
+            RameDeco no puede garantizar que la información transmitida a través del
+            PORTAL se encuentra completamente segura, asumiendo los USUARIOS este
+            riesgo que declara conocer y aceptar.
+        </p>
+        <h4 class="green_font">Datos de carácter general.</h4>
+        <p>
+            El USUARIO acepta y consiente libre y expresamente que los DATOS
+            PERSONALES facilitados o que facilite en el futuro a RameDeco, sean
+            objeto de tratamiento e incorporados en un archivo de datos que quedará
+            bajo la responsabilidad de RameDeco, con el objetivo de brindar
+            adecuadamente los servicios que se ofrecen a través del PORTAL. Los
+            USUARIOS también autorizan la utilización de los DATOS PERSONALES para
+            la realización de estadísticas, la remisión de publicidad y newsletters,
+            la realización de concursos y promociones, la compra y envío de todo
+            tipo de productos y novedades institucionales de RameDeco, así como para
+            el control y posterior desarrollo de la PAGINA WEB. En caso de que los
+            USUARIOS no deseen ser contactados con estos fines, podrán
+            manifestárselo fehacientemente a RameDeco y se procederá a interrumpir
+            este tipo de comunicaciones en el menor tiempo posible.<br />
+
+            RameDeco asegura que no venderá ni arrendará ni de ningún otro modo
+            cederá los datos del USUARIO a ningún tercero. Los DATOS PERSONALES
+            podrán ser compartidos con empresas contratadas por RameDeco a fin de
+            poder ofrecer los servicios a través del PORTAL y cumplir con las
+            presentes condiciones generales de uso.<br />
+
+            Los USUARIOS tienen derecho a requerir que la información de sus DATOS
+            PERSONALES les sea suministrada en forma gratuita a intervalos no
+            inferiores a seis (6) meses, salvo que se acredite un interés legítimo
+            al efecto, así como a solicitar que sus datos sean rectificados,
+            actualizados o removidos del archivo de datos electrónicos. A tales
+            efectos, el USUARIO deberá dirigir una nota a la dirección de correo
+            electrónico info@cencosud.com.ar o bien al domicilio de RameDeco sito en
+            Suipacha 1111, piso 18, Ciudad Autónoma de Buenos Aires (CP 1008). El
+            USUARIO será responsable en cualquier caso de la veracidad, exactitud,
+            vigencia y autenticidad de los DATOS PERSONALES facilitados.<br />
+
+            Se les hace saber a los USUARIOS que la Dirección Nacional de Protección
+            de Datos Personales, órgano de control de la ley 25.326, tiene la
+            atribución de atender las denuncias y reclamos que se interpongan con
+            relación al incumplimiento de las normas sobre protección de datos
+            personales.
+        </p>
+        <h4 class="green_font">DATOS PERSONALES - Orden de pedido on-line.</h4>
+        <p>
+            La compra a través del PORTAL es uno de los servicios con solicitud
+            previa de registración. Los DATOS PERSONALES se utilizarán en el caso de
+            compra al solo efecto de que un representante de RameDeco pueda seguir
+            el procedimiento de compra y envío de los productos con el USUARIO por
+            teléfono. RameDeco no es responsable en el caso de que se filtraren
+            DATOS PERSONALES del USUARIO durante la comunicación telefónica.<br />
+
+            El cargo por el envío no está incluido en el precio de los productos. El
+            valor del flete varía de acuerdo al volumen y distancia, siendo
+            informado al momento de confirmar su solicitud de compra.<br />
+            Las fotos son a modo ilustrativo. Los productos no incluyen
+            decoración.<br />
+            Los precios exhibidos son exclusivos para la PAGINA WEB, no aplican en
+            el local de venta.<br />
+            La disponibilidad de los productos ofrecidos en ramedeco.com.ar está
+            sujeta al movimiento diario de stock de la sucursal que arma el pedido.
+            Por lo tanto el producto seleccionado puede no encontrarse en stock en
+            la sucursal al momento de llegar el pedido a la misma. A su vez, es
+            posible que no estén disponibles en ramedeco.com.ar algunos artículos
+            que sí lo están en la sucursal.<br />
+            Los productos marcados en la web como “retiro en tienda” tendrán la
+            opción de ser buscados personalmente por el cliente en el local.<br />
+            Los artículos se encuentran sujetos a disponibilidad de stock al momento
+            de preparación del pedido, en caso de que los mismos no se encuentren
+            disponibles será contactado por el call center. El pedido de compra
+            realizado por internet se entrega en el domicilio informado en el
+            formulario de solicitud de pedido. En caso de presentarse algún
+            inconveniente con el medio de pago proporcionado, el pedido podrá ser
+            anulado directamente, sin generar ningún tipo de cargo en la tarjeta de
+            crédito del cliente. El cliente recibirá una constancia de dicha
+            anulación por e-mail. Nota: Las fotos son a modo ilustrativo. Los
+            productos no incluyen decoración. Los precios exhibidos son exclusivos
+            para la página web, no aplican en el local de venta. Las promociones,
+            publicaciones o descuentos que se comunican en los locales de venta
+            pueden sufrir variaciones o no aplicarse en la página web.
+        </p>
+        <h4 class="green_font">Retiro en tienda.</h4>
+        <p>
+            El cliente tendrá la opción, en ciertos productos marcados en la web, de
+            retirar los mismos por el local personalmente. Sólo el titular de la
+            tarjeta de crédito podrá retirar el pedido, presentando su DNI y la
+            tarjeta con la que abonó su compra.<br />
+            La disponibilidad del producto NO es inmediata. El Cliente debe aguardar
+            la confirmación de la facturación del producto, siendo la misma
+            realizada por correo electrónico.<br />
+
+            Una vez recibida dicha notificación el cliente puede presentarse en el
+            local a fin de retira su compra. El tiempo previsto para el retiro de la
+            compra del local es de 7 días corridos.<br />
+
+            A modo informativo se enviara un correo electrónico una vez que el
+            producto esta a disposición del cliente para ser retirado.- Pasados 7
+            días, si aun sigue el comprador sin retirar el producto del local, se
+            realizara una llamada telefónico mediante el call-center autorizado afín
+            de notificar por última vez que la compra sigue disponible. Vencido el
+            plazo de 7 días sin que se haya retirado la compra se cancelara
+            automáticamente la operación, otorgándose al cliente una nota de crédito
+            por el importe total del producto que será reflejado en su cuenta.
+        </p>
+        <h4 class="green_font">Servicio de asesoramiento on line mediante "Chat".</h4>
+        <p>
+            RameDeco tiene a disposición del USUARIO un servicio de asesoramiento on
+            line mediante el cual el USUARIO podrá obtener información acerca de sus
+            compras online o recibir ayuda en caso de tener inconvenientes para
+            concretar su compra. RameDeco no es responsable por la imposibilidad del
+            USUARIO de establecer contacto con el PORTAL o con el Chat, por
+            problemas de conexión o saturación de atención por parte de RameDeco ni
+            por cualquier otro inconveniente que impida que el USUARIO se conecte.
+            RameDeco no garantiza la disponibilidad y continuidad del funcionamiento
+            del Chat, quedando eximida de toda responsabilidad por los daños de
+            cualquier naturaleza que puedan presentarse, por la falta de
+            disponibilidad y continuidad de funcionamiento del Chat. RameDeco no es
+            responsable por los daños y perjuicios que pudieran ocasionarse con
+            motivo del acceso o utilización de los contenidos, servicios o
+            informaciones puestas a disposición del USUARIO en el Chat.
+        </p>
+        <h4 class="green_font">Utilización del PORTAL. Propiedad intelectual. Derecho de autor.</h4>
+        <p>
+            Todos los contenidos de este PORTAL, incluidos, pero no limitado a todos
+            los textos (notas, informes, comentarios), gráficos, marcas, logos,
+            iconos, imágenes, fotografías, software, hardware, archivos de cualquier
+            tipo y cualquier otra información disponible en el PORTAL son de
+            propiedad exclusiva de RameDeco o de terceras personas que han
+            autorizado a RameDeco su publicación y/o utilización. Los mismos están
+            protegidos por las leyes de propiedad intelectual y de derecho de autor.
+            En consecuencia, cualquier retransmisión, reproducción, alteración,
+            publicación o utilización de cualquier material precedentemente
+            mencionado, por cualquier medio y de cualquier forma, se encuentra
+            estrictamente prohibido. RameDeco no concede ninguna licencia o
+            autorización de uso de ninguna clase sobre sus derechos de propiedad
+            intelectual o sobre cualquier otra propiedad o derecho relacionado con
+            el PORTAL, los servicios o los contenidos del mismo.
+        </p>
+        <h4 class="green_font">Hipervínculos/Hiperenlaces.</h4>
+        <p>
+            Los USUARIOS y todas las personas que quieran establecer un hipervínculo
+            entre su página Web y cualquiera de las páginas del PORTAL se verán
+            sometidos a las siguientes condiciones:
+        </p>
+
+        <ul>
+            <li>
+                No se permite la reproducción ni comercialización total o parcial de
+                ninguno de los servicios ni contenidos del PORTAL.
+            </li>
+            <li>
+                La página Web en la que se establezca el hipervínculo no contendrá
+                ninguna marca, nombre comercial, rótulo de
+            </li>
+
+            <li>
+                establecimiento, denominación, logotipo u otros signos distintivos
+                pertenecientes a RameDeco salvo autorización expresa
+            </li>
+
+            <li>y por escrito de RameDeco.</li>
+            <li>
+                La existencia de un hipervínculo entre una página Web y el PORTAL no
+                implicar la existencia de una relación entre el
+            </li>
+
+            <li>
+                propietario de esa página y RameDeco, así como tampoco la aceptación o
+                aprobación por parte de RameDeco de los
+            </li>
+
+            <li>contenidos de dicha página.</li>
+            <li>
+                En ningún caso se podrá entender que el PORTAL ha supervisado de
+                alguna manera los servicios o contenidos ofrecidos por
+            </li>
+
+            <li>la página Web desde la que se produce el hipervínculo.</li>
+            <li>
+                Sólo podrán efectuarse hipervínculos respecto de la página principal
+                del PORTAL, salvo autorización expresa y escrita de
+            </li>
+
+            <li>
+                RameDeco para hacerlo respecto de otras páginas del PORTAL, distintas
+                a la primera página.
+            </li>
+            <li>
+                Bajo ninguna circunstancia el PORTAL es responsable de los contenidos
+                o servicios puestos a disposición del público en
+            </li>
+
+            <li>
+                la página desde la que se realice el hipervínculo, ni de las
+                manifestaciones e informaciones incluidas en la misma.
+            </li>
+            <li>
+                RameDeco se reserva el derecho de inhabilitar hipervínculos o
+                estructuras no autorizadas cuando lo crea conveniente.
+            </li>
+            <li>
+                No se podrán incluir contenidos contrarios a los derechos de terceros,
+                ni al orden público ni a la moral y buenas
+            </li>
+
+            <li>
+                costumbres, ni contenidos o informaciones ilícitas, en la página Web
+                desde la que se establece el hipervínculo, aunque
+            </li>
+
+            <li>
+                como se indicó precedentemente, RameDeco no será responsable de los
+                contenidos de la página desde la que se realice el
+            </li>
+
+            <li>hipervínculo.</li>
+        </ul>
+
+        <h4 class="green_font">Exclusión de garantías y responsabilidad.</h4>
+        <p>
+            El uso del PORTAL se realizará bajo exclusiva responsabilidad del
+            USUARIO. RameDeco no asume ningún tipo de responsabilidad que se derive
+            de cualquier daño o perjuicio de cualquier naturaleza que se pudieran
+            originar al USUARIO como consecuencia del acceso y utilización del
+            PORTAL, incluyendo los relacionados con:
+        </p>
+        <ul>
+            <li>
+                La falta de disponibilidad, continuidad, acceso, mantenimiento y
+                efectivo funcionamiento del PORTAL o sus servicios.
+            </li>
+            <li>
+                La falta de licitud, calidad, fiabilidad, utilidad y disponibilidad de
+                servicios prestados por terceros y puestos a
+            </li>
+
+            <li>disposición de los USUARIOS en la PAGINA WEB.</li>
+            <li>
+                Daños ocasionados por virus, programas maliciosos, o lesivos en los
+                contenidos y/o cualquier otro agente que pueda
+            </li>
+
+            <li>
+                llegar a infectar o a afectar de cualquier modo el sistema de
+                computación utilizado por el USUARIO.
+            </li>
+            <li>
+                La recepción, obtención, almacenamiento, difusión o transmisión por
+                parte de los USUARIOS de los contenidos.
+            </li>
+            <li>
+                El uso ilícito, negligente, fraudulento, contrario a estas condiciones
+                generales de uso, a la buena fe o al orden
+            </li>
+
+            <li>público por parte de los USUARIOS.</li>
+            <li>
+                El incumplimiento por parte de terceros de sus obligaciones o
+                compromisos en relación con los servicios prestados a los
+            </li>
+
+            <li>USUARIOS a través de la PAGINA WEB.</li>
+            <li>
+                La solicitud compra se confirmará dentro de las 72 hs. de realizada,
+                por un operador telefónico.
+            </li>
+            <li>
+                Los artículos denominados Venta por Pedido (vp) no se encuentran con
+                stock. Se confirmara la compra y disponibilidad por
+            </li>
+
+            <li>medio del call center luego de recibir el pedido.</li>
+            <li>
+                La enumeración precedente posee carácter enunciativo y en ningún caso
+                exclusivo ni excluyente.
+            </li>
+        </ul>
+
+        <h4 class="green_font">Responsabilidad del USUARIO por daños y perjuicios.</h4>
+        <p>
+            El USUARIO debe responder por los daños y perjuicios de toda naturaleza
+            que RameDeco pudiera sufrir como consecuencia del incumplimiento de
+            cualquiera de las obligaciones a las que queda sometido por estas
+            condiciones generales de uso. En caso de que RameDeco tuviera que
+            afrontar sanción, multa, condena o indemnización de cualquier tipo que
+            hubiere provocado el USUARIO por el incumplimiento de cualquiera de los
+            puntos establecidos en las presentes condiciones generales de uso, el
+            USUARIO debe rembolsar la cantidad que se hubiere abonado por tal motivo
+            en un plazo de treinta días de recibida la notificación que se lo
+            indique.
+        </p>
+
+        <h4 class="green_font">Seguridad.</h4>
+        <p>
+            Queda terminantemente prohibido:<br />
+            Intentar la violación de los sistemas de autenticación, verificación de
+            identidad y seguridad del servidor; esto incluye y no se limita a tratar
+            de acceder a datos del USUARIO, intentar ingresar al servidor o cuentas
+            sin contar con la expresa autorización para hacerlo.<br />
+            Intentar interrupciones en las comunicaciones de Internet, sobrecargar
+            un servicio y/o efectuar ataques informáticos. Efectuar cualquier tipo
+            de monitoreo que implique la interceptación de información destinada y
+            no destinada a los USUARIOS.<br />
+            Utilizar cualquier programa destinado a interferir en el normal uso del
+            PORTAL. El PORTAL es controlado y llega a usted por RameDeco desde sus
+            instalaciones en Argentina. RameDeco se abstiene de manifestar que el
+            PORTAL es apropiado para otros lugares, como así también que se
+            encuentre disponible en aquéllos. Los USUARIOS que accedan al PORTAL o
+            hagan uso de éste desde otras jurisdicciones lo hacen por su propia
+            voluntad y asumen la responsabilidad de respetar la legislación
+            Argentina y en caso que ésta así lo establezca, de no acceder al PORTAL.
+        </p>
+        <h4 class="green_font">Notificaciones / Comunicaciones</h4>
+
+        <p>
+            Toda notificación u otra comunicación que deba efectuar RameDeco al
+            USUARIO sobre cualquier tema referido a la relación vigente entre el
+            USUARIO y RameDeco como titular del PORTAL, podrá realizarse a través
+            del correo electrónico o bien por carta documento dirigida al domicilio
+            que el USUARIO haya informado oportunamente. En todo momento el USUARIO
+            podrá comunicarse con RameDeco por medio de correo electrónico a
+            info@cencosud.com.ar o a través del correo enviando la notificación a
+            Suipacha 1111, piso 18, Ciudad Autónoma de Buenos Aires (CP 1008).
+        </p>
+        <h4 class="green_font">Duración y terminación.</h4>
+        <p>
+            La prestación del servicio tiene una duración indefinida. No obstante
+            ello, RameDeco se encuentra plenamente facultada para dar por terminada,
+            suspender, o interrumpir, cuando lo considere necesario y sin necesidad
+            de preaviso, la prestación del servicio del PORTAL y de cualquiera de
+            sus restantes servicios.
+        </p>
+        <h4 class="green_font">Legislación aplicable y jurisdicción.</h4>
+        <p>
+            Las presentes condiciones generales de uso se regirán e interpretarán
+            por la legislación argentina. El titular del PORTAL y el USUARIO, con
+            renuncia expresa a cualquier otro fuero o jurisdicción que pudiere
+            corresponderles, someterán a la jurisdicción de los tribunales
+            nacionales ordinarios con sede en la Ciudad Autónoma de Buenos Aires
+            cuantas cuestiones pudieran suscitarse derivadas de la utilización del
+            servicio, contenido del PORTAL, interpretación, aplicación y/o
+            cumplimiento de estas condiciones generales de uso
+        </p>
+        <h2 id="garantias" class="green_font">Garantias</h2>
+        <p>
+            El consumidor tiene derecho a revocar la presente operación comercial
+            (por adquisición de cosas y/o prestación de servicios) durante el plazo
+            de diez (10) días corridos, contados a partir de la fecha en que se
+            entregue la cosa o se celebre el contrato, lo último que ocurra, sin
+            responsabilidad alguna. Esta facultad no puede ser dispensada ni
+            renunciada. El consumidor comunicará fehacientemente dicha revocación al
+            proveedor y pondrá la cosa a su disposición. Los gastos de devolución
+            son por cuenta del proveedor. Para ejercer el derecho de revocación el
+            consumidor deberá poner la cosa a disposición del vendedor sin haberla
+            usado y manteniéndola en el mismo estado en que la recibió, debiendo
+            restituir el proveedor al consumidor los importes recibidos. Ley 4387
+            C.A.B.A la garantía de cambio o devolución es de 30 días
+        </p>
+    </div>
+    <%- include('parcials/footer.ejs') %>
+</body>
+
+</html>

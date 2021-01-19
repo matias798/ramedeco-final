@@ -44,18 +44,18 @@ let productsContoller = {
 
     if (productsInCart.length === 0)
      { 
-    res.render("emptyShoppingcart",{'books':productsInCart});}
+    res.render("emptyShoppingcart",{'books':productsInCart,user:req.session.user});}
     else{
-    res.render("shoppingcart",{'books':productsInCart,'products':products});}
+    res.render("shoppingcart",{'books':productsInCart,'products':products,user:req.session.user})}
   },
 
   create: function (req, res) {
-    res.render("create",{'books':mapOfProducts.values()});
+    res.render("create",{'books':mapOfProducts.values(),user:req.session.user});
   },
 
   edit: function (req, res) {
     let product=mapOfProducts.get(req.params.id)
-    res.render("edit",{'books':mapOfProducts.values(),'product':product});
+    res.render("edit",{'books':mapOfProducts.values(),'product':product,user:req.session.user});
   },
 
   search: (req, res) => {
@@ -66,23 +66,26 @@ let productsContoller = {
         name.indexOf(req.body.search_input.toLowerCase()) != -1
       );
     })[0];
-    res.render("productdetail", { product: product });
+    res.render("productdetail", { product: product,user:req.session.user});
   },
-
+  info:(req,res)=>{
+    res.render("info", {user:req.session.user});
+  }
+  ,
   index: (req, res) => {
     let product_s = products.filter((product) => {
       return product.category != "scene_member";
     });
-    res.render("index", { scenes: scenes, products: product_s });
+    res.render("index", { scenes: scenes, products: product_s ,user:req.session.user});
   },
 
   getAllProducts: (req, res) => {
-    res.render("adminhome", { products: products });
+    res.render("adminhome", { products: products ,user:req.session.user});
   },
 
   findById: (req, res) => {
     let product = mapOfProducts.get(req.params.id);
-    res.render("productdetail", { product: product });
+    res.render("productdetail", { product: product ,user:req.session.user});
   },
 
   deleteById: (req, res) => {
@@ -134,7 +137,7 @@ let productsContoller = {
   },
 
   contact: (req, res) => {
-    res.render("contact");
+    res.render("contact",{user:req.session.user});
   },
 };
 

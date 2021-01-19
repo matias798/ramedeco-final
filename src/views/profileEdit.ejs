@@ -17,7 +17,7 @@
     
       <main>
         
-  <%- include('parcials/header.ejs') %>
+  <%- include('parcials/header.ejs',{'user':user}) %>
   <%if (obj != undefined) { %>
     <div class="container p-4">
   <form class="card card-body" method="POST" action="/users/profile/edit/<%=obj.id%>?_method=PUT"  enctype="multipart/form-data" >

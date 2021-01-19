@@ -19,12 +19,12 @@
       <a href="/products/shoppingcart" class="links" style="margin-top: 3px;">
         <i class="fas fa-shopping-cart green_font"></i>
       </a>
-      <% if (usuario ==undefined) { %>
+      <% if (user ==undefined) { %>
         <a class="links" href="/users/login">Ingresar</a>
         <a class="links" href="/users/register">Registrarse</a>
       <% } %> 
-      <% if (usuario !=undefined) { %>  
-        <a href="/profile/<%=usuario.id%>" class="image_container green_font links">
+      <% if (user !=undefined) { %>  
+        <a href="/profile/<%=user.id%>" class="image_container green_font links">
           <img class="logo_user" src="/images/defaultuser.png" alt=""/>
         </a>
         <a class="green_font links"  href="/users/logout">Salir</a>

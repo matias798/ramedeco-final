@@ -15,14 +15,14 @@ let pathUserJSON=path.resolve(__dirname,"..","data/users.json")
 
 module.exports={
     'getLogin':function(req, res, next) {
-        res.render('login');
+        res.render('login',{user:req.session.user});
     },
     'logInUser': function(req,res){
         var username=req.body.username;
         var password=req.body.password;
         let user=users.find(user => {return user.username == username})
         if(bcrypt.compare(password,user.password)){
-            req.session.userLogged=username;
+            req.session.user=user;
 
             if(user.role === "admin"){
                 res.redirect('/products')
@@ -32,6 +32,7 @@ module.exports={
         }
     },
     'logOutUser': function(req,res){
+        req.session.user=undefined
         res.redirect('/')
     },
     'registerUser':function(req,res){
@@ -45,21 +46,17 @@ module.exports={
         res.redirect('/')
     },
     'getRegister':function(req, res, next) {
-        res.render('register');
+        res.render('register',{user:req.session.user});
     },
 
     'adminUser':function(req, res, next) {
-        res.render('adminUser',{users:users});
+        res.render('adminUser',{users:users,user:req.session.user});
     },
 
     'userProfile':function(req, res, next) {
-       var userLogged = req.session.userLogged;
-
-       let obj = users.find(o => o.username === userLogged );
-
-
-        res.render('profile',{users:users, obj:obj });
+        res.render('profile',{users:users, obj:req.session.user ,user:req.session.user});
     },
+
     'editUser':function(req,res){
         console.log(req.body)
         let user = {...user_template,...req.body}
@@ -73,14 +70,14 @@ module.exports={
     }  ,
 
     'userEdit': function (req, res) {
-        var obj = req.session.userLogged;
+        var obj = req.session.user;
         res.render("profileEdit",{obj:obj});
       },
 
   'update':(req,res)=>{ 
-      var userLogged = req.session.userLogged;
+      let user = req.session.user.username;
 
-    let Index = users.findIndex(o => o.username === userLogged );
+    let Index = users.findIndex(o => o.username === user );
     
         
     users[Index].first_name=req.body.Nombre;
