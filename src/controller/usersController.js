@@ -24,6 +24,10 @@ module.exports={
         if(bcrypt.compare(password,user.password)){
             req.session.userLogged=username;
 
+            if(req.body.recordarme != undefined) {
+                res.cookie('recordarme', username.email, {maxAge: 60000});
+                }            
+
             if(user.role === "admin"){
                 res.redirect('/products')
             }else res.redirect('/')
