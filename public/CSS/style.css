@@ -462,6 +462,15 @@ border-radius: 20px;
          width: 300px;
         }
         
+        /* description */
+        .section-container-subtitle-sugested-products {
+           
+            color: #AAA;
+          text-align: center;
+          word-wrap: break-word; width: 100px;
+        
+         
+            }
         
         /* counter of products */
         .quantity-display,

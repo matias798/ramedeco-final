@@ -74,9 +74,23 @@
 
 <!-- images of sugested products -->
 <div class='Sugested-products-image-container'>
-  <% for(var i= 0; i<books.length; i++) { %>
 
-    <img class="Sugested-products-image" id = "top-right-image" src="../images/home/productos/<%= books[i].main_image %>" alt="">
+  <% for(var i= 0; i< 5 ; i++) { %>
+
+
+
+    <div class="rounded card justify-content-center">
+      <div class="card-body" >
+    <a class="section-container" href="/products/detail/<%= products[i].id %> ">
+     
+    <img class="Sugested-products-image" class="rounded" id = "top-right-image" src="../images/home/productos/<%= products[i].main_image %>" alt="">
+    <p class="section-container-subtitle-sugested-products "><%= products[i].tittle %> </p>
+  </a>
+  
+    </div>
+  </div>
+
+    
     <% } %>
 
   </div>

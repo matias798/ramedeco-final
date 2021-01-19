@@ -46,7 +46,7 @@ let productsContoller = {
      { 
     res.render("emptyShoppingcart",{'books':productsInCart});}
     else{
-    res.render("shoppingcart",{'books':productsInCart});}
+    res.render("shoppingcart",{'books':productsInCart,'products':products});}
   },
 
   create: function (req, res) {
