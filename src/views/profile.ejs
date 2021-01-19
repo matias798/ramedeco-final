@@ -17,6 +17,7 @@
     
     <main>
     <%- include('parcials/header.ejs') %>
+    <%if (obj != undefined) { %>
     <div class="container">
       <div class="main-body">
       
@@ -82,21 +83,24 @@
                   
                     <div class="row">
                       <div class="col-sm-3">
-                        <h6 class="mb-0">Address</h6>
+                        <h6 class="mb-0">Direccion</h6>
                       </div>
                       <div class="col-sm-9 text-secondary">
                         <%=obj.address %>
                       </div>
-                    </div>
-                  </div>
+    </div>
+    </div>
                 </div>
-               
+<div style="display: flex;justify-content: flex-end;">
+
+      <a class="btn btn-secondary" href="/users/profile/edit/<%= obj.id%>">Editar</a>
+    </div>               
               </div>
             </div>
-          </div>
+    </div>
       </div>
 
-
+      <% } %>
     <%- include('parcials/footer.ejs') %>
     
 </main>
