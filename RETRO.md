@@ -193,3 +193,57 @@ Stop doing:
 Keep doing:
 - tener buena predisposición en ayudar a los que tengan dificultad con un tema.
 
+
+
+# Retrospectiva 20/01/2021
+
+Eze:
+
+Creo que el sprint fue mucho mejor que el otro. En este todos fueron participando y cuando tuvieron un quilombo levantaron la mano. Otra cosa creo que mejoro (no vi todos los commit) es la perdida de codigo haciendo pull veia cambios no mas, lo cual es muy bueno.Algo para continuar con la mejora alcista es mirar el codigo que hay. Me paso con un par de stories completas que estaban bien hechas pero desconectadas y eso traia como problema que primero no se pueda subir la foto del usuario y por el otro el metodo que updateaba al user. Osea es como que cada story hacia lo suyo pero jamas se relacionaba con la otra.Nunca se ejecutaba. Es un tonteria de arreglar, pero lo que deje como observacion es que hay que mirar el codigo porque puede ser que halla cosas por reutilizar y no tener que hacer todo de 0.
+
+more of: Tomar las tareas para que los demas sepan en que se esta trabajando.Avisar cuando un problema.Controlar lo que se commitea no borre codigo que se usa en la app.
+
+start doing: mirar todo el codigo ayuda a reutilizar funciones y aprender sobre las distintas partes de la app
+
+stop doing: -
+
+less of: keep doing: usar trello y dividir las tareas.
+
+
+
+Retro Agus:
+
+Buen sprint, mejoramos mucho en comparación al anterior. Creo que todos estuvimos con pilas para hacer las tareas que nos asignamos y pudimos cumplir en tiempo y forma. Estuvimos dispuestos a ayudar siempre que surgió algún problema.
+
+More of:
+- Buena comunicación entre nosotros.
+- Pedir ayuda al resto o en ultima instancia a los profesores cuando nos trabamos.
+
+Start doing:
+
+Stop doing:
+
+Less of:
+
+Keep doing: 
+- uso correcto por parte de todos de Trello.
+- Dividir y asignar las tareas claramente en los primeros días.
+
+
+Retro Matias:
+
+A mi parecer hubo una mejora en este sprint a nivel de comunicacion y una mayor division de las tareas, lo cual espero siga mejorando.
+
+
+More of:
+- Buena comunicación entre nosotros.
+- Pedir ayuda al resto o en ultima instancia a los profesores cuando nos trabamos.
+- Usar trello
+
+Start doing:
+
+Stop doing:
+
+Less of:
+
+Keep doing: 
