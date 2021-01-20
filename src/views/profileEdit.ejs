@@ -36,7 +36,7 @@
               name="Nombre"
               type="text"
               class="form-control"
-              placeholder="Entry a New Title"
+              value="<%= obj.first_name%>"
               autofocus
             />
           </div>
@@ -46,7 +46,7 @@
               name="Apellido"
               type="text"
               class="form-control"
-              placeholder="Author"
+              value="<%= obj.last_name%>"
               autofocus
             />
           </div>
@@ -56,7 +56,7 @@
               name="Email"
               type="text"
               class="form-control"
-              placeholder="Email"
+              value="<%= obj.email%>"
               autofocus
             />
           </div>
@@ -67,15 +67,15 @@
               name="Direccion"
               type="text"
               class="form-control"
-              placeholder="Direccion"
+              value="<%= obj.address%>"
               autofocus
             />
           </div>
           <div class="form-group">
-            <label for="profileImg">Elegi una foto</label>
-            <input type="file" class="form-control-file" id="profileImg" />
+            <label for="images">Elegi una foto</label>
+            <input type="file" class="form-control-file" id="images"  name="images"/>
           </div>
-          <div class="form-group mt-6"></div>
+
           <button class="btn btn-secondary" type="submit" value="edit">Editar</button>
         </form>
       </div>

@@ -8,8 +8,8 @@ let loginMiddleware = require('../middlewares/loginMiddleware');
 const storage = multer.diskStorage(
 	{
 		destination: (req,file,cb)=>{ 
-            let pathToUse =path.resolve(__dirname,'..','avatar')
-            cb(null,pathToUse)},
+
+            cb(null,path.resolve(__dirname,'..','avatar'))},
 		filename:  (req,file,cb)=>{ 
             let filename=file.originalname.substr(0,file.originalname.indexOf('.'))+'-' +Date.now() + path.extname(file.originalname)
             cb(null,filename)}
@@ -28,7 +28,7 @@ router.get('/profile/:id', loginMiddleware,usersController.userProfile);
 router.get('/profile/edit/:id',loginMiddleware, usersController.userEdit);
 
 
-router.put('/profile/edit/:id',upload.any(),loginMiddleware, usersController.update);
+router.put('/profile/edit/:id',upload.any(), usersController.update);
 
 /* GET register page. */
 router.get('/register', usersController.getRegister);

@@ -95,11 +95,17 @@ module.exports={
     users[index].last_name=req.body.Apellido;
     users[index].email=req.body.Email;
     users[index].address=req.body.Direccion;
-    users[index].avatar=req.files[0].filename
+    if(req.files[0] != undefined){
+        users[index].avatar="/"+req.files[0].filename
+    }else{
+        users[index].avatar="/defaultuser.png"
+        console.log("users[index].avatar" + users[index].avatar)
+    }
         
     req.session.user=users[index]
     fs.writeFileSync(pathUserJSON,JSON.stringify(users));
-    res.redirect('/users/profile/'+user.id)
+    let pathToRedirect='/users/profile/'+users[index].id
+    res.redirect(pathToRedirect)
   },
 
 }

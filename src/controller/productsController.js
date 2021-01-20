@@ -76,7 +76,9 @@ let productsContoller = {
     let product_s = products.filter((product) => {
       return product.category != "scene_member";
     });
-    res.render("index", { scenes: scenes, products: product_s ,user:req.session.user});
+    let userTs =  req.session.user!=undefined?req.session.user:undefined
+    console.log("userTs" + userTs)
+    res.render("index", { scenes: scenes, products: product_s ,user:userTs});
   },
 
   getAllProducts: (req, res) => {
