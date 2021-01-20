@@ -8,7 +8,7 @@ let loginMiddleware = require('../middlewares/loginMiddleware');
 const storage = multer.diskStorage(
 	{
 		destination: (req,file,cb)=>{ 
-            let pathToUse =path.resolve(__dirname,'..','src','avatar')
+            let pathToUse =path.resolve(__dirname,'..','avatar')
             cb(null,pathToUse)},
 		filename:  (req,file,cb)=>{ 
             let filename=file.originalname.substr(0,file.originalname.indexOf('.'))+'-' +Date.now() + path.extname(file.originalname)
@@ -22,13 +22,13 @@ const upload = multer({storage:storage})
 router.get('/', loginMiddleware,usersController.adminUser);
 
 /* GET user profile page*/
-router.get('/profile', loginMiddleware,usersController.userProfile);
+router.get('/profile/:id', loginMiddleware,usersController.userProfile);
  
 /* GET user profile page*/
-router.get('/profile/edit/:id', usersController.userEdit);
+router.get('/profile/edit/:id',loginMiddleware, usersController.userEdit);
 
 
-router.put('/profile/:id',upload.any(), usersController.update);
+router.put('/profile/edit/:id',upload.any(),loginMiddleware, usersController.update);
 
 /* GET register page. */
 router.get('/register', usersController.getRegister);
@@ -37,6 +37,6 @@ router.post('/register', usersController.registerUser);
 /* GET login page. */
 router.get('/login', usersController.getLogin);
 router.post('/login',usersController.logInUser );
-router.get('/logout', usersController.logOutUser);
+router.get('/logout',loginMiddleware, usersController.logOutUser);
 
 module.exports = router;

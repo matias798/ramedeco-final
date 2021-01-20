@@ -15,7 +15,8 @@ let pathUserJSON=path.resolve(__dirname,"..","data/users.json")
 
 module.exports={
     'getLogin':function(req, res, next) {
-        res.render('login',{user:req.session.user});
+        let user =req.session.user!=undefined?req.session.user:undefined
+        res.render('login',{user:user});
     },
     'logInUser': function(req,res){
         var username=req.body.username;
@@ -25,7 +26,7 @@ module.exports={
             req.session.user=user;
 
             if(req.body.recordarme != undefined) {
-                res.cookie('recordarme', username.email, {maxAge: 60000});
+                res.cookie('recordarme', user.id, {maxAge: 60000});
                 }            
 
             if(user.role === "admin"){
@@ -37,6 +38,7 @@ module.exports={
     },
     'logOutUser': function(req,res){
         req.session.user=undefined
+        req.cookies.recordarme=undefined
         res.redirect('/')
     },
     'registerUser':function(req,res){
@@ -45,6 +47,7 @@ module.exports={
         user.role="user"        
         user.id=users[users.length-1].id +1
         user.password=bcrypt.hashSync(user.password,10)
+        user.avatar="/defaultuser"
         users.push(user)
         fs.writeFileSync(pathUserJSON,JSON.stringify(users))
         res.redirect('/')
@@ -58,7 +61,11 @@ module.exports={
     },
 
     'userProfile':function(req, res, next) {
-        res.render('profile',{users:users, obj:req.session.user ,user:req.session.user});
+        let user= req.session.user
+        if(user == undefined){
+            user =users.find(user =>{ return user.id ==req.params.id})[0]
+        }
+        res.render('profile',{user:user})
     },
 
     'editUser':function(req,res){
@@ -75,23 +82,24 @@ module.exports={
 
     'userEdit': function (req, res) {
         var obj = req.session.user;
-        res.render("profileEdit",{obj:obj});
+        res.render("profileEdit",{obj:obj,user:req.session.user});
       },
 
   'update':(req,res)=>{ 
       let user = req.session.user.username;
 
-    let Index = users.findIndex(o => o.username === user );
+    let index = users.findIndex(o => o.username === user );
     
         
-    users[Index].first_name=req.body.Nombre;
-    users[Index].last_name=req.body.Apellido;
-    users[Index].email=req.body.Email;
-    users[Index].address=req.body.Direccion;
+    users[index].first_name=req.body.Nombre;
+    users[index].last_name=req.body.Apellido;
+    users[index].email=req.body.Email;
+    users[index].address=req.body.Direccion;
+    users[index].avatar=req.files[0].filename
         
-
+    req.session.user=users[index]
     fs.writeFileSync(pathUserJSON,JSON.stringify(users));
-    res.redirect('/users/profile')
+    res.redirect('/users/profile/'+user.id)
   },
 
 }

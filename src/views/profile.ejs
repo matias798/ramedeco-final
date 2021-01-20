@@ -17,7 +17,7 @@
     
     <main>
     <%- include('parcials/header.ejs',{'user':user}) %>
-    <%if (obj != undefined) { %>
+    <%if (user != undefined) { %>
     <div class="container">
       <div class="main-body">
       
@@ -27,15 +27,10 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="d-flex flex-column align-items-center text-center">
-                      <img src="https://cdn.pixabay.com/photo/2017/08/05/02/12/sansevieria-2582056_960_720.jpg" alt="Admin" class="rounded-circle" width="150">
-                      
-<form  action="/users/profile" method="POST" enctype="multipart/form-data"> 
-        <input type="file" id="imagen" name="imagen" >
-          <button type="submit" class="btn btn-secondary mt-2" >cambiar foto de perfil </button>
- </form>
+                      <img src="<%= user.avatar?user.avatar:"/defaultuser.png"%>" alt="Admin" class="rounded-circle" width="150">
 
                       <div class="mt-3">
-                        <h4><%=obj.username %></h4>
+                        <h4><%=user.username %></h4>
                           </div>
                     </div>
                   </div>
@@ -52,7 +47,7 @@
 
                       
                       <div class="col-sm-9 text-secondary">
-                        <%=obj.first_name %>
+                        <%=user.first_name %>
                       </div>
                     </div>
                     <hr>
@@ -65,7 +60,7 @@
 
                       
                       <div class="col-sm-9 text-secondary">
-                        <%=obj.last_name %>
+                        <%=user.last_name %>
                       </div>
                     </div>
                     <hr>
@@ -75,7 +70,7 @@
                         <h6 class="mb-0">Email</h6>
                       </div>
                       <div class="col-sm-9 text-secondary">
-                       <%=obj.email %>
+                       <%=user.email %>
                       </div>
                     </div>
                     <hr>
@@ -86,14 +81,14 @@
                         <h6 class="mb-0">Direccion</h6>
                       </div>
                       <div class="col-sm-9 text-secondary">
-                        <%=obj.address %>
+                        <%=user.address %>
                       </div>
     </div>
     </div>
                 </div>
 <div style="display: flex;justify-content: flex-end;">
 
-      <a class="btn btn-secondary" href="/users/profile/edit/<%= obj.id%>">Editar</a>
+      <a class="btn btn-secondary" href="/users/profile/edit/<%= user.id%>">Editar</a>
     </div>               
               </div>
             </div>

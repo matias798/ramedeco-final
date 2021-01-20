@@ -24,8 +24,8 @@
         <a class="links" href="/users/register">Registrarse</a>
       <% } %> 
       <% if (user !=undefined) { %>  
-        <a href="/profile/<%=user.id%>" class="image_container green_font links">
-          <img class="logo_user" src="/images/defaultuser.png" alt=""/>
+        <a href="/users/profile/<%=user.id%>" class="image_container green_font links">
+          <img class="logo_user" src="<%= user.avatar?user.avatar:"/defaultuser.png"%>" alt=""/>
         </a>
         <a class="green_font links"  href="/users/logout">Salir</a>
       <% } %> 
