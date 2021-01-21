@@ -24,6 +24,7 @@ router.get('/edit/:id', productsController.edit);
 
 router.put('/:id',upload.any(), productsController.update);
 router.get('/detail/:id', productsController.findById);
+router.get('/categories/:category', productsController.getProductByCategory);
 router.get('/', productsController.getAllProducts);
 router.delete('/:id', productsController.deleteById);
 router.post('/',upload.any(), productsController.store);

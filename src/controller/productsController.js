@@ -137,7 +137,11 @@ let productsContoller = {
     fs.writeFileSync(pathProductJSON, JSON.stringify(products))
     res.redirect('/products')
   },
-
+  getProductByCategory:(req, res) =>{
+      let productsByCategory=product.find(product => {return req.params.category== product.category})
+      let userts=req.session.user?req.session.user:undefined
+      res.render("productCat", {category:req.params.category,products:productsByCategory, user:userts})
+  },
   contact: (req, res) => {
     res.render("contact",{user:req.session.user});
   },
