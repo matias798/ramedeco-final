@@ -247,3 +247,26 @@ Stop doing:
 Less of:
 
 Keep doing: 
+
+
+Retro Rubén:
+
+Este sprint ha sido mucho mejor que el anterior, se nota el espíritu de colaboración y de aprender sobre estos temas.
+
+
+More of:
+1. Buena comunicación.
+2. División de tareas.
+
+Start doing: 
+1. Mirar el código de forma global y no de forma parcial.
+
+Stop doing:
+
+Less of:
+
+Keep doing: 
+
+1. Ayudarnos entre todos.
+2. Pedir ayuda cuando algo no se entienda. 
+3. Mantener el ánimo y las ganas de completar todas las asignaciones.
