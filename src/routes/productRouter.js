@@ -18,15 +18,15 @@ const upload = multer({storage:storage})
 /* GET home page. */
 const productsController = require('../controller/productsController');
 
-router.get('/create', productsController.create)
+router.get('/create', loginMiddleware,productsController.create)
 router.get('/shoppingcart',productsController.getShoppingcart);
-router.get('/edit/:id', productsController.edit);
+router.get('/edit/:id', loginMiddleware,productsController.edit);
 
 router.put('/:id',upload.any(), productsController.update);
 router.get('/detail/:id', productsController.findById);
 router.get('/categories/:category', productsController.getProductByCategory);
-router.get('/', productsController.getAllProducts);
-router.delete('/:id', productsController.deleteById);
+router.get('/', loginMiddleware,productsController.getAllProducts);
+router.delete('/:id',loginMiddleware, productsController.deleteById);
 router.post('/',upload.any(), productsController.store);
 router.post('/addToCart', loginMiddleware,productsController.addToCart);
 module.exports = router;

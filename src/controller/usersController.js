@@ -15,7 +15,8 @@ let pathUserJSON=path.resolve(__dirname,"..","data/users.json")
 
 module.exports={
     'getLogin':function(req, res, next) {
-        let user =req.session.user!=undefined?req.session.user:undefined
+        let user =req.session.user || undefined
+        console.log("user",user)
         res.render('login',{user:user});
     },
     'logInUser': function(req,res){
@@ -106,6 +107,6 @@ module.exports={
     fs.writeFileSync(pathUserJSON,JSON.stringify(users));
     let pathToRedirect='/users/profile/'+users[index].id
     res.redirect(pathToRedirect)
-  },
+    },
 
 }
