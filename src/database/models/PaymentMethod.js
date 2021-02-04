@@ -1,20 +1,30 @@
-const { Sequelize, DataTypes } = require('sequelize');
-modele.exports=function(Sequelize,DataTypes){
-    const PaymentMethod=Sequelize.define("payment_methods",
-    
+modele.exports=function(sequelize,DataTypes){
+const PaymentMethod = sequelize.define("payment_methods",
+
     {
-        id:DataTypes.SMALLINT,
-        name:DataTypes.VARCHAR[32],
-        create_at:DataTypes.TIMESTAMP,
-        updated_at:DataTypes.TIMESTAMP,
-        deleted_at:DataTypes.TIMESTAMP,
+        id: {
+            type: DataTypes.SMALLINT,
+            autoIncrement:true, 
+            primaryKey: true
+        },
+        name: {
+            type: DataTypes.STRING[32]
+        },
+        create_at: {
+            type: DataTypes.DATE
+        },
+        updated_at: {
+            type: DataTypes.DATE
+        },
+        deleted_at: {
+            type: DataTypes.DATE
+        },
     })
-    PaymentMethod.associate((models)=>{
-        PaymentMethod.hasMany(models.Purchase,{
-            as:"purchases",
-            foreingKey:"payment_method_id"
-        })}
-    )
-    return PaymentMethod
-    
+PaymentMethod.associate = function (models) {
+    PaymentMethod.hasMany(models.Purchase, {
+        as: "purchases",
+        foreingKey: "payment_method_id"
+    })
 }
+
+return PaymentMethod}

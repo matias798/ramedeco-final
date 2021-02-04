@@ -1,25 +1,39 @@
-const { Sequelize, DataTypes } = require('sequelize');
-modele.exports=function(Sequelize,DataTypes){
-    const SceneDetail=Sequelize.define("scene_details",
-    
+modele.exports=function(sequelize,DataTypes){
+const SceneDetail = sequelize.define(
+    "scene_details",
+
     {
-        id:DataTypes.SMALLINT,
-        position_left:DataTypes.TINYINT,
-        position_top:DataTypes.TINYINT,
-        create_at:DataTypes.TIMESTAMP,
-        updated_at:DataTypes.TIMESTAMP,
-        deleted_at:DataTypes.TIMESTAMP,
-    })
-    SceneDetail.associate((models)=>{
-        SceneDetail.belongTo(models.Product,{
-            as:"product",
-            foreignKey:"product_id"
-        })
-        SceneDetail.belongTo(models.Scene,{
-            as:"scene",
-            foreignKey:"scene_id"
-        })
-    })
-    return SceneDetail
-    
+        id: {
+            type: DataTypes.SMALLINT,
+            autoIncrement:true, 
+            primaryKey: true
+        },
+        position_left: {
+            type: DataTypes.TINYINT
+        },
+        position_top: {
+            type: DataTypes.TINYINT
+        },
+        create_at: {
+            type: DataTypes.DATE
+        },
+        updated_at: {
+            type: DataTypes.DATE
+        },
+        deleted_at: {
+            type: DataTypes.DATE
+        },
+    }
+);
+SceneDetail.associate = function (models) {
+    SceneDetail.belongTo(models.Product, {
+        as: "product",
+        foreignKey: "product_id",
+    });
+    SceneDetail.belongTo(models.Scene, {
+        as: "scene",
+        foreignKey: "scene_id",
+    });
+};
+return SceneDetail
 }

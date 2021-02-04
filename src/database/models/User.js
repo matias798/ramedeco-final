@@ -1,30 +1,51 @@
-const { Sequelize, DataTypes } = require('sequelize');
-modele.exports=function(Sequelize,DataTypes){
-    const User=Sequelize.define("users",
-    
-    {
-        id:DataTypes.BIGINT,
-        first_name:DataTypes.VARCHAR[64],
-        last_name:DataTypes.VARCHAR[64],
-        email:DataTypes.VARCHAR[64],
-        password:DataTypes.VARCHAR[100],
-        username:DataTypes.VARCHAR[64],
-        avatar:DataTypes.VARCHAR[64],
-        create_at:DataTypes.TIMESTAMP,
-        updated_at:DataTypes.TIMESTAMP,
-        deleted_at:DataTypes.TIMESTAMP,
-    })
-    
-    User.associate( (models)=>{
-        User.belongsTo(models.Role,{
-            as:"role",
-            foreingKey:"role_id",
+modele.exports = function (sequelize, DataTypes) {
+    const User = Sequelize.define("users",
+
+        {
+            id: {
+                type: DataTypes.SMALLINT,
+                autoIncrement: true,
+                primaryKey: true
+            },
+            first_name: {
+                type: DataTypes.STRING[64]
+            },
+            last_name: {
+                type: DataTypes.STRING[64]
+            },
+            email: {
+                type: DataTypes.STRING[64]
+            },
+            password: {
+                type: DataTypes.STRING[100]
+            },
+            username: {
+                type: DataTypes.STRING[64]
+            },
+            avatar: {
+                type: DataTypes.STRING[64]
+            },
+            create_at: {
+                type: DataTypes.DATE
+            },
+            updated_at: {
+                type: DataTypes.DATE
+            },
+            deleted_at: {
+                type: DataTypes.DATE
+            },
         })
-        User.hasMany(models.Purchase,{
-            as:"purchases",
-            foreingKey:"user_id"
+
+    User.associate = function (models) {
+        User.belongsTo(models.Role, {
+            as: "role",
+            foreingKey: "role_id",
         })
-    })
+        User.hasMany(models.Purchase, {
+            as: "purchases",
+            foreingKey: "user_id"
+        })
+    }
     return User
-    
+
 }

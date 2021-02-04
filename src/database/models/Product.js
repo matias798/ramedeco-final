@@ -1,35 +1,56 @@
-const { Sequelize, DataTypes } = require('sequelize');
-modele.exports=function(Sequelize,DataTypes){
-    const Product=Sequelize.define("products",
-    
-    {
-        id:DataTypes.BIGINT,
-        tittle:DataTypes.VARCHAR[64],
-        summary:DataTypes.VARCHAR[64],
-        description:DataTypes.VARCHAR[255],
-        product_detail:DataTypes.TEXT,
-        price:DataTypes.DOUBLE[8,2],
-        dimension:DataTypes.VARCHAR[32],
-        main_image:DataTypes.VARCHAR[64],
-        stock:DataTypes.INTEGER,
-        create_at:DataTypes.TIMESTAMP,
-        updated_at:DataTypes.TIMESTAMP,
-        deleted_at:DataTypes.TIMESTAMP,
+modele.exports=function(sequelize,DataTypes){
+const Product = sequelize.define("products", {
+    id: {
+        type: DataTypes.BIGINT,
+        autoIncrement:true, 
+        primaryKey: true
+    },
+    tittle: {
+        type: DataTypes.STRING[64]
+    },
+    summary: {
+        type: DataTypes.STRING[64]
+    },
+    description: {
+        type: DataTypes.STRING[255]
+    },
+    product_detail: {
+        type: DataTypes.TEXT
+    },
+    price: {
+        type: DataTypes.DOUBLE(8, 2)
+    },
+    dimension: {
+        type: DataTypes.STRING[32]
+    },
+    main_image: {
+        type: DataTypes.STRING[64]
+    },
+    stock: {
+        type: DataTypes.INTEGER
+    },
+    create_at: {
+        type: DataTypes.DATE
+    },
+    updated_at: {
+        type: DataTypes.DATE
+    },
+    deleted_at: {
+        type: DataTypes.DATE
+    },
+})
+Product.associate = function (models) {
+    Product.hasMany(models.PurchaseDetail, {
+        as: "purchaseDetails",
+        foreignKey: "product_id"
     })
-    Product.associate((models)=>{
-        Product.hasMany(models.PurchaseDetail,{
-            as:"purchaseDetails",
-            foreignKey:"product_id"
-        })
-        Product.hasMany(models.PurchaseDetail,{
-            as:"purchaseDetails",
-            foreignKey:"product_id"
-        })
-        Product.hasMany(models.SceneDetail,{
-            as:"sceneDetail",
-            foreignKey:"product_id"
-        })
+    Product.hasMany(models.PurchaseDetail, {
+        as: "purchaseDetails",
+        foreignKey: "product_id"
     })
-    return Product
-    
+    Product.hasMany(models.SceneDetail, {
+        as: "sceneDetail",
+        foreignKey: "product_id"
+    })
 }
+return Product}

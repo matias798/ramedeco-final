@@ -1,20 +1,30 @@
-const { Sequelize, DataTypes } = require('sequelize');
-modele.exports=function(Sequelize,DataTypes){
-    const Role=Sequelize.define("roles",
-    
+modele.exports=function(sequelize,DataTypes){
+const Role = sequelize.define("roles",
+
     {
-        id:DataTypes.SMALLINT,
-        name:DataTypes.VARCHAR[32],
-        create_at:DataTypes.TIMESTAMP,
-        updated_at:DataTypes.TIMESTAMP,
-        deleted_at:DataTypes.TIMESTAMP,
+        id: {
+            type: DataTypes.SMALLINT,
+            autoIncrement:true, 
+            primaryKey: true
+        },
+        name: {
+            type: DataTypes.STRING[32]
+        },
+        create_at: {
+            type: DataTypes.DATE
+        },
+        updated_at: {
+            type: DataTypes.DATE
+        },
+        deleted_at: {
+            type: DataTypes.DATE
+        },
     })
-    Role.associate( (models)=>{
-        Role.hasMany(models.User,{
-            as:"users",
-            foreingKey:"role_id",
-        })
+Role.associate = function (models) {
+    Role.hasMany(models.User, {
+        as: "users",
+        foreingKey: "role_id",
     })
-    return Role
-    
+}
+return Role
 }
