@@ -17,15 +17,15 @@
     <main class="lr-main-container">
         <div class="lr-title">
             <h2>Creá tu cuenta</h2>
+        </div>
 
 <% if (typeof errors != 'undefined') { %> 
 <% for (let i =0 ; i < errors.length;i++){ %> 
 
-        <div> <%=errors[i].msg  %> </div>
+        <div class='p-3 mb-2 bg-secondary text-white text-center '> <%=errors[i].msg%>  </div>
     
 <% } %> 
 <% } %> 
-        </div>
         <form class="lr-form" action="/users/register" method="POST">
                 <div>
                     <label class="lr-fontsize" for="username">Nombre de usuario</label>
