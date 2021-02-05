@@ -46,7 +46,10 @@ router.post('/register',[
 
 /* GET login page. */
 router.get('/login', usersController.getLogin);
-router.post('/login',usersController.logInUser );
+router.post('/login',[
+check('username').notEmpty().withMessage('Ingresaste mal tu nombre de usuario, escribelo nuevamente'),
+check('password').isLength({min:6}).withMessage('Ingresaste mal tu contraseña, escribela nuevamente ')
+],usersController.logInUser );
 router.get('/logout',loginMiddleware, usersController.logOutUser);
 
 module.exports = router;

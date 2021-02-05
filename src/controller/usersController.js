@@ -24,6 +24,8 @@ module.exports={
     'logInUser': function(req,res){
         var username=req.body.username;
         var password=req.body.password;
+        let errors = validationResult(req);
+        if(errors.isEmpty()){
         let user=users.find(user => {return user.username == username})
         if(bcrypt.compare(password,user.password)){
             req.session.user=user;
@@ -38,6 +40,11 @@ module.exports={
         }else{
             res.redirect('login')
         }
+    }
+    else{
+        console.log(errors);
+        return res.render('login',{user:req.session.user,errors:errors.errors})
+    }
     },
     'logOutUser': function(req,res){
         req.session.user=undefined
