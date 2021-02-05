@@ -1,6 +1,8 @@
 const users =require('../data/users.json')
 const fs =require('fs')
 const bcrypt=require('bcrypt')
+const {check,validationResult,body}= require('express-validator')
+
 
 const user_template ={
     "first_name": "",
@@ -43,6 +45,8 @@ module.exports={
         res.redirect('/')
     },
     'registerUser':function(req,res){
+let errors = validationResult(req);
+        if(errors.isEmpty()){
         console.log(req.body)
         let user = {...user_template,...req.body}
         user.role="user"        
@@ -51,7 +55,12 @@ module.exports={
         user.avatar="/defaultuser"
         users.push(user)
         fs.writeFileSync(pathUserJSON,JSON.stringify(users))
-        res.redirect('/')
+        res.redirect('/')}
+
+        else{
+            console.log(errors);
+            return res.render('register',{user:req.session.user,errors:errors.errors})
+        }
     },
     'getRegister':function(req, res, next) {
         res.render('register',{user:req.session.user});

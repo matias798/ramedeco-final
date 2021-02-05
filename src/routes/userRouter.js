@@ -4,6 +4,8 @@ let usersController= require('../controller/usersController');
 const multer = require('multer');
 const path =require('path');
 let loginMiddleware = require('../middlewares/loginMiddleware');
+const {check,validationResult,body}= require('express-validator')
+
 
 const storage = multer.diskStorage(
 	{
@@ -32,7 +34,15 @@ router.put('/profile/edit/:id',upload.any(), usersController.update);
 
 /* GET register page. */
 router.get('/register', usersController.getRegister);
-router.post('/register', usersController.registerUser);
+router.post('/register',[
+	check('username').notEmpty().withMessage('Debes escribir tu nombre de usuario'),
+	check('first_name').notEmpty().withMessage('Debes escribir tu nombre'),
+	check('last_name').notEmpty().withMessage('Debes escribir tu apellido'),
+	check('email').isEmail().withMessage('Debes escribir tu email correctamente'),
+	check('password').isLength({min:6}).withMessage('Recuerda que debes escribir minimamente 6 caracteres')
+
+
+] ,usersController.registerUser);
 
 /* GET login page. */
 router.get('/login', usersController.getLogin);
