@@ -1,35 +1,40 @@
-modele.exports=function(sequelize,DataTypes){
+module.exports = function(sequelize,DataTypes){
 const Product = sequelize.define("products", {
     id: {
-        type: DataTypes.BIGINT,
+        type: DataTypes.BIGINT(20),
         autoIncrement:true, 
         primaryKey: true
     },
-    tittle: {
-        type: DataTypes.STRING[64]
+    title: {
+        type: DataTypes.STRING(64),
+        allowNull: false
     },
     summary: {
-        type: DataTypes.STRING[64]
+        type: DataTypes.STRING(64),
+        allowNull: false
     },
     description: {
-        type: DataTypes.STRING[255]
+        type: DataTypes.STRING(255)
     },
     product_detail: {
         type: DataTypes.TEXT
     },
     price: {
-        type: DataTypes.DOUBLE(8, 2)
+        type: DataTypes.DOUBLE(8,2),
+        allowNull: false
     },
     dimension: {
-        type: DataTypes.STRING[32]
+        type: DataTypes.STRING(32)
     },
     main_image: {
-        type: DataTypes.STRING[64]
+        type: DataTypes.STRING(64),
+        allowNull: false
     },
     stock: {
-        type: DataTypes.INTEGER
+        type: DataTypes.INTEGER,
+        allowNull: false
     },
-    create_at: {
+    created_at: {
         type: DataTypes.DATE
     },
     updated_at: {
@@ -51,6 +56,13 @@ Product.associate = function (models) {
     Product.hasMany(models.SceneDetail, {
         as: "sceneDetail",
         foreignKey: "product_id"
+    })
+    Product.belongsToMany(models.Category,{
+        as: "category_product",
+        through: "Category_product",
+        foreingnKey: "product_id",
+        otherKey:"category_id",
+        timestamps: true
     })
 }
 return Product}
