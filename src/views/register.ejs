@@ -8,8 +8,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
     <title>¡Registrate!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+
 </head>
-<body style="margin:0">
+<body style="margin:0; background-color: #e2e8f0;">
     <%- include('parcials/header.ejs',{'user':user}) %> 
     <main class="lr-main-container">
         <div class="lr-title">
@@ -25,37 +28,36 @@
         </div>
         <form class="lr-form" action="/users/register" method="POST">
                 <div>
-                    <label class="lr-fontsize" for="username">Nombre de usuario</label><br>
-                    <input class="form_lr-width lr-fontsize" type="text" id="username" name="username" placeholder="Nombre de usuario">
+                    <label class="lr-fontsize" for="username">Nombre de usuario</label>
+                    <input class="form_lr-width lr-fontsize " type="text" id="username" name="username" placeholder="Nombre de usuario">
                 </div>
                 <div>
-                <label class="lr-fontsize" for="username">Nombre</label><br>
+                <label class="lr-fontsize" for="username">Nombre</label>
                 <input class="form_lr-width lr-fontsize" type="text" id="first_name" name="first_name" placeholder="Nombre">
                 </div>
 
                 <div>
-                <label class="lr-fontsize" for="username">Apellido</label><br>
+                <label class="lr-fontsize" for="username">Apellido</label>
                 <input class="form_lr-width lr-fontsize" type="text" id="last_name" name="last_name" placeholder="Apellido">
                 </div>
     
                 <div>
-                <label class="lr-fontsize" for="email">E-mail</label><br>
+                <label class="lr-fontsize" for="email">E-mail</label>
                 <input class="form_lr-width lr-fontsize" type="email" id="email" name="email" placeholder="E-mail">
                 </div>
 
                 <div>
-                <label class="lr-fontsize" for="contraseña">Contraseña</label><br>
+                <label class="lr-fontsize" for="contraseña">Contraseña</label>
                 <input class="form_lr-width lr-fontsize" type="password" id="password" name="password" placeholder="Elegí tu contraseña"><br>
                 <div class="register-password-msg"><small>La contraseña debe ser de mínimo 6 dígitos</small></div>
                 <input class="form_lr-width lr-fontsize" type="password" id="password_confirm" name="password_confirm" placeholder="Confirmá tu contraseña"><br>
                 </div>
             
-                <div class="register-newsletter-msg">
-                    <input type="checkbox" name="newsletter" value="newsletter si">Quiero recibir emails de RaméDeco con ofertas y promociones exclusivas acordes a mis gustos, intereses e historial de compras.
+                <div class="register-newsletter-msg mb-2">
+                    <input type="checkbox"  name="newsletter" value="newsletter si">Quiero recibir emails de RaméDeco con ofertas y promociones exclusivas acordes a mis gustos, intereses e historial de compras.
                     </div>
-                    <br>
 
-                <div><button class="btn form_lr-width" type="submit">Registrarme</button></div>
+                <div><button class="btn btn-primary form_lr-width" type="submit">Registrarme</button></div>
             </form>
                 <div><p>¿Ya tenés cuenta? Ingresá <a href="/users/login">acá</a></p></div>
 
