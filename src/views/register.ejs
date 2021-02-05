@@ -29,28 +29,28 @@
         <form class="lr-form" action="/users/register" method="POST">
                 <div>
                     <label class="lr-fontsize" for="username">Nombre de usuario</label>
-                    <input class="form_lr-width lr-fontsize " type="text" id="username" name="username" placeholder="Nombre de usuario">
+                    <input class="form_lr-width lr-fontsize " type="text" id="username" name="username" placeholder="Nombre de usuario" required>
                 </div>
                 <div>
-                <label class="lr-fontsize" for="username">Nombre</label>
-                <input class="form_lr-width lr-fontsize" type="text" id="first_name" name="first_name" placeholder="Nombre">
+                <label class="lr-fontsize" for="first_name">Nombre</label>
+                <input class="form_lr-width lr-fontsize" type="text" id="first_name" name="first_name" placeholder="Nombre" required>
                 </div>
 
                 <div>
-                <label class="lr-fontsize" for="username">Apellido</label>
-                <input class="form_lr-width lr-fontsize" type="text" id="last_name" name="last_name" placeholder="Apellido">
+                <label class="lr-fontsize" for="last_name">Apellido</label>
+                <input class="form_lr-width lr-fontsize" type="text" id="last_name" name="last_name" placeholder="Apellido" required>
                 </div>
     
                 <div>
                 <label class="lr-fontsize" for="email">E-mail</label>
-                <input class="form_lr-width lr-fontsize" type="email" id="email" name="email" placeholder="E-mail">
+                <input class="form_lr-width lr-fontsize" type="email" id="email" name="email" placeholder="E-mail" required>
                 </div>
 
                 <div>
                 <label class="lr-fontsize" for="contraseña">Contraseña</label>
-                <input class="form_lr-width lr-fontsize" type="password" id="password" name="password" placeholder="Elegí tu contraseña"><br>
+                <input class="form_lr-width lr-fontsize" type="password" id="password" name="password" placeholder="Elegí tu contraseña" required><br>
                 <div class="register-password-msg"><small>La contraseña debe ser de mínimo 6 dígitos</small></div>
-                <input class="form_lr-width lr-fontsize" type="password" id="password_confirm" name="password_confirm" placeholder="Confirmá tu contraseña"><br>
+                <input class="form_lr-width lr-fontsize" type="password" id="password_confirm" name="password_confirm" placeholder="Confirmá tu contraseña" required><br>
                 </div>
             
                 <div class="register-newsletter-msg mb-2">
