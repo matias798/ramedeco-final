@@ -43,8 +43,11 @@ module.exports = function (sequelize, DataTypes) {
             deleted_at: {
                 type: DataTypes.DATE
             },
+            role_id: {
+                type: DataTypes.SMALLINT(5),
+                allowNull: false
+            }
             
-
         })
 
     User.associate = function (models) {
