@@ -11,7 +11,7 @@ module.exports=function(sequelize,DataTypes){
             type: DataTypes.STRING(64),
             allowNull: false
         },
-        create_at: {
+        created_at: {
             type: DataTypes.DATE
         },
         updated_at: {

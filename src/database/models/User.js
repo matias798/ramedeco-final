@@ -34,7 +34,7 @@ module.exports = function (sequelize, DataTypes) {
             avatar: {
                 type: DataTypes.STRING(64)
             },
-            create_at: {
+            created_at: {
                 type: DataTypes.DATE
             },
             updated_at: {
