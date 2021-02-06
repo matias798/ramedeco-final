@@ -8,13 +8,14 @@ const PurchaseDetail = sequelize.define("purchase_details",
             primaryKey: true
         },
         amount: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,allowNull:false
+            
         },
         subtotal: {
-            type: DataTypes.DECIMAL
+            type: DataTypes.DECIMAL,allowNull:false
         },
         unit_price: {
-            type: DataTypes.DECIMAL
+            type: DataTypes.DECIMAL,allowNull:false
         },
         create_at: {
             type: DataTypes.DATE
@@ -25,6 +26,14 @@ const PurchaseDetail = sequelize.define("purchase_details",
         deleted_at: {
             type: DataTypes.DATE
         },
+        purchase_id_purchase_detail:{
+            type:DataTypes.BIGINT,
+            allowNull:false
+        },
+        product_id_purchase_detail:{
+            type:DataTypes.BIGINT,
+            allowNull:false
+        }
     })
 PurchaseDetail.associate = function (models) {
     PurchaseDetail.belongsTo(models.products, {

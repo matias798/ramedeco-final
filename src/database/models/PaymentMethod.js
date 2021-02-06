@@ -8,7 +8,8 @@ const PaymentMethod = sequelize.define("payment_methods",
             primaryKey: true
         },
         name: {
-            type: DataTypes.STRING(32)
+            type: DataTypes.STRING(32),
+            allowNull: false
         },
         create_at: {
             type: DataTypes.DATE
@@ -20,6 +21,7 @@ const PaymentMethod = sequelize.define("payment_methods",
             type: DataTypes.DATE
         },
     })
+    
 PaymentMethod.associate = function (models) {
     console.log(models)
     PaymentMethod.hasMany(models.purchases, {

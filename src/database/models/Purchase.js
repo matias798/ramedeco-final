@@ -9,10 +9,11 @@ const Purchase = sequelize.define(
             primaryKey: true
         },
         date: {
-            type: DataTypes.DATE
+            type: DataTypes.DATE,
+            allowNull:false
         },
         total: {
-            type: DataTypes.DECIMAL
+            type: DataTypes.DECIMAL,allowNull:false
         },
         create_at: {
             type: DataTypes.DATE
@@ -23,6 +24,13 @@ const Purchase = sequelize.define(
         deleted_at: {
             type: DataTypes.DATE
         },
+        payment_method_id:{
+            type: DataTypes.SMALLINT,allowNull:false
+
+        },
+        user_id:{
+            type: DataTypes.BIGINT,allowNull:false
+        }
     }
 );
 
