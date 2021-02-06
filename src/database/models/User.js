@@ -1,5 +1,5 @@
-modele.exports = function (sequelize, DataTypes) {
-    const User = Sequelize.define("users",
+module.exports = function (sequelize, DataTypes) {
+    const User = sequelize.define("users",
 
         {
             id: {
@@ -8,22 +8,22 @@ modele.exports = function (sequelize, DataTypes) {
                 primaryKey: true
             },
             first_name: {
-                type: DataTypes.STRING[64]
+                type: DataTypes.STRING(64)
             },
             last_name: {
-                type: DataTypes.STRING[64]
+                type: DataTypes.STRING(64)
             },
             email: {
-                type: DataTypes.STRING[64]
+                type: DataTypes.STRING(64)
             },
             password: {
-                type: DataTypes.STRING[100]
+                type: DataTypes.STRING(100)
             },
             username: {
-                type: DataTypes.STRING[64]
+                type: DataTypes.STRING(64)
             },
             avatar: {
-                type: DataTypes.STRING[64]
+                type: DataTypes.STRING(64)
             },
             create_at: {
                 type: DataTypes.DATE
@@ -37,11 +37,11 @@ modele.exports = function (sequelize, DataTypes) {
         })
 
     User.associate = function (models) {
-        User.belongsTo(models.Role, {
+        User.belongsTo(models.roles, {
             as: "role",
             foreingKey: "role_id",
         })
-        User.hasMany(models.Purchase, {
+        User.hasMany(models.purchases, {
             as: "purchases",
             foreingKey: "user_id"
         })

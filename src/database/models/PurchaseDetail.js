@@ -1,4 +1,4 @@
-modele.exports=function(sequelize,DataTypes){
+module.exports=function(sequelize,DataTypes){
 const PurchaseDetail = sequelize.define("purchase_details",
 
     {
@@ -27,11 +27,11 @@ const PurchaseDetail = sequelize.define("purchase_details",
         },
     })
 PurchaseDetail.associate = function (models) {
-    PurchaseDetail.belongsTo(models.Product, {
+    PurchaseDetail.belongsTo(models.products, {
         as: "product",
         foreignKey: "product_id"
     })
-    PurchaseDetail.belongsTo(models.Purchase, {
+    PurchaseDetail.belongsTo(models.purchases, {
         as: "purchase",
         foreignKey: "purchase_id"
     })

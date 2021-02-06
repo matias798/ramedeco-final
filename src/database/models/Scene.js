@@ -1,16 +1,16 @@
 const { Sequelize, DataTypes } = require('sequelize');
-modele.exports=function(Sequelize,DataTypes){
+module.exports=function(Sequelize,DataTypes){
     const Scene=Sequelize.define("scenes",
     
     {
         id:{type:DataTypes.BIGINT,primaryKey:true},
-        main_image:{type:DataTypes.STRING[64]},
-        create_at:{type:DataTypes.TIMESTAMP},
-        updated_at:{type:DataTypes.TIMESTAMP},
-        deleted_at:{type:DataTypes.TIMESTAMP},
+        main_image:{type:DataTypes.STRING(64)},
+        create_at:{type:DataTypes.DATE},
+        updated_at:{type:DataTypes.DATE},
+        deleted_at:{type:DataTypes.DATE},
     })
     Scene.associate=function(models){
-        Scene.hasMany(models.SceneDetail,{
+        Scene.hasMany(models.scene_details,{
             as:"sceneDetail",
             foreignKey:"scene_id"
         })

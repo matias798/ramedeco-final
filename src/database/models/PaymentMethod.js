@@ -1,4 +1,4 @@
-modele.exports=function(sequelize,DataTypes){
+module.exports=function(sequelize,DataTypes){
 const PaymentMethod = sequelize.define("payment_methods",
 
     {
@@ -8,7 +8,7 @@ const PaymentMethod = sequelize.define("payment_methods",
             primaryKey: true
         },
         name: {
-            type: DataTypes.STRING[32]
+            type: DataTypes.STRING(32)
         },
         create_at: {
             type: DataTypes.DATE
@@ -21,7 +21,8 @@ const PaymentMethod = sequelize.define("payment_methods",
         },
     })
 PaymentMethod.associate = function (models) {
-    PaymentMethod.hasMany(models.Purchase, {
+    console.log(models)
+    PaymentMethod.hasMany(models.purchases, {
         as: "purchases",
         foreingKey: "payment_method_id"
     })

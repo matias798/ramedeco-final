@@ -1,4 +1,4 @@
-modele.exports=function(sequelize,DataTypes){
+module.exports=function(sequelize,DataTypes){
 const Purchase = sequelize.define(
     "purchases",
 
@@ -27,15 +27,15 @@ const Purchase = sequelize.define(
 );
 
 Purchase.associate = function (models) {
-    Purchase.belongsTo(models.Role, {
+    Purchase.belongsTo(models.users, {
         as: "users",
         foreingKey: "user_id",
     });
-    Purchase.belongsTo(models.PaymentMethod, {
+    Purchase.belongsTo(models.payment_methods, {
         as: "paymentMethods",
         foreingKey: "payment_method_id",
     });
-    Purchase.hasMany(models.PurchaseDetail, {
+    Purchase.hasMany(models.purchase_details, {
         as: "purchaseDetails",
         foreingKey: "purchase_id",
     });

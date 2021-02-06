@@ -1,4 +1,4 @@
-modele.exports=function(sequelize,DataTypes){
+module.exports=function(sequelize,DataTypes){
 const SceneDetail = sequelize.define(
     "scene_details",
 
@@ -26,11 +26,11 @@ const SceneDetail = sequelize.define(
     }
 );
 SceneDetail.associate = function (models) {
-    SceneDetail.belongTo(models.Product, {
+    SceneDetail.belongsTo(models.products, {
         as: "product",
         foreignKey: "product_id",
     });
-    SceneDetail.belongTo(models.Scene, {
+    SceneDetail.belongsTo(models.scenes, {
         as: "scene",
         foreignKey: "scene_id",
     });

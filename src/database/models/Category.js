@@ -1,5 +1,4 @@
 module.exports = function(sequelize,DataTypes){
-const sequelize = new Sequelize('sequelize')
 const Category = sequelize.define("categories", {
     id: {
         type: DataTypes.TINYINT,
@@ -22,7 +21,7 @@ const Category = sequelize.define("categories", {
 })
 
 Category.associate = function(models){
-    Category.belongsToMany(models.Product,{
+    Category.belongsToMany(models.products,{
         as: "category_product",
         through: "Category_product",
         foreingnKey: "category_id",

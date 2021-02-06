@@ -1,4 +1,4 @@
-modele.exports=function(sequelize,DataTypes){
+module.exports=function(sequelize,DataTypes){
     const Image = sequelize.define("images", {
     id: {
         type: DataTypes.BIGINT,
@@ -6,7 +6,7 @@ modele.exports=function(sequelize,DataTypes){
         primaryKey: true
     },
     path: {
-        type: DataTypes.STRING[64]
+        type: DataTypes.STRING(64)
     },
     create_at: {
         type: DataTypes.DATE
@@ -19,10 +19,7 @@ modele.exports=function(sequelize,DataTypes){
     },
 })
 Image.associate = function (models) {
-    Image.belongsTo(models.Product, {
-        as: "product",
-        foreignKey: "product_id"
-    })
+    Image.belongsTo(models.products, {as: "product", foreignKey: "product_id"})
 }
 
 return Image}
