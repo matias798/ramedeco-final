@@ -1,6 +1,7 @@
 module.exports=function(sequelize,DataTypes){ 
-
-    const Role = sequelize.define("roles", {
+     const Role = sequelize.define("roles", 
+    
+         {
 
             id: {
                 type: DataTypes.SMALLINT(5),
@@ -21,7 +22,7 @@ module.exports=function(sequelize,DataTypes){
             },
         })
 
-    Role.associate = function (models) {
+     Role.associate = function (models) {
         Role.hasMany(models.users, {
             as: "users",
             foreingKey: "role_id",
