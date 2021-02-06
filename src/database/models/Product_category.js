@@ -1,5 +1,4 @@
 module.exports = function(sequelize,DataTypes){
-    const sequelize = new Sequelize('sequelize')
     const Category_product = sequelize.define("Category_product",{
         product_id_cat: {
             type: DataTypes.BIGINT(20),

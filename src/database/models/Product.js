@@ -53,6 +53,10 @@ Product.associate = function (models) {
         as: "sceneDetail",
         foreignKey: "product_id"
     })
+    Product.hasMany(models.images, {
+        as: "images", 
+        foreignKey: "product_id"
+    })
     Product.belongsToMany(models.categories,{
         as: "category_product",
         through: "Category_product",
