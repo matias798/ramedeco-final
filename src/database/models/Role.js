@@ -9,9 +9,10 @@ module.exports=function(sequelize,DataTypes){
                 primaryKey: true
             },
             name: {
-                type: DataTypes.STRING(45)
+                type: DataTypes.STRING(45),
+                allowNull: false
             },
-            create_at: {
+            created_at: {
                 type: DataTypes.DATE
             },
             updated_at: {
