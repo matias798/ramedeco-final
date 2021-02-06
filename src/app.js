@@ -28,8 +28,8 @@ app.set('view engine', 'ejs');
 var indexRouter = require('./routes/indexRouter');
 var productRouter = require('./routes/productRouter');
 var userRouter = require('./routes/userRouter');
-
-
+//used for testing the models
+//const db=require('./database/models')
 
 app.use('/', indexRouter);
 app.use('/products', productRouter);
