@@ -2,7 +2,7 @@ const users =require('../data/users.json')
 const fs =require('fs')
 const bcrypt=require('bcrypt')
 const {check,validationResult,body}= require('express-validator')
-
+const db=require('../database/models')
 
 const user_template ={
     "first_name": "",
@@ -20,6 +20,7 @@ module.exports={
         let user =req.session.user || undefined
         console.log("user",user)
         res.render('login',{user:user});
+
     },
     'logInUser': function(req,res){
         var username=req.body.username;
@@ -52,22 +53,42 @@ module.exports={
         res.redirect('/')
     },
     'registerUser':function(req,res){
-let errors = validationResult(req);
-        if(errors.isEmpty()){
-        console.log(req.body)
-        let user = {...user_template,...req.body}
-        user.role="user"        
-        user.id=users[users.length-1].id +1
-        user.password=bcrypt.hashSync(user.password,10)
-        user.avatar="/defaultuser"
-        users.push(user)
-        fs.writeFileSync(pathUserJSON,JSON.stringify(users))
-        res.redirect('/')}
 
-        else{
-            console.log(errors);
-            return res.render('register',{user:req.session.user,errors:errors.errors})
-        }
+        db.users.create({
+            username:req.body.username,
+            first_name:req.body.first_name,
+            last_name:req.body.last_name,
+            email:req.body.email,
+            password:req.body.password,
+            address:req.body.Direccion,
+            avatar: "/defaultuser",
+            role_id:"2",
+            password : bcrypt.hashSync(req.body.password,10),
+
+        })
+        
+        .then((users)=>{
+
+            let errors = validationResult(req);
+            if(errors.isEmpty())
+            {
+            console.log(req.body)
+            return res.redirect('/');
+            }
+            else{
+        // Muestro errores por consola
+       console.log(errors);
+        
+        // Retorno vista registro 
+        return res.render('register',{users:req.session.user,errors:errors.errors})
+            }
+
+        })
+
+        .catch(
+            (error)=>{console.log(error);}
+        )
+        
     },
     'getRegister':function(req, res, next) {
         res.render('register',{user:req.session.user});
