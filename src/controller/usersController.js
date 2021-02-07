@@ -54,6 +54,11 @@ module.exports={
     },
     'registerUser':function(req,res){
 
+        let errors = validationResult(req);
+
+        if(errors.isEmpty())
+        {
+
         db.users.create({
             username:req.body.username,
             first_name:req.body.first_name,
@@ -67,28 +72,22 @@ module.exports={
 
         })
         
-        .then((users)=>{
+        .then(()=>{return res.redirect('/');})
 
-            let errors = validationResult(req);
-            if(errors.isEmpty())
-            {
-            console.log(req.body)
-            return res.redirect('/');
-            }
-            else{
-        // Muestro errores por consola
-       console.log(errors);
-        
-        // Retorno vista registro 
-        return res.render('register',{users:req.session.user,errors:errors.errors})
-            }
-
+        .catch((error)=>
+        {
+            console.log(error);
+            return res.redirect('/',);
         })
-
-        .catch(
-            (error)=>{console.log(error);}
-        )
         
+    }
+    else{
+// Muestro errores por consola
+console.log(errors);
+
+// Retorno vista registro 
+return res.render('register',{user:req.session.user,errors:errors.errors})
+    }
     },
     'getRegister':function(req, res, next) {
         res.render('register',{user:req.session.user});
