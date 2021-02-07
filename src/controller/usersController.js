@@ -94,8 +94,21 @@ module.exports={
         res.render('register',{user:req.session.user});
     },
 
-    'adminUser':function(req, res, next) {
+    'adminUser':function(req, res) {
+        db.users.findAll()
+        .then(
+            (users)=>{
         res.render('adminUser',{users:users,user:req.session.user});
+
+            }
+        )
+        .catch(
+            // Muestro error por consola
+            (error)=>{console.log(error);
+            // Redirigo a pagina principal   
+                return res.redirect('/');
+            })
+
     },
 
     'userProfile':function(req, res, next) {
