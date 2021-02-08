@@ -101,7 +101,7 @@ module.exports={
     'userProfile':function(req, res, next) {
         let user= req.session.user
         if(user == undefined){
-            user =users.find(user =>{ return user.id ==req.params.id})[0]
+            user =db.User.findbyPK(req.params.id)
         }
         res.render('profile',{user:user})
     },

@@ -23,7 +23,6 @@ const PaymentMethod = sequelize.define("payment_methods",
     })
     
 PaymentMethod.associate = function (models) {
-    console.log(models)
     PaymentMethod.hasMany(models.purchases, {
         as: "purchases",
         foreingKey: "payment_method_id"
