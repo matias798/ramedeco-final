@@ -1,14 +1,14 @@
 module.exports = function(sequelize,DataTypes){
-    const Product_category = sequelize.define("Product_category",{
-        product_id_cat: {
+    const Scene_category = sequelize.define("Scene_category",{
+        scene_id_category: {
             type: DataTypes.BIGINT(20),
             allowNull: false,
             references: {
-                model: "Product",
+                model: "Scene",
                 key:"id"
             }
         },
-        category_id_prod: {
+        category_id_scene: {
             type: DataTypes.TINYINT,
             allowNull: false,
             references: {
@@ -27,4 +27,4 @@ module.exports = function(sequelize,DataTypes){
         }
     })
 
-    return Product_category}
+    return Scene_category}
