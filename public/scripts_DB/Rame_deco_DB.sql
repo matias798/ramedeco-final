@@ -188,12 +188,12 @@ CREATE TABLE IF NOT EXISTS `scene_details` (
 -- Volcando estructura para tabla rame_deco_db.users
 CREATE TABLE IF NOT EXISTS `users` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `first_name` varchar(64) NOT NULL,
-  `last_name` varchar(64) NOT NULL,
-  `email` varchar(64) NOT NULL,
-  `password` varchar(100) NOT NULL,
-  `username` varchar(64) NOT NULL,
-  `address` varchar(64) NOT NULL,
+  `first_name` varchar(64) DEFAULT NULL,
+  `last_name` varchar(64) DEFAULT NULL,
+  `email` varchar(64) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `username` varchar(64) DEFAULT NULL,
+  `address` varchar(64) DEFAULT NULL,
   `avatar` varchar(64) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
