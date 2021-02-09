@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
-const path =require('path')
+const path =require('path');
+
 const loginMiddleware = require('../middlewares/loginMiddleware');
 const storage = multer.diskStorage(
 	{
@@ -18,7 +19,7 @@ const upload = multer({storage:storage})
 /* GET home page. */
 const productsController = require('../controller/productsController');
 
-router.get('/create', loginMiddleware,productsController.create)
+router.get('/create',loginMiddleware,productsController.create)
 router.get('/shoppingcart',productsController.getShoppingcart);
 router.get('/edit/:id', loginMiddleware,productsController.edit);
 

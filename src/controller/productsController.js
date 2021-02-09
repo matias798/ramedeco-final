@@ -4,6 +4,8 @@ const fs =require('fs')
 var path = require('path');
 let products = require("../data/products.json");
 const scenes = require("../data/scenes.json");
+const db=require('../database/models')
+
 const mapOfProducts = new Map(
   products.map((val) => {
     return [val.id, val];
@@ -60,7 +62,26 @@ let productsContoller = {
   },
 
   create: function (req, res) {
-    res.render("create",{'books':mapOfProducts.values(),user:req.session.user});
+    db.categories.findAll()
+    
+    .then(
+      (categories)=>{
+
+    res.render("create",{'categories':categories,user:req.session.user});
+
+      }
+    )
+
+    .catch(
+      (error)=>{
+ // muestro el error por consola 
+ console.log(error);
+    
+ // Redirecciono a productos
+ res.redirect('/products')})
+
+    
+
   },
 
   edit: function (req, res) {
@@ -129,24 +150,54 @@ let productsContoller = {
     res.redirect('/products')
   },
   store: (req, res) => {
-		let newProduct={...productSkeleton,...req.body}
-		let lastProduct =products.length-1
-		if(lastProduct !== -1){
-			lastProduct= products[lastProduct]
-			newProduct.id= lastProduct.id+1
-		}
-    for (let i=0;i<req.files.length;i++) {
-      if(i == 0 ){
-        newProduct.main_image=req.files[i].filename
-      }else{
-        newProduct.images.push(req.files[i].filename)
-      }
-    }
-    products.push(newProduct)
-    mapOfProducts.set(newProduct.id,newProduct)
-    fs.writeFileSync(pathProductJSON, JSON.stringify(products))
+    // Primer premisa que crea un producto
+      db.products.create({
+      title:req.body.tittle,
+      summary:req.body.summary,
+      description:req.body.description,
+      product_detail:req.body.product_detail,
+      price:req.body.price,
+      dimension:req.body.dimension,
+      stock:req.body.stock,
+      main_image:req.files[0].originalname
+    })
+    
+    .then(
+    (product)=>{
+    
+    //  Segunda premisa que crea datos de imagenes
+    db.images.create({ 
+    path: req.files[0].originalname,
+    product_id_images: product.id })
+    
+    
+    .then(
+    ()=>{
+    // Redirecciono a productos
     res.redirect('/products')
-  },
+    })
+    
+    .catch(
+    (error)=>{
+    // muestro el error por consola 
+      console.log(error);
+    
+    // Redirecciono a productos
+    res.redirect('/products')})
+    
+    })
+    
+    .catch(
+    
+    // muestro el error por consola 
+    (error)=>{console.log(error);
+    
+    // Redirecciono a productos
+    res.redirect('/products')}
+    )
+    
+    
+      },
   getProductByCategory:(req, res) =>{
       let productsByCategory=product.find(product => {return req.params.category== product.category})
       let userts=req.session.user?req.session.user:undefined

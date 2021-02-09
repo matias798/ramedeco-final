@@ -52,6 +52,7 @@ module.exports={
         req.cookies.recordarme=undefined
         res.redirect('/')
     },
+
     'registerUser':function(req,res){
 
         let errors = validationResult(req);
@@ -59,24 +60,27 @@ module.exports={
         if(errors.isEmpty())
         {
 
+     // creo usuario en la base de datos
         db.users.create({
             username:req.body.username,
             first_name:req.body.first_name,
             last_name:req.body.last_name,
             email:req.body.email,
+            address:"",
             password:req.body.password,
-            address:req.body.Direccion,
             avatar: "/defaultuser",
             role_id:"2",
             password : bcrypt.hashSync(req.body.password,10),
-
         })
         
         .then(()=>{return res.redirect('/');})
 
         .catch((error)=>
         {
+            // muestro errores por consola
             console.log(error);
+
+            // redirigo a pagina principal
             return res.redirect('/',);
         })
         
@@ -89,6 +93,9 @@ console.log(errors);
 return res.render('register',{user:req.session.user,errors:errors.errors})
     }
     },
+
+
+
     'getRegister':function(req, res, next) {
         res.render('register',{user:req.session.user});
     },

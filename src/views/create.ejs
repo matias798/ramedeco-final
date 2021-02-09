@@ -33,8 +33,8 @@
         <input class="inputName" type="text" name="tittle" placeholder="Escribe el titulo de tu producto">
 
         <!--description  -->
-        <label class=" labelDescription" for="summary">Resumen de tu producto</label>
-        <textarea class="coments" style="resize: none;" name="summary" rows="10"
+        <label class=" labelDescription" for="description">Describe tu producto</label>
+        <textarea class="coments" style="resize: none;" name="description" rows="10"
           placeholder="Escribe una descripcion de tu producto" cols="40"></textarea>
 
 
@@ -49,16 +49,16 @@
         <div>
 
           <!--description  -->
-          <label class=" labelDescription" for="product_detail">Resumen</label>
-          <textarea class="coments" style="resize: none;" name="product_detail" rows="5"
+          <label class=" labelDescription" for="summary">Resumen</label>
+          <textarea class="coments" style="resize: none;" name="summary" rows="5"
             placeholder="Escribe un resumen de tu producto" cols="40"></textarea>
 
 
           <label>Categoría</label>
 
           <select name="category">
-            <% for(var i= 0; i< books.length; i++) { %>
-            <option name="category"><%=books[i].category%></option>
+            <% for(var i= 0; i< categories.length; i++) { %>
+            <option name="category"><%=categories[i].name%></option>
             <% } %>
           </select>
           <label class="upload-images">Sube imagenes del producto 
@@ -83,6 +83,8 @@
           <label class="labelPrecio" for="dimension">Dimension</label>
           <input class="inputPrecio" type="number" name="dimension" style="background-color: #dce1df" required>
 
+          <label class="labelPrecio" for="stock">Cantidad</label>
+          <input class="inputPrecio" type="number" name="stock" style="background-color: #dce1df" required>
 
 
 
