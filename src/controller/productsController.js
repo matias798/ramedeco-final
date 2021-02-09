@@ -1,3 +1,5 @@
+db=require('../database/models')
+const { Op } = require("sequelize");
 const fs =require('fs')
 var path = require('path');
 let products = require("../data/products.json");
@@ -33,20 +35,28 @@ let productsContoller = {
   addToCart: function(req,res){
     let idProducto=req.body.id_product
     let cantidad=req.body.display
-    productCart.push({idProducto:idProducto,cantidad:cantidad})
+    if(req.session != undefined){
+      if(req.session.shoppingCart == undefined){
+        req.session.shoppingCart=new Map();
+      }
+      req.session.shoppingCart.set(idProducto,{idProducto:idProducto,amount:cantidad})
+    }
     res.redirect('/')
   },
   getShoppingcart: function (req, res) {
-    let productsInCart=[]
-    productCart.forEach(element => {
-      productsInCart.push(mapOfProducts.get(element.idProducto))
-    });
-
-    if (productsInCart.length === 0)
-     { 
-    res.render("emptyShoppingcart",{'books':productsInCart,user:req.session.user});}
+    let productsSelected= req.session.shoppingCart.keys()
+    if (productsSelected.length === 0)
+    { 
+        res.render("emptyShoppingcart",{'books':productsInCart,user:req.session.user});}
     else{
-    res.render("shoppingcart",{'books':productsInCart,'products':products,user:req.session.user})}
+      db.Product.findAll({where:{id:{[Op.in]:productsSelected}}}).then( (products) =>{
+        for(let i =0; i< products.length;i++){
+            products[i].amount = req.session.shoppingCart.get(products[i].id).amount
+            products[i].subtotal= products[i].amount * products[i].price
+        }
+
+      })
+    }
   },
 
   create: function (req, res) {
