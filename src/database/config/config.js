@@ -5,7 +5,10 @@ module.exports={
     "password": process.env.PASSWORD_DB,
     "database": process.env.DATABASE_DB,
     "host": process.env.HOST_DB,
-    "dialect": "mysql"
+    "dialect": "mysql",
+    define: {
+      timestamps: false
+    }
   },
   "test": {
     "username": "root",
