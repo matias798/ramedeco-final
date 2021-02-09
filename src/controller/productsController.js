@@ -52,7 +52,26 @@ let productsContoller = {
   },
 
   create: function (req, res) {
-    res.render("create",{'books':mapOfProducts.values(),user:req.session.user});
+    db.categories.findAll()
+    
+    .then(
+      (categories)=>{
+
+    res.render("create",{'categories':categories,user:req.session.user});
+
+      }
+    )
+
+    .catch(
+      (error)=>{
+ // muestro el error por consola 
+ console.log(error);
+    
+ // Redirecciono a productos
+ res.redirect('/products')})
+
+    
+
   },
 
   edit: function (req, res) {
