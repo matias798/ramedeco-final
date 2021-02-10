@@ -36,10 +36,9 @@ CREATE TABLE IF NOT EXISTS `images` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
-  `product_id_images` bigint(20) unsigned NOT NULL,
+  `product_id` bigint(20) unsigned NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `product_id_idx` (`product_id_images`),
-  CONSTRAINT `product_id_image` FOREIGN KEY (`product_id_images`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8mb4;
 
 -- La exportación de datos fue deseleccionada.
@@ -68,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `main_image` varchar(64) NOT NULL,
   `stock` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `upedated_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
@@ -109,25 +108,6 @@ CREATE TABLE IF NOT EXISTS `purchases` (
 
 -- La exportación de datos fue deseleccionada.
 
--- Volcando estructura para tabla rame_deco_db.purchase_details
-CREATE TABLE IF NOT EXISTS `purchase_details` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `amount` int(11) NOT NULL,
-  `subtotal` decimal(10,0) NOT NULL,
-  `unit_price` decimal(10,0) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL,
-  `purchase_id_purchase_detail` bigint(20) unsigned NOT NULL,
-  `product_id_purchase_detail` bigint(20) unsigned NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `purchase_id_idx` (`purchase_id_purchase_detail`),
-  KEY `product_id_idx` (`product_id_purchase_detail`),
-  CONSTRAINT `product_id_purchase_detail` FOREIGN KEY (`product_id_purchase_detail`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `purchase_id` FOREIGN KEY (`purchase_id_purchase_detail`) REFERENCES `purchases` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- La exportación de datos fue deseleccionada.
 
 -- Volcando estructura para tabla rame_deco_db.roles
 CREATE TABLE IF NOT EXISTS `roles` (
@@ -205,6 +185,25 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
 -- La exportación de datos fue deseleccionada.
+
+-- Volcando estructura para tabla rame_deco_db.purchase_details
+CREATE TABLE IF NOT EXISTS `purchase_details` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `amount` int(11) NOT NULL,
+  `subtotal` decimal(10,0) NOT NULL,
+  `unit_price` decimal(10,0) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `purchase_id` bigint(20) unsigned NOT NULL,
+  `product_id` bigint(20) unsigned NOT NULL,
+  PRIMARY KEY (`id`,`purchase_id`,`product_id`),
+  FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  FOREIGN KEY (`purchase_id`) REFERENCES `purchases` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- La exportación de datos fue deseleccionada.
+
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;

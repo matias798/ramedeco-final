@@ -1,10 +1,9 @@
-db=require('../database/models')
+const db=require('../database/models')
 const { Op } = require("sequelize");
 const fs =require('fs')
 var path = require('path');
 let products = require("../data/products.json");
 const scenes = require("../data/scenes.json");
-const db=require('../database/models')
 
 const mapOfProducts = new Map(
   products.map((val) => {
@@ -22,15 +21,6 @@ for (const scene of scenes) {
   }
 }
 
-let productSkeleton={"tittle":"",
-"summary":"",
-"description":"",
-"price":"",
-"product_detail":"",
-"dimension":"",
-"main_image":"",
-"images":[]}
-
 productCart=[]
 
 let productsContoller = {
@@ -45,6 +35,7 @@ let productsContoller = {
     }
     res.redirect('/')
   },
+
   getShoppingcart: function (req, res) {
     let productsSelected= req.session.shoppingCart.keys()
     if (productsSelected.length === 0)
@@ -62,9 +53,7 @@ let productsContoller = {
   },
 
   create: function (req, res) {
-    db.categories.findAll()
-    
-    .then(
+    db.categories.findAll().then(
       (categories)=>{
 
     res.render("create",{'categories':categories,user:req.session.user});
@@ -116,17 +105,21 @@ let productsContoller = {
     res.render("adminhome", { products: products ,user:req.session.user});
   },
 
-  findById: (req, res) => {
-    let product = mapOfProducts.get(req.params.id);
-    res.render("productdetail", { product: product ,user:req.session.user});
+  findById: (req, res) => {//arreglar
+    let product = mapOfProducts.get();
+    db.products.findByPk(req.params.id,{include: [{association:"images"}]})
+    .then(
+      product =>{
+        res.render("productdetail", { product: product ,user:req.session.user});
+      })
+      .catch(error => {console.log(error);res.redirect('/')})
   },
 
   deleteById: (req, res) => {
-    products = products.filter((product) => {
-      return product.id != req.params.id;
-    });
-    mapOfProducts.delete(req.params.id);
-    res.redirect("/products");
+    db.products.destroy({where:{id:req.params.id }}).then(result => {
+      console.log(result)
+      res.redirect("/products");
+    }).catch(error => {console.log(error); res.redirect("/products");})
   },
 
   update:(req,res)=>{

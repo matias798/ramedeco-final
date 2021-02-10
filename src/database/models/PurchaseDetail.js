@@ -17,7 +17,7 @@ const PurchaseDetail = sequelize.define("purchase_details",
         unit_price: {
             type: DataTypes.DECIMAL,allowNull:false
         },
-        create_at: {
+        created_at: {
             type: DataTypes.DATE
         },
         updated_at: {
@@ -30,20 +30,14 @@ const PurchaseDetail = sequelize.define("purchase_details",
             type:DataTypes.BIGINT,
             allowNull:false
         },
-        product_id_purchase_detail:{
-            type:DataTypes.BIGINT,
-            allowNull:false
-        }
+    },{
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
+        "underscored": true
     })
 PurchaseDetail.associate = function (models) {
-    PurchaseDetail.belongsTo(models.products, {
-        as: "product",
-        foreignKey: "product_id"
-    })
-    PurchaseDetail.belongsTo(models.purchases, {
-        as: "purchase",
-        foreignKey: "purchase_id"
-    })
+    PurchaseDetail.belongsTo(models.products)
+    PurchaseDetail.belongsTo(models.purchases)
 }
 
 return PurchaseDetail}

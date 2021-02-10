@@ -43,24 +43,25 @@ const Product = sequelize.define("products", {
     deleted_at: {
         type: DataTypes.DATE
     },
+},{
+    createdAt: 'created_at',
+    updatedAt: 'updated_at',
+    "underscored": true
 })
 Product.associate = function (models) {
     Product.hasMany(models.purchase_details, {
         as: "purchaseDetails",
-        foreignKey: "product_id"
     })
     Product.hasMany(models.scene_details, {
         as: "sceneDetail",
-        foreignKey: "product_id"
     })
     Product.hasMany(models.images, {
         as: "images", 
-        foreignKey: "product_id"
     })
     Product.belongsToMany(models.categories,{
         as: "category_product",
         through: "Category_product",
-        foreingnKey: "product_id",
+        foreignkey: "product_id",
         otherKey:"category_id",
         timestamps: true
     })

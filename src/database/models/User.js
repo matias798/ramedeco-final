@@ -44,21 +44,16 @@ module.exports = function (sequelize, DataTypes) {
             deleted_at: {
                 type: DataTypes.DATE
             },
-            role_id: {
-                type: DataTypes.SMALLINT(5),
-                allowNull: false
-            }
-            
+        },{
+            createdAt: 'created_at',
+            updatedAt: 'updated_at',
+            "underscored": true
         })
-
+//sequelize.sync()
     User.associate = function (models) {
-        User.belongsTo(models.roles, {
-            as: "role",
-            foreingKey: "role_id",
-        })
+        User.belongsTo(models.roles)
         User.hasMany(models.purchases, {
             as: "purchases",
-            foreingKey: "user_id"
         })
     }
     return User

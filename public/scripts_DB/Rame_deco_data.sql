@@ -27,7 +27,7 @@ INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`, `deleted_at`
 
 -- Volcando datos para la tabla rame_deco_db.images: ~51 rows (aproximadamente)
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
-INSERT INTO `images` (`id`, `path`, `created_at`, `updated_at`, `deleted_at`, `product_id_images`) VALUES
+INSERT INTO `images` (`id`, `path`, `created_at`, `updated_at`, `deleted_at`, `product_id`) VALUES
 	(1, '1_1.webp', NULL, NULL, NULL, 1),
 	(2, '1_2.webp', NULL, NULL, NULL, 1),
 	(3, '1_3.webp', NULL, NULL, NULL, 1),
@@ -91,7 +91,7 @@ INSERT INTO `payment_methods` (`id`, `name`, `created_at`, `updated_at`, `delete
 
 -- Volcando datos para la tabla rame_deco_db.products: ~17 rows (aproximadamente)
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` (`id`, `title`, `summary`, `description`, `product_detail`, `price`, `dimension`, `main_image`, `stock`, `created_at`, `upedated_at`, `deleted_at`) VALUES
+INSERT INTO `products` (`id`, `title`, `summary`, `description`, `product_detail`, `price`, `dimension`, `main_image`, `stock`, `created_at`, `updated_at`, `deleted_at`) VALUES
 	(1, 'Dosel', 'Dosel, motivo conejo', 'Este dosel, instalado a una altura segura, transforma la cuna en un espacio acogedor. Es fácil de montar, no incluye telas que cuelguen y está confeccionado con poliéster reciclado: un punto a favor del medio ambiente.', 'Tejido que deja traspasar la luz y permite crear ambiente sin oscurecer.El tejido es de poliéster 100%, un material duradero que ha sido probado para garantizar que no contiene substancias ni aditivos dañinos', 700.00, '45 cm x 79cm x 100cm', '1_main.webp', 1, NULL, NULL, NULL),
 	(3, 'Estructura de Cama', 'Estructura de Cama abatible, blanco155x210 cm', 'Esta cama proporciona un amplio espacio de almacenaje que no ocupa nada. Solo tienes que levantar el somier y meter tus cosas dentro. La puedes poner en el centro de la habitación o con el cabecero contra la pared.', 'En el espacio de almacenaje que queda debajo de la mesa se puede guardar de todo, desde mantas y cojines hasta ropa o incluso la tabla de planchar.Completa con cajas y separadores para organizar bien los objetos pequeños. En las series STUK, SKUBB y STORSTABBE encontrarás productos diseñados específicamente para esto.', 10000.00, '210cm x 155cm x 30cm', '3_main.webp', 1, NULL, NULL, NULL),
 	(4, 'Manta', 'Colcha, blanco230x250 cm', 'Esta colcha te permite renovar con un solo gesto tu habitación, y además hace las veces de manta. El suave tejido de algodón es agradable y confortable.', 'Esta colcha de algodón abriga y es cómoda y decorativa.La colcha encaja en camas de 140 cm con 45 cm aprox. de caída por cada lado.', 3000.00, '250cm x 230cm', '4_main.webp', 1, NULL, NULL, NULL),

@@ -15,7 +15,7 @@ const Purchase = sequelize.define(
         total: {
             type: DataTypes.DECIMAL,allowNull:false
         },
-        create_at: {
+        created_at: {
             type: DataTypes.DATE
         },
         updated_at: {
@@ -24,28 +24,18 @@ const Purchase = sequelize.define(
         deleted_at: {
             type: DataTypes.DATE
         },
-        payment_method_id:{
-            type: DataTypes.SMALLINT,allowNull:false
-
-        },
-        user_id:{
-            type: DataTypes.BIGINT,allowNull:false
-        }
+    },{
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
+        "underscored": true
     }
 );
 
 Purchase.associate = function (models) {
-    Purchase.belongsTo(models.users, {
-        as: "users",
-        foreingKey: "user_id",
-    });
-    Purchase.belongsTo(models.payment_methods, {
-        as: "paymentMethods",
-        foreingKey: "payment_method_id",
-    });
+    Purchase.belongsTo(models.users);
+    Purchase.belongsTo(models.payment_methods);
     Purchase.hasMany(models.purchase_details, {
         as: "purchaseDetails",
-        foreingKey: "purchase_id",
     });
 };
 return Purchase

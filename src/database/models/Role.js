@@ -21,12 +21,15 @@ module.exports=function(sequelize,DataTypes){
             deleted_at: {
                 type: DataTypes.DATE
             },
+        },{
+            createdAt: 'created_at',
+            updatedAt: 'updated_at',
+            "underscored": true
         })
 
      Role.associate = function (models) {
         Role.hasMany(models.users, {
             as: "users",
-            foreingKey: "role_id",
         })
     }
     return Role

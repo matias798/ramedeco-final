@@ -27,20 +27,28 @@ module.exports={
         var password=req.body.password;
         let errors = validationResult(req);
         if(errors.isEmpty()){
-        let user=users.find(user => {return user.username == username})
-        if(bcrypt.compare(password,user.password)){
-            req.session.user=user;
-
-            if(req.body.recordarme != undefined) {
-                res.cookie('recordarme', user.id, {maxAge: 60000});
-                }            
-
-            if(user.role === "admin"){
-                res.redirect('/products')
-            }else res.redirect('/')
-        }else{
+        let user=db.users.findOne({
+            where:{username:username},
+            include:[{association:"role"}]
+        }).then((user)=>{
+            if( user != undefined && bcrypt.compare(password,user.password)){
+                req.session.user=user;
+    
+                if(req.body.recordarme != undefined) {
+                    res.cookie('recordarme', user.id, {maxAge: 60000});
+                    }            
+                if(user.role === "admin"){
+                    res.redirect('/products')
+                }else res.redirect('/')
+            }else{
+                console.log("no matchea la password", user)
+                res.redirect('login')
+            }
+        }).catch(error =>{
+            console.log(error)
             res.redirect('login')
-        }
+        })
+        
     }
     else{
         console.log(errors);
@@ -49,6 +57,7 @@ module.exports={
     },
     'logOutUser': function(req,res){
         req.session.user=undefined
+        req.session.shoppingCart=undefined
         req.cookies.recordarme=undefined
         res.redirect('/')
     },
@@ -68,8 +77,8 @@ module.exports={
             email:req.body.email,
             address:"",
             password:req.body.password,
-            avatar: "/defaultuser",
-            role_id:"2",
+            avatar: "/defaultuser.png",
+            roleId:2,
             password : bcrypt.hashSync(req.body.password,10),
         })
         
@@ -121,21 +130,18 @@ return res.render('register',{user:req.session.user,errors:errors.errors})
         let user= req.session.user
         if(user == undefined){
             user =db.User.findbyPK(req.params.id)
+            .then(
+                (result) =>{
+                    res.render('profile',{user:result})
+                }
+            )
+            .catch(
+                (error) => {
+                    console.log(error);
+                    res.redirect('/')})
         }
         res.render('profile',{user:user})
     },
-
-    'editUser':function(req,res){
-        console.log(req.body)
-        let user = {...user_template,...req.body}
-        user.role="user"        
-        user.id=users[users.length-1].id +1
-        user.password=bcrypt.hashSync(user.password,10)
-        user.avatar = req.files[0].filename
-        users.push(user)
-        fs.writeFileSync(pathUserJSON,JSON.stringify(users))
-        res.redirect('/')
-    }  ,
 
     'userEdit': function (req, res) {
         var obj = req.session.user;
@@ -143,26 +149,24 @@ return res.render('register',{user:req.session.user,errors:errors.errors})
       },
 
   'update':(req,res)=>{ 
-      let user = req.session.user.username;
-
-    let index = users.findIndex(o => o.username === user );
-    
-        
-    users[index].first_name=req.body.Nombre;
-    users[index].last_name=req.body.Apellido;
-    users[index].email=req.body.Email;
-    users[index].address=req.body.Direccion;
-    if(req.files[0] != undefined){
-        users[index].avatar="/"+req.files[0].filename
-    }else{
-        users[index].avatar="/defaultuser.png"
-        console.log("users[index].avatar" + users[index].avatar)
+      let avatar;
+      if(req.files[0] != undefined){
+       avatar="/"+req.files[0].filename
+       }else{
+        avatar="/defaultuser.png"
     }
-        
-    req.session.user=users[index]
-    fs.writeFileSync(pathUserJSON,JSON.stringify(users));
-    let pathToRedirect='/users/profile/'+users[index].id
-    res.redirect(pathToRedirect)
+    db.users.update({
+        first_name:req.body.Nombre,
+        last_name:req.body.Apellido,
+        email:req.body.Email,
+        address:req.body.Direccion,
+        avatar:avatar,
+    },{where: {
+       id:req.session.user.id
+    }}).then(result => {
+        console.log(result);
+        res.redirect("/users/profile/"+req.session.user.id)})
+    .catch(error =>{console.log(error);res.redirect("/")})
     },
 
 }

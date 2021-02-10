@@ -14,7 +14,7 @@ const SceneDetail = sequelize.define(
         position_top: {
             type: DataTypes.TINYINT
         },
-        create_at: {
+        created_at: {
             type: DataTypes.DATE
         },
         updated_at: {
@@ -23,17 +23,15 @@ const SceneDetail = sequelize.define(
         deleted_at: {
             type: DataTypes.DATE
         },
+    },{
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
+        "underscored": true
     }
 );
 SceneDetail.associate = function (models) {
-    SceneDetail.belongsTo(models.products, {
-        as: "product",
-        foreignKey: "product_id",
-    });
-    SceneDetail.belongsTo(models.scenes, {
-        as: "scene",
-        foreignKey: "scene_id",
-    });
+    SceneDetail.belongsTo(models.products);
+    SceneDetail.belongsTo(models.scenes);
 };
 return SceneDetail
 }

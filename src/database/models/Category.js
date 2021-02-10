@@ -18,13 +18,17 @@ const Category = sequelize.define("categories", {
     deleted_at: {
         type: DataTypes.DATE
     }
+},{
+    createdAt: 'created_at',
+    updatedAt: 'updated_at',
+    "underscored": true
 })
 
 Category.associate = function(models){
     Category.belongsToMany(models.products,{
         as: "category_product",
         through: "Category_product",
-        foreingnKey: "category_id",
+        foreignkey: "category_id",
         otherKey:"product_id",
         timestamps: true
     })

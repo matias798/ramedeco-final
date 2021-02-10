@@ -11,7 +11,7 @@ const PaymentMethod = sequelize.define("payment_methods",
             type: DataTypes.STRING(32),
             allowNull: false
         },
-        create_at: {
+        created_at: {
             type: DataTypes.DATE
         },
         updated_at: {
@@ -20,12 +20,15 @@ const PaymentMethod = sequelize.define("payment_methods",
         deleted_at: {
             type: DataTypes.DATE
         },
+    },{
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
+        "underscored": true
     })
     
 PaymentMethod.associate = function (models) {
     PaymentMethod.hasMany(models.purchases, {
         as: "purchases",
-        foreingKey: "payment_method_id"
     })
 }
 
