@@ -33,11 +33,12 @@ module.exports={
         }).then((user)=>{
             if( user != undefined && bcrypt.compare(password,user.password)){
                 req.session.user=user;
-    
+                req.session.shoppingCart=[]
                 if(req.body.recordarme != undefined) {
                     res.cookie('recordarme', user.id, {maxAge: 60000});
-                    }            
-                if(user.role === "admin"){
+                    } 
+                console.log(user.role.name)           
+                if(user.role.name == "admin"){
                     res.redirect('/products')
                 }else res.redirect('/')
             }else{
@@ -146,13 +147,13 @@ return res.render('register',{user:req.session.user,errors:errors.errors})
     'userEdit': function (req, res) {
         var obj = req.session.user;
         res.render("profileEdit",{obj:obj,user:req.session.user});
-      },
+    },
 
   'update':(req,res)=>{ 
-      let avatar;
-      if(req.files[0] != undefined){
-       avatar="/"+req.files[0].filename
-       }else{
+    let avatar;
+    if(req.files[0] != undefined){
+        avatar="/"+req.files[0].filename
+    }else{
         avatar="/defaultuser.png"
     }
     db.users.update({
@@ -162,7 +163,7 @@ return res.render('register',{user:req.session.user,errors:errors.errors})
         address:req.body.Direccion,
         avatar:avatar,
     },{where: {
-       id:req.session.user.id
+        id:req.session.user.id
     }}).then(result => {
         console.log(result);
         res.redirect("/users/profile/"+req.session.user.id)})

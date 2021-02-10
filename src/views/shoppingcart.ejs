@@ -45,7 +45,7 @@
 <div class="shoppingcart-quantity">
 
 <input class="quantity-decrement" type="button" value="-" id="decI" onclick="decrementI()"/>             
-<label class="quantity-display" id="display" >1</label>                  
+<label class="quantity-display" id="display" ><%= product.amount %></label>                  
 <input class="quantity-increment" type="button" value="+" id="incI" onclick="incrementI()"/>
 
 </div>
@@ -53,7 +53,8 @@
     
 <!-- Price of the product -->
 <div class="shoppingcart-product-price">
-<span class="quantity-price">$<span><%=product.price%></span></span>    
+<span class="quantity-price">Precio:$<span><%=product.price%></span></span>    
+<span class="quantity-price">Subtotal:$<span><%=product.subtotal%></span></span>    
 </div>
 </div>
 

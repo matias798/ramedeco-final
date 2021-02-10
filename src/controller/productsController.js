@@ -21,34 +21,39 @@ for (const scene of scenes) {
   }
 }
 
-productCart=[]
+
 
 let productsContoller = {
   addToCart: function(req,res){
     let idProducto=req.body.id_product
     let cantidad=req.body.display
     if(req.session != undefined){
-      if(req.session.shoppingCart == undefined){
-        req.session.shoppingCart=new Map();
-      }
-      req.session.shoppingCart.set(idProducto,{idProducto:idProducto,amount:cantidad})
+      req.session.shoppingCart.push({idProducto:idProducto,amount:cantidad})
     }
     res.redirect('/')
   },
 
   getShoppingcart: function (req, res) {
-    let productsSelected= req.session.shoppingCart.keys()
+    let productsSelected=[]
+     req.session.shoppingCart.forEach(element => {productsSelected.push(element.idProducto)})
     if (productsSelected.length === 0)
     { 
         res.render("emptyShoppingcart",{'books':productsInCart,user:req.session.user});}
     else{
-      db.Product.findAll({where:{id:{[Op.in]:productsSelected}}}).then( (products) =>{
+      db.products.findAll({where:{id:{[Op.in]:productsSelected}}}).then( (products) =>{
         for(let i =0; i< products.length;i++){
-            products[i].amount = req.session.shoppingCart.get(products[i].id).amount
+          for(let j=0;j<req.session.shoppingCart.length;j++){
+            if(req.session.shoppingCart[j] != undefined && req.session.shoppingCart[j].idProducto ==products[i].id){
+              products[i].amount=req.session.shoppingCart[j].amount
+              break;
+            }
+          }
             products[i].subtotal= products[i].amount * products[i].price
         }
+        db.products.findAll({limit:5}).then(result => {
+          res.render("shoppingcart",{'books':products,'products':result,user:req.session.user})}).catch(error => {console.log(error);res.redirect('/')})
 
-      })
+      }).catch(error => {console.log(error);res.redirect('/')})
     }
   },
 
@@ -74,20 +79,42 @@ let productsContoller = {
   },
 
   edit: function (req, res) {
-    let product=mapOfProducts.get(req.params.id)
-    res.render("edit",{'books':mapOfProducts.values(),'product':product,user:req.session.user});
+     db.categories.findAll().then(
+      (categories)=>{
+
+   db.products.findByPk(req.params.id).then(product => {
+      res.render("edit",{'categories':categories,'product':product,user:req.session.user});
+   }).catch((error)=>{
+    // muestro el error por consola 
+    console.log(error);
+    // Redirecciono a productos
+    res.redirect('/products')})
+  }).catch(
+      (error)=>{
+      // muestro el error por consola 
+      console.log(error);
+      // Redirecciono a productos
+      res.redirect('/products')})
   },
 
   search: (req, res) => {
-    let product = products.filter((producto) => {
+    /*let product = products.filter((producto) => {
       let name = producto.tittle.toLowerCase();
       return (
         req.body.search_input == name ||
         name.indexOf(req.body.search_input.toLowerCase()) != -1
       );
+
     })[0];
-    res.render("productdetail", { product: product,user:req.session.user});
+    Op.iLike*/
+    db.products.findOne({
+      where:{
+        tittle: {[Op.iLike]:req.body.search_input}
+      }
+    }).then(product =>res.render("productdetail", { product: product,user:req.session.user}) ).catch(error => {console.log(error); res.redirect('/')})
+    
   },
+
   info:(req,res)=>{
     res.render("info", {user:req.session.user});
   }
@@ -102,10 +129,13 @@ let productsContoller = {
   },
 
   getAllProducts: (req, res) => {
-    res.render("adminhome", { products: products ,user:req.session.user});
+    db.products.findAll().then(products =>{
+
+      res.render("adminhome", { products: products ,user:req.session.user});
+    }).catch(error => {console.log(error)})
   },
 
-  findById: (req, res) => {//arreglar
+  findById: (req, res) => {
     let product = mapOfProducts.get();
     db.products.findByPk(req.params.id,{include: [{association:"images"}]})
     .then(
@@ -123,25 +153,35 @@ let productsContoller = {
   },
 
   update:(req,res)=>{
-    let product =mapOfProducts.get(req.params.id);
-    product.tittle=req.body.tittle,
-    product.category=req.body.category
-    product.summary=req.body.summary
-    product.description=req.body.description
-    product.price=req.body.price
-    product.product_detail=req.body.product_detail
-    product.dimension=req.body.dimension
-
-    for (let i=0;i<req.files.length;i++) {
-      if(i == 0 ){
-        product.main_image=req.files[i].filename
-      }else{
-        product.images.push(req.files[i].filename)
-      }
-    }
-    fs.writeFileSync(pathProductJSON, JSON.stringify(products))
-    res.redirect('/products')
+    let product_detail=req.body.product_detail.reduce((prev,actual)=>{
+      prev += " "+ actual
+    })
+    console.log(product_detail)
+    db.products.update({
+      title:req.body.tittle,
+      summary:req.body.summary,
+      description:req.body.description,
+      product_detail:product_detail,
+      price:req.body.price,
+      dimension:req.body.dimension,
+      stock:req.body.stock || 100,
+      main_image:req.files[0].originalname
+    },{where : {id :req.params.id}})
+    
+    .then(
+    (product)=>{
+    
+    //  Segunda premisa que crea datos de imagenes
+    db.images.create({ 
+    path: req.files[0].originalname,
+    productId: req.params.id })
+    .then(()=>{res.redirect('/products') })
+    .catch((error)=>{ console.log(error); res.redirect('/products')})
+    })
+    
+    .catch((error)=>{ console.log(error); res.redirect('/products')})
   },
+
   store: (req, res) => {
     // Primer premisa que crea un producto
       db.products.create({
@@ -161,7 +201,7 @@ let productsContoller = {
     //  Segunda premisa que crea datos de imagenes
     db.images.create({ 
     path: req.files[0].originalname,
-    product_id_images: product.id })
+    productId: product.id })
     
     
     .then(
@@ -191,7 +231,8 @@ let productsContoller = {
     
     
       },
-  getProductByCategory:(req, res) =>{
+ 
+      getProductByCategory:(req, res) =>{
       let productsByCategory=product.find(product => {return req.params.category== product.category})
       let userts=req.session.user?req.session.user:undefined
       res.render("productCat", {category:req.params.category,products:productsByCategory, user:userts})

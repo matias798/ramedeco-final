@@ -46,7 +46,9 @@ const Product = sequelize.define("products", {
 },{
     createdAt: 'created_at',
     updatedAt: 'updated_at',
-    "underscored": true
+    deletedAt: 'deleted_at',
+    "underscored": true,
+    paranoid: true,
 })
 Product.associate = function (models) {
     Product.hasMany(models.purchase_details, {
