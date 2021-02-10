@@ -38,3 +38,26 @@ He estado trabajando en la implementación de multer para almacenar las imágene
 
 ### Eze:
 Yo estoy arreglando el home con lo que dijo Alejandro, ya moví el search y lo arreglé. Agregué más links a los productos para ir directo. Me queda hacer la distinción entre logeado y no logeado (quiero hacer hoy) y después me queda arreglar cosas del home.
+
+## Daily Lunes 08/02 (sprint_6)
+
+### Eze:
+
+Hoy voy a arrancar con el carrito de compras, hice cambios en el metodo para buscar usuarios, 
+ahora lo hace con primary key.
+
+### Agus:
+
+Ya terminé los modelos de products, categories y product_category, estuve corrigiendo algunos detalles ayer, creo que quedaron listos, hoy voy a hacer el metodo en el controller para llamar a la db
+
+### Matias:
+
+Estoy realizando los controladores para poder crear un usuario y uno para poder crear productos, ya agregue el dotennv y el .env.example para poder usarlo.
+
+### Ruben:
+
+ Creando BD y relaciones entre tablas.
+ creando estructura de modelos de Users, Rol, Image y Scene.
+ completando modelos y probándolos. 
+ Realizando cambios en DB para mejoras del proyecto. 
+ Prueba con métodos de Usercontroller
