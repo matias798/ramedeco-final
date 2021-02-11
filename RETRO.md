@@ -275,4 +275,63 @@ Keep doing:
 
 # Retrospectiva 20/01/2021
 
-Eze: Pasaron los mismos problemas que otros sprints, se llego al lunes  y faltaba medio sprint. Mas sumados a los problemas explicados en el readme, no se llego a todo o como quizás estaría bueno entregar. Relacionado a cosas a mejorar creo que vamos a seguir de la misma manera, viendo el historial no creo que halla cambio alguno. 
+Eze: Pasaron los mismos problemas que otros sprints, se llego al lunes  y faltaba medio sprint. Mas sumados a los problemas explicados en el readme, no se llego a todo o como quizás estaría bueno entregar.
+
+
+
+Rubén :
+More of: *comunicación 
+
+Star doing:
+*testear individual y en grupo el proyecto.
+
+Stop doing:
+
+Less of:
+
+Keep doing:
+*Ayudar entre compañeros.
+*Mantener buen trato.
+*Continuar con el espíritu colaborativo
+
+Retro Agus:
+
+Siento que el sprint estuvo bastante bien en general, al final (ultimos dias) pinchamos un poco. Sin embargo siempre hubo buena predisposicion y ganas de colaborar, que me parece lo mas importante, pero con la última parte de sequelize creo q hay una cuestión conceptual y de cantidad de contenido que cuesta digerir y por lo tanto aplicar (hablo por mi)
+
+More of:
+- Buena comunicación entre nosotros.
+- Pedir y aceptar ayuda.
+- testear antes de pushear
+
+Start doing:
+
+Stop doing:
+- colgar con dividir en trello tareas para hacer
+
+Less of:
+
+Keep doing: 
+- uso correcto por parte de todos de Trello (al final fallamos un poco)
+- Dividir y asignar las tareas claramente en los primeros días (si es posible, en este sprint me parecio q por la naturaleza del sprint, dividimos lo q pudimos rapido pero teniamos q esperar al avance del curso para seguir dividiendo y ahi fallamos un poco)
+
+Retro Matias:
+
+En este sprint senti una actitud mas colaborativa entre nosotros, a penas uno tuvo una duda lo conto y sea la hora que sea se le fue contestado.
+Creo que nos vendria bien comenzar lo antes posible, pero me parece entendible que en casos puntuales uno se encuentre en situaciones que nos obligen a aplazar el comienzo debido a su importancia.Me parecio importante el uso de las daylys para ir sabiendo que va haciendo cada uno y no hacer lo mismo, cosa que me ha pasado frecuentemente. 
+
+More of:
+- Buena comunicación entre nosotros.
+- Levantar la mano tanto como cuando surge una duda como cuando se pueda contestar esta.
+
+Start doing:
+- Reuniones virtuales
+- Comenzar los proyectos lo antes posible
+- Comunicacion entre nosotros
+- Dividir mejor las tareas por trello, subirlas lo mas rapido posible y que no nos queden en el aire
+
+Stop doing:
+- mala division de las tareas 
+
+Less of:
+
+Keep doing:
