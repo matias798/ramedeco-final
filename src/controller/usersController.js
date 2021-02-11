@@ -156,16 +156,20 @@ return res.render('register',{user:req.session.user,errors:errors.errors})
     }else{
         avatar="/defaultuser.png"
     }
-    db.users.update({
+
+    let user ={
         first_name:req.body.Nombre,
         last_name:req.body.Apellido,
         email:req.body.Email,
         address:req.body.Direccion,
-        avatar:avatar,
-    },{where: {
+        avatar:avatar
+    }
+    db.users.update(
+        
+    user,{where: {
         id:req.session.user.id
     }}).then(result => {
-        console.log(result);
+        req.session.user=user
         res.redirect("/users/profile/"+req.session.user.id)})
     .catch(error =>{console.log(error);res.redirect("/")})
     },

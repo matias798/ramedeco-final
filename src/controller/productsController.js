@@ -35,7 +35,7 @@ let productsContoller = {
 
   getShoppingcart: function (req, res) {
     let productsSelected=[]
-     req.session.shoppingCart.forEach(element => {productsSelected.push(element.idProducto)})
+    req.session.shoppingCart.forEach(element => {productsSelected.push(element.idProducto)})
     if (productsSelected.length === 0)
     { 
         res.render("emptyShoppingcart",{'books':productsInCart,user:req.session.user});}
@@ -98,19 +98,11 @@ let productsContoller = {
   },
 
   search: (req, res) => {
-    /*let product = products.filter((producto) => {
-      let name = producto.tittle.toLowerCase();
-      return (
-        req.body.search_input == name ||
-        name.indexOf(req.body.search_input.toLowerCase()) != -1
-      );
-
-    })[0];
-    Op.iLike*/
     db.products.findOne({
       where:{
-        tittle: {[Op.iLike]:req.body.search_input}
-      }
+        title: {[Op.like]: "%" +req.body.search_input + "%"}
+      },
+      include:[{association:"images"}]
     }).then(product =>res.render("productdetail", { product: product,user:req.session.user}) ).catch(error => {console.log(error); res.redirect('/')})
     
   },
