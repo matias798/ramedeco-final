@@ -270,3 +270,9 @@ Keep doing:
 1. Ayudarnos entre todos.
 2. Pedir ayuda cuando algo no se entienda. 
 3. Mantener el ánimo y las ganas de completar todas las asignaciones.
+
+
+
+# Retrospectiva 20/01/2021
+
+Eze: Pasaron los mismos problemas que otros sprints, se llego al lunes  y faltaba medio sprint. Mas sumados a los problemas explicados en el readme, no se llego a todo o como quizás estaría bueno entregar. Relacionado a cosas a mejorar creo que vamos a seguir de la misma manera, viendo el historial no creo que halla cambio alguno. 
