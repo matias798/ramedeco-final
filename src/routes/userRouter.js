@@ -37,7 +37,7 @@ router.get('/register', usersController.getRegister);
 router.post('/register',[
 	check('username').notEmpty().withMessage('Debes escribir tu nombre de usuario'),
 	check('email').isEmail().withMessage('Debes escribir tu email correctamente'),
-	check('password').isLength({min:6}).withMessage('Recuerda que debes escribir minimamente 6 caracteres')
+	check('password').isLength({min:8}).withMessage('Recuerda que debes escribir minimamente 8 caracteres')
 
 
 ] ,usersController.registerUser);
