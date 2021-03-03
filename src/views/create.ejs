@@ -23,6 +23,19 @@
       <h1>Crear producto</h1>
     </div>
 
+
+  <!-- muestra errores con express-validator --> 
+  <% if (typeof errors != 'undefined') { %> 
+    <% for (let i =0 ; i < errors.length;i++){ %> 
+    <div class="d-flex justify-content-center"> 
+    <div class=' w-70 p-1 mb-2 bg-secondary text-white text-center '>
+     <%=errors[i].msg%>  </div>
+     </div>
+     <% } %> 
+     <% } %> 
+
+
+
     <form class="container-main" action="/products" method="POST" enctype="multipart/form-data">
       
       <!--product name and description  -->

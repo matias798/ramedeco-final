@@ -2,6 +2,7 @@ const db=require('../database/models')
 const { Op } = require("sequelize");
 const fs =require('fs')
 var path = require('path');
+const {check,validationResult,body}= require('express-validator')
 let products = require("../data/products.json");
 const scenes = require("../data/scenes.json");
 
@@ -58,7 +59,8 @@ let productsContoller = {
   },
 
   create: function (req, res) {
-    db.categories.findAll().then(
+    db.categories.findAll()
+    .then(
       (categories)=>{
 
     res.render("create",{'categories':categories,user:req.session.user});
@@ -175,6 +177,10 @@ let productsContoller = {
   },
 
   store: (req, res) => {
+
+    let errors = validationResult(req);
+        if(errors.isEmpty()){
+        
     // Primer premisa que crea un producto
       db.products.create({
       title:req.body.tittle,
@@ -221,7 +227,29 @@ let productsContoller = {
     res.redirect('/products')}
     )
     
+        }
+
+        else{
+        console.log(errors);
+
+        db.categories.findAll()
     
+     .then(
+        (categories)=>
+    {return res.render("create",{'categories':categories,user:req.session.user,errors:errors.errors});})
+    
+      
+    .catch(
+       
+      (error)=>{
+     // muestro el error por consola 
+     console.log(error);
+        
+// redirigo a productos
+res.redirect('/products');
+        });
+        
+      }
       },
  
       getProductByCategory:(req, res) =>{
