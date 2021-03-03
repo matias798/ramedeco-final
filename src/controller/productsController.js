@@ -147,6 +147,11 @@ let productsContoller = {
   },
 
   update:(req,res)=>{
+
+
+    let errors = validationResult(req);
+        if(errors.isEmpty()){
+
     let product_detail=req.body.product_detail.reduce((prev,actual)=>{
       prev += " "+ actual
     })
@@ -174,6 +179,36 @@ let productsContoller = {
     })
     
     .catch((error)=>{ console.log(error); res.redirect('/products')})
+
+  }
+  else{
+    // muestro errores por consola
+    console.log(errors);
+
+
+
+
+
+    db.categories.findAll().then(
+      (categories)=>{
+
+   db.products.findByPk(req.params.id).then(product => {
+      res.render("edit",{'categories':categories,'product':product,user:req.session.user, errors:errors.errors});
+   })
+   .catch((error)=>{
+    // muestro el error por consola 
+    console.log(error);
+    // Redirecciono a productos
+    res.redirect('/products')})
+  })
+  .catch(
+      (error)=>{
+      // muestro el error por consola 
+      console.log(error);
+      // Redirecciono a productos
+      res.redirect('/products')})
+
+  }
   },
 
   store: (req, res) => {

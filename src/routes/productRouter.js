@@ -21,21 +21,28 @@ const upload = multer({storage:storage})
 /* GET home page. */
 const productsController = require('../controller/productsController');
 
-router.get('/create',productsController.create)
+router.get('/create',loginMiddleware,productsController.create)
 router.get('/shoppingcart',productsController.getShoppingcart);
-router.get('/edit/:id',productsController.edit);
+router.get('/edit/:id',loginMiddleware,productsController.edit);
 
-router.put('/:id',upload.any(), productsController.update);
+router.put('/:id',upload.any(),[
+	check('tittle').notEmpty().withMessage('Debes escribir un titulo para tu producto'),
+	
+	check('tittle').isLength({min:5}).withMessage('El titulo debe tener minimamente 5 caracteres'),
+	check('product_detail').isLength({min:20}).withMessage('La decripcion debe tener minimamente 20 caracteres')
+
+],
+ productsController.update);
 router.get('/detail/:id', productsController.findById);
 router.get('/categories/:category', productsController.getProductByCategory);
-router.get('/',productsController.getAllProducts);
-router.delete('/:id', productsController.deleteById);
+router.get('/',loginMiddleware,productsController.getAllProducts);
+router.delete('/:id', loginMiddleware,productsController.deleteById);
 router.post('/',upload.any(),[
       check('tittle').notEmpty().withMessage('Debes escribir un titulo para tu producto'),
 	check('tittle').isLength({min:5}).withMessage('El titulo debe tener minimamente 5 caracteres'),
 	check('description').isLength({min:20}).withMessage('La decripcion debe tener minimamente 20 caracteres')
 
 ], productsController.store);
-router.post('/addToCart',productsController.addToCart);
+router.post('/addToCart',loginMiddleware,productsController.addToCart);
 module.exports = router;
 
