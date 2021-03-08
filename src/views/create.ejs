@@ -34,20 +34,32 @@
      <% } %> 
      <% } %> 
 
-
-
-    <form class="container-main" action="/products" method="POST" enctype="multipart/form-data">
+    <form class="container-main createform" action="/products" method="POST" enctype="multipart/form-data">
       
       <!--product name and description  -->
       <div class="product-name-description">
 
         <!--name  -->
         <label class="labelName" for="tittle">Nombre del producto</label>
-        <input class="inputName" type="text" name="tittle" placeholder="Escribe el titulo de tu producto">
+     <!-- div para mostrar errores en js -->
+     <div class="titleError"></div>
+
+       <!-- div para mostrar errores en js -->
+       <div class="titleLength"></div>
+
+        <input class="inputName title" type="text" id="title" name="tittle" placeholder="Escribe el titulo de tu producto">
+
+
 
         <!--description  -->
         <label class=" labelDescription" for="description">Describe tu producto</label>
-        <textarea class="coments" style="resize: none;" name="description" rows="10"
+       <!-- div para mostrar errores en js -->
+        <div class="descriptionErrors"></div>
+
+       <!-- div para mostrar errores en js -->
+       <div class="descriptionlength"></div>
+
+        <textarea class="coments createDescription" style="resize: none;" name="description" rows="10"
           placeholder="Escribe una descripcion de tu producto" cols="40"></textarea>
 
 
@@ -114,7 +126,8 @@
   </main>
 
 
-
+<script src="../js/create.js"></script>
 </body>
+
 
 </html>
