@@ -38,20 +38,40 @@
 
 
 
-        <form class="container-main" method="POST" action="/products/<%=product.id%>?_method=PUT"  enctype="multipart/form-data" >
+        <form class="container-main editForm" method="POST" action="/products/<%=product.id%>?_method=PUT"  enctype="multipart/form-data" >
 
             <!--product name and description  -->
             <div class="product-name-description">
 
                 <!--name  -->
                 <label class="labelName" for="tittle">Nombre del producto</label>
-                <input class="inputName" type="text" name="tittle" value="<%=product.title%>">
+                
+                 <!-- div para mostrar errores en js -->
+                 <div class="titleError"></div>
 
-                <!--description  -->
-                <label class=" labelDescription" for="summary">Resumen de tu producto</label>
-                <textarea class="coments" style="resize: none;" id="summary" name="summary" rows="10"
-                   cols="40"><%=product.summary%></textarea>
+                 <!-- div para mostrar errores en js -->
+                <div class="titleLength"></div>
 
+                <input class="inputName title" type="text" name="tittle" value="<%=product.title%>">
+
+                    <!--description  -->
+                    <label class=" labelDescription" for="product_detail">Descripcion</label>
+                    
+
+                         
+  <!-- div para mostrar errores en js -->
+  <div class="descriptionErrors"></div>
+
+  <!-- div para mostrar errores en js -->
+  <div class="descriptionlength"></div>
+  
+
+                    <textarea class="coments editDescription" style="resize: none;" name="product_detail" rows="10"
+                         cols="40"><%=product.description%></textarea>
+
+  
+                 
+                 
 
             </div>
 
@@ -63,10 +83,15 @@
                 <!-- first column of inputs -->
                 <div>
 
-                    <!--description  -->
-                    <label class=" labelDescription" for="product_detail">Descripcion</label>
-                    <textarea class="coments" style="resize: none;" name="product_detail" rows="5"
-                         cols="40"><%=product.description%></textarea>
+                  
+                  
+                <!--description  -->
+                <label class=" labelDescription" for="summary">Resumen de tu producto</label>
+                <textarea class="coments " style="resize: none;" id="summary" name="summary" rows="5"
+                   cols="40"><%=product.summary%></textarea>
+                  
+                  
+                  
 
 
                     <label>Categoría</label>
@@ -121,6 +146,7 @@
 
 
 
+<script src="../../js/edit.js"></script>
 </body>
 
 </html>
