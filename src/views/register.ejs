@@ -50,12 +50,12 @@
                 <div>
                 <label class="lr-fontsize" for="contraseña">Contraseña</label>
                 <input class="form_lr-width lr-fontsize" type="password" id="password" name="password" placeholder="Elegí tu contraseña">
-                <div class="register-password-msg"><small>La contraseña debe ser de mínimo 6 dígitos</small></div>
+                <div class="register-password-msg"><small>La contraseña debe ser de al menos 8 dígitos</small></div>
                 <input class="form_lr-width lr-fontsize" type="password" id="password_confirm" name="password_confirm" placeholder="Confirmá tu contraseña">
                 </div>
             
                 <div class="register-newsletter-msg">
-                    <input type="checkbox" name="newsletter" value="newsletter si">Quiero recibir emails de RaméDeco con ofertas y promociones exclusivas acordes a mis gustos, intereses e historial de compras.
+                    <input type="checkbox" name="newsletter" value="newsletter si"> Quiero recibir emails de RaméDeco con ofertas y promociones exclusivas acordes a mis gustos, intereses e historial de compras.
                     </div>
                     
 
@@ -66,5 +66,6 @@
                 <div class="register-final-msg"><p>Podrás agregar más información personal, gustos y preferencias más adelante</p></div>
     </main>
     <%- include('parcials/footer.ejs') %>
+<script src="../js/register.js"></script>
 </body>
 </html>
