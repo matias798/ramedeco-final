@@ -12,15 +12,23 @@
 <body style="margin:0">
     <%- include('parcials/header.ejs',{'user':user}) %> 
     <main class="lr-main-container">
-        <form class="lr-form" action="/users/login" method="POST">
+        <form class="lr-form loginForm" action="/users/login" method="POST">
             <div class="lr-title">
                 <h2>Iniciá sesión</h2>
             </div>
                 <label class="lr-fontsize" for="email">Usuario</label><br>
-                <input class="form_lr-width lr-fontsize" type="text" id="username" name="username" placeholder="Usuario"><br>
+               
+                <div class="userError"></div>
+                
+                <input class="form_lr-width lr-fontsize user" type="text" id="username" name="username" placeholder="Usuario"><br>
                     
+                
                 <label class="lr-fontsize" for="password">Contraseña</label><br>
-                <input class="form_lr-width lr-fontsize" type="password" id="password" name="password" placeholder="Contraseña"><br>
+               
+                <div class="passwordError"></div>
+                
+                <input class="form_lr-width lr-fontsize writePassword" type="password" id="password" name="password" placeholder="Contraseña"><br>
+               
                 <a href="">¿Olvidaste tu contraseña?</a><br><br>
                     
 
