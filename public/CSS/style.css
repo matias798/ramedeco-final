@@ -468,15 +468,18 @@ border-radius: 20px;
     }
 
     .register-password-msg{
-        margin-bottom: 10px;
+        margin-bottom: 0.5em;
         color: red;
-        font-size: 14px;
+        font-size: 1em;
+        display: block;
+        text-align: left;
+        margin-left: 3em;
     }
 
     .btn{
         border-radius: 10px;
         padding: 5px;
-        font-size: 1.3em;
+        font-size: 3em;
         border: none;
         background-color: #0096a0;
         color: #dce1df;
@@ -484,6 +487,20 @@ border-radius: 20px;
 
     .btn:hover{
         background-color: #05646b;
+    }
+
+    div.errores{
+        display: block;
+        color: red;
+        font-size: 1em;
+        margin-left: 4em;
+    }
+
+    div.login_user{
+        display: block;
+        margin-left: 3em;
+        margin-bottom: 0.5em;
+        text-align: left;
     }
 
     /* shoppingcart styles */
@@ -968,6 +985,12 @@ display: none;
         margin-bottom: 0px;
     }
     /*register y login*/
+
+    .form_title{
+        margin-top: 0.75em;
+        font-weight: bold;
+
+    }
 
     .lr-main-container{
         background-color: #f2f4f4;
