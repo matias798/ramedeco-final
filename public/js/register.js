@@ -1,11 +1,11 @@
 //validación front del formulario register 
 
-window.addEventListener("load", function() {
+window.addEventListener('load', function() {
     //capturo el formulario
     let registerForm = document.querySelector("form.registerform");
 
     //defino un evento sobre el submit del form
-    registerForm.addEventListener("submit",function(e){
+    registerForm.addEventListener('submit',function(e){
 
         //creo un array vacío donde se irán acumulando los errores de validación
         let errores = [];
@@ -28,7 +28,7 @@ window.addEventListener("load", function() {
             errores.push("El campo Apellido debe contener al menos 2 caracteres")
         }
 
-        let email = document.querySelector("input.last_name");
+        let email = document.querySelector("input.email");
         if(email.value == ""){
             errores.push("El campo E-mail no puede quedar vacío")
         }
@@ -52,6 +52,13 @@ window.addEventListener("load", function() {
     //si hay errores de validacion, prevengo el comportamiento por default del submit
     if(errores.length > 0){
         e.preventDefault();
+
+    //por último, capturo el div de errores del .ejs y recorro el array de errores agregando contenido al .ejs con innerHTML
+    let ulErrores = document.querySelector("div.errores ul")
+    for(let i = 0; i < errores.length; i++){
+        ulErrores.innerHTML += "<li>" + errores[i] + "</li>"
+
+    }
     };
     });
 
