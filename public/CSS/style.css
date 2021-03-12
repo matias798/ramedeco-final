@@ -503,6 +503,16 @@ border-radius: 20px;
         text-align: left;
     }
 
+    .userError{
+        display: block;
+        color: red;
+    }
+
+    .passwordError{
+        display: block;
+        color: red;
+    }
+
     /* shoppingcart styles */
     
     body{background-color: #dce1df;}
