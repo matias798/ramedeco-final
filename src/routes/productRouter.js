@@ -23,6 +23,7 @@ const productsController = require('../controller/productsController');
 
 router.get('/create',loginMiddleware,productsController.create)
 router.get('/shoppingcart',productsController.getShoppingcart);
+router.post('/shoppingcart',productsController.savePurchase);
 router.get('/edit/:id',loginMiddleware,productsController.edit);
 
 router.put('/:id',upload.any(),[
@@ -32,13 +33,13 @@ router.put('/:id',upload.any(),[
 	check('product_detail').isLength({min:20}).withMessage('La decripcion debe tener minimamente 20 caracteres')
 
 ],
- productsController.update);
+productsController.update);
 router.get('/detail/:id', productsController.findById);
 router.get('/categories/:category', productsController.getProductByCategory);
 router.get('/',loginMiddleware,productsController.getAllProducts);
 router.delete('/:id', loginMiddleware,productsController.deleteById);
 router.post('/',upload.any(),[
-      check('tittle').notEmpty().withMessage('Debes escribir un titulo para tu producto'),
+    check('tittle').notEmpty().withMessage('Debes escribir un titulo para tu producto'),
 	check('tittle').isLength({min:5}).withMessage('El titulo debe tener minimamente 5 caracteres'),
 	check('description').isLength({min:20}).withMessage('La decripcion debe tener minimamente 20 caracteres')
 

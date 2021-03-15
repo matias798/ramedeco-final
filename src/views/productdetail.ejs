@@ -36,18 +36,20 @@
       </div>
 
       <div class="contenedor-descrip-der">
-        <p class="precio"><%= product.price%></p>
+        <p>Precio: $<span class="precio" id="precio"><%= product.price%></span></p>
+        
 
       
         <div class="contenedor-cantidad">
           <form action="/products/addToCart" method="POST">
             <input style="display: none;" type="text" id="id_product" name="id_product" value="<%= product.id%>" />
-            <input class="bajar-cantidad" type="button" value="-" onclick="decrementI()" />
+            <input class="bajar-cantidad" type="button" value="-" />
             <input type="text" name="display" id="display" value="1">
-            <input class="aumentar-cantidad" type="button" value="+" onclick="incrementI()" />
+            <input class="aumentar-cantidad" type="button" value="+"  />
             <button class="boton-agregar-carrito" type="submit">Agregar al carrito</button>
         </form>
-            <p class="precio" id="total" ><%= product.price%></p>
+            <p>Total: $<span class="precio" id="total" ><%= product.price%></span></p>
+            
         </div>
         
       </div>
@@ -63,55 +65,6 @@
     <% } %> 
   
   <%- include('parcials/footer.ejs') %>
+  <script src="/js/productDetail.js"></script>
 </body>
-
-<script> 
-  var i = 1;
-  var j = 1;
-  var k = 11900;
-
-  
-  function incrementI() {
-  if (i < 10) {
-   i++;
-   k+=1500;
-  }
-   document.getElementById("display").innerHTML = i;
-   document.getElementById("total").innerHTML = k;
-  }
-
-   function decrementI() {
-  if (i > 1) {
-  k-=1500;
-  --i;
-  } 
-  document.getElementById("display").innerHTML = i;
-  document.getElementById("total").innerHTML = k;
-
-  }
-
-  function incrementJ() {
-  if (j < 10) {
-   j++;
-   k+=10000;
-
-  }
-   document.getElementById("display-2").innerHTML = j;
-   document.getElementById("total").innerHTML = k;
-
-   }
-
-   function decrementj() {
-  if (j > 1) {
-      k-=10000;
-      --j;
-  } 
-  document.getElementById("display-2").innerHTML = j;
-  document.getElementById("total").innerHTML = k;
-
-  }
-
-
-</script>
-
 </html>

@@ -26,10 +26,6 @@ const PurchaseDetail = sequelize.define("purchase_details",
         deleted_at: {
             type: DataTypes.DATE
         },
-        purchase_id_purchase_detail:{
-            type:DataTypes.BIGINT,
-            allowNull:false
-        },
     },{
         createdAt: 'created_at',
         updatedAt: 'updated_at',

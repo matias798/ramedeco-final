@@ -1,14 +1,14 @@
 <div class="product_card_container">
-    <img class="product_card_img" src="images/home/<%= scene.image %>" alt="">
+    <img class="product_card_img" src="images/home/<%= scene.main_image %>" alt="">
     <% for (const element of scene.pointers_position) { %>
-        <div class="pointer-container" style="left:<%= element.pointer_left %>%;top:<%= element.pointer_top %>% ;">
-        <a href="/products/detail/<%=element.description_ref%>" ></a>
+        <div class="pointer-container" style="left:<%= element.position_left %>%;top:<%= element.position_top  %>% ;">
+        <a href="/products/detail/<%=element.product.id%>" ></a>
         </div>
         
-        <div class="card-container-product-description" style="left:<%= element.description_lef%>%; top:<%= element.description_top %>%; ">
-            <a class="links" href="/products/detail/<%=element.description_ref%>"><h3 class="product_card_text_mark product_card_text green_font"><%= element.description_tittle %></h3></a>
-            <p class="product_card_text"><%= element.description_summary %></p>
-            <p class="product_card_text_mark product_card_text green_font"><%= element.description_price %></p>
+        <div class="card-container-product-description" style="left:<%= element.description_left %>%; top:<%= element.description_top %>%; ">
+            <a class="links" href="/products/detail/<%=element.product.id %>"><h3 class="product_card_text_mark product_card_text green_font"><%= element.product.title %></h3></a>
+            <p class="product_card_text"><%= element.product.summary %></p>
+            <p class="product_card_text_mark product_card_text green_font"><%= element.product.price %></p>
         </div>        
     <%} %> 
 </div>

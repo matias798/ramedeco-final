@@ -14,6 +14,12 @@ const SceneDetail = sequelize.define(
         position_top: {
             type: DataTypes.TINYINT
         },
+        description_left: {
+            type: DataTypes.TINYINT
+        },
+        description_top: {
+            type: DataTypes.TINYINT
+        },
         created_at: {
             type: DataTypes.DATE
         },

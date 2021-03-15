@@ -633,8 +633,6 @@ border-radius: 20px;
         
         .shoppingcart-quantity-price{
         display: flex;
-        justify-content: space-between;
-        line-height: 30px;
         color: #53b5aa;
         font-weight: 400;
         }
