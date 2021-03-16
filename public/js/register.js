@@ -33,6 +33,14 @@ window.addEventListener('load', function() {
             errores.push("El campo e-mail no puede quedar vacío")
         }
 
+        //validación de mail válido
+        const regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+        if(regexEmail.test(email.value) == false){
+            errores.push("El e-mail debe ser válido")
+        }
+
+        //ACÁ VA LA VALIDACIÓN DE MAIL YA REGISTRADO -- en proceso
+
         let password = document.querySelector("input.password");
         if(password.value == ""){
             errores.push("El campo Contraseña no puede quedar vacío")
@@ -40,8 +48,7 @@ window.addEventListener('load', function() {
         if(password.value.length < 2){
             errores.push("La contraseña debe contener al menos 8 caracteres")
         }
-        //ACÁ VA LA VALIDACIÓN OPCIONAL PARA QUE LA CONTRASEÑA CONTENGA CARACTER ESPECIAL, MAYUSCULA Y NUM
-
+ 
         let password_confirm = document.querySelector("input.password_confirm");
         if(password_confirm.value != password.value){
             errores.push("La confirmación de contraseña no coincide con la ingresada")
