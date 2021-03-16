@@ -151,8 +151,20 @@ return res.render('register',{user:req.session.user,errors:errors.errors})
 
 
 'repetir': function (req, res) {
-    return true;
+ db.users.findOne({where:{email: req.body.email}})
+ .then(
+      (user) => {
+        if(user != undefined ){
+           return true;
+                }
+                else{
+                    return false;
+                }
+    }
+)
 },
+
+
 
   'update':(req,res)=>{ 
     let avatar;
