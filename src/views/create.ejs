@@ -9,124 +9,100 @@
   <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
   <link rel="icon" href="../images/white-logo.jpeg" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
   <title>Ramé Deco</title>
 </head>
 
-<body>
+<body class="page_background_color">
   <main>
 
     <!-- navbar -->
     <%- include('parcials/headeradmin.ejs',{'user':user}) %>
 
-    <!-- title -->
-    <div>
-      <h1>Crear producto</h1>
+
+    <!-- muestra errores con express-validator -->
+    <% if (typeof errors != 'undefined') { %>
+    <% for (let i =0 ; i < errors.length;i++){ %>
+    <div class="d-flex justify-content-center">
+      <div class=' w-70 p-1 mb-2 bg-secondary text-white text-center '>
+        <%=errors[i].msg%> </div>
     </div>
+    <% } %>
+    <% } %>
 
-
-  <!-- muestra errores con express-validator --> 
-  <% if (typeof errors != 'undefined') { %> 
-    <% for (let i =0 ; i < errors.length;i++){ %> 
-    <div class="d-flex justify-content-center"> 
-    <div class=' w-70 p-1 mb-2 bg-secondary text-white text-center '>
-     <%=errors[i].msg%>  </div>
-     </div>
-     <% } %> 
-     <% } %> 
-
-    <form class="container-main createform" action="/products" method="POST" enctype="multipart/form-data">
-      
-      <!--product name and description  -->
-      <div class="product-name-description">
-
-        <!--name  -->
-        <label class="labelName" for="tittle">Nombre del producto</label>
-     <!-- div para mostrar errores en js -->
-     <div class="titleError"></div>
-
-       <!-- div para mostrar errores en js -->
-       <div class="titleLength"></div>
-
-        <input class="inputName title" type="text" id="title" name="tittle" placeholder="Escribe el titulo de tu producto">
-
-
-
-        <!--description  -->
-        <label class=" labelDescription" for="description">Describe tu producto</label>
-       <!-- div para mostrar errores en js -->
-        <div class="descriptionErrors"></div>
-
-       <!-- div para mostrar errores en js -->
-       <div class="descriptionlength"></div>
-
-        <textarea class="coments createDescription" style="resize: none;" name="description" rows="10"
-          placeholder="Escribe una descripcion de tu producto" cols="40"></textarea>
-
-
+    <div class="form_container">
+      <div>
+        <h1 class="editTittle">Crear producto</h1>
       </div>
+      <form style="text-align:left" action="/products" class="createform" method="POST" enctype="multipart/form-data">
 
-
-
-      <!-- inputs -->
-      <div class="containerDetalle">
-
-        <!-- first column of inputs -->
-        <div>
-
-          <!--description  -->
-          <label class=" labelDescription" for="summary">Resumen</label>
-          <textarea class="coments" style="resize: none;" name="summary" rows="5"
-            placeholder="Escribe un resumen de tu producto" cols="40"></textarea>
-
-
-          <label>Categoría</label>
-
-          <select name="category">
+        <div class="form-group">
+          <label class="labelName" for="tittle">Nombre del producto</label>
+          <!-- div para mostrar errores en js -->
+          <div class="titleError"></div>
+          <!-- div para mostrar errores en js -->
+          <div class="titleLength"></div>
+          <input class="form-control title" type="text" id="title" name="tittle" placeholder="Escribe el titulo de tu producto"/>
+        </div>
+        <div class="form-group">
+          <label class="labelName" for="description">Descripcion</label>
+          <!-- div para mostrar errores en js -->
+          <div class="descriptionErrors"></div>
+          <!-- div para mostrar errores en js -->
+          <div class="descriptionlength"></div>
+          <textarea class="form-control createDescription" style="resize: none" name="description" rows="10" cols="40"
+            placeholder="Escribe una descripcion de tu producto"></textarea>
+        </div>
+        <div class="form-group">
+          <label class="labelName" class="labelDescription" for="summary">Resumen de tu producto</label>
+          <!-- div para mostrar errores en js -->
+          <div class="descriptionErrors"></div>
+          <!-- div para mostrar errores en js -->
+          <div class="labelName" class="descriptionlength"></div>
+          <textarea class="form-control" style="resize: none" id="summary" name="summary" rows="5" cols="40"
+            placeholder="Escribe un resumen de tu producto"></textarea>
+        </div>
+        <div class="form-group">
+          <label class="labelName">Categoría</label>
+          <select class="form-control" name="category">
             <% for(var i= 0; i< categories.length; i++) { %>
             <option name="category"><%=categories[i].name%></option>
             <% } %>
           </select>
-          <label class="upload-images">Sube imagenes del producto 
-            <input type="file" size="60"
-                    name='images' accept=".pdf,.jpg,.png"></label>
-          <label class="labelPrecio" for="price">Precio</label>
-          <input class="inputPrecio" type="number" name="price" style="background-color: #dce1df" required>
-
-          <!-- upload images of products -->
-
         </div>
-
-        <!-- second column of inputs -->
-        <div>
-
-          <!--description  -->
-          <label class=" labelDescription" for="product_detail">Detalles del producto</label>
-          <textarea class="coments" style="resize: none;" name="product_detail" rows="5"
-            placeholder="Escribe los detalles de tu producto" cols="40" required></textarea>
-
-
-          <label class="labelPrecio" for="dimension">Dimension</label>
-          <input class="inputPrecio" type="number" name="dimension" style="background-color: #dce1df" required>
-
+        <div class="form-group">
+          <label class="upload-images">Sube imagenes del producto
+            <input type="file" size="60" name="images" accept=".pdf,.jpg,.png" /></label>
+        </div>
+        <div class="form-group">
+          <label class="labelName" for="product_detail">Detalles del producto</label>
+          <textarea class="form-control" style="resize: none" name="product_detail" rows="5"
+          placeholder="Escribe los detalles de tu producto" cols="40" required></textarea>
+        </div>
+        <div class="form-group">
+          <label class="labelName" for="dimension">Dimension</label>
+          <input class="form-control" type="text" name="dimension" style="background-color: #dce1df" required />
+        </div>
+        <div class="form-group">
+          <label class="labelName" for="price">Precio</label>
+          <input class="form-control" type="number" name="price" style="background-color: #dce1df"  required />
+        </div>
+        <div class="form-group">
           <label class="labelPrecio" for="stock">Cantidad</label>
-          <input class="inputPrecio" type="number" name="stock" style="background-color: #dce1df" required>
-
-
-
-          <div class="container-of-button">
-            <input type="submit" class="input-of-create" value="crear">
-          </div>
+          <input class="form-control" type="number" name="stock" style="background-color: #dce1df" required>
         </div>
-
-      </div>
-
-    </form>
-
+        <div class="form-group">
+          <input type="submit" class="btn btn-primary" value="crear" />
+        </div>
+      </form>
+    </div>
 
   </main>
 
 
-<script src="../js/create.js"></script>
+  <script src="../js/create.js"></script>
 </body>
 
 

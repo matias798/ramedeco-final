@@ -2,151 +2,101 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/CSS/style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
-    <link rel="icon" href="../images/white-logo.jpeg" type="image/x-icon">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/CSS/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet" />
+    <link rel="icon" href="../images/white-logo.jpeg" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
     <title>Ramé Deco Editar</title>
 </head>
 
-<body>
+<body class="page_background_color">
     <main>
-
         <!-- navbar -->
         <%- include('parcials/headeradmin.ejs',{'user':user}) %>
-        <div>
-            <h1>
-                Edicion Articulo: <%=product.tittle%>
-            </h1>
+        <!-- muestra errores con express-validator -->
 
-        </div>
-
-
-
-  <!-- muestra errores con express-validator --> 
-  <% if (typeof errors != 'undefined') { %> 
-    <% for (let i =0 ; i < errors.length;i++){ %> 
-    <div class="d-flex justify-content-center"> 
-    <div class=' w-70 p-1 mb-2 bg-secondary text-white text-center '>
-     <%=errors[i].msg%>  </div>
-     </div>
-     <% } %> 
-     <% } %> 
-
-
-
-        <form class="container-main editForm" method="POST" action="/products/<%=product.id%>?_method=PUT"  enctype="multipart/form-data" >
-
-            <!--product name and description  -->
-            <div class="product-name-description">
-
-                <!--name  -->
-                <label class="labelName" for="tittle">Nombre del producto</label>
-                
-                 <!-- div para mostrar errores en js -->
-                 <div class="titleError"></div>
-
-                 <!-- div para mostrar errores en js -->
-                <div class="titleLength"></div>
-
-                <input class="inputName title" type="text" name="tittle" value="<%=product.title%>">
-
-                    <!--description  -->
-                    <label class=" labelDescription" for="product_detail">Descripcion</label>
-                    
-
-                         
-  <!-- div para mostrar errores en js -->
-  <div class="descriptionErrors"></div>
-
-  <!-- div para mostrar errores en js -->
-  <div class="descriptionlength"></div>
-  
-
-                    <textarea class="coments editDescription" style="resize: none;" name="product_detail" rows="10"
-                         cols="40"><%=product.description%></textarea>
-
-  
-                 
-                 
-
+        
+        <div class="form_container">
+            <div>
+                <h1 class="editTittle">Edicion Articulo: <%=product.title%></h1>
             </div>
-
-
-
-            <!-- inputs -->
-            <div class="containerDetalle">
-
-                <!-- first column of inputs -->
-                <div>
-
-                  
-                  
-                <!--description  -->
-                <label class=" labelDescription" for="summary">Resumen de tu producto</label>
-                <textarea class="coments " style="resize: none;" id="summary" name="summary" rows="5"
-                   cols="40"><%=product.summary%></textarea>
-                  
-                  
-                  
-
-
-                    <label>Categoría</label>
-
-                    <select name="category">
+            <% if (typeof errors != 'undefined') { %> <% for (let i =0 ; i <errors.length;i++){ %>
+                <div class="d-flex justify-content-center">
+                    <div class="w-70 p-1 mb-2 bg-secondary text-white text-center">
+                        <%=errors[i].msg%>
+                    </div>
+                </div>
+                <% } %>
+                <% } %>
+            <form style="text-align:left" class="editForm" method="POST" action="/products/<%=product.id%>?_method=PUT"
+                enctype="multipart/form-data">
+                <div class="form-group">
+                    <label class="labelName" for="tittle">Nombre del producto</label>
+                    <!-- div para mostrar errores en js -->
+                    <div class="titleError"></div>
+                    <!-- div para mostrar errores en js -->
+                    <div class="titleLength"></div>
+                    <input class="form-control title" type="text" id="title" name="tittle" value="<%=product.title%>" />
+                </div>
+                <div class="form-group">
+                    <label class="labelName" for="product_detail">Descripcion</label>
+                    <!-- div para mostrar errores en js -->
+                    <div class="descriptionErrors"></div>
+                    <!-- div para mostrar errores en js -->
+                    <div class="descriptionlength"></div>
+                    <textarea class="form-control editDescription" style="resize: none" name="product_detail" rows="10" cols="40">
+<%=product.description%></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="labelName" class="labelDescription" for="summary">Resumen de tu producto</label>
+                    <!-- div para mostrar errores en js -->
+                    <div class="descriptionErrors"></div>
+                    <!-- div para mostrar errores en js -->
+                    <div class="labelName" class="descriptionlength"></div>
+                    <textarea class="form-control" style="resize: none" id="summary" name="summary" rows="5" cols="40">
+<%=product.summary%></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="labelName">Categoría</label>
+                    <select class="form-control" name="category">
                         <% for(var i= 0; i< categories.length; i++) { %>
                         <option name="category"><%=categories[i].name%></option>
                         <% } %>
                     </select>
-
-                        <label class="upload-images">Sube imagenes del producto 
-                        <input type="file" size="60"
-                                name='images' accept=".pdf,.jpg,.png"></label>
-
                 </div>
-
-                <!-- second column of inputs -->
-                <div>
-
-                    <!--description  -->
-                    <label class=" labelDescription" for="product_detail">Detalles del producto</label>
-                    <textarea class="coments" style="resize: none;" name="product_detail" rows="5"
-                        value="<%=product.product_detail%>" cols="40" required><%=product.product_detail%></textarea>
-
-
-                    <label class="labelPrecio" for="dimension">Dimension</label>
-                    <input class="inputPrecio" type="text" name="dimension" style="background-color: #dce1df" value="<%=product.dimension%>"
-                        required>
-
-
-                    <label class="labelPrecio" for="price">Precio</label>
-                    <input class="inputPrecio" type="number" name="price" style="background-color: #dce1df" value="<%=product.price%>" required>
-
-                    <div class="container-of-button">
-                        <input type="submit" class="input-of-create" value="edit">
-                    </div>
-
+                <div class="form-group">
+                    <label class="upload-images">Sube imagenes del producto
+                        <input type="file" size="60" name="images" accept=".pdf,.jpg,.png" /></label>
                 </div>
-
-            </div>
-
-
-        </form>
-
+                <div class="form-group">
+                    <label class="labelName" for="product_detail">Detalles del producto</label>
+                    <textarea class="form-control" style="resize: none" name="product_detail" rows="5"
+                        value="<%=product.product_detail%>" cols="40" required>
+<%=product.product_detail%></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="labelName" for="dimension">Dimension</label>
+                    <input class="form-control" type="text" name="dimension" style="background-color: #dce1df"
+                        value="<%=product.dimension%>" required />
+                </div>
+                <div class="form-group">
+                    <label class="labelName" for="price">Precio</label>
+                    <input class="form-control" type="number" name="price" style="background-color: #dce1df"
+                        value="<%=product.price%>" required />
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" value="edit" />
+                </div>
+            </form>
         </div>
-
-
-
-        
-
     </main>
-
-
-
-<script src="../../js/edit.js"></script>
+    <script src="../../js/edit.js"></script>
 </body>
 
 </html>
