@@ -32,14 +32,26 @@ window.addEventListener('load', function() {
         if(email.value == ""){
             errores.push("El campo e-mail no puede quedar vacío")
         }
-
         //validación de mail válido
         const regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
         if(regexEmail.test(email.value) == false){
             errores.push("El e-mail debe ser válido")
         }
-
-        //ACÁ VA LA VALIDACIÓN DE MAIL YA REGISTRADO -- en proceso
+        //validación de mail ya registrado
+        fetch('/repetir')
+            .then(response => {
+                return response.json()
+            })
+            .then(dataDecode => {
+                console.log(dataDecode)
+                //este resultado va a ser true si ya existe el mail en la DB o false si no existe
+                if(dataDecode == true){
+                    errores.push("El e-mail que estás ingresando ya está en uso")
+                }
+            })
+            .catch(function(error){
+                console.log(error);
+            });
 
         let password = document.querySelector("input.password");
         if(password.value == ""){
@@ -55,16 +67,17 @@ window.addEventListener('load', function() {
         }
 
 
-    //si hay errores de validacion, prevengo el comportamiento por default del submit
+    //si hay errores de validacion, prevengo el comportamiento por default del submit y muestro los errores con innerHTML
     if(errores.length > 0){
+        let ulErrores = document.querySelector("div.errores ul")
+        ulErrores.innerHTML = ""
+
         e.preventDefault();
 
-    //por último, capturo el div de errores del .ejs y recorro el array de errores agregando contenido al .ejs con innerHTML
-    let ulErrores = document.querySelector("div.errores ul")
-    for(let i = 0; i < errores.length; i++){
-        ulErrores.innerHTML += "<li>" + errores[i] + "</li>"
-
-    }
+        for(let i = 0; i < errores.length; i++){
+            ulErrores.innerHTML += "<li>" + errores[i] + "</li>"
+    
+        }
     };
     });
 

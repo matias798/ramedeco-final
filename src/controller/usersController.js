@@ -153,6 +153,7 @@ return res.render('register',{user:req.session.user,errors:errors.errors})
 'repetir': function (req, res) {
     return true;
 },
+
   'update':(req,res)=>{ 
     let avatar;
     if(req.files[0] != undefined){
