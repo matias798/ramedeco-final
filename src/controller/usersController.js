@@ -149,6 +149,10 @@ return res.render('register',{user:req.session.user,errors:errors.errors})
         res.render("profileEdit",{obj:obj,user:req.session.user});
     },
 
+
+'repetir': function (req, res) {
+    return true;
+},
   'update':(req,res)=>{ 
     let avatar;
     if(req.files[0] != undefined){

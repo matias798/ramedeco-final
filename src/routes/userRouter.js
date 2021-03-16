@@ -61,4 +61,6 @@ check('password').isLength({min:6}).withMessage('Ingresaste mal tu contraseña, 
 ],usersController.logInUser );
 router.get('/logout',loginMiddleware, usersController.logOutUser);
 
+router('/repetir',usersController.repetir)
+
 module.exports = router;
