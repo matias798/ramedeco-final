@@ -19,13 +19,13 @@
             <h2 class="form_title">Creá tu cuenta</h2>
         </div>
 
-        <!--- <% if (typeof errors != 'undefined') { %> 
+        <% if (typeof errors != 'undefined') { %> 
             <% for (let i =0 ; i < errors.length;i++){ %> 
             
                 <div class='p-3 mb-2 bg-secondary text-white text-center '> <%=errors[i].msg%>  </div>
                 
             <% } %> 
-            <% } %> --->
+            <% } %> 
 
             <div class="errores">
                 <ul>
@@ -71,6 +71,5 @@
                 <div class="register-final-msg"><p>Podrás agregar más información personal, gustos y preferencias más adelante</p></div>
     </main>
     <%- include('parcials/footer.ejs') %>
-<script src="../js/register.js"></script>
 </body>
 </html>

@@ -35,9 +35,20 @@ router.put('/profile/edit/:id',upload.any(), usersController.update);
 /* GET register page. */
 router.get('/register', usersController.getRegister);
 router.post('/register',[
-	check('username').notEmpty().withMessage('Debes escribir tu nombre de usuario'),
+	check('first_name').notEmpty().withMessage('Debes escribir tu nombre '),
+	check('first_name').isLength({min:2}).withMessage('Tu nombre debe tener minimamente 2 caracteres'),
+
+	check('last_name').notEmpty().withMessage('Debes escribir tu apellido '),
+	check('last_name').isLength({min:2}).withMessage('Tu apellido debe tener minimamente 2 caracteres'),
+	
+	check('email').notEmpty().withMessage('Debes escribir un email '),
 	check('email').isEmail().withMessage('Debes escribir tu email correctamente'),
-	check('password').isLength({min:8}).withMessage('Recuerda que debes escribir minimamente 8 caracteres')
+
+	check('password').notEmpty().withMessage('Debes escribir una contraseña '),
+	check('password').isLength({min:8}).withMessage('Recuerda que tu contraseña debe tener minimamente 8 caracteres'),
+
+
+	check('username').notEmpty().withMessage('Debes escribir tu nombre de usuario')
 
 
 ] ,usersController.registerUser);
