@@ -30,9 +30,8 @@ window.addEventListener('load', function() {
 
         let email = document.querySelector("input.email");
         if(email.value == ""){
-            errores.push("El campo E-mail no puede quedar vacío")
+            errores.push("El campo e-mail no puede quedar vacío")
         }
-        //ACÁ FALTA VALIDACIÓN PARA QUE NO SE PUEDAN REGISTRAR MAILS YA REGISTRADOS
 
         let password = document.querySelector("input.password");
         if(password.value == ""){
