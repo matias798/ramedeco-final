@@ -16,7 +16,7 @@ let productsContoller = {
   addToCart: function (req, res) {
     let idProducto = req.body.id_product;
     let cantidad = req.body.display;
-    if (req.session != undefined) {
+    if (req.session.user != undefined) {
       req.session.shoppingCart.push({
         idProducto: idProducto,
         amount: cantidad,
@@ -28,7 +28,7 @@ let productsContoller = {
     let formData=req.body
     let mapProducts = new Map();
     for (const key in formData) {
-      if (typeof formData[key] !== undefined && key !== "total_purchase") {
+      if (typeof formData[key] !== undefined && key !== "total_purchase" && key !== "paymentMethod") {
         const element = formData[key];
         let product_id=key.slice(0,key.indexOf('_'))
         if(mapProducts.has(product_id)){
@@ -44,23 +44,18 @@ let productsContoller = {
     let purchase_content ={
       date: Date.now(),
       total:formData["total_purchase"],
-      payment_methodId:1,
+      paymentMethodId:req.body.paymentMethod,
       userId : req.session.user.id
     }
     try{
     let purchase=db.purchases.build(purchase_content)
-    //let purchase=db.purchases.create(purchase_content)
-    /*.then(purchase => {
-
-    })
-    .catch(error => console.log(error))*/
-    purchase.paymentMethodId=1
     await purchase.save()
     for (const element of mapProducts.values()) {
       let purchase_detail=db.purchase_details.build({...element})
       purchase_detail.purchaseId=purchase.id 
       await purchase_detail.save() 
     }
+    req.session.shoppingCart=undefined
     res.redirect("/")
   }catch(error){
     console.log(error)
@@ -70,11 +65,19 @@ let productsContoller = {
 
   getShoppingcart: function (req, res) {
     let productsSelected = [];
-    if(req.session.shoppingCart === undefined){
+    if(!req.session.shoppingCart ){
       res.render("emptyShoppingcart", {
         books: undefined,
         user: req.session.user,
       });
+      return
+    }
+    if(req.session.shoppingCart.length<1 ){
+      res.render("emptyShoppingcart", {
+        books: undefined,
+        user: req.session.user,
+      });
+      return
     }
     req.session.shoppingCart.forEach((element) => {
       productsSelected.push(element.idProducto);
@@ -106,11 +109,13 @@ let productsContoller = {
               limit: 5,
             })
             .then((result) => {
+              db.payment_methods.findAll().then(paymentMethods=> {
               res.render("shoppingcart", {
                 books: products,
                 products: result,
                 user: req.session.user,
-              });
+                paymentMethods:paymentMethods
+              })}).catch(error=> console.log(error))
             })
             .catch((error) => {
               console.log(error);

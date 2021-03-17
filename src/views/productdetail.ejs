@@ -38,9 +38,9 @@
       <h3 class="form_title_pd"><%= product.title %></h3>
       <div class="price_container">
       <div class="form_element_container"><p>Precio: $<span class="precio" id="precio"><%= product.price%></span></p></div>
-      <input style="display: none;" type="text" id="id_product" name="id_product" value="<%= product.id%>" />
       <form action="/products/addToCart" method="POST" class="form_element_container" >
         <div class="amount_container">
+        <input style="display: none;" type="text" id="id_product" name="id_product" value="<%= product.id%>" />
         <input class="bajar-cantidad" type="button" value="-" />
         <input type="text" class="display_input"
         name="display" id="display" value="1">

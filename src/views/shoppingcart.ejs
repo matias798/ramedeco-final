@@ -84,9 +84,14 @@
           <input  readonly class="form-control" type="text" name="total_purchase" id="total_purchase" value="<%= total %>" >
         </div>
         <div >
-        <button type="button" class="btn btn-secondary btn-sm">
-          Volver
-        </button>
+        <div class="form-group">
+            <label class="labelName">Formas de Pago:</label>
+            <select class="form-control" name="paymentMethod">
+              <% for(var i= 0; i< paymentMethods.length; i++) { %>
+              <option name="paymentMethod" value="<%= paymentMethods[i].id%>"><%= paymentMethods[i].name%></option>
+              <% } %>
+            </select>
+        </div>
 
         
           <button type="submit" class="btn btn-primary btn-sm">
