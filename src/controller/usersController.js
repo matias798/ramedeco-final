@@ -70,6 +70,23 @@ module.exports={
         if(errors.isEmpty())
         {
 
+    db.users.findOne({where:{email:req.body.email}})
+    .then(
+        user =>{
+            if (req.body.email == user.email ){
+               
+                let repetir ="El email ingresado ya existe";
+// Retorno vista registro 
+return res.render('register',{user:req.session.user,errors:errors.errors,repetir})
+   
+            }
+        })
+
+        .catch(error=>{
+            console.log(error);
+            res.redirect('/')
+        })
+
      // creo usuario en la base de datos
         db.users.create({
             username:req.body.username,
