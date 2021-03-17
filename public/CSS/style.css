@@ -510,12 +510,18 @@ border-radius: 20px;
     .userError{
         display: block;
         color: red;
+        font-size: 1em;
+        margin-left: 4em;
     }
+    
 
     .passwordError{
         display: block;
         color: red;
+        font-size: 1em;
+        margin-left: 4em;
     }
+    
 
     /* shoppingcart styles */
     

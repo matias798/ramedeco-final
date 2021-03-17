@@ -164,6 +164,20 @@ return res.render('register',{user:req.session.user,errors:errors.errors})
 )
 },
 
+'userExist': function (req, res) {
+    db.users.findOne({where:{username: req.body.username}})
+    .then(
+         (user) => {
+           if(user != undefined ){
+              return true;
+                   }
+                   else{
+                       return false;
+                   }
+       }
+   )
+   },
+
 
 
   'update':(req,res)=>{ 

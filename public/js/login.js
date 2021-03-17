@@ -35,7 +35,26 @@ window.addEventListener('load', function() {
 
                         //no se muestra error
                         userError.innerHTML = "";
-                  }
+                  } 
+
+                  //validación de usuario existente
+                  
+                       fetch('/userExist')
+                        .then(response => {
+                              return response.json()
+                        })
+                        .then(dataDecode => {
+                              console.log(dataDecode)
+                              //Si el usuario No existe esto será false
+                              if(dataDecode == false){
+                              errores.push("El nombre de usuario es inexistente")
+                              }
+                        })
+                        .catch(function(error){
+                              console.log(error);
+                        }); 
+                        
+                  
 
 
                   //Si la contraseña está vacía

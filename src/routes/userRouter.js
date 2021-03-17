@@ -63,4 +63,6 @@ router.get('/logout',loginMiddleware, usersController.logOutUser);
 
 router.get('/repetir',usersController.repetir)
 
+router.get('/userExist',usersController.userExist)
+
 module.exports = router;
