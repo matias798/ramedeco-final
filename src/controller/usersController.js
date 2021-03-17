@@ -149,6 +149,37 @@ return res.render('register',{user:req.session.user,errors:errors.errors})
         res.render("profileEdit",{obj:obj,user:req.session.user});
     },
 
+
+'repetir': function (req, res) {
+ db.users.findOne({where:{email: req.body.email}})
+ .then(
+      (user) => {
+        if(user != undefined ){
+           return true;
+                }
+                else{
+                    return false;
+                }
+    }
+)
+},
+
+'userExist': function (req, res) {
+    db.users.findOne({where:{username: req.body.username}})
+    .then(
+         (user) => {
+           if(user != undefined ){
+              return true;
+                   }
+                   else{
+                       return false;
+                   }
+       }
+   )
+   },
+
+
+
   'update':(req,res)=>{ 
     let avatar;
     if(req.files[0] != undefined){

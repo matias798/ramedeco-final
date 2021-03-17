@@ -470,17 +470,21 @@ border-radius: 20px;
         margin-left: 3em;
     }
 
-    .btn{
+    .btn-login-register{
         border-radius: 10px;
-        padding: 5px;
-        font-size: 3em;
+        padding: 0.2em;
+        font-size: 1.7em;
         border: none;
         background-color: #0096a0;
         color: #dce1df;
     }
 
-    .btn:hover{
+    .btn-login-register:hover{
         background-color: #05646b;
+    }
+
+    .btn-container-register{
+        margin: 1em
     }
 
     div.errores{
@@ -500,12 +504,18 @@ border-radius: 20px;
     .userError{
         display: block;
         color: red;
+        font-size: 1em;
+        margin-left: 4em;
     }
+    
 
     .passwordError{
         display: block;
         color: red;
+        font-size: 1em;
+        margin-left: 4em;
     }
+    
 
     /* shoppingcart styles */
     

@@ -30,9 +30,28 @@ window.addEventListener('load', function() {
 
         let email = document.querySelector("input.email");
         if(email.value == ""){
-            errores.push("El campo E-mail no puede quedar vacío")
+            errores.push("El campo e-mail no puede quedar vacío")
         }
-        //ACÁ FALTA VALIDACIÓN PARA QUE NO SE PUEDAN REGISTRAR MAILS YA REGISTRADOS
+        //validación de mail válido
+        const regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+        if(regexEmail.test(email.value) == false){
+            errores.push("El e-mail debe ser válido")
+        }
+        //validación de mail ya registrado
+        fetch('/repetir')
+            .then(response => {
+                return response.json()
+            })
+            .then(dataDecode => {
+                console.log(dataDecode)
+                //este resultado va a ser true si ya existe el mail en la DB o false si no existe
+                if(dataDecode == true){
+                    errores.push("El e-mail que estás ingresando ya está en uso")
+                }
+            })
+            .catch(function(error){
+                console.log(error);
+            });
 
         let password = document.querySelector("input.password");
         if(password.value == ""){
@@ -41,24 +60,24 @@ window.addEventListener('load', function() {
         if(password.value.length < 2){
             errores.push("La contraseña debe contener al menos 8 caracteres")
         }
-        //ACÁ VA LA VALIDACIÓN OPCIONAL PARA QUE LA CONTRASEÑA CONTENGA CARACTER ESPECIAL, MAYUSCULA Y NUM
-
+ 
         let password_confirm = document.querySelector("input.password_confirm");
         if(password_confirm.value != password.value){
             errores.push("La confirmación de contraseña no coincide con la ingresada")
         }
 
 
-    //si hay errores de validacion, prevengo el comportamiento por default del submit
+    //si hay errores de validacion, prevengo el comportamiento por default del submit y muestro los errores con innerHTML
     if(errores.length > 0){
+        let ulErrores = document.querySelector("div.errores ul")
+        ulErrores.innerHTML = ""
+
         e.preventDefault();
 
-    //por último, capturo el div de errores del .ejs y recorro el array de errores agregando contenido al .ejs con innerHTML
-    let ulErrores = document.querySelector("div.errores ul")
-    for(let i = 0; i < errores.length; i++){
-        ulErrores.innerHTML += "<li>" + errores[i] + "</li>"
-
-    }
+        for(let i = 0; i < errores.length; i++){
+            ulErrores.innerHTML += "<li>" + errores[i] + "</li>"
+    
+        }
     };
     });
 
