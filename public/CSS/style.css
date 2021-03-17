@@ -325,13 +325,7 @@ body{
   padding: 0;
 }
 
-.titulo-product-detail{
-  
-  display: flex;
-  position: relative;
-  left: 10px;
-  color: #0096a0
-}
+
   
 .elContenedor{
     padding: 5px;
@@ -1075,6 +1069,69 @@ div.product_card_container{
 
 }
 
+/* product detail*/
+.content-container{
+    background-color: white;
+    border: 1.5px solid whitesmoke;
+    border-radius: 15px;
+    width: 90%;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.grid_container{
+    display:grid;
+    column-gap:0rem;
+    grid-template-columns: 1;
+    align-items: center;
+}
+.img_container{
+    width: 100%;
+    border-radius: 0px;
+}
+.product_detail_title{
+    font-size: 2rem;
+    text-align: center;
+    color: #0096a0;
+    margin-bottom:0;
+
+}
+.subtitle{
+    font-size: 1em;
+    line-height: 1em;
+    font-weight: 400;
+    text-align: left;
+}
+
+.text_container{
+    padding: 10px;
+    font-size: 1.2em;
+    line-height: 1em;
+    font-weight: 400;
+    text-align: center;
+}
+.img_container img {
+    width: 100%;
+}
+.price_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.form_title_pd{
+    font-size: 1.6em;
+    margin-left: 20px;
+}
+.form_element_container{
+    width: 30%;
+}
+
+.display_input{
+    width: 30%;
+}
 /* shoppingcart styles */
 @media(min-width : 800px){
     
@@ -1082,7 +1139,9 @@ div.product_card_container{
      display: flex;
      justify-content: space-evenly;
       }
-    
+    .grid_container{
+        grid-template-columns: repeat(2,minmax(200px,1fr));
+    }
      .shoppincart-delete{display: none}
     
      .shoppingcart-delete-pc{color: red;
@@ -1093,8 +1152,8 @@ div.product_card_container{
         border-radius: 30px;}
     
      .section-container-subtitle {
-         width: 500px;
-        }
+        width: 500px;
+    }
     
     .shoppingcart-delete-pc{
         display: block;
@@ -1111,7 +1170,9 @@ div.product_card_container{
         .product-name-description, .containerDetalle{
             width: 48%;
         }
-
+        .grid_container{
+            grid-template-columns: repeat(2,minmax(200px,1fr));
+        }
     .inputName{width: 97%;}
 
         .container-main{

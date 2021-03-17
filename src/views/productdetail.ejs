@@ -12,59 +12,64 @@
 
 <body class="body-product-detail">
   <%- include('parcials/header.ejs',{'user':user}) %>
-  <main>
+  <main class="content-container">
     <% if (product != undefined) { %>
-    <section class="titulo-product-detail">    
-        <h1><%= product.title %></h1>
-    </section>
-    <div class="elContenedor">
-      <div>
-        <img src="/images/home/productos/<%= product.main_image%>" alt="" class="imagen-product">
-        <div class="texto-izq-product"><%= product.summary%></div>
-      </div>
-    </div>
 
-    <div class="elContenedor">
-      <div>
-        <img src="/images/home/productos/<%= product.images[0] %>" alt="" class="imagen-product">
-        <div class="texto-der-product"> <%= product.summary%></div>
-      </div>
-    </div>
-    <div class="otroContenedor contenedor-descrip">
-      <div class="contenedor-descrip-izq">
-        <p class="caja"><%= product.product_detail%></p>
-      </div>
-
-      <div class="contenedor-descrip-der">
-        <p>Precio: $<span class="precio" id="precio"><%= product.price%></span></p>
-        
-
+    <section>
+      <h1 class="product_detail_title"><%= product.title %></h1>
       
-        <div class="contenedor-cantidad">
-          <form action="/products/addToCart" method="POST">
-            <input style="display: none;" type="text" id="id_product" name="id_product" value="<%= product.id%>" />
-            <input class="bajar-cantidad" type="button" value="-" />
-            <input type="text" name="display" id="display" value="1">
-            <input class="aumentar-cantidad" type="button" value="+"  />
-            <button class="boton-agregar-carrito" type="submit">Agregar al carrito</button>
-        </form>
-            <p>Total: $<span class="precio" id="total" ><%= product.price%></span></p>
-            
-        </div>
-        
+    </section>
+    <div class="text_container"><p><%= product.summary%></p></div>
+    <div class="grid_container">
+      <div class="img_container">
+        <img src="/images/home/productos/<%= product.main_image%>" alt="" >
+      </div>
+      <div class="text_container"><p><%= product.description%></p></div>  
+      <div class="text_container"><p ><%= product.product_detail%></p></div>
+      
+      <div class="img_container">
+        <img src="/images/home/productos/<%= product.images[0].path %>" alt="" >
       </div>
     </div>
-    </main>
-    <% } %> 
-    <% if (product == undefined) { %>
-    <main style="height: 80vh;">
+      
+      
+    </div>
+    <div>
+      <h3 class="form_title_pd"><%= product.title %></h3>
+      <div class="price_container">
+      <div class="form_element_container"><p>Precio: $<span class="precio" id="precio"><%= product.price%></span></p></div>
+      <input style="display: none;" type="text" id="id_product" name="id_product" value="<%= product.id%>" />
+      <form action="/products/addToCart" method="POST" class="form_element_container" >
+        <div class="amount_container">
+        <input class="bajar-cantidad" type="button" value="-" />
+        <input type="text" class="display_input"
+        name="display" id="display" value="1">
+        <input class="aumentar-cantidad" type="button" value="+" />
+        </div>
+      
+        <button class="boton-agregar-carrito" type="submit">Agregar</button>
+      </form>
+      <div class="form_element_container">
+        <p>Total: $<span class="precio" id="total"><%= product.price%></span></p>
+      </div>
+      </div>
+    </div>  
+
+
+
+
+  </main>
+  <% } %>
+  <% if (product == undefined) { %>
+  <main style="height: 80vh;">
     <div class="error_container">
       <p>No se han encontrado productos relacionados con su busqueda</p>
     </div>
-  </main>  
-    <% } %> 
-  
+  </main>
+  <% } %>
+
   <%- include('parcials/footer.ejs') %>
   <script src="/js/productDetail.js"></script>
 </body>
+
 </html>
