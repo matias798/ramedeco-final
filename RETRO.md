@@ -335,3 +335,79 @@ Stop doing:
 Less of:
 
 Keep doing:
+
+
+
+# Retrospectiva 17/03/2021
+
+
+
+Matias:
+
+Siento que él clima grupal esta tenso, tanto que en los zooms grupales en clase nadie dijo mas
+ que un hola y chau. Concuerdo con agustina, esa pregunta la teniamos la mayoria del grupo y me pareció una lastima que no se conteste.
+
+Aspectos positivos: se logró realizar lo pedido en menor tiempo y mejor forma,
+
+Mayor movimiento en trello y separación de las tareas
+
+Noto una buena comunicación con agustina y Rubén
+
+A mejorar: si bien creo que la división de la tareas esta mejorando, a mi parecer hay mas por hacer
+
+Mejorar comunicación entre nosotros
+
+Ruben:
+
+En general considero que pudimos sacar adelante el sprint y aunque nos habíamos planificado y estuvimos al día para trabajar y testear con tiempo, no estuvo bueno que prácticamente faltando un día para terminar la entrega se empezaran a levantar temas que habíamos resuelto con las herramientas propias del sprint. Con Mati y a Agus interactuamos constantemente para resolver todas las tareas en conjunto, lo cual es algo muy destacable. 
+
+ASPECTOS POSITIVOS
+-	buena división de tareas.
+- trabajo codo a codo.
+
+ASPECTOS NEGATIVOS
+-	comunicación general bastante floja.
+-	recibir respuestas poco cordiales entre compañeros 
+
+A MEJORAR
+-	fluidez de la comunicación 
+-  trato profesional y de camaradería 
+
+SEGUIR HACIENDO
+
+- Reuniones Hackaton para ayudarnos con las dudas mutuas y resolver el sprint.
+- coordinar tareas, preguntarnos y tratar de ayudar 
+
+DEJAR DE HACER
+-	Evitar interacciones  poco profesionales
+
+Agus:
+
+Creo que se llegó a cumplir con lo pedido. Por mi parte, las validaciones que hice planeo optimizarlas en las ultimas semanas que nos dan para mejorar todo lo que haya quedado colgado, para que queden más lindas y con un diseño mas UX con las recomendaciones de clase. 
+Algo con lo que no estoy conforme y quiero resaltar es que yo pregunté algo el 11/03 por el canal de discord de nuestro grupo (donde están los profes) y no recibí respuesta alguna. Aparte después justo ese tema que consultaba fue el que me hizo clavarme todo el martes, cuando si hubiera recibido respuesta a tiempo o al menos respuesta en fin, podría haber sido distinto. Uno de mis compañeros pregunto algo varios días después y recibió respuesta inmediata.
+Después a nivel grupal entre nosotros, muy muy mala comunicación. Realmente se hace difícil laburar si no hay respuesta ni siquiera a preguntas directas a veces y aparte se genera un mal clima innecesario. Con Mati y con Ruben pude laburar en paralelo más que nada las ultimas dos semanas en las que estuvimos en constante contacto mientras hacíamos las validaciones back y front y nos dimos un feedback muy frecuente, lo cual fue super útil y enriquecedor. Creo que así debería ser siempre y entre todos.
+
+ASPECTOS POSITIVOS
+-	buen uso de trello
+
+ASPECTOS NEGATIVOS
+-	comunicación grupal
+-	trato poco cordial a veces
+
+A MEJORAR
+-	división de tareas efectiva y desde el primer momento (no estuvo mal ese punto pero podríamos hacerlo mejor)
+
+EMPEZAR A HACER
+
+DEJAR DE HACER
+-	No responder
+-	no ofrecer ayuda
+
+Ezequiel:
+
+Honestamente cansado de tener que quedarme los martes hasta la madrugada arreglando el sprint, probé con otro approach quedarme callado (literalmente respondi si,no y nada mas )y limitarme hacer lo mío. Y incluso haciendo eso, llegamos al lunes y había cosas que no estaban hechas o que no funcionaban, literalmente me sente a corregir el sprint.
+Prueba de eso esta el discord que había cosas que se asumieron y no se preguntaron. Cada parte que se toca a veces requiere un override zarpado a tal punto que querés salir corriendo. 
+Uno puede tener paciencia pero después de 6 sprints llega un momento que se pudre, ya me canse de quedarme hasta tarde y perderme de ver las clases cuando el resto esta al día. Hay algo en el software que no miente que es el repositorio en este caso Git, ahí se puede ver la participación de cada uno.Si hago algo en el proyecto lo basico es pruebarlo, lo verifico, 
+pruebo la aplicación entera para ver que no la cague y si me quede sin laburo, me fijo si hay mas cosas para hacer.
+No pickeo dos stories de 20 y listo cumplí, no funcionan así las cosas.Este patron se puede ver con trello y las revisiones en git. A mi parecer, creo que hacer un fork y laburar solo seria mas beneficioso que tener que llegar al fin del curso trasnochando para tarpar todos los errores.
+
