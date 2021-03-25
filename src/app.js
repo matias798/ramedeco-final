@@ -28,6 +28,8 @@ app.set('view engine', 'ejs');
 var indexRouter = require('./routes/indexRouter');
 var productRouter = require('./routes/productRouter');
 var userRouter = require('./routes/userRouter');
+var apiRouter = require('./routes/api/userRouter');
+
 
 const Sequelize =require("sequelize")
 
@@ -35,6 +37,7 @@ const Sequelize =require("sequelize")
 app.use('/', indexRouter);
 app.use('/products', productRouter);
 app.use('/users', userRouter);
+app.use('/api/users', apiRouter);
 
 
 // catch 404 and forward to error handler
