@@ -62,7 +62,7 @@ Product.associate = function (models) {
     })
     Product.belongsToMany(models.categories,{
         as: "category_product",
-        through: "Category_product",
+        through: "product_category",
         foreignkey: "product_id",
         otherKey:"category_id",
         timestamps: true
