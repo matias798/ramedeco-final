@@ -1,7 +1,34 @@
 const db=require('../../database/models')
 
 module.exports={
-    'findUsers':function(req, res) {fetch('http://localhost:3003')
+    'findUsers':function(req, res) {
+        db.users.findAll({usersUrl:'localhost'})
+
+        .then(users=>{
+
+// Counts how many users has the database
+ let count= users.length;
+
+ // array of users details links 
+ let usersUrl=[] ;
+//  loop for getting the detail url page
+for (let index = 1; index < count+1 ; index++) {
+    usersUrl.push('localhost:3000/api/users/'+ index)
+}
+
+
+res.json({count, users,usersUrl});
+      
+})
+
+// catches the error if exist
+.catch(error=>{
+
+res.status(404)
+
+.json({error: "Ocurrio un error, por favor intentalo nuevamente"});
+})
+  
 },
 
 'userDetail':function (req,res){
