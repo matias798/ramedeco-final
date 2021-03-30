@@ -6,6 +6,8 @@ var logger = require('morgan');
 var methodOverride = require('method-override')
 const session = require('express-session')
 var recordarmeMiddleware = require("./middlewares/recordarmeMiddleware")
+var cors = require('cors');
+
 
 var app = express();
 
@@ -15,6 +17,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors());
 app.use(methodOverride('_method'));
 app.use(session({secret:'keyboard cat',resave: true,
 saveUninitialized: true}));
