@@ -76,15 +76,15 @@ CREATE TABLE IF NOT EXISTS `products` (
 
 -- Volcando estructura para tabla rame_deco_db.product_category
 CREATE TABLE IF NOT EXISTS `product_category` (
-  `product_id_cat` bigint(20) unsigned NOT NULL,
-  `category_id_prod` tinyint(3) unsigned NOT NULL,
+  `product_id` bigint(20) unsigned NOT NULL,
+  `category_id` tinyint(3) unsigned NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
-  KEY `product_id_idx` (`product_id_cat`),
-  KEY `category_id_idx` (`category_id_prod`),
-  CONSTRAINT `category_id` FOREIGN KEY (`category_id_prod`) REFERENCES `categories` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `product_id` FOREIGN KEY (`product_id_cat`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  KEY `product_id_idx` (`product_id`),
+  KEY `category_id_idx` (`category_id`),
+  CONSTRAINT `category_id` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `product_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- La exportación de datos fue deseleccionada.
