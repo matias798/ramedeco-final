@@ -168,6 +168,58 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `user
 	(2, 'Sebastien', 'Gouinlock', 'sgouinlock1@pcworld.com', '$2b$10$cFokXn3NUGDQJznGblPoh.UbVe5Koug7PWpRjreKD7boeqA01hfNK', 'sgouinlock1', '19641 Paget Street', '', NULL, NULL, NULL, 2),
 	(3, 'Roslyn', 'Rembaud', 'rrembaud2@discuz.net', '$2b$10$PhzbUVHCdx24sC5AoqJnquV7lOlJ7jqcz/sNaBNluUVlwD4jaGrQe', 'user', '03 Cottonwood Drive', '', NULL, NULL, NULL, 2),
 	(4, 'Robbie', 'Starling', 'rstarling3@digg.com', '$2b$10$FXajNU/ZDUsTeZ67IEuBSuM1Xo8P8xpJWO4S6Qtij73QFACjFN97y', 'rstarling3', '2 Mockingbird Place', '', NULL, NULL, NULL, 2);
+
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (1,4,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (1,4,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (1,4,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (1,4,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (1,4,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (1,4,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (1,4,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (1,4,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (1,4,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (1,4,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (1,4,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (1,2,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (3,2,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (4,1,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (4,2,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (4,3,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (5,1,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (5,2,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (6,2,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (6,6,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (7,6,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (7,3,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (7,4,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (8,4,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (8,5,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (8,6,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (8,2,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (8,1,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (9,6,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (9,4,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (10,3,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (11,4,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (11,7,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (12,3,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (12,4,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (12,6,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (13,1,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (14,2,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (15,6,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (15,7,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (16,3,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (16,4,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (17,3,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (17,4,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (17,6,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (18,4,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (18,7,now());
+INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at) values (18,6,now());
+
+
+
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
