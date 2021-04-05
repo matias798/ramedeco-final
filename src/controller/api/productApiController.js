@@ -5,7 +5,7 @@ module.exports = {
         try {
             let countByCategory = {};
             let products = await db.products.findAndCountAll({
-                attributes: ["id", "title", "description"],
+                attributes: ["id", "title", "description","created_at"],
                 include: [{
                     association: "category_product",
                     attributes: ["id", "name"],
