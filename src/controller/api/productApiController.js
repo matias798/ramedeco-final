@@ -5,7 +5,7 @@ module.exports = {
         try {
             let countByCategory = {};
             let products = await db.products.findAndCountAll({
-                attributes: ["id", "title", "description","created_at"],
+                attributes: ["id", "title", "description","main_image","created_at"],
                 include: [{
                     association: "category_product",
                     attributes: ["id", "name"],
@@ -14,7 +14,8 @@ module.exports = {
             });
 
             products.rows.forEach((element) => {
-                element.detail = "/api/products/" + element.id;
+                element.detail = "localhost:3001/api/products/" + element.id;
+                element.main_image="localhost:3001/images/home/productos/"+element.main_image
                 if (element.category_product) {
                     element.category_product.forEach((element2) => {
                         if (countByCategory[element2.name]) {
