@@ -25,9 +25,10 @@ module.exports = {
                         }
                     });
                 }
+                element.produ
             });
             res.status(200).json({
-                count: products.count,
+                count: products.rows.length,
                 countByCategory: countByCategory,
                 products: products,
             });
