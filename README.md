@@ -1,3 +1,4 @@
+![Screenshot_2021-04-06 Ramé Deco](https://user-images.githubusercontent.com/58121395/113718450-0749d380-96c3-11eb-8c0d-1fb264d4c60b.png)
 
 
 ## Nuestro Ecommerce
@@ -10,9 +11,6 @@ Nuestro sitio es un tienda virtual orientada a la venta de decoración de ambien
 En nuestro ecommerce se ajustara la oferta para ambas categorías mencionadas. Para el primer grupo se presentaran imágenes con productos de nuestra tienda y se agregara efectos a la imagen para reflejar los productos adquiridos (ejemplo Ikea).
 Para el segundo grupo brindaremos diferentes categorías para poder llegar al producto deseado. Como idea general pretendemos tener una tienda simple que permita llegar al producto deseado en pocos clicks.
 
-
-
-![Screenshot_2021-04-06 Ramé Deco](https://user-images.githubusercontent.com/58121395/113718450-0749d380-96c3-11eb-8c0d-1fb264d4c60b.png)
 
 
 
