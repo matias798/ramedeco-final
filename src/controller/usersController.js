@@ -25,6 +25,7 @@ module.exports={
     'logInUser': function(req,res){
         var username=req.body.username;
         var password=req.body.password;
+        
         let errors = validationResult(req);
         if(errors.isEmpty()){
         let user=db.users.findOne({
@@ -37,13 +38,32 @@ module.exports={
                 if(req.body.recordarme != undefined) {
                     res.cookie('recordarme', user.id, {maxAge: 60000});
                     } 
+
                 console.log(user.role.name)           
-                if(user.role.name == "admin"){
-                    res.redirect('/products')
-                }else res.redirect('/')
+                /*  checks if the user is admin  */ 
+                if(user.role.name == "admin")
+                { res.redirect('/products')}
+                /*  /checks if the user is admin  */ 
+                
+                /*  if the user is not admin  */ 
+                else{ res.redirect('/')}
+                /*  /if the user is not admin  */ 
+                
+           
             }else{
-                console.log("no matchea la password", user)
-                res.redirect('login')
+                
+                /*  Message explaining the error  */ 
+                let errrorMessage='El usuario o la contraseña no son correctos'
+                /* Message explaining the error */ 
+
+                /*  shows error on console  */ 
+                console.log(errrorMessage)
+                /*  shows error on console  */ 
+
+                /*  Renders the login page with the error message as object and the session as undefined  */ 
+                return res.render('login',{user:req.session.user,errrorMessage})
+                /*  /Renders the login page with the error message as object and the session as undefined  */ 
+
             }
         }).catch(error =>{
             console.log(error)
