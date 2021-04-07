@@ -6,19 +6,23 @@ module.exports = {
             categories: [
                 {
                     url: 'http://localhost:3001/',
-                    title: "INICIO"
+                    title: "INICIO",
+                    classIcon:"fas fa-home"
                 },
                 {
                     url: 'http://localhost:3001/products/',
-                    title: "LISTADO DE PRODUCTOS"
+                    title: "LISTADO DE PRODUCTOS",
+                    classIcon:"fas fa-align-justify"
                 },
                 {
                     url:'http://localhost:3001/products/create',
-                    title: "CREAR NUEVO PRODUCTO"
+                    title: "AGREGAR PRODUCTO",
+                    classIcon:"fas fa-plus-circle"
                 },
                 {
                     url:'http://localhost:3001/users/',
-                    title: "USUARIOS"
+                    title: "USUARIOS",
+                    classIcon:"fas fa-users"
                 }
             ]
         })
