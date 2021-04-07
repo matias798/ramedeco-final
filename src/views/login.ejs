@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
     <title>Ingresá</title>
+    
 </head>
 <body style="margin:0">
     <%- include('parcials/header.ejs',{'user':user}) %> 
@@ -49,6 +50,16 @@
      </div>
      <% } %> 
      <% } %> 
+
+
+  <!-- Muestra error de que no matchee contraseña o usuario --> 
+  <% if (typeof errrorMessage != 'undefined') { %> 
+    <div class="d-flex justify-content-center"> 
+    <div style="color: red;"><%=errrorMessage%> </div>
+     </div>
+     <% } %>
+  <!-- / Muestra error de que no matchee contraseña o usuario --> 
+
 
                 <button class="btn-login-register form_lr-width" type="submit">Ingresar</button><br><br>
                 <input type="checkbox" name="recordarme" value="recordarme">Recordar mi usuario y contraseña.

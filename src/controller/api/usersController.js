@@ -2,22 +2,35 @@ const db=require('../../database/models')
 
 module.exports={
     'findUsers':function(req, res) {
-        db.users.findAll({usersUrl:'localhost'})
+        
+db.users.findAll()
 
-        .then(users=>{
+.then(users=>{
+
+let user=users;     
 
 // Counts how many users has the database
- let count= users.length;
+ let count= user.length;
 
  // array of users details links 
- let usersUrl=[] ;
+ let userUrl=[];
+
 //  loop for getting the detail url page
 for (let index = 1; index < count+1 ; index++) {
-    usersUrl.push('localhost:3000/api/users/'+ index)
+    userUrl.push('localhost:3000/api/user/'+ index)
 }
 
+// hiddes all passwords and roles
+for (let index = 0; index < user.length; index++) {
 
-res.json({count, users,usersUrl});
+  user[index].password = null;
+  user[index].roleId = null;
+
+ }
+
+
+res.json({count, user,userUrl});
+
       
 })
 
@@ -27,6 +40,8 @@ res.json({count, users,usersUrl});
 res.status(404)
 
 .json({error: "Ocurrio un error, por favor intentalo nuevamente"});
+
+console.error(error)
 })
   
 },
@@ -37,7 +52,7 @@ db.users.findByPk(req.params.id)
 
 let name= user.first_name;
 
-let surname=user.last_name;
+let lastName=user.last_name;
 
 let email = user.email;
 
@@ -47,7 +62,7 @@ let address =user.address;
 
 let avatar = 'localhost:3000/' + user.avatar;
 
-res.json({name,surname,email,username,address,avatar} )
+res.json({name,lastName,email,username,address,avatar} )
 
 })
 
