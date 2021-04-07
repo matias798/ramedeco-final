@@ -22,17 +22,18 @@ module.exports={
         res.render('login',{user:user});
 
     },
-    'logInUser': function(req,res){
+    'logInUser':  async function(req,res){
         var username=req.body.username;
         var password=req.body.password;
-        
         let errors = validationResult(req);
         if(errors.isEmpty()){
-        let user=db.users.findOne({
+        try{
+        let user=  await db.users.findOne({
             where:{username:username},
             include:[{association:"role"}]
-        }).then((user)=>{
-            if( user != undefined && bcrypt.compare(password,user.password)){
+        })
+            let result =await bcrypt.compare(password,user.password) 
+            if( user != undefined && result ){
                 req.session.user=user;
                 req.session.shoppingCart=[]
                 if(req.body.recordarme != undefined) {
@@ -65,10 +66,10 @@ module.exports={
                 /*  /Renders the login page with the error message as object and the session as undefined  */ 
 
             }
-        }).catch(error =>{
+        }catch(error){
             console.log(error)
             res.redirect('login')
-        })
+        }
         
     }
     else{
