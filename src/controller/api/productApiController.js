@@ -4,7 +4,7 @@ module.exports = {
     getProducts: async function (req, res) {
         try {
             let countByCategory = {};
-            let products = await db.products.findAndCountAll({
+            let products = await db.products.findAll({
                 attributes: ["id", "title", "description","main_image","created_at"],
                 include: [{
                     association: "category_product",
@@ -12,8 +12,8 @@ module.exports = {
                     subQuery: false,
                 }, ],
             });
-
-            products.rows.forEach((element) => {
+console.log(products)
+            products.forEach((element) => {
                 element.detail = "localhost:3001/api/products/" + element.id;
                 element.main_image="localhost:3001/images/home/productos/"+element.main_image
                 if (element.category_product) {
@@ -25,10 +25,9 @@ module.exports = {
                         }
                     });
                 }
-                element.produ
             });
             res.status(200).json({
-                count: products.rows.length,
+                count: products.length,
                 countByCategory: countByCategory,
                 products: products,
             });

@@ -114,7 +114,6 @@ return res.render('register',{user:req.session.user,errors:errors.errors,repetir
             last_name:req.body.last_name,
             email:req.body.email,
             address:"",
-            password:req.body.password,
             avatar: "/defaultuser.png",
             roleId:2,
             password : bcrypt.hashSync(req.body.password,10),
