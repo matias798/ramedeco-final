@@ -5,6 +5,7 @@ const productPath= productsPath + ":id"
 const productApiController = require('../../controller/api/productApiController')
 
 router.get(productsPath,productApiController.getProducts)
+router.get("/last",productApiController.getLastProduct)
 router.get(productPath,productApiController.getProductByid)
 
 module.exports=router

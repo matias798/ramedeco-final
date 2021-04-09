@@ -72,4 +72,18 @@ console.log(products)
                 });
         }
     },
+    getLastProduct: function (req, res) {
+        db.sequelize.query('SELECT * FROM products ORDER BY created_at DESC LIMIT 1')
+        .then(resultado =>{
+            res.send(resultado[0])
+            res.status(200)
+
+        })
+        .catch (error => {
+            console.log(error)
+            res.status(400).json("Un error ocurrió, por favor intenta nuevamente")
+        })     
+        
+
+    },
 };
