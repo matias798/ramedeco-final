@@ -1,5 +1,5 @@
 const db = require("../../database/models");
-
+const urlBackend="http://localhost:3001/images/home/productos/"
 module.exports = {
     getProducts: async function (req, res) {
         try {
@@ -15,7 +15,7 @@ module.exports = {
 console.log(products)
             products.forEach((element) => {
                 element.detail = "localhost:3001/api/products/" + element.id;
-                element.main_image="localhost:3001/images/home/productos/"+element.main_image
+                element.main_image=urlBackend+element.main_image
                 if (element.category_product) {
                     element.category_product.forEach((element2) => {
                         if (countByCategory[element2.name]) {
@@ -57,9 +57,9 @@ console.log(products)
                     },
                 ],
             });
-            product.main_image="localhost:3000/images/home/productos/"+product.main_image
+            product.main_image=urlBackend+product.main_image
             product.images.forEach(element => {
-                element.path="localhost:3000/images/home/productos/"+element.path
+                element.path="http://localhost:3001/images/home/productos/"+element.path
             })
             res.status(200).json(product)
 
@@ -77,7 +77,7 @@ console.log(products)
         .then(resultado =>{
             console.log(resultado)
             let last=resultado[0][0];
-            last.main_image="localhost:3001/images/home/productos/"+last.main_image
+            last.main_image=urlBackend+last.main_image
             res.json(last)
             res.status(200)
 
