@@ -164,9 +164,9 @@ INSERT INTO `scene_details` (`id`, `position_left`, `position_top`, `description
 -- Volcando datos para la tabla rame_deco_db.users: ~4 rows (aproximadamente)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `username`, `address`, `avatar`, `created_at`, `updated_at`, `deleted_at`, `role_id`) VALUES
-	(1, 'Jose', 'Jose', 'jose@dh.com', 'admin', 'admin', 'Argentina', '', NULL, NULL, NULL, 1),
+	(1, 'Jose', 'Jose', 'jose@dh.com', '$2b$10$7Nkuj.KThPXlHIUWZTo15eqS/KFs5BlYDCEwh14Q3ykwpyygGZhzO', 'admin', 'Argentina', '', NULL, NULL, NULL, 1),
 	(2, 'Sebastien', 'Gouinlock', 'sgouinlock1@pcworld.com', '$2b$10$cFokXn3NUGDQJznGblPoh.UbVe5Koug7PWpRjreKD7boeqA01hfNK', 'sgouinlock1', '19641 Paget Street', '', NULL, NULL, NULL, 2),
-	(3, 'Roslyn', 'Rembaud', 'rrembaud2@discuz.net', '$2b$10$PhzbUVHCdx24sC5AoqJnquV7lOlJ7jqcz/sNaBNluUVlwD4jaGrQe', 'user', '03 Cottonwood Drive', '', NULL, NULL, NULL, 2),
+	(3, 'Roslyn', 'Rembaud', 'rrembaud2@discuz.net', '$2b$10$7Nkuj.KThPXlHIUWZTo15eqS/KFs5BlYDCEwh14Q3ykwpyygGZhzO', 'user', '03 Cottonwood Drive', '', NULL, NULL, NULL, 2),
 	(4, 'Robbie', 'Starling', 'rstarling3@digg.com', '$2b$10$FXajNU/ZDUsTeZ67IEuBSuM1Xo8P8xpJWO4S6Qtij73QFACjFN97y', 'rstarling3', '2 Mockingbird Place', '', NULL, NULL, NULL, 2);
 
 INSERT INTO rame_deco_db.product_category(product_id,category_id,created_at,updated_at) values (1,4,now(),now());
