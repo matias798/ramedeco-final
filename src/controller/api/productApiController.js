@@ -75,7 +75,9 @@ console.log(products)
     getLastProduct: function (req, res) {
         db.sequelize.query('SELECT * FROM products ORDER BY created_at DESC LIMIT 1')
         .then(resultado =>{
+            console.log(resultado)
             let last=resultado[0][0];
+            last.main_image="localhost:3001/images/home/productos/"+last.main_image
             res.json(last)
             res.status(200)
 
