@@ -936,6 +936,32 @@ display: none;
 /* Edit products styles  */
 
 /* end of edit products styles */
+
+
+
+/* CATEGORIES */
+
+.rigthtText {
+    white-space: nowrap;
+    width: 60vw;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }
+
+
+.categoriesHref{
+    text-decoration: none;
+}
+
+.categoriesHref:hover{
+    color: #05646b;
+    text-decoration: none;
+}
+
+
+/* /CATEGORIES */
+
 /**Media Querys**/
 @media(min-width : 768px){
     .menu_container{

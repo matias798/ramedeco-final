@@ -414,8 +414,7 @@ let productsContoller = {
     } else {
       console.log(errors);
 
-      db.categories
-        .findAll()
+      db.categories.findAll()
 
         .then((categories) => {
           return res.render("create", {
@@ -436,15 +435,32 @@ let productsContoller = {
   },
 
   getProductByCategory: (req, res) => {
-    let productsByCategory = product.find((product) => {
-      return req.params.category == product.category;
-    });
-    let userts = req.session.user ? req.session.user : undefined;
-    res.render("productCat", {
-      category: req.params.category,
-      products: productsByCategory,
-      user: userts,
-    });
+
+/* This function searchs for categories and the products which are related */ 
+
+db.categories.findAll({
+  include:[{association:"category_product"}]
+})
+
+/* /This function searchs for categories and the products which are related */ 
+
+
+
+.then(
+  categories=>{
+
+    res.render('categories',{ categories,params:req.params.category-1,user: req.session.user,})
+  }
+)
+
+
+
+.catch(error=>{
+
+  console.log(error)
+  res.send(error)
+
+})
   },
   contact: (req, res) => {
     res.render("contact", {
