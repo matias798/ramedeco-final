@@ -1,42 +1,85 @@
 //validación front del formulario register 
 
 window.addEventListener('load', function() {
-    //capturo el formulario
-    let registerForm = document.querySelector("form.registerform");
 
-    //defino un evento sobre el submit del form
-    registerForm.addEventListener('submit',function(e){
+    //validación username
+    let username = document.querySelector("input.username")
+    let username_error = document.querySelector(".username-error")
 
-        //creo un array vacío donde se irán acumulando los errores de validación
-        let errores = [];
+        username.addEventListener('blur', () => {
+            if(username.value == ""){
+                username_error.innerHTML = "El nombre de usuario no puede quedar vacío"
+            }else{
+                username_error.innerHTML = ""
+            }
+        })
+ 
+    //validacion first name    
+    let first_name = document.querySelector("input.first_name")
+    let first_name_error = document.querySelector(".firstname-error")
 
-        let first_name = document.querySelector("input.first_name");
-        //en un if, capturo el valor que ingresó el usuario con la prop value y lo valido
-        if(first_name.value == ""){
-            //si se cumple, agrego un string al array de errores con push
-            errores.push("El campo Nombre no puede quedar vacío")
-        }
-        if(first_name.value.length < 2){
-            errores.push("El campo Nombre debe contener al menos 2 caracteres")
-        }
+        first_name.addEventListener('blur', () => {
+            if(first_name.value == "" || first_name.value.length < 2){
+                first_name_error.innerHTML = "El nombre no puede quedar vacío o contener menos de 2 caracteres"
+            }else{
+                first_name_error.innerHTML = ""
+            }
+        })
 
-        let last_name = document.querySelector("input.last_name");
-        if(last_name.value == ""){
-            errores.push("El campo Apellido no puede quedar vacío")
-        }
-        if(last_name.value.length < 2){
-            errores.push("El campo Apellido debe contener al menos 2 caracteres")
-        }
+    //validacion last name 
+    let last_name = document.querySelector("input.last_name")
+    let last_name_error = document.querySelector(".lastname-error")
 
-        let email = document.querySelector("input.email");
-        if(email.value == ""){
-            errores.push("El campo e-mail no puede quedar vacío")
+        last_name.addEventListener('blur', () => {
+            if(last_name.value == "" || last_name.value.length < 2){
+                last_name_error.innerHTML = "El apellido no puede quedar vacío o contener menos de 2 caracteres"
+            }else{
+                last_name_error.innerHTML = ""
+            }
+        })
+
+    //validacion del mail
+    let email = document.querySelector("input.email")
+    let email_error = document.querySelector(".email-error")
+
+        email.addEventListener('blur', () => {
+            const regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+            if(email.value == ""){
+                email_error.innerHTML = "El e-mail no puede quedar vacío"
+            }else if(regexEmail.test(email.value) == false){
+                email_error.innerHTML = "El e-mail debe ser válido"
+            }else{
+                email_error.innerHTML = "" 
+            }
+        })
+        
+    //validacion password
+    let password = document.querySelector("input.password")
+    let password_error = document.querySelector(".password-error")
+
+        password.addEventListener('blur', () => {
+            if(password.value == ""){
+                password_error.innerHTML = "La contraseña no puede quedar vacía"
+            }else if(password.value.length < 8){
+                password_error.innerHTML = "La contraseña debe contener al menos de 8 caracteres"
+            }else{
+                password_error.innerHTML = ""
+            }
+        })
+        
+    let password_confirm = document.querySelector("input.password_confirm")
+    let password_confirm_error = document.querySelector(".password-conf-error")
+
+    password_confirm.addEventListener('blur', () => {
+        if(password_confirm.value != password.value){
+            password_confirm_error.innerHTML = "La confirmación de contraseña no coincide con la ingresada"
+        }else{
+            password_confirm_error.innerHTML = ""
         }
-        //validación de mail válido
-        const regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
-        if(regexEmail.test(email.value) == false){
-            errores.push("El e-mail debe ser válido")
-        }
+    })
+
+    let registerForm = document.querySelector("form.registerform")
+    registerForm.addEventListener("submit",function(e){
         //validación de mail ya registrado
         fetch('/repetir')
             .then(response => {
@@ -46,40 +89,16 @@ window.addEventListener('load', function() {
                 console.log(dataDecode)
                 //este resultado va a ser true si ya existe el mail en la DB o false si no existe
                 if(dataDecode == true){
-                    errores.push("El e-mail que estás ingresando ya está en uso")
+                    email_error.innerHTML = "El e-mail que estás ingresando ya está en uso"
                 }
             })
             .catch(function(error){
                 console.log(error);
             });
-
-        let password = document.querySelector("input.password");
-        if(password.value == ""){
-            errores.push("El campo Contraseña no puede quedar vacío")
+            
+        if(error != ""){
+            e.preventDefault();
         }
-        if(password.value.length < 2){
-            errores.push("La contraseña debe contener al menos 8 caracteres")
-        }
- 
-        let password_confirm = document.querySelector("input.password_confirm");
-        if(password_confirm.value != password.value){
-            errores.push("La confirmación de contraseña no coincide con la ingresada")
-        }
+    })
 
-
-    //si hay errores de validacion, prevengo el comportamiento por default del submit y muestro los errores con innerHTML
-    if(errores.length > 0){
-        let ulErrores = document.querySelector("div.errores ul")
-        ulErrores.innerHTML = ""
-
-        e.preventDefault();
-
-        for(let i = 0; i < errores.length; i++){
-            ulErrores.innerHTML += "<li>" + errores[i] + "</li>"
-    
-        }
-    };
-    });
-
-
-})
+});

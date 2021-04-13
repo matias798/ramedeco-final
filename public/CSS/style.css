@@ -68,6 +68,19 @@ header.header_layout{
     margin:0;
 }
 
+.unified_inputs{
+    padding-left: 0.7em;
+}
+
+.search-button{
+    border-radius: 10%;
+    border:none
+}
+
+.fa-search{
+    padding: 10%;
+}
+
 .logo_nav{
     display:flex;
     justify-content: space-between;
@@ -462,12 +475,11 @@ border-radius: 20px;
     }
 
     .register-password-msg{
-        margin-bottom: 0.5em;
-        color: red;
+        margin-bottom: 1em;
         font-size: 1em;
         display: block;
         text-align: left;
-        margin-left: 3em;
+        margin-left: 4em;
     }
 
     .btn-login-register{
@@ -485,6 +497,10 @@ border-radius: 20px;
 
     .btn-container-register{
         margin: 1em
+    }
+
+    .validation-error-msg{
+        color: rgb(209, 35, 35);
     }
 
     div.errores{
