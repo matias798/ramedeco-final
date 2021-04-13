@@ -290,18 +290,20 @@ let productsContoller = {
         prev += " " + actual;
       });
       console.log(product_detail);
+      let productDetails={
+        title: req.body.tittle,
+        summary: req.body.summary,
+        description: req.body.description,
+        product_detail: product_detail,
+        price: req.body.price,
+        dimension: req.body.dimension,
+        stock: req.body.stock || 100
+      }
+      if(req.files.length >1){
+        productDetails.main_image=req.files[0].originalName
+      }
       db.products
-        .update(
-          {
-            title: req.body.tittle,
-            summary: req.body.summary,
-            description: req.body.description,
-            product_detail: product_detail,
-            price: req.body.price,
-            dimension: req.body.dimension,
-            stock: req.body.stock || 100,
-            main_image: req.files[0].originalname,
-          },
+        .update(productDetails,
           {
             where: {
               id: req.params.id,
