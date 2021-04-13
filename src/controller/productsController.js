@@ -300,7 +300,7 @@ let productsContoller = {
         stock: req.body.stock || 100
       }
       if(req.files.length >1){
-        productDetails.main_image=req.files[0].originalName
+        productDetails.main_image=req.files[0].filename
       }
       db.products
         .update(productDetails,
@@ -377,7 +377,7 @@ let productsContoller = {
           price: req.body.price,
           dimension: req.body.dimension,
           stock: req.body.stock,
-          main_image: req.files[0].originalname,
+          main_image: req.files[0].filename,
         })
 
         .then((product) => {
