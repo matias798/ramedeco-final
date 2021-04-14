@@ -480,8 +480,10 @@ border-radius: 20px;
         display: block;
         text-align: left;
         margin-left: 4em;
+        font-style: italic;
     }
 
+    
     .btn-login-register{
         border-radius: 10px;
         padding: 0.2em;
@@ -512,9 +514,15 @@ border-radius: 20px;
 
     div.login_user{
         display: block;
-        margin-left: 3em;
+        margin-left: 4em;
         margin-bottom: 0.5em;
         text-align: left;
+    }
+
+    .forgot-pass-msg{
+        font-size: larger;
+        padding-bottom: 1em;
+        padding-top: 0.5em;
     }
 
     .userError{
@@ -530,6 +538,11 @@ border-radius: 20px;
         color: red;
         font-size: 1em;
         margin-left: 4em;
+    }
+
+    .input-plus-icon{
+        width: 90%;
+        margin-left: 1.6em;
     }
     
 

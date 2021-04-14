@@ -26,10 +26,10 @@ var server = http.createServer(app);
  */
 
 server.listen(port, () => { 
-  console.log(`\\*-------------------------*\\`);
+  console.log(`\\****----------------------****\\`);
   console.log(`El servidor corre en el puerto ${port}`);
-  console.log(`Abre este proyecto en la dirección  http://localhost:${port}  en cualquier navegador`);
-  console.log(`\\*-------------------------*\\`);
+  console.log(`Abrir este proyecto en la dirección  http://localhost:${port}  en cualquier navegador`);
+  console.log(`\\****----------------------****\\`);
 });
 server.on('error', onError);
 server.on('listening', onListening);

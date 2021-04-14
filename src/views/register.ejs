@@ -66,10 +66,16 @@
 
             <div>
                 <label class="lr-fontsize" for="contraseña">Contraseña</label>
-                <input class="form_lr-width lr-fontsize password" type="password" id="password" name="password" placeholder="Elegí tu contraseña">
+                <div class="input-plus-icon">
+                    <input class="lr-fontsize password" type="password" id="password" name="password" placeholder="Elegí tu contraseña">
+                    <span class="show-password"><i class="fas fa-eye"></i></span>
+                </div>
                 <p class="password-error validation-error-msg"></p>
             <div class="register-password-msg"><small>La contraseña debe contener al menos 8 caracteres</small></div>
-                <input class="form_lr-width lr-fontsize password_confirm" type="password" id="password_confirm" name="password_confirm" placeholder="Confirmá tu contraseña">
+                <div class="input-plus-icon">
+                    <input class="lr-fontsize password_confirm" type="password" id="password_confirm" name="password_confirm" placeholder="Confirmá tu contraseña">
+                    <span class="show-password-conf"><i class="fas fa-eye"></i></span>
+                </div>
                 <p class="password-conf-error validation-error-msg"></p>
             </div>
             

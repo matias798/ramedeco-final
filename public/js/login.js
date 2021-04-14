@@ -80,4 +80,15 @@ window.addEventListener('load', function() {
    
 
 });
+      //show password function
+      let password = document.querySelector("input.writePassword")
+      let viewpass = document.querySelector(".show-password")
+  
+      viewpass.addEventListener('click',()=>{
+          if(password.getAttribute("type")=="password"){
+              password.setAttribute("type","text")
+          }else{
+              password.setAttribute("type","password")
+          }
+      })
 });
