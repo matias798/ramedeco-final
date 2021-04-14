@@ -56,6 +56,15 @@ window.addEventListener('load', function() {
     //validacion password
     let password = document.querySelector("input.password")
     let password_error = document.querySelector(".password-error")
+    let viewpass = document.querySelector(".show-password")
+
+    viewpass.addEventListener('click',()=>{
+        if(password.getAttribute("type")=="password"){
+            password.setAttribute("type","text")
+        }else{
+            password.setAttribute("type","password")
+        }
+    })
 
         password.addEventListener('blur', () => {
             if(password.value == ""){
@@ -66,9 +75,19 @@ window.addEventListener('load', function() {
                 password_error.innerHTML = ""
             }
         })
-        
+
     let password_confirm = document.querySelector("input.password_confirm")
     let password_confirm_error = document.querySelector(".password-conf-error")
+    let viewpassconf = document.querySelector(".show-password-conf")
+
+
+    viewpassconf.addEventListener('click',()=>{
+        if(password_confirm.getAttribute("type")=="password"){
+            password_confirm.setAttribute("type","text")
+        }else{
+            password_confirm.setAttribute("type","password")
+        }
+    })
 
     password_confirm.addEventListener('blur', () => {
         if(password_confirm.value != password.value){
