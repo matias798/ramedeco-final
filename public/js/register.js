@@ -20,7 +20,7 @@ window.addEventListener('load', function() {
 
         first_name.addEventListener('blur', () => {
             if(first_name.value == "" || first_name.value.length < 2){
-                first_name_error.innerHTML = "El nombre no puede quedar vacío o contener menos de 2 caracteres"
+                first_name_error.innerHTML = "El nombre no puede quedar vacío ni contener menos de 2 caracteres"
             }else{
                 first_name_error.innerHTML = ""
             }
@@ -32,7 +32,7 @@ window.addEventListener('load', function() {
 
         last_name.addEventListener('blur', () => {
             if(last_name.value == "" || last_name.value.length < 2){
-                last_name_error.innerHTML = "El apellido no puede quedar vacío o contener menos de 2 caracteres"
+                last_name_error.innerHTML = "El apellido no puede quedar vacío ni contener menos de 2 caracteres"
             }else{
                 last_name_error.innerHTML = ""
             }

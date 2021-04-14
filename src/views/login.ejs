@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
     <title>Ingresá</title>
     
+    
 </head>
 <body style="margin:0">
     <%- include('parcials/header.ejs',{'user':user}) %> 
@@ -36,9 +37,13 @@
                 <!-- div para mostrar errores en js -->
                 <div class="passwordError"></div>
                 
-                <input class="form_lr-width lr-fontsize writePassword" type="password" id="password" name="password" placeholder="Contraseña"><br>
-               
-                <a href="">¿Olvidaste tu contraseña?</a><br><br>
+                <div class="input-plus-icon">
+                    <input class="form_lr-width lr-fontsize writePassword" type="password" id="password" name="password" placeholder="Contraseña">
+                    <span class="show-password"><i class="fas fa-eye"></i></span>
+                </div>
+                <div class="forgot-pass-msg">
+                    <a href="">¿Olvidaste tu contraseña?</a>
+                </div>
                     
 
   <!-- muestra errores con express-validator --> 

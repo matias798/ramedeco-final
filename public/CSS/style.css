@@ -514,9 +514,15 @@ border-radius: 20px;
 
     div.login_user{
         display: block;
-        margin-left: 3em;
+        margin-left: 4em;
         margin-bottom: 0.5em;
         text-align: left;
+    }
+
+    .forgot-pass-msg{
+        font-size: larger;
+        padding-bottom: 1em;
+        padding-top: 0.5em;
     }
 
     .userError{
