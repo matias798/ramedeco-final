@@ -20,7 +20,7 @@ window.addEventListener('load', function() {
 
         first_name.addEventListener('blur', () => {
             if(first_name.value == "" || first_name.value.length < 2){
-                first_name_error.innerHTML = "El nombre no puede quedar vacío o contener menos de 2 caracteres"
+                first_name_error.innerHTML = "El nombre no puede quedar vacío ni contener menos de 2 caracteres"
             }else{
                 first_name_error.innerHTML = ""
             }
@@ -32,7 +32,7 @@ window.addEventListener('load', function() {
 
         last_name.addEventListener('blur', () => {
             if(last_name.value == "" || last_name.value.length < 2){
-                last_name_error.innerHTML = "El apellido no puede quedar vacío o contener menos de 2 caracteres"
+                last_name_error.innerHTML = "El apellido no puede quedar vacío ni contener menos de 2 caracteres"
             }else{
                 last_name_error.innerHTML = ""
             }
@@ -56,6 +56,15 @@ window.addEventListener('load', function() {
     //validacion password
     let password = document.querySelector("input.password")
     let password_error = document.querySelector(".password-error")
+    let viewpass = document.querySelector(".show-password")
+
+    viewpass.addEventListener('click',()=>{
+        if(password.getAttribute("type")=="password"){
+            password.setAttribute("type","text")
+        }else{
+            password.setAttribute("type","password")
+        }
+    })
 
         password.addEventListener('blur', () => {
             if(password.value == ""){
@@ -66,9 +75,19 @@ window.addEventListener('load', function() {
                 password_error.innerHTML = ""
             }
         })
-        
+
     let password_confirm = document.querySelector("input.password_confirm")
     let password_confirm_error = document.querySelector(".password-conf-error")
+    let viewpassconf = document.querySelector(".show-password-conf")
+
+
+    viewpassconf.addEventListener('click',()=>{
+        if(password_confirm.getAttribute("type")=="password"){
+            password_confirm.setAttribute("type","text")
+        }else{
+            password_confirm.setAttribute("type","password")
+        }
+    })
 
     password_confirm.addEventListener('blur', () => {
         if(password_confirm.value != password.value){
