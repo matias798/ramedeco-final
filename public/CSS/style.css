@@ -1176,6 +1176,7 @@ div.product_card_container{
     line-height: 1em;
     font-weight: 400;
     text-align: center;
+    word-wrap: break-word;
 }
 .img_container img {
     width: 100%;
