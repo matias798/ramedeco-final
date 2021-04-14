@@ -34,6 +34,7 @@ var userRouter = require('./routes/userRouter');
 var apiRouter = require('./routes/api/userRouter');
 var apiProductRouter = require('./routes/api/productRouter');
 var connectionRouter = require('./routes/api/connectionRouter');
+var articleRouter = require('./routes/api/articleRouter')
 
 
 const Sequelize =require("sequelize")
@@ -45,6 +46,7 @@ app.use('/users', userRouter);
 app.use('/api/users', apiRouter);
 app.use('/api/products', apiProductRouter);
 app.use('/api/connection', connectionRouter);
+app.use('/api/article', articleRouter);
 
 
 // catch 404 and forward to error handler
