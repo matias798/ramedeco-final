@@ -205,6 +205,11 @@ let productsContoller = {
     });
   },
   index: (req, res) => {
+    if(req.session.user !== undefined && req.session.user.role !== undefined){
+      if(req.session.user.role.name == "admin"){
+        res.redirect('/products')
+      }
+    }
    let productsPromise=db.products.findAll({limit:6})
    let sceneDetailPromise= db.scene_details.findAll({include:[{association:"product"},{association:"scene"}]})
    Promise.all([sceneDetailPromise,productsPromise])
@@ -230,7 +235,32 @@ let productsContoller = {
     });
     }).catch(error => console.log(error))
   },
-
+  indexUser: (req, res) => {
+   let productsPromise=db.products.findAll({limit:6})
+   let sceneDetailPromise= db.scene_details.findAll({include:[{association:"product"},{association:"scene"}]})
+   Promise.all([sceneDetailPromise,productsPromise])
+   .then(response => {
+      let sceneMap = new Map()
+      for (const element of response[0]) {
+        if(sceneMap.get(element.scene.id) === undefined){
+          let innerScene =element.scene
+          innerScene.pointers_position=[]
+          innerScene.pointers_position.push(element)
+          sceneMap.set(element.scene.id,innerScene)
+        }else{
+          sceneMap.get(element.scene.id).pointers_position.push(element)
+        }
+      }
+  
+      let userTs = req.session.user != undefined ? req.session.user : undefined;
+      console.debug("userTs" + userTs);
+    res.render("index", {
+      scenes: sceneMap.values(),
+      products: response[1],
+      user: userTs,
+    });
+    }).catch(error => console.log(error))
+  },
   getAllProducts: (req, res) => {
     db.products
       .findAll()
@@ -382,13 +412,15 @@ let productsContoller = {
 
         .then((product) => {
           //  Segunda premisa que crea datos de imagenes
-          db.images
+          let arrayImages=[]
+          for(let i =1 ;i<req.files.length;i++){
+          arrayImages.push(db.images
             .create({
-              path: req.files[0].originalname,
+              path: req.files[i].filename,
               productId: product.id,
-            })
+            }))
 
-            .then(() => {
+            Promise.all(arrayImages).then(() => {
               // Redirecciono a productos
               res.redirect("/products");
             })
@@ -400,6 +432,7 @@ let productsContoller = {
               // Redirecciono a productos
               res.redirect("/products");
             });
+          }  
         })
 
         .catch(
