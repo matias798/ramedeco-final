@@ -5,12 +5,12 @@ module.exports = {
         return res.json({
             categories: [
                 {
-                    url: 'http://localhost:3001/',
+                    url: 'http://localhost:3001/userhome',
                     title: "INICIO",
                     classIcon:"fas fa-home"
                 },
                 {
-                    url: 'http://localhost:3001/products/',
+                    url: 'http://localhost:3001/products',
                     title: "LISTADO DE PRODUCTOS",
                     classIcon:"fas fa-align-justify"
                 },

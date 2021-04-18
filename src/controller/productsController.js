@@ -316,15 +316,11 @@ let productsContoller = {
   update: (req, res) => {
     let errors = validationResult(req);
     if (errors.isEmpty()) {
-      let product_detail = req.body.product_detail.reduce((prev, actual) => {
-        prev += " " + actual;
-      });
-      console.log(product_detail);
       let productDetails={
         title: req.body.tittle,
         summary: req.body.summary,
         description: req.body.description,
-        product_detail: product_detail,
+        product_detail: req.body.product_detail,
         price: req.body.price,
         dimension: req.body.dimension,
         stock: req.body.stock || 100
@@ -342,12 +338,13 @@ let productsContoller = {
         )
 
         .then((product) => {
-          //  Segunda premisa que crea datos de imagenes
+          
+          if(req.files.length >1 ){//  Segunda premisa que crea datos de imagenes
           db.images
-            .create({
-              path: req.files[0].originalname,
-              productId: req.params.id,
-            })
+            .update({
+              path: req.files[1].filename,
+              
+            },{where:{productId: req.params.id}})
             .then(() => {
               res.redirect("/products");
             })
@@ -355,6 +352,9 @@ let productsContoller = {
               console.log(error);
               res.redirect("/products");
             });
+          }else{
+            res.redirect("/products");
+          }
         })
 
         .catch((error) => {

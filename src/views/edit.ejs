@@ -45,12 +45,12 @@
                     <input class="form-control title" type="text" id="title" name="tittle" value="<%=product.title%>" />
                 </div>
                 <div class="form-group">
-                    <label class="labelName" for="product_detail">Descripcion</label>
+                    <label class="labelName" for="description">Descripcion</label>
                     <!-- div para mostrar errores en js -->
                     <div class="descriptionErrors"></div>
                     <!-- div para mostrar errores en js -->
                     <div class="descriptionlength"></div>
-                    <textarea class="form-control editDescription" style="resize: none" name="product_detail" rows="10" cols="40">
+                    <textarea class="form-control editDescription" style="resize: none" name="description" rows="10" cols="40">
 <%=product.description%></textarea>
                 </div>
                 <div class="form-group">
@@ -72,7 +72,7 @@
                 </div>
                 <div class="form-group">
                     <label class="upload-images">Sube imagenes del producto
-                        <input type="file" size="60" multiple name="images" accept=".pdf,.jpg,.png" /></label>
+                        <input type="file" size="60" multiple name="images" accept=".webp,.jpg,.png" /></label>
                 </div>
                 <div class="form-group">
                     <label class="labelName" for="product_detail">Detalles del producto</label>
