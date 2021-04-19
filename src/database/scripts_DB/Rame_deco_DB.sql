@@ -15,17 +15,8 @@
 
 -- Volcando estructura de base de datos para rame_deco_db
 CREATE DATABASE IF NOT EXISTS `rame_deco_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
-USE `rame_deco_db`;
 
--- Volcando estructura para tabla rame_deco_db.categories
-CREATE TABLE IF NOT EXISTS `categories` (
-  `id` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(32) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
+
 
 -- La exportación de datos fue deseleccionada.
 
